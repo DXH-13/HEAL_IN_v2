@@ -1,0 +1,42 @@
+.avatar-container {
+    position: fixed; /* Cố định ở góc phải */
+    top: 75px;
+    right: 250px;
+    z-index: 1000;
+    transition: top 0.18s ease;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Bo tròn hình ảnh */
+    cursor: pointer;
+    border: 2px solid #ccc; /* Viền xám nhạt */
+}
+
+/* Dropdown menu */
+.dropdown {
+    display: none; /* Ẩn menu mặc định */
+    position: absolute;
+    top: 60px; /* Căn dưới hình ảnh avatar */
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 150px;
+    font-family: Arial, sans-serif;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown a:hover {
+    background-color: #f0f0f0; /* Hiệu ứng khi hover */
+}
