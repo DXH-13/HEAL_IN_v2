@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package dao;
 
 import java.sql.ResultSet;
@@ -61,8 +58,25 @@ public class DAOUser {
     }
     
     public Vector<User> getAllUser() {
-        String sql = "select * from User where AccountType = 'User' ";
+        String sql = "SELECT * FROM User WHERE AccountType = 'User' ";
         return getAll(sql);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public static void main(String[] args) {
+        
     }
     
     
