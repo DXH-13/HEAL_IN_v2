@@ -61,7 +61,7 @@ public class DAOUser {
     }
     
     public Vector<User> getAllUser() {
-        String sql = "select * from User where AccountType = 'User' ";
+        String sql = "SELECT * FROM User WHERE AccountType = 'User' ";
         return getAll(sql);
     }
     
