@@ -3,7 +3,7 @@
     Created on : Dec 9, 2024, 4:12:48 PM
     Author     : dangx
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@
                                                     <p class="text-center mt-4 mb-5">Or email</p>
                                                 </div>
                                             </div>
-                                            <form action="#!">
+                                            <form action="login" method="post">
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">
                                                         <div class="form-floating mb-3">

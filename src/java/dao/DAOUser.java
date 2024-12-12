@@ -65,11 +65,11 @@ public class DAOUser {
     }
 
     //Get the active user with username and password
-    public User checkActiveAccount(String username, String passuord) {
-        String query = "SELECT * FROM User WHERE Username = ? AND Password = ? AND isActive = 1 ";
+    public User checkActiveAccount(String email, String passuord) {
+        String query = "SELECT * FROM User WHERE Email = ? AND Password = ? AND isActive = 1 ";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(query);
-            pstmt.setString(1, username);
+            pstmt.setString(1, email);
             pstmt.setString(2, passuord);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
