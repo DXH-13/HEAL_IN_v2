@@ -15841,9 +15841,10 @@ html.rd-navbar-fixed-linked .page {
 
 @media (min-width: 1200px) {
     .rd-navbar-modern.rd-navbar-static .rd-navbar-project-hamburger-open {
-        bottom: 18px;
+        bottom: 20px;
     }
 }
+
 
 .rd-navbar-modern.rd-navbar-fixed .rd-navbar-aside {
     padding: 30px 30px 0;
@@ -15988,7 +15989,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-project-hamburger {
     position: relative;
-    width: 50px;
+    width: 58px;
     height: 50px;
     padding: 6px 0;
     transition: all .3s ease;

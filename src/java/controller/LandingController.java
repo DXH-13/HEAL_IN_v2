@@ -37,15 +37,9 @@ public class LandingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("userLogin");
-        if (user != null) {
-            request.setAttribute("userName", user.getName());
-            request.setAttribute("isLoggedIn", true);
-        } else {
-            request.setAttribute("isLoggedIn", false);
-        }
-        request.setAttribute("user", user);
+//        HttpSession session = request.getSession();
+//        User user = (User) session.getAttribute("userLogin");
+//        request.setAttribute("user", user);
         request.getRequestDispatcher("landing-page.jsp").forward(request, response);
     }
 
