@@ -13,6 +13,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/login.css">
+
     </head>
 
     <body>
@@ -51,26 +53,30 @@
                                                             <span class="ms-2 fs-6">Continue with Google</span>
                                                         </a>
                                                     </div>
-                                                    <p class="text-center mt-4 mb-5">Or email</p>
+                                                    <p class="text-center mt-4 mb-3">Or email</p>
+                                                    <div class="error-wronginfor">
+                                                        <span>${errorWrongInforLogin}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <form action="login" method="post">
+                                                <c:set var="cookie" value="${pageContext.request.cookies}"/>
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">
                                                         <div class="form-floating mb-3">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="${cookie.cemail.value}" required>
                                                             <label for="email" class="form-label">Email</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-floating mb-3">
-                                                            <input type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                                                            <input type="password" class="form-control" name="password" id="password" value="${cookie.cpass.value}" placeholder="Password" required>
                                                             <label for="password" class="form-label">Password</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
+                                                            <input class="form-check-input" type="checkbox" ${(cookie.crem != null ? 'checked' : '')} value="OFF" name="remember_me" id="remember_me">
                                                             <label class="form-check-label text-secondary" for="remember_me">
                                                                 Keep me logged in
                                                             </label>
@@ -87,7 +93,7 @@
                                                 <div class="col-12">
                                                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
                                                         <a href="/web/views/signup.html" class="link-secondary text-decoration-none">Create new account</a>
-                                                        <a href="/web/views/forgotpass.html" class="link-secondary text-decoration-none">Forgot password</a>
+                                                        <a href="/web/views/forgotpass.html" class="link-secondary text-decoration-none">Forgot password ?</a>
                                                     </div>
                                                 </div>
                                             </div>

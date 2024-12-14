@@ -63,6 +63,41 @@ public class DAOUser {
         String sql = "SELECT * FROM User WHERE AccountType = 'User' ";
         return getAll(sql);
     }
+    
+    
+    public User checkExistAccount(String email, String passuord) {
+        String query = "SELECT * FROM User WHERE Email = ? AND Password = ? ";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(query);
+            pstmt.setString(1, email);
+            pstmt.setString(2, passuord);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("Email"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("Image"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
+    
 
     //Get the active user with username and password
     public User checkActiveAccount(String email, String passuord) {
@@ -97,6 +132,9 @@ public class DAOUser {
         }
         return null;
     }
+    
+    
+    
 
     //Get the user by Id
     public User findByID(int id) {
