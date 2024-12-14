@@ -117,14 +117,32 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item active"><a class="rd-nav-link"
-                                                                              href="views/home.html">Home</a></li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/about-us.html">About us</a></li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/typography.html">Typography</a></li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/contacts.html">Contacts</a></li>
+                                            <li class="rd-nav-item active">
+                                                <a class="rd-nav-link" href="views/home.html">Home</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/about-us.html">About us</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/typography.html">Typography</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
+                                            </li>
+
+                                            <% if (user==null) { %>
+                                            <li class="rd-nav-item loginbtn">
+                                                <a class="rd-nav-link" href="login.jsp">Login</a>
+                                            </li>
+                                            <% } else { %>
+                                            <li class="rd-nav-item active loginbtn"><a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/web/views/single-product.html">Profile user</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="logout">Log out</a></li>
+                                                </ul>
+                                            </li>
+                                            <% } %>
+
                                         </ul>
 
                                     </div>

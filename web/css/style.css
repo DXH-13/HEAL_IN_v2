@@ -15828,6 +15828,13 @@ html.rd-navbar-fixed-linked .page {
     bottom: 15px;
 }
 
+@media (max-width: 1200px) {
+    .rd-navbar-modern.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-project-hamburger-open,
+    .rd-navbar-modern.rd-navbar-static.rd-navbar--is-clone .rd-navbar-project-hamburger-open {
+        bottom: 6px;
+    }
+}
+
 .rd-navbar-modern.rd-navbar-static.rd-navbar--is-stuck .rd-navbar-nav-item>.rd-navbar-submenu,
 .rd-navbar-modern.rd-navbar-static.rd-navbar--is-clone .rd-navbar-nav-item>.rd-navbar-submenu {
     margin-top: 17px;
@@ -15835,7 +15842,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-modern.rd-navbar-static .rd-navbar-project-hamburger-open {
     position: absolute;
-    right: 4px;
+    right: 15px;
     bottom: 10px;
 }
 
