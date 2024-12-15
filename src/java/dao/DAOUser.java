@@ -168,6 +168,38 @@ public class DAOUser {
         }
         return null;
     }
+    
+    public User findByEmail(String email) {
+        String sql = "SELECT * FROM User WHERE Email = '?' ";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, email);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("Email"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("Image"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
         DAOUser dao = new DAOUser();

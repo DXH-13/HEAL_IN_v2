@@ -1,5 +1,6 @@
 <%-- Document : landing-page Created on : Dec 12, 2024, 7:45:56 AM Author : dangx --%>
 <%@ page import="model.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
