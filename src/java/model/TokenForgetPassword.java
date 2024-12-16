@@ -13,8 +13,8 @@ public class TokenForgetPassword {
     private int id;
     private int userId;
     private String token;
-    private String expiryTime;
     private boolean isUsed;
+    private String expiryTime;
     private String createdAt;
     private String createdBy;
     private String updatedAt;
@@ -25,21 +25,19 @@ public class TokenForgetPassword {
     public TokenForgetPassword() {
     }
 
-    public TokenForgetPassword(int userId, String token, String expiryTime, boolean isUsed) {
+    public TokenForgetPassword(int userId, String token, boolean isUsed, String expiryTime) {
         this.userId = userId;
         this.token = token;
-        this.expiryTime = expiryTime;
         this.isUsed = isUsed;
+        this.expiryTime = expiryTime;
     }
-    
-    
 
-    public TokenForgetPassword(int id, int userId, String token, String expiryTime, boolean isUsed, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+    public TokenForgetPassword(int id, int userId, String token, boolean isUsed, String expiryTime, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
         this.id = id;
         this.userId = userId;
         this.token = token;
-        this.expiryTime = expiryTime;
         this.isUsed = isUsed;
+        this.expiryTime = expiryTime;
         this.createdAt = createdAt;
         this.createdBy = createdBy;
         this.updatedAt = updatedAt;
@@ -60,12 +58,12 @@ public class TokenForgetPassword {
         return token;
     }
 
-    public String getExpiryTime() {
-        return expiryTime;
-    }
-
     public boolean isIsUsed() {
         return isUsed;
+    }
+
+    public String getExpiryTime() {
+        return expiryTime;
     }
 
     public String getCreatedAt() {
@@ -104,12 +102,12 @@ public class TokenForgetPassword {
         this.token = token;
     }
 
-    public void setExpiryTime(String expiryTime) {
-        this.expiryTime = expiryTime;
-    }
-
     public void setIsUsed(boolean isUsed) {
         this.isUsed = isUsed;
+    }
+
+    public void setExpiryTime(String expiryTime) {
+        this.expiryTime = expiryTime;
     }
 
     public void setCreatedAt(String createdAt) {
@@ -138,8 +136,10 @@ public class TokenForgetPassword {
 
     @Override
     public String toString() {
-        return "TokenForgetPassword{" + "id=" + id + ", userId=" + userId + ", token=" + token + ", expiryTime=" + expiryTime + ", isUsed=" + isUsed + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
+        return "TokenForgetPassword{" + "id=" + id + ", userId=" + userId + ", token=" + token + ", isUsed=" + isUsed + ", expiryTime=" + expiryTime + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
     }
+
+    
     
     
 }
