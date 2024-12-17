@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forgot password</title>
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/forgot-password.css">
     </head>
 
     <body>
@@ -32,7 +33,7 @@
 
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <div class="mb-5">
+                                                    <div class="mb-3">
                                                         <div class="text-center" style="margin-bottom: 7rem;">
                                                             <a href="#!">
                                                                 <img src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175" height="57">
@@ -43,12 +44,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div class="noticeBox error">
                                                 <span>${errorEmailNotFound}</span>
                                             </div>
-                                            <div>
+                                            <div class="noticeBox success">
                                                 <span>${sendmailNotice}</span>
                                             </div>
+
+
                                             <form action="forgotpassword" method="post">
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">
