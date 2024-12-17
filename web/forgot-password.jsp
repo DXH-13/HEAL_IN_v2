@@ -43,6 +43,12 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div>
+                                                <span>${errorEmailNotFound}</span>
+                                            </div>
+                                            <div>
+                                                <span>${sendmailNotice}</span>
+                                            </div>
                                             <form action="forgotpassword" method="post">
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">

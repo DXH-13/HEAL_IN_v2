@@ -16,7 +16,9 @@ import javax.mail.internet.MimeMessage;
 
 public class SendMail {
 
-    private static final String TEMPLATE_PATH = "web/views/email-template.html";
+//    private static final String TEMPLATE_PATH = "/web/views/email-template.html";
+private static final String TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-template.html";
+
     private static final int LIMIT_MINUS = 10;
 
     public String generateToken() {
@@ -37,7 +39,7 @@ public class SendMail {
         return LocalDateTime.now().isAfter(time);
     }
 
-    public static void sendMail(String recipient, String resetLink) throws Exception {
+    public static boolean sendMail(String recipient, String resetLink) throws Exception {
         System.out.println("Preparing to send email...");
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -69,6 +71,25 @@ public class SendMail {
             message.setContent(emailContent, "text/html; charset=UTF-8");
             Transport.send(message);
             System.out.println("Email sent successfully.");
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        String testRecipient = "dangxuanhuyb52@gmail.com"; // Replace with the recipient's email
+        String resetLink = "http://example.com/reset-password?token=abc123"; // Test reset link
+
+        try {
+            boolean result = sendMail(testRecipient, resetLink);
+            if (result) {
+                System.out.println("Test email sent successfully.");
+            } else {
+                System.out.println("Failed to send the test email.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

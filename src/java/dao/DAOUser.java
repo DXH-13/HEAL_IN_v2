@@ -60,13 +60,13 @@ public class DAOUser {
     }
 
     public Vector<User> getAllUser() {
-        String sql = "SELECT * FROM User WHERE AccountType = 'User' ";
+        String sql = "SELECT * FROM HEALIN.USER WHERE AccountType = 'User' ";
         return getAll(sql);
     }
     
     
     public User checkExistAccount(String email, String passuord) {
-        String query = "SELECT * FROM User WHERE Email = ? AND Password = ? ";
+        String query = "SELECT * FROM HEALIN.USER WHERE Email = ? AND Password = ? ";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(query);
             pstmt.setString(1, email);
@@ -101,7 +101,7 @@ public class DAOUser {
 
     //Get the active user with username and password
     public User checkActiveAccount(String email, String passuord) {
-        String query = "SELECT * FROM User WHERE Email = ? AND Password = ? AND isActive = 1 ";
+        String query = "SELECT * FROM HEALIN.USER WHERE Email = ? AND Password = ? AND isActive = 1 ";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(query);
             pstmt.setString(1, email);
@@ -138,7 +138,7 @@ public class DAOUser {
 
     //Get the user by Id
     public User findByID(int id) {
-        String sql = "SELECT * FROM User WHERE Id = ?";
+        String sql = "SELECT * FROM HEALIN.USER WHERE Id = ?";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setInt(1, id);
@@ -170,7 +170,7 @@ public class DAOUser {
     }
     
     public User findByEmail(String email) {
-        String sql = "SELECT * FROM User WHERE Email = '?' ";
+        String sql = "SELECT * FROM HEALIN.USER WHERE Email = ?;";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setString(1, email);
@@ -203,8 +203,8 @@ public class DAOUser {
 
     public static void main(String[] args) {
         DAOUser dao = new DAOUser();
-        Vector<User> users = dao.getAllUser();
-        System.out.println(users);
+        User u = dao.findByEmail("dangxuanhuyb52@gmail.com");
+        System.out.println(u);
     }
 
 }
