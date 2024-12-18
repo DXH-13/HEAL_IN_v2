@@ -33,7 +33,7 @@
 
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <div class="mb-3">
+                                                    <div class="mb-5">
                                                         <div class="text-center" style="margin-bottom: 7rem;">
                                                             <a href="#!">
                                                                 <img src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175" height="57">

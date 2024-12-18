@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Properties;
 import java.util.UUID;
 import javax.mail.Authenticator;
@@ -35,10 +36,23 @@ private static final String TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EX
         return expiredDateTime.format(formatter);
     }
 
-    public boolean isExpiredTime(LocalDateTime time) {
-        return LocalDateTime.now().isAfter(time);
-    }
+//    public boolean isExpiredTime(LocalDateTime time) {
+//        return LocalDateTime.now().isAfter(time);
+//    }
 
+    
+    public boolean isExpiredTime(String timeString) {
+    try {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime time = LocalDateTime.parse(timeString, formatter);
+        return LocalDateTime.now().isAfter(time);
+    } catch (DateTimeParseException e) {
+        System.err.println("Invalid date-time format: " + e.getMessage());
+        return false; 
+    }
+}
+    
+    
     public static boolean sendMail(String recipient, String resetLink) throws Exception {
         System.out.println("Preparing to send email...");
         Properties properties = new Properties();

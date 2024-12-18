@@ -200,11 +200,26 @@ public class DAOUser {
         }
         return null;
     }
+    
+    public void updatePassword(String password, int userId) {
+        String sql = "UPDATE user\n"
+                + "SET Password = ?\n"
+                + "WHERE Id = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, password);
+            pstmt.setInt(2, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+    
+    
 
     public static void main(String[] args) {
         DAOUser dao = new DAOUser();
         User u = dao.findByEmail("dangxuanhuyb52@gmail.com");
         System.out.println(u);
     }
-
 }

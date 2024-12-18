@@ -18,6 +18,15 @@
         <url-pattern>/forgotpassword</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>ResetPasswordController</servlet-name>
+        <servlet-class>controller.ResetPasswordController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResetPasswordController</servlet-name>
+        <url-pattern>/resetpassword</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

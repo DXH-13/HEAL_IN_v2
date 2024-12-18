@@ -43,12 +43,18 @@
                         </div>
                       </div>
                     </div>
-                    <form action="#!">
+                      <form action="resetpassword" method="post">
                       <div class="row gy-3 overflow-hidden">
                         <div class="col-12">
                           <div class="form-floating mb-3">
                             <input type="password" class="form-control" name="password" id="password" placeholder="" required>
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">New Password</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating mb-3">
+                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="" required>
+                            <label for="confirm_password" class="form-label">Confirm New Password</label>
                           </div>
                         </div>
                         <div class="col-12">
