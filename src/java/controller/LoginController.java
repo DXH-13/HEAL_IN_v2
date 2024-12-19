@@ -17,7 +17,7 @@ import utils.SHA256;
  *
  * @author dangx
  */
-@WebServlet(name = "LoginController", urlPatterns = {"/login"})
+@WebServlet(name = "LoginController", urlPatterns = {"/log_in"})
 public class LoginController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

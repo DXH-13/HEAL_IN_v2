@@ -20,7 +20,7 @@ public class SendMail {
 //    private static final String TEMPLATE_PATH = "/web/views/email-template.html";
 private static final String TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-template.html";
 
-    private static final int LIMIT_MINUS = 10;
+    private static final int LIMIT_MINUS = 5;
 
     public String generateToken() {
         return UUID.randomUUID().toString();

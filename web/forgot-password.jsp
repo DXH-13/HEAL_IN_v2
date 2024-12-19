@@ -33,7 +33,7 @@
 
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <div class="mb-5">
+                                                    <div class="mb-3">
                                                         <div class="text-center" style="margin-bottom: 7rem;">
                                                             <a href="#!">
                                                                 <img src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175" height="57">
@@ -71,7 +71,7 @@
                                             <div class="row mt-5" style="margin-bottom: 6.2rem;">
                                                 <div class="col-12">
                                                     <div class="d-flex justify-content-center mt-3">
-                                                        <a href="login" class="link-secondary text-decoration-none">Log in</a>
+                                                        <a href="log_in" class="link-secondary text-decoration-none">Log in</a>
                                                     </div>                          
                                                 </div>
                                             </div>

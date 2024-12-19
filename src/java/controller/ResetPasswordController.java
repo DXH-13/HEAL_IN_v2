@@ -55,17 +55,17 @@ public class ResetPasswordController extends HttpServlet {
             TokenForgetPassword tokenPassword = daoToken.getTokenForgetPassword(token);
             SendMail service = new SendMail();
             if (tokenPassword == null) {
-                request.setAttribute("errorEmailNotFound", "token invalid");
+                request.setAttribute("errorEmailNotFound", "Token invalid");
                 request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
                 return;
             }
             if (tokenPassword.isIsUsed()) {
-                request.setAttribute("errorEmailNotFound", "token is used");
+                request.setAttribute("errorEmailNotFound", "Token is used");
                 request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
                 return;
             }
             if (service.isExpiredTime(tokenPassword.getExpiryTime())) {
-                request.setAttribute("errorEmailNotFound", "token is expiry time");
+                request.setAttribute("errorEmailNotFound", "Token is expiry time");
                 request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
                 return;
             }
@@ -84,7 +84,7 @@ public class ResetPasswordController extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirm_password");
         if (!password.equals(confirmPassword)) {
-            request.setAttribute("errorEmailNotFound", "The password confirmation does not match.");
+            request.setAttribute("errorCFpass", "The password confirmation does not match.");
             request.getRequestDispatcher("reset-password.jsp").forward(request, response);
             return;
         }
@@ -94,17 +94,17 @@ public class ResetPasswordController extends HttpServlet {
         //check token is valid, of time, of used
         SendMail service = new SendMail();
         if (tokenForgetPassword == null) {
-            request.setAttribute("errorEmailNotFound", "token invalid");
+            request.setAttribute("errorEmailNotFound", "Token invalid");
             request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
             return;
         }
         if (tokenForgetPassword.isIsUsed()) {
-            request.setAttribute("errorEmailNotFound", "token is used");
+            request.setAttribute("errorEmailNotFound", "Token is used");
             request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
             return;
         }
         if (service.isExpiredTime(tokenForgetPassword.getExpiryTime())) {
-            request.setAttribute("errorEmailNotFound", "token is expiry time");
+            request.setAttribute("errorEmailNotFound", "Token is expiry time");
             request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
             return;
         }

@@ -82,7 +82,7 @@
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
                                     <div class="rd-navbar-brand"><a class="brand" href="views/home.html"><img
-                                                class="brand-logo-dark" src="assets/images/logo-198x66.png"
+                                                class="brand-logo-dark" src="https://placehold.co/198x66"
                                                 alt="" width="198" height="66" /></a>
                                     </div>
                                 </div>
@@ -133,13 +133,13 @@
 
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
-                                                <a class="rd-nav-link" href="login.jsp">Login</a>
+                                                <a class="rd-nav-link" href="log_in">Login</a>
                                             </li>
                                             <% } else { %>
                                             <li class="rd-nav-item active loginbtn"><a class="rd-nav-link" href="shop.html">Avatar</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
                                                     <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/web/views/single-product.html">Profile user</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="logout">Log out</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="log_out">Log out</a></li>
                                                 </ul>
                                             </li>
                                             <% } %>
@@ -154,7 +154,7 @@
                                     <!-------------------------------------------------------------->
 
                                     <% if (user==null) { %>
-                                    <a href="login.jsp" class="loginbtn2">Login</a>
+                                    <a href="log_in" class="loginbtn2">Login</a>
                                     <% } else { %>
                                     <div class="dropdown">
                                         <button class="dropbtn">
@@ -163,7 +163,7 @@
                                         </button>
                                         <div class="dropdown-content">
                                             <a href="profile.jsp">Profile</a>
-                                            <a href="logout">Logout</a>
+                                            <a href="log_out">Logout</a>
                                         </div>
                                     </div>
                                     <% } %>
@@ -186,12 +186,10 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
-                                        <h1 class="oh swiper-title"><span class="d-inline-block"
-                                                                          data-caption-animate="slideInUp" data-caption-delay="0">Perfect
-                                                pizza</span></h1>
+                                        <h1 class="oh swiper-title">
+                                            <span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">ABC</span></h1>
                                         <p class="big swiper-text" data-caption-animate="fadeInLeft"
-                                           data-caption-delay="300">Experience the
-                                            taste of a perfect pizza at PizzaHouse, one of the best restaurants!
+                                           data-caption-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         </p>
                                         <a class="button button-lg button-primary button-winona button-shadow-2"
                                            href="#" data-caption-animate="fadeInUp"
@@ -209,11 +207,9 @@
                                     <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
                                         <h1 class="oh swiper-title"><span class="d-inline-block"
                                                                           data-caption-animate="slideInDown"
-                                                                          data-caption-delay="0">Quality
-                                                ingredients</span></h1>
+                                                                          data-caption-delay="0">ABC</span></h1>
                                         <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                           data-caption-delay="300">We use only the
-                                            best ingredients to make one-of-a-kind pizzas for our customers.</p>
+                                           data-caption-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
                                         <div class="button-wrap oh"><a
                                                 class="button button-lg button-primary button-winona button-shadow-2"
                                                 href="#" data-caption-animate="slideInUp"

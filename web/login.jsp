@@ -59,13 +59,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <form action="login" method="post">
+                                            <form action="log_in" method="post">
                                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">
                                                         <div class="form-floating mb-3">
-                                                            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" value="${cookie.cemail.value}" required>
-                                                            <label for="email" class="form-label">Email</label>
+                                                            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email address or username" value="${cookie.cemail.value}" required>
+                                                            <label for="email" class="form-label">Email or Username</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -92,8 +92,8 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-center mt-5">
-                                                        <a href="/web/views/signup.html" class="link-secondary text-decoration-none">Create new account</a>
-                                                        <a href="forgotpassword" class="link-secondary text-decoration-none">Forgot password ?</a>
+                                                        <a href="sign_up" class="link-secondary text-decoration-none">Create new account</a>
+                                                        <a href="forgot_password" class="link-secondary text-decoration-none">Forgot password ?</a>
                                                     </div>
                                                 </div>
                                             </div>

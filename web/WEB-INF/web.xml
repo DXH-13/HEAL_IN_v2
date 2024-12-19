@@ -6,7 +6,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
-        <url-pattern>/logout</url-pattern>
+        <url-pattern>/log_out</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -15,7 +15,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ForgotPasswordController</servlet-name>
-        <url-pattern>/forgotpassword</url-pattern>
+        <url-pattern>/forgot_password</url-pattern>
     </servlet-mapping>
     
     <servlet>
@@ -24,7 +24,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>ResetPasswordController</servlet-name>
-        <url-pattern>/resetpassword</url-pattern>
+        <url-pattern>/reset_password</url-pattern>
     </servlet-mapping>
     
     <session-config>
