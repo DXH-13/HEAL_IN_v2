@@ -53,7 +53,7 @@
                         <p class="text-center mt-4" style="margin-bottom:2.7rem ;">Or email</p>
                       </div>
                     </div>
-                    <form action="#!">
+                      <form action="sign_up" method="post">
                       <div class="row gy-3 overflow-hidden">
                         <div class="col-12">
                           <div class="form-floating mb-3">
@@ -63,8 +63,8 @@
                         </div>
                         <div class="col-12">
                             <div class="form-floating mb-3">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
-                              <label for="email" class="form-label">Username</label>
+                              <input type="text" class="form-control" name="username" id="email" placeholder="username" required>
+                              <label for="username" class="form-label">Username</label>
                             </div>
                           </div>
                         <div class="col-12">
@@ -76,8 +76,8 @@
                           
                         <div class="col-12">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
-                            <label class="form-check-label text-secondary" for="remember_me">
+                            <input class="form-check-input" type="checkbox" value="" name="term" id="term">
+                            <label class="form-check-label text-secondary" for="term">
                                 I accept HEAl IN's Terms of Service and Privacy Policy
                             </label>
                           </div>

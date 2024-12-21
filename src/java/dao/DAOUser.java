@@ -63,82 +63,77 @@ public class DAOUser {
         String sql = "SELECT * FROM HEALIN.USER WHERE AccountType = 'User' ";
         return getAll(sql);
     }
-    
-    
-    public User checkExistAccount(String emailOrUsername, String password) {
-    String query = "SELECT * FROM HEALIN.USER WHERE (Email = ? OR Username = ?) AND Password = ?";
-    try {
-        PreparedStatement pstmt = db.getConnection().prepareStatement(query);
-        pstmt.setString(1, emailOrUsername);  // truyền email hoặc username
-        pstmt.setString(2, emailOrUsername);  // truyền email hoặc username
-        pstmt.setString(3, password);  // truyền mật khẩu
-        ResultSet rs = pstmt.executeQuery();
-        if (rs.next()) {
-            User user = new User(
-                    rs.getInt("ID"),
-                    rs.getString("Name"),
-                    rs.getString("Username"),
-                    rs.getString("Password"),
-                    rs.getString("Email"),
-                    rs.getString("PhoneNumber"),
-                    rs.getString("DateOfBirth"),
-                    rs.getString("Image"),
-                    rs.getString("AccountType"),
-                    rs.getString("CreatedAt"),
-                    rs.getString("CreatedBy"),
-                    rs.getString("UpdatedAt"),
-                    rs.getString("DeactivatedAt"),
-                    rs.getString("DeactivatedBy"),
-                    rs.getBoolean("isActive")
-            );
-            return user;
-        }
-    } catch (Exception e) {
-        Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
-    }
-    return null;
-}
 
-    
+    public User checkExistAccount(String emailOrUsername, String password) {
+        String query = "SELECT * FROM HEALIN.USER WHERE (Email = ? OR Username = ?)"
+                + " AND Password = ?";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(query);
+            pstmt.setString(1, emailOrUsername);  // truyền email hoặc username
+            pstmt.setString(2, emailOrUsername);  // truyền email hoặc username
+            pstmt.setString(3, password);  // truyền mật khẩu
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("Email"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("Image"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
 
     //Get the active user with username and password
     public User checkActiveAccount(String emailOrUsername, String password) {
-    String query = "SELECT * FROM HEALIN.USER WHERE (Email = ? OR Username = ?) AND Password = ? AND isActive = 1";
-    try {
-        PreparedStatement pstmt = db.getConnection().prepareStatement(query);
-        pstmt.setString(1, emailOrUsername);  // truyền email hoặc username
-        pstmt.setString(2, emailOrUsername);  // truyền email hoặc username
-        pstmt.setString(3, password);  // truyền mật khẩu
-        ResultSet rs = pstmt.executeQuery();
-        if (rs.next()) {
-            User user = new User(
-                    rs.getInt("ID"),
-                    rs.getString("Name"),
-                    rs.getString("Username"),
-                    rs.getString("Password"),
-                    rs.getString("Email"),
-                    rs.getString("PhoneNumber"),
-                    rs.getString("DateOfBirth"),
-                    rs.getString("Image"),
-                    rs.getString("AccountType"),
-                    rs.getString("CreatedAt"),
-                    rs.getString("CreatedBy"),
-                    rs.getString("UpdatedAt"),
-                    rs.getString("DeactivatedAt"),
-                    rs.getString("DeactivatedBy"),
-                    rs.getBoolean("isActive")
-            );
-            return user;
+        String query = "SELECT * FROM HEALIN.USER WHERE (Email = ? OR Username = ?)"
+                + " AND Password = ? AND isActive = 1";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(query);
+            pstmt.setString(1, emailOrUsername);  // truyền email hoặc username
+            pstmt.setString(2, emailOrUsername);  // truyền email hoặc username
+            pstmt.setString(3, password);  // truyền mật khẩu
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("Email"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("Image"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
         }
-    } catch (Exception e) {
-        Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        return null;
     }
-    return null;
-}
-
-    
-    
-    
 
     //Get the user by Id
     public User findByID(int id) {
@@ -172,7 +167,7 @@ public class DAOUser {
         }
         return null;
     }
-    
+
     public User findByEmail(String email) {
         String sql = "SELECT * FROM HEALIN.USER WHERE Email = ?;";
         try {
@@ -204,7 +199,7 @@ public class DAOUser {
         }
         return null;
     }
-    
+
     public void updatePassword(String password, int userId) {
         String sql = "UPDATE user\n"
                 + "SET Password = ?\n"
@@ -218,8 +213,31 @@ public class DAOUser {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+
     
-    
+    public boolean insertUser(String username, String password, String email) {
+        String accountType = "User";
+
+        String sql = "INSERT INTO user (Name, Username, Password, Email, "
+                + "PhoneNumber, DateOfBirth, Image, AccountType, CreatedAt, "
+                + "CreatedBy, UpdatedAt, DeactivatedAt, DeactivatedBy, isActive)\n"
+                + "VALUES (NULL, ?, ?, ?, NULL, NULL, NULL, ?, CURRENT_TIMESTAMP"
+                + ", ?, NULL, NULL, NULL, 0),";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, email);
+            pstmt.setString(4, accountType);
+            pstmt.setString(5, username);
+            
+            int result = pstmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
+    }
 
     public static void main(String[] args) {
         DAOUser dao = new DAOUser();
