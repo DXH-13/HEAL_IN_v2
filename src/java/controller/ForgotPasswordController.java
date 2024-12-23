@@ -93,7 +93,7 @@ public class ForgotPasswordController extends HttpServlet {
                 } catch (Exception ex) {
                     System.out.println("Exception occurred: " + ex.getMessage());
                     ex.printStackTrace(); // Log lỗi chi tiết
-                    request.setAttribute("errorEmailNotFound", "An error occurred: " + ex.getMessage());
+                    request.setAttribute("errorEmailNotFound", "Sorry we have error in server");
                     request.getRequestDispatcher("forgot-password.jsp").forward(request, response);
                 }
             }

@@ -76,7 +76,7 @@
                           
                         <div class="col-12">
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" name="term" id="term">
+                              <input class="form-check-input" type="checkbox" value="" name="term" id="term" required>
                             <label class="form-check-label text-secondary" for="term">
                                 I accept HEAl IN's Terms of Service and Privacy Policy
                             </label>

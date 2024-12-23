@@ -222,7 +222,7 @@ public class DAOUser {
                 + "PhoneNumber, DateOfBirth, Image, AccountType, CreatedAt, "
                 + "CreatedBy, UpdatedAt, DeactivatedAt, DeactivatedBy, isActive)\n"
                 + "VALUES (NULL, ?, ?, ?, NULL, NULL, NULL, ?, CURRENT_TIMESTAMP"
-                + ", ?, NULL, NULL, NULL, 0),";
+                + ", ?, NULL, NULL, NULL, 0)";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setString(1, username);
@@ -238,10 +238,39 @@ public class DAOUser {
             return false;
         }
     }
+    
+    
+    public void updateActiveStatus(int userId) {
+        String sql = "UPDATE user\n"
+                + "SET isActive = 1\n"
+                + "WHERE Id = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setInt(1, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+    
+    
 
     public static void main(String[] args) {
-        DAOUser dao = new DAOUser();
-        User u = dao.findByEmail("dangxuanhuyb52@gmail.com");
-        System.out.println(u);
+        DAOUser daoUser = new DAOUser();
+
+        // Thông tin người dùng cần thêm
+        String username = "testUser";
+        String password = "testPassword123";
+        String email = "dangxuanhuyb52@gmail.com";
+
+        // Gọi phương thức insertUser
+        boolean isInserted = daoUser.insertUser(username, password, email);
+
+        // Kiểm tra kết quả
+        if (isInserted) {
+            System.out.println("User inserted successfully!");
+        } else {
+            System.out.println("Failed to insert user.");
+        }
     }
 }

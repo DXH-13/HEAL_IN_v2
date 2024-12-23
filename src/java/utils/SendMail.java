@@ -124,7 +124,7 @@ private static final String EMAIL_APP_PASS = "bacgpgdyexlipimy";
 
             // Đọc nội dung file HTML và chèn link reset
             String emailContent = new String(Files.readAllBytes(Paths.get(ACTIVE_ACCOUNT_TEMPLATE_PATH)));
-            emailContent = emailContent.replace("{{reset_link}}", activeLink);
+            emailContent = emailContent.replace("{{active_link}}", activeLink);
 
             message.setContent(emailContent, "text/html; charset=UTF-8");
             Transport.send(message);

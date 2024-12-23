@@ -4,11 +4,14 @@
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>controller.LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ActivateAccountController</servlet-name>
+        <servlet-class>controller.ActivateAccountController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LogoutController</servlet-name>
         <url-pattern>/log_out</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ForgotPasswordController</servlet-name>
         <servlet-class>controller.ForgotPasswordController</servlet-class>
@@ -17,7 +20,6 @@
         <servlet-name>ForgotPasswordController</servlet-name>
         <url-pattern>/forgot_password</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>ResetPasswordController</servlet-name>
         <servlet-class>controller.ResetPasswordController</servlet-class>
@@ -26,7 +28,10 @@
         <servlet-name>ResetPasswordController</servlet-name>
         <url-pattern>/reset_password</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>ActivateAccountController</servlet-name>
+        <url-pattern>/activate_account</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
