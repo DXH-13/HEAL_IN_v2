@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
+import utils.GoogleLogin;
 import utils.SHA256;
 
 /**
@@ -46,50 +47,63 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         HttpSession session = request.getSession();
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
         String rem = request.getParameter("remember_me");
         String encryptedPassword = SHA256.hashPassword(pass);
+        String loginType = request.getParameter("loginType");
 
         DAOUser daoUser = new DAOUser();
-        User user = daoUser.checkExistAccount(email, encryptedPassword);
 
-        if (user == null) {
-            request.setAttribute("errorWrongInforLogin", "Incorrect email or password.");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+        if ("google".equals(loginType)) {
+            //dang nhap bang google
+            String code = request.getParameter("code");
+            GoogleLogin gg = new GoogleLogin();
+            String accessToken = gg.getToken(code);
+            User user = gg.getUserInfo(accessToken);
+            System.out.println(user);
         } else {
-            User user2 = daoUser.checkActiveAccount(email, encryptedPassword);
-            if (user2 == null) {
-                request.setAttribute("errorWrongInforLogin", "Your account has been locked. Please contact support for assistance.");
+            //dang nhap thong thuong
+            User user = daoUser.checkExistAccount(email, encryptedPassword);
+            if (user == null) {
+                request.setAttribute("errorWrongInforLogin", "Incorrect email or password.");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             } else {
-                Cookie cEmail = new Cookie("cemail", email);
-                Cookie cPass = new Cookie("cpass", pass);
-                Cookie cRem = new Cookie("crem", rem);
-
-                if (rem != null) {
-                    cEmail.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
-                    cPass.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
+                User user2 = daoUser.checkActiveAccount(email, encryptedPassword);
+                if (user2 == null) {
+                    request.setAttribute("errorWrongInforLogin", "Your account has been locked. Please contact support for assistance.");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                 } else {
-                    cEmail.setMaxAge(0);
-                    cPass.setMaxAge(0);
-                    cRem.setMaxAge(0);
-                }
-                response.addCookie(cEmail);
-                response.addCookie(cPass);
-                response.addCookie(cRem);
+                    Cookie cEmail = new Cookie("cemail", email);
+                    Cookie cPass = new Cookie("cpass", pass);
+                    Cookie cRem = new Cookie("crem", rem);
 
-                // Kiểm tra idRole của người dùng
-                if ("admin".equals(user.getAccountType())) {
-                    session.setAttribute("userLogin", user);
-                    response.sendRedirect("admin");
-                } else {
-                    session.setAttribute("userLogin", user);
-                    response.sendRedirect("landing?id=" + user.getId());
+                    if (rem != null) {
+                        cEmail.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
+                        cPass.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
+                    } else {
+                        cEmail.setMaxAge(0);
+                        cPass.setMaxAge(0);
+                        cRem.setMaxAge(0);
+                    }
+                    response.addCookie(cEmail);
+                    response.addCookie(cPass);
+                    response.addCookie(cRem);
+
+                    // Kiểm tra idRole của người dùng
+                    if ("admin".equals(user.getAccountType())) {
+                        session.setAttribute("userLogin", user);
+                        response.sendRedirect("admin");
+                    } else {
+                        session.setAttribute("userLogin", user);
+                        response.sendRedirect("landing?id=" + user.getId());
+                    }
                 }
             }
         }
+
     }
 
     @Override

@@ -47,9 +47,15 @@ public class DAOUser {
                 String deactivatedBy = rs.getString("DeactivatedBy");
                 int temp = rs.getInt("isActive");
                 boolean isActive = (temp == 1 ? true : false);
-
-                User user = new User(id, name, username, password, email,
-                        phoneNumber, dateOfBirth, image, accountType, createdAt,
+                String googleId = rs.getString("GoogleId");
+                String firstName = rs.getString("FirstName");
+                String givenName = rs.getString("GivenName");
+                String familyName = rs.getString("FamilyName");
+                int tempGG = rs.getInt("VerifiedEmailGoogle");
+                boolean verifiedEmail = (tempGG == 1 ? true : false);
+                User user = new User(id, email, verifiedEmail, firstName, givenName,
+                        familyName, image, googleId, name, username, password,
+                        phoneNumber, dateOfBirth, accountType, createdAt,
                         createdBy, updatedAt, deactivatedAt, deactivatedBy, isActive);
                 vector.add(user);
             }
@@ -60,7 +66,7 @@ public class DAOUser {
     }
 
     public Vector<User> getAllUser() {
-        String sql = "SELECT * FROM HEALIN.USER WHERE AccountType = 'User' ";
+        String sql = "SELECT * FROM HEALIN.USER WHERE AccountType = 'NormalUser' ";
         return getAll(sql);
     }
 
@@ -76,13 +82,18 @@ public class DAOUser {
             if (rs.next()) {
                 User user = new User(
                         rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
                         rs.getString("Name"),
                         rs.getString("Username"),
                         rs.getString("Password"),
-                        rs.getString("Email"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
-                        rs.getString("Image"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -112,13 +123,18 @@ public class DAOUser {
             if (rs.next()) {
                 User user = new User(
                         rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
                         rs.getString("Name"),
                         rs.getString("Username"),
                         rs.getString("Password"),
-                        rs.getString("Email"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
-                        rs.getString("Image"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -145,13 +161,18 @@ public class DAOUser {
             if (rs.next()) {
                 User user = new User(
                         rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
                         rs.getString("Name"),
                         rs.getString("Username"),
                         rs.getString("Password"),
-                        rs.getString("Email"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
-                        rs.getString("Image"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -177,13 +198,18 @@ public class DAOUser {
             if (rs.next()) {
                 User user = new User(
                         rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
                         rs.getString("Name"),
                         rs.getString("Username"),
                         rs.getString("Password"),
-                        rs.getString("Email"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
-                        rs.getString("Image"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -214,7 +240,6 @@ public class DAOUser {
         }
     }
 
-    
     public boolean insertUser(String username, String password, String email) {
         String accountType = "User";
 
@@ -230,7 +255,7 @@ public class DAOUser {
             pstmt.setString(3, email);
             pstmt.setString(4, accountType);
             pstmt.setString(5, username);
-            
+
             int result = pstmt.executeUpdate();
             return result > 0;
         } catch (SQLException e) {
@@ -238,8 +263,7 @@ public class DAOUser {
             return false;
         }
     }
-    
-    
+
     public void updateActiveStatus(int userId) {
         String sql = "UPDATE user\n"
                 + "SET isActive = 1\n"
@@ -252,25 +276,12 @@ public class DAOUser {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-    
-    
 
     public static void main(String[] args) {
         DAOUser daoUser = new DAOUser();
-
-        // Thông tin người dùng cần thêm
-        String username = "testUser";
-        String password = "testPassword123";
-        String email = "dangxuanhuyb52@gmail.com";
-
-        // Gọi phương thức insertUser
-        boolean isInserted = daoUser.insertUser(username, password, email);
-
-        // Kiểm tra kết quả
-        if (isInserted) {
-            System.out.println("User inserted successfully!");
-        } else {
-            System.out.println("Failed to insert user.");
+        Vector<User> user = daoUser.getAllUser();
+        for (User userl : user) {
+            System.out.println(userl);
         }
     }
 }
