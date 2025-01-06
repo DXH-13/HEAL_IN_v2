@@ -49,7 +49,7 @@ public class ActivateAccountController extends HttpServlet {
         if (user != null) {
             daoUser.updateActiveStatus(userIdNum);
             session.setAttribute("userLogin", user);
-            response.sendRedirect("landing?id=" + user.getId());
+            response.sendRedirect("landing?id=" + user.getNormalUserId());
         } else {
             request.getRequestDispatcher("404-page.jsp").forward(request, response);
         }

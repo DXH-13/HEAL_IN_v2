@@ -241,7 +241,7 @@ public class DAOUser {
     }
 
     public boolean insertUser(String username, String password, String email) {
-        String accountType = "User";
+        String accountType = "NormalUser";
 
         String sql = "INSERT INTO user (Name, Username, Password, Email, "
                 + "PhoneNumber, DateOfBirth, Image, AccountType, CreatedAt, "
@@ -255,6 +255,35 @@ public class DAOUser {
             pstmt.setString(3, email);
             pstmt.setString(4, accountType);
             pstmt.setString(5, username);
+
+            int result = pstmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
+    }
+
+    public boolean insertGmailUser(String email, String firstName, String givenName,
+            String familyName, String image, String googleId, String name, int verifiedEmailGoogle) {
+        String accountType = "GoogleUser";
+
+        String sql = "INSERT INTO user (Name, Username, Password, Email, PhoneNumber,"
+                + " DateOfBirth, Image, AccountType, CreatedAt, CreatedBy, UpdatedAt,"
+                + " DeactivatedAt, DeactivatedBy, isActive, GoogleId, FirstName,"
+                + " GivenName, FamilyName, VerifiedEmailGoogle) \n"
+                + "VALUES (?, NULL, NULL, ?, NULL, NULL, ?, ?, CURRENT_TIMESTAMP, NULL, NULL, NULL, NULL, 0, ?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, name);
+            pstmt.setString(2, email);
+            pstmt.setString(3, image);
+            pstmt.setString(4, accountType);
+            pstmt.setString(5, googleId);
+            pstmt.setString(6, firstName);
+            pstmt.setString(7, givenName);
+            pstmt.setString(8, familyName);
+            pstmt.setInt(9, verifiedEmailGoogle);
 
             int result = pstmt.executeUpdate();
             return result > 0;

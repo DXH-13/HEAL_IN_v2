@@ -8,14 +8,14 @@ import com.google.gson.annotations.SerializedName;
  */
 public class User {
 
-    private int id;
+    private int normalUserId;
 
     @SerializedName("email")
     private String email;
 
     @SerializedName("verified_email")
     private boolean verifiedEmail;
-    
+
     @SerializedName("first_name")
     private String firstName;
 
@@ -26,10 +26,10 @@ public class User {
     private String familyName;
 
     @SerializedName("picture")
-    private String image; 
+    private String image;
 
     @SerializedName("id")
-    private String googleId; 
+    private String googleId;
 
     private String name;
     private String username;
@@ -47,8 +47,8 @@ public class User {
     public User() {
     }
 
-    public User(int id, String email, boolean verifiedEmail, String firstName, String givenName, String familyName, String image, String googleId, String name, String username, String password, String phoneNumber, String dateOfBirth, String accountType, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
-        this.id = id;
+    public User(int normalUserId, String email, boolean verifiedEmail, String firstName, String givenName, String familyName, String image, String googleId, String name, String username, String password, String phoneNumber, String dateOfBirth, String accountType, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+        this.normalUserId = normalUserId;
         this.email = email;
         this.verifiedEmail = verifiedEmail;
         this.firstName = firstName;
@@ -81,8 +81,12 @@ public class User {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public User toMinimalUser() {
+        return new User(this.email, this.verifiedEmail, this.firstName, this.givenName, this.familyName, this.image, this.googleId, this.name);
+    }
+
+    public int getNormalUserId() {
+        return normalUserId;
     }
 
     public String getEmail() {
@@ -161,8 +165,8 @@ public class User {
         return isActive;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNormalUserId(int normalUserId) {
+        this.normalUserId = normalUserId;
     }
 
     public void setEmail(String email) {
@@ -243,11 +247,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", email=" + email + ", verifiedEmail=" + verifiedEmail + ", firstName=" + firstName + ", givenName=" + givenName + ", familyName=" + familyName + ", image=" + image + ", googleId=" + googleId + ", name=" + name + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", dateOfBirth=" + dateOfBirth + ", accountType=" + accountType + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
+        return "User{" + "normalUserId=" + normalUserId + ", email=" + email + ", verifiedEmail=" + verifiedEmail + ", firstName=" + firstName + ", givenName=" + givenName + ", familyName=" + familyName + ", image=" + image + ", googleId=" + googleId + ", name=" + name + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", dateOfBirth=" + dateOfBirth + ", accountType=" + accountType + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
     }
-
-
-
-    
 
 }

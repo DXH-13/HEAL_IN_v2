@@ -68,7 +68,7 @@ public class ForgotPasswordController extends HttpServlet {
                 SendMail service = new SendMail();
                 String token = service.generateToken();
                 String linkReset = "http://localhost:9999/HEAL_IN_v2/reset_password?token=" + token;
-                TokenForgetPassword tokenForget = new TokenForgetPassword(user.getId(), token, false, service.expiredDateTime());
+                TokenForgetPassword tokenForget = new TokenForgetPassword(user.getNormalUserId(), token, false, service.expiredDateTime());
                 DAOTokenForgetPassword daoTokenForgetPassword = new DAOTokenForgetPassword();
                 boolean isInserted = daoTokenForgetPassword.addTokenForgetPassword(tokenForget, user);
                 if (!isInserted) {

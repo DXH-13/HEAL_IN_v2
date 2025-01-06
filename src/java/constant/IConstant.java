@@ -15,7 +15,7 @@ public interface IConstant {
 
     String GOOGLE_CLIENT_SECRET = "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";
 
-    String GOOGLE_REDIRECT_URI = "http://localhost:9999/HEAL_IN_v2/log_in";
+    String GOOGLE_REDIRECT_URI = "http://localhost:9999/HEAL_IN_v2/log_in?loginType=google";
 
     String GOOGLE_GRANT_TYPE = "authorization_code";
 

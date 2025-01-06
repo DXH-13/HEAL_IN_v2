@@ -48,7 +48,7 @@ public class EmailConfirmationController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         User registeredUser = (User) request.getAttribute("registeredUser");
-        String linkActive = "http://localhost:9999/HEAL_IN_v2/activate_account?id=" + registeredUser.getId();
+        String linkActive = "http://localhost:9999/HEAL_IN_v2/activate_account?id=" + registeredUser.getNormalUserId();
         SendMail service = new SendMail();
         boolean isSent;
             try {

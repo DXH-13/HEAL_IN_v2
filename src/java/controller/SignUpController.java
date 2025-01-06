@@ -110,7 +110,7 @@ public class SignUpController extends HttpServlet {
 
         // Gửi email kích hoạt
         SendMail service = new SendMail();
-        String linkActive = "http://localhost:9999/HEAL_IN_v2/activate_account?id=" + registeredUser.getId();
+        String linkActive = "http://localhost:9999/HEAL_IN_v2/activate_account?id=" + registeredUser.getNormalUserId();
         try {
             System.out.println("Sending email to: " + registeredUser.getEmail());
             boolean isSent = service.sendActiveAccountMail(registeredUser.getEmail(), linkActive);

@@ -37,15 +37,18 @@ public class GoogleLogin {
         String accessToken = jobj.get("access_token").toString().replaceAll("\"", "");
         return accessToken;
     }
-    
-    
+
 //    public User getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
 //        String link = IConstant.GOOGLE_LINK_GET_USER_INFO + accessToken;
 //        String response = Request.Get(link).execute().returnContent().asString();
 //        User googlePojo = new Gson().fromJson(response, User.class);
 //        return googlePojo;
 //    }
-        
-    
+    public User getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
+        String link = IConstant.GOOGLE_LINK_GET_USER_INFO + accessToken;
+        String response = Request.Get(link).execute().returnContent().asString();
+        User fullUser = new Gson().fromJson(response, User.class);
+        return fullUser.toMinimalUser();
+    }
 
 }
