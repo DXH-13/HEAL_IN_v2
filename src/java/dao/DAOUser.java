@@ -272,7 +272,8 @@ public class DAOUser {
                 + " DateOfBirth, Image, AccountType, CreatedAt, CreatedBy, UpdatedAt,"
                 + " DeactivatedAt, DeactivatedBy, isActive, GoogleId, FirstName,"
                 + " GivenName, FamilyName, VerifiedEmailGoogle) \n"
-                + "VALUES (?, NULL, NULL, ?, NULL, NULL, ?, ?, CURRENT_TIMESTAMP, NULL, NULL, NULL, NULL, 0, ?, ?, ?, ?, ?);";
+                + "VALUES (?, NULL, NULL, ?, NULL, NULL, ?, ?, CURRENT_TIMESTAMP,"
+                + " NULL, NULL, NULL, NULL, 1, ?, ?, ?, ?, ?);";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setString(1, name);

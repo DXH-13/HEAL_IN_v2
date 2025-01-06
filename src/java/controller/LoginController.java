@@ -68,6 +68,19 @@ public class LoginController extends HttpServlet {
             String userGoogleId = user.getGoogleId();
             String userName = user.getName();
             int isUserGmailVerified = user.isVerifiedEmail() ? 1 : 0;
+            
+            User userF = daoUser.findByEmail(userEmail);
+            if(userF == null){
+                daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
+                    userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
+
+            // Đăng nhập thành công
+            HttpSession session = request.getSession();
+            session.setAttribute("userLogin", user);
+            response.sendRedirect("landing?id=" + user.getNormalUserId());
+            }else{
+                
+            }
 
             daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
                     userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);

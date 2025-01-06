@@ -4,8 +4,6 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>controller.LoginController</servlet-class>
     </servlet>
-    
-    
     <servlet>
         <servlet-name>LogoutController</servlet-name>
         <servlet-class>controller.LogoutController</servlet-class>
@@ -14,7 +12,10 @@
         <servlet-name>ActivateAccountController</servlet-name>
         <servlet-class>controller.ActivateAccountController</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>LoginExistAccountGmail</servlet-name>
+        <servlet-class>controller.LoginExistAccountGmail</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -42,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ActivateAccountController</servlet-name>
         <url-pattern>/activate_account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginExistAccountGmail</servlet-name>
+        <url-pattern>/login_exist_account_gmail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
