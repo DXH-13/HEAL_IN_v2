@@ -225,6 +225,44 @@ public class DAOUser {
         }
         return null;
     }
+    
+    
+    public User findByUsername(String username) {
+        String sql = "SELECT * FROM HEALIN.USER WHERE Username = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
 
     public void updatePassword(String password, int userId) {
         String sql = "UPDATE user\n"

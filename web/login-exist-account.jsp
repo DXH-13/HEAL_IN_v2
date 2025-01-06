@@ -65,7 +65,7 @@
                       <h5 class="mt-3">yyyyyyyyyee</h4>
                       <p class="text-muted">hu********03@gmail.com</p>
                     </div>
-                    <form action="forgotpassword" method="post">
+                    <form action="login_exist_account_gmail" method="post">
                       <div class="row gy-3 overflow-hidden">
                         <div class="col-12">
                           <div class="form-floating mb-3">

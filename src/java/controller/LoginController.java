@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import model.User;
+import utils.GenerateRandomUserName;
 import utils.GoogleLogin;
 import utils.SHA256;
 
@@ -32,6 +33,7 @@ public class LoginController extends HttpServlet {
         if ("google".equals(loginType)) {
             // Xử lý đăng nhập bằng Google
             handleGoogleLogin(request, response);
+
         } else {
             // Chuyển tiếp đến trang đăng nhập thông thường
             request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -49,17 +51,19 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         try {
             String code = request.getParameter("code");
-            System.out.println("para code: "+code);
+            System.out.println("para code: " + code);
             if (code == null || code.isEmpty()) {
                 response.sendRedirect("login.jsp");
                 return;
             }
-
             GoogleLogin gg = new GoogleLogin();
             String accessToken = gg.getToken(code);
             User user = gg.getUserInfo(accessToken);
             System.out.println("Google User: " + user);
 
+            String username = GenerateRandomUserName.generateUsername();
+//            if User
+            
             String userEmail = user.getEmail();
             String userFirstName = user.getFirstName();
             String userGivenName = user.getGivenName();
@@ -68,27 +72,19 @@ public class LoginController extends HttpServlet {
             String userGoogleId = user.getGoogleId();
             String userName = user.getName();
             int isUserGmailVerified = user.isVerifiedEmail() ? 1 : 0;
-            
+
             User userF = daoUser.findByEmail(userEmail);
-            if(userF == null){
+            if (userF == null) {
                 daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
-                    userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
-
-            // Đăng nhập thành công
-            HttpSession session = request.getSession();
-            session.setAttribute("userLogin", user);
-            response.sendRedirect("landing?id=" + user.getNormalUserId());
-            }else{
-                
+                        userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
+                HttpSession session = request.getSession();
+                session.setAttribute("userLogin", user);
+                response.sendRedirect("landing?id=" + user.getNormalUserId());
+            } else {
+                HttpSession session = request.getSession();
+                session.setAttribute("email", userEmail);
+                response.sendRedirect("login-exist-account.jsp");
             }
-
-            daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
-                    userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
-
-            // Đăng nhập thành công
-            HttpSession session = request.getSession();
-            session.setAttribute("userLogin", user);
-            response.sendRedirect("landing?id=" + user.getNormalUserId());
         } catch (Exception e) {
             e.printStackTrace();
             response.sendRedirect("login.jsp");
@@ -115,20 +111,20 @@ public class LoginController extends HttpServlet {
                 handleLoginCookies(request, response, email, pass, rem);
 
                 HttpSession session = request.getSession();
-                session.setAttribute("userLogin", user);
+                session.setAttribute("userLogin", user2);
 
                 // Chuyển hướng dựa trên vai trò người dùng
-                if ("admin".equals(user.getAccountType())) {
+                if ("admin".equals(user2.getAccountType())) {
                     response.sendRedirect("admin");
                 } else {
-                    response.sendRedirect("landing?id=" + user.getNormalUserId());
+                    response.sendRedirect("landing?id=" + user2.getNormalUserId());
                 }
             }
         }
     }
 
     private void handleLoginCookies(HttpServletRequest request, HttpServletResponse response,
-                                    String email, String pass, String rem) {
+            String email, String pass, String rem) {
         Cookie cEmail = new Cookie("cemail", email);
         Cookie cPass = new Cookie("cpass", pass);
         Cookie cRem = new Cookie("crem", rem);
@@ -152,11 +148,6 @@ public class LoginController extends HttpServlet {
         return "Login Controller Servlet";
     }
 }
-
-
-
-
-
 
 //public class LoginController extends HttpServlet {
 //

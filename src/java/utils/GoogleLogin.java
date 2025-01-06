@@ -38,12 +38,7 @@ public class GoogleLogin {
         return accessToken;
     }
 
-//    public User getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
-//        String link = IConstant.GOOGLE_LINK_GET_USER_INFO + accessToken;
-//        String response = Request.Get(link).execute().returnContent().asString();
-//        User googlePojo = new Gson().fromJson(response, User.class);
-//        return googlePojo;
-//    }
+
     public User getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
         String link = IConstant.GOOGLE_LINK_GET_USER_INFO + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
