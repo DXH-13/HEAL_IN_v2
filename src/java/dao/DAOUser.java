@@ -227,6 +227,10 @@ public class DAOUser {
     }
     
     
+    
+
+    
+    
     public User findByUsername(String username) {
         String sql = "SELECT * FROM HEALIN.USER WHERE Username = ?;";
         try {

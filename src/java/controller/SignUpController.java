@@ -8,7 +8,9 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.User;
+import utils.GoogleLogin;
 import utils.SHA256;
 import utils.SendMail;
 
@@ -18,6 +20,8 @@ import utils.SendMail;
  */
 @WebServlet(name = "SignUpController", urlPatterns = {"/sign_up"})
 public class SignUpController extends HttpServlet {
+
+    private DAOUser daoUser = new DAOUser();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,12 +43,61 @@ public class SignUpController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("signup.jsp").forward(request, response);
+
+        String signupType = request.getParameter("signupType");
+        System.out.println("para:login type" + signupType);
+        if ("google".equals(signupType)) {
+
+            String code = request.getParameter("code");
+            System.out.println("para code: " + code);
+            if (code == null || code.isEmpty()) {
+                response.sendRedirect("signup.jsp");
+                return;
+            }
+            GoogleLogin gg = new GoogleLogin();
+            String accessToken = gg.getSignupToken(code);
+            User user = gg.getUserInfo(accessToken);
+            System.out.println("Google User: " + user);
+
+//            String username = GenerateRandomUserName.generateUsername();
+//            if User
+            String userEmail = user.getEmail();
+            String userFirstName = user.getFirstName();
+            String userGivenName = user.getGivenName();
+            String userFamilyName = user.getFamilyName();
+            String userImage = user.getImage();
+            String userGoogleId = user.getGoogleId();
+            String userName = user.getName();
+            int isUserGmailVerified = user.isVerifiedEmail() ? 1 : 0;
+
+            User userF = daoUser.findByEmail(userEmail);
+            if (userF == null) {
+                daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
+                        userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
+                HttpSession session = request.getSession();
+                session.setAttribute("userLogin", user);
+                response.sendRedirect("landing?id=" + user.getNormalUserId());
+            } else {
+                if ("GoogleUser".equals(userF.getAccountType())) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("userLogin", user);
+                    response.sendRedirect("landing?id=" + user.getNormalUserId());
+                } else {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("email", userEmail);
+                    response.sendRedirect("login-exist-account.jsp");
+                }
+            }
+
+        }else{
+            request.getRequestDispatcher("signup.jsp").forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -79,7 +132,6 @@ public class SignUpController extends HttpServlet {
             return;
         }
 
-        DAOUser daoUser = new DAOUser();
         User user = daoUser.findByEmail(email);
 
         // Kiểm tra email đã tồn tại
@@ -131,6 +183,7 @@ public class SignUpController extends HttpServlet {
             request.setAttribute("errorServer", "An error occurred while sending the activation email.");
             request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
+
     }
 
     @Override

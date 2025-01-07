@@ -21,13 +21,31 @@ import org.apache.http.client.fluent.Request;
  */
 public class GoogleLogin {
 
-    public String getToken(String code) throws ClientProtocolException, IOException {
+    public String getLoginToken(String code) throws ClientProtocolException, IOException {
         String response = Request.Post(IConstant.GOOGLE_LINK_GET_TOKEN)
                 .bodyForm(
                         Form.form()
                                 .add("client_id", IConstant.GOOGLE_CLIENT_ID)
                                 .add("client_secret", IConstant.GOOGLE_CLIENT_SECRET)
-                                .add("redirect_uri", IConstant.GOOGLE_REDIRECT_URI)
+                                .add("redirect_uri", IConstant.GOOGLE_REDIRECT_URI_LOG_IN)
+                                .add("code", code)
+                                .add("grant_type", IConstant.GOOGLE_GRANT_TYPE)
+                                .build()
+                )
+                .execute().returnContent().asString();
+        JsonObject jobj = new Gson().fromJson(response, JsonObject.class);
+        String accessToken = jobj.get("access_token").toString().replaceAll("\"", "");
+        return accessToken;
+    }
+    
+    
+    public String getSignupToken(String code) throws ClientProtocolException, IOException {
+        String response = Request.Post(IConstant.GOOGLE_LINK_GET_TOKEN)
+                .bodyForm(
+                        Form.form()
+                                .add("client_id", IConstant.GOOGLE_CLIENT_ID)
+                                .add("client_secret", IConstant.GOOGLE_CLIENT_SECRET)
+                                .add("redirect_uri", IConstant.GOOGLE_REDIRECT_URI_SIGN_UP)
                                 .add("code", code)
                                 .add("grant_type", IConstant.GOOGLE_GRANT_TYPE)
                                 .build()

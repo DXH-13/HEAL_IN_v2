@@ -57,13 +57,12 @@ public class LoginController extends HttpServlet {
                 return;
             }
             GoogleLogin gg = new GoogleLogin();
-            String accessToken = gg.getToken(code);
+            String accessToken = gg.getLoginToken(code);
             User user = gg.getUserInfo(accessToken);
             System.out.println("Google User: " + user);
 
-            String username = GenerateRandomUserName.generateUsername();
+//            String username = GenerateRandomUserName.generateUsername();
 //            if User
-            
             String userEmail = user.getEmail();
             String userFirstName = user.getFirstName();
             String userGivenName = user.getGivenName();
@@ -81,9 +80,15 @@ public class LoginController extends HttpServlet {
                 session.setAttribute("userLogin", user);
                 response.sendRedirect("landing?id=" + user.getNormalUserId());
             } else {
-                HttpSession session = request.getSession();
-                session.setAttribute("email", userEmail);
-                response.sendRedirect("login-exist-account.jsp");
+                if ("GoogleUser".equals(userF.getAccountType())) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("userLogin", user);
+                    response.sendRedirect("landing?id=" + user.getNormalUserId());
+                } else {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("email", userEmail);
+                    response.sendRedirect("login-exist-account.jsp");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
