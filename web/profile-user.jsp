@@ -1,3 +1,10 @@
+<%-- 
+    Document   : profile-user
+    Created on : Jan 8, 2025, 9:31:15 AM
+    Author     : dangx
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
@@ -7,16 +14,13 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="/web/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
-    <link rel="stylesheet" href="/web/css/bootstrap.css">
-    <link rel="stylesheet" href="/web/css/fonts.css">
-    <link rel="stylesheet" href="/web/css/style.css">
-    <!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -68,7 +72,7 @@
                                 <!-- RD Navbar Toggle-->
                                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!-- RD Navbar Brand-->
-                                <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="/web/assets/images/logo-198x66.png" alt="" width="189" height="66"/></a></div>
+                                <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="assets/images/logo-198x66.png" alt="" width="189" height="66"/></a></div>
                             </div>
                             <div class="rd-navbar-right rd-navbar-nav-wrap">
                                 <div class="rd-navbar-aside">
@@ -259,7 +263,7 @@
                     <h3 class="breadcrumbs-custom-title">Cart Page</h3>
                     <div class="breadcrumbs-custom-decor"></div>
                 </div>
-                <div class="box-transform" style="background-image: url(/web/assets/images/bg-1.jpg);"></div>
+                <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
             </div>
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
@@ -270,7 +274,7 @@
             </div>
         </section> -->
         <!-- Shopping Cart-->
-        <iframe src="/web/views/profileuser.html" width="100%" height="750px" frameborder="0"></iframe>
+        <iframe src="profile-user-only.jsp" width="100%" height="750px" frameborder="0"></iframe>
 
         <!-- Page Footer-->
         <footer class="section footer-modern context-dark footer-modern-2">
@@ -321,9 +325,9 @@
                     <div class="row row-30 align-items-center">
                         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                             <div class="row row-30 align-items-center text-lg-center">
-                                <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img src="/web/assets/images/logo-inverse-163x57.png" alt="" width="163" height="57"/></a></div>
+                                <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img src="assets/images/logo-inverse-163x57.png" alt="" width="163" height="57"/></a></div>
                                 <div class="col-md-5 col-xl-6">
-                                    <div class="iso-1"><span><img src="/web/assets/images/like-icon-58x25.png" alt="" width="58" height="25"/></span><span class="iso-1-big">9.4k</span></div>
+                                    <div class="iso-1"><span><img src="assets/images/like-icon-58x25.png" alt="" width="58" height="25"/></span><span class="iso-1-big">9.4k</span></div>
                                 </div>
                             </div>
                         </div>
@@ -370,8 +374,8 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="/web/js/core.min.js"></script>
-    <script src="/web/js/script.js"></script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
     <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
         (function(w, d, s, l, i) {

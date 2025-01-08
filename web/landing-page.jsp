@@ -162,7 +162,7 @@
                                                  class="avatar">
                                         </button>
                                         <div class="dropdown-content">
-                                            <a href="profile.jsp">Profile</a>
+                                            <a href="user_profile?id=${sessionScope.userLogin.id}">Profile</a>
                                             <a href="log_out">Logout</a>
                                         </div>
                                     </div>
