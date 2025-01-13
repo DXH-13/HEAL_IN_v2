@@ -88,8 +88,7 @@ public class SignUpController extends HttpServlet {
                     response.sendRedirect("login-exist-account.jsp");
                 }
             }
-
-        }else{
+        } else {
             request.getRequestDispatcher("signup.jsp").forward(request, response);
         }
     }
