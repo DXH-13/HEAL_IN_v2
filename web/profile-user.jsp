@@ -322,48 +322,44 @@
                         <div class="py-2">
                             <div class="row" style="margin-top: 30px;">
                                 <div class="col-md-6 ">
-                                    <label for="firstname" style="text-align: left; display: block;">User
-                                        Name</label>
+                                    <label for="firstname" style="text-align: left; display: block;">User name</label>
                                     <input type="text" class="bg-light form-control form-control-sm rounded-0 "
-                                           style="padding: 17px 20px;" placeholder="" value="${userLogin.username}">
+                                           style="padding: 17px 20px;" placeholder="" name="username" value="${userLogin.username}">
                                 </div>
                                 <div class="col-md-6 pt-md-0 pt-3">
                                     <label for="lastname" style="text-align: left; display: block;">Name</label>
                                     <input type="text" class="bg-light form-control form-control-sm rounded-0"
-                                           style="padding: 17px 20px;" placeholder="" value="${userLogin.name}">
+                                           style="padding: 17px 20px;" placeholder="" name="name" value="${userLogin.name}">
                                 </div>
                             </div>
                             <div class="row" style="margin-top: 30px;">
                                 <div class="col-md-6">
-                                    <label for="email" style="text-align: left; display: block;">Email
-                                        Address</label>
+                                    <label for="email" style="text-align: left; display: block;">Email address</label>
                                     <input type="text" class="bg-light form-control form-control-sm rounded-0"
-                                           style="padding: 17px 20px;" placeholder="" value="${userLogin.email}">
+                                           style="padding: 17px 20px;" placeholder="" name="email" value="${userLogin.email}">
                                 </div>
                                 <div class="col-md-6 pt-md-0 pt-3">
-                                    <label for="phone" style="text-align: left; display: block;">Phone
-                                        Number</label>
+                                    <label for="phone" style="text-align: left; display: block;">Phone number</label>
                                     <input type="tel" class="bg-light form-control form-control-sm rounded-0"
-                                           style="padding: 17px 20px;" placeholder="" value="${userLogin.phoneNumber}">
+                                           style="padding: 17px 20px;" placeholder="" name="phonenumber" value="${userLogin.phoneNumber}">
                                 </div>
                             </div>
                             <div class="row" style="margin-top: 30px;">
                                 <div class="col-md-6 select-width">
                                     <label for="gender" style="text-align: left; display: block;">Gender</label>
-                                    <select name="gender" id="gender" class="bg-light "
-                                            style="border: 1px solid #ced4da; width: 200px;">
-                                        <option value="male" selected>Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="other">Other</option>
+                                    <select name="gender" id="gender" class="bg-light" style="border: 1px solid #ced4da; width: 200px;">
+                                        <option value="male" ${userLogin.gender == 'male' ? 'selected' : ''}>Male</option>
+                                        <option value="female" ${userLogin.gender == 'female' ? 'selected' : ''}>Female</option>
+                                        <option value="other" ${userLogin.gender == 'other' ? 'selected' : ''}>Other</option>
                                     </select>
                                 </div>
 
+
                                 <div class="col-md-6 pt-md-0 pt-3" id="lang">
-                                    <label for="datepicker" style="text-align: left; display: block;">Date of
-                                        birth</label>
+                                    <label for="datepicker" style="text-align: left; display: block;">Date of birth</label>
                                     <div class="input-group date" id="datepicker">
                                         <input type="text" class="form-control form-control-sm rounded-0"
-                                               style="padding: 17px 20px; max-width: 200px;" placeholder="dd/mm/yyyy" value="${userLogin.dateOfBirth}">
+                                               style="padding: 17px 20px; max-width: 200px;" placeholder="dd/mm/yyyy" name="dateofbirth" value="${userLogin.dateOfBirth}">
                                         <div class="input-group-append"
                                              style="display: flex; align-items: center; border: 1px solid #ced4da; border-left: none">
                                             <span class="input-group-text pl-2 pr-2">
@@ -376,8 +372,8 @@
 
                             <div class="py-3 pb-4 border-bottom"
                                  style="margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 100px;">
-                                <button class="save-button" role="button">Save changes</button>
-                                <button class="cancel-button" role="button">Cancel</button>
+                                <button type="submit" class="save-button" role="button">Save changes</button>
+                                <button type="reset" class="cancel-button" role="button">Cancel</button>
                             </div>
                     </form>
                     <div class="d-sm-flex align-items-center pt-3" id="deactivate">
