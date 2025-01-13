@@ -1,3 +1,10 @@
+<%-- 
+    Document   : profile-user-only
+    Created on : Jan 8, 2025, 9:46:04 AM
+    Author     : dangx
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
