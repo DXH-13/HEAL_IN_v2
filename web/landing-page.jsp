@@ -119,7 +119,7 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link" href="views/home.html">Home</a>
+                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/about-us.html">About us</a>
@@ -138,7 +138,7 @@
                                             <% } else { %>
                                             <li class="rd-nav-item active loginbtn"><a class="rd-nav-link" href="shop.html">Avatar</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="/web/views/single-product.html">Profile user</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="profile_user">Profile user</a></li>
                                                     <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="log_out">Log out</a></li>
                                                 </ul>
                                             </li>
@@ -162,7 +162,7 @@
                                                  class="avatar">
                                         </button>
                                         <div class="dropdown-content">
-                                            <a href="profile.jsp">Profile</a>
+                                            <a href="profile_user">Profile</a>
                                             <a href="log_out">Logout</a>
                                         </div>
                                     </div>
