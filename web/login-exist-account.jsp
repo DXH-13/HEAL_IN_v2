@@ -1,3 +1,10 @@
+<%-- 
+    Document   : login-exist-account
+    Created on : Jan 6, 2025, 2:58:02 PM
+    Author     : dangx
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,50 +36,56 @@
                     <div class="row">
                       <div class="col-12">
                         <div class="mb-3">
-                          <div class="text-center" style="margin-bottom: 7rem;">
+                          <div class="text-center" style="margin-bottom: 2rem;">
                             <a href="#!">
                               <img
                                 src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/bsb-logo.svg"
                                 alt="BootstrapBrain Logo" width="175" height="57">
                             </a>
                           </div>
-                          <h2 class="text-left mb-3 mt-5">Reset your password</h2>
-                          <p class="text-left">Enter the email you signed up with. We'll send you a link to log in and
-                            reset your password.</p>
+                          <h2 class="text-left mb-3 mt-1">Account Exists</h2>
+                          <p class="text-left">It looks like you already have an account with that email. Please log in
+                            using your password instead.</p>
                         </div>
                       </div>
                     </div>
 
-                    <div class="noticeContainer">
+                    <!-- <div class="noticeContainer">
                       <div class="noticeBox error">
                         <span>${errorEmailNotFound}</span>
                       </div>
                       <div class="noticeBox success">
                         <span>${sendmailNotice}</span>
                       </div>
+                    </div> -->
+                    <!-- Thay phần code comment bằng đoạn mã này -->
+                    <div class="user-info text-center my-3">
+                      <img src="https://placehold.co/70x70" alt="User Avatar" class="rounded-circle"
+                        style="width: 100px; height: 100px;">
+                      <h5 class="mt-3">yyyyyyyyyee</h4>
+                      <p class="text-muted">hu********03@gmail.com</p>
                     </div>
-
-                    <form action="forgotpassword" method="post">
+                    <form action="login_exist_account_gmail" method="post">
                       <div class="row gy-3 overflow-hidden">
                         <div class="col-12">
-                          <div class="form-floating mb-5">
-                            <input type="email" class="form-control" name="email" id="email"
+                          <div class="form-floating mb-3">
+                            <input type="password" class="form-control" name="password" id="password"
                               placeholder="name@example.com" required>
-                            <label for="email" class="form-label">Email</label>
+                            <label for="password" class="form-label">Password</label>
                           </div>
                         </div>
                         <div class="col-12">
                           <div class="d-grid">
-                            <button class="btn btn-dark btn-lg" type="submit">Send link</button>
+                            <button class="btn btn-dark btn-lg" type="submit">Login</button>
                           </div>
                         </div>
                       </div>
                     </form>
 
-                    <div class="row mt-5" style="margin-bottom: 6.2rem;">
+                    <div class="row mt-3" style="margin-bottom: 6.2rem;">
                       <div class="col-12">
                         <div class="d-flex justify-content-center mt-3">
-                          <a href="login" class="link-secondary text-decoration-none">Log in</a>
+                          <a href="login" class="link-secondary text-decoration-none">Log in with different account</a>
                         </div>
                       </div>
                     </div>
