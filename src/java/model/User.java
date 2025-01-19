@@ -36,6 +36,7 @@ public class User {
     private String password;
     private String phoneNumber;
     private String dateOfBirth;
+    private String gender;
     private String accountType;
     private String createdAt;
     private String createdBy;
@@ -47,7 +48,7 @@ public class User {
     public User() {
     }
 
-    public User(int normalUserId, String email, boolean verifiedEmail, String firstName, String givenName, String familyName, String image, String googleId, String name, String username, String password, String phoneNumber, String dateOfBirth, String accountType, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+    public User(int normalUserId, String email, boolean verifiedEmail, String firstName, String givenName, String familyName, String image, String googleId, String name, String username, String password, String phoneNumber, String dateOfBirth, String gender, String accountType, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
         this.normalUserId = normalUserId;
         this.email = email;
         this.verifiedEmail = verifiedEmail;
@@ -61,6 +62,7 @@ public class User {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
         this.accountType = accountType;
         this.createdAt = createdAt;
         this.createdBy = createdBy;
@@ -135,6 +137,10 @@ public class User {
 
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+    
+    public String getGender() {
+        return gender;
     }
 
     public String getAccountType() {
@@ -216,6 +222,10 @@ public class User {
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+    
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public void setAccountType(String accountType) {
         this.accountType = accountType;
@@ -247,7 +257,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "normalUserId=" + normalUserId + ", email=" + email + ", verifiedEmail=" + verifiedEmail + ", firstName=" + firstName + ", givenName=" + givenName + ", familyName=" + familyName + ", image=" + image + ", googleId=" + googleId + ", name=" + name + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", dateOfBirth=" + dateOfBirth + ", accountType=" + accountType + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
+        return "User{" + "normalUserId=" + normalUserId + ", email=" + email + ", verifiedEmail=" + verifiedEmail + ", firstName=" + firstName + ", givenName=" + givenName + ", familyName=" + familyName + ", image=" + image + ", googleId=" + googleId + ", name=" + name + ", username=" + username + ", password=" + password + ", phoneNumber=" + phoneNumber + ", dateOfBirth=" + dateOfBirth + ", gender=" + gender + ", accountType=" + accountType + ", createdAt=" + createdAt + ", createdBy=" + createdBy + ", updatedAt=" + updatedAt + ", deactivatedAt=" + deactivatedAt + ", deactivatedBy=" + deactivatedBy + ", isActive=" + isActive + '}';
     }
 
 }

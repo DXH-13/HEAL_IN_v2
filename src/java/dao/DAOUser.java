@@ -38,6 +38,7 @@ public class DAOUser {
                 String email = rs.getString("Email");
                 String phoneNumber = rs.getString("PhoneNumber");
                 String dateOfBirth = rs.getString("DateOfBirth");
+                String gender = rs.getString("Gender");
                 String image = rs.getString("Image");
                 String accountType = rs.getString("AccountType");
                 String createdAt = rs.getString("CreatedAt");
@@ -55,7 +56,7 @@ public class DAOUser {
                 boolean verifiedEmail = (tempGG == 1 ? true : false);
                 User user = new User(id, email, verifiedEmail, firstName, givenName,
                         familyName, image, googleId, name, username, password,
-                        phoneNumber, dateOfBirth, accountType, createdAt,
+                        phoneNumber, dateOfBirth, gender, accountType, createdAt,
                         createdBy, updatedAt, deactivatedAt, deactivatedBy, isActive);
                 vector.add(user);
             }
@@ -94,6 +95,7 @@ public class DAOUser {
                         rs.getString("Password"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -135,6 +137,7 @@ public class DAOUser {
                         rs.getString("Password"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -173,6 +176,7 @@ public class DAOUser {
                         rs.getString("Password"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -210,6 +214,7 @@ public class DAOUser {
                         rs.getString("Password"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -225,12 +230,7 @@ public class DAOUser {
         }
         return null;
     }
-    
-    
-    
 
-    
-    
     public User findByUsername(String username) {
         String sql = "SELECT * FROM HEALIN.USER WHERE Username = ?;";
         try {
@@ -252,6 +252,45 @@ public class DAOUser {
                         rs.getString("Password"),
                         rs.getString("PhoneNumber"),
                         rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
+                        rs.getString("AccountType"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return user;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
+    
+    public User findByPhoneNumber(String phoneNumber) {
+        String sql = "SELECT * FROM HEALIN.USER WHERE PhoneNumber = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, phoneNumber);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                        rs.getInt("ID"),
+                        rs.getString("Email"),
+                        rs.getBoolean("VerifiedEmailGoogle"),
+                        rs.getString("FirstName"),
+                        rs.getString("GivenName"),
+                        rs.getString("FamilyName"),
+                        rs.getString("Image"),
+                        rs.getString("GoogleId"),
+                        rs.getString("Name"),
+                        rs.getString("Username"),
+                        rs.getString("Password"),
+                        rs.getString("PhoneNumber"),
+                        rs.getString("DateOfBirth"),
+                        rs.getString("Gender"),
                         rs.getString("AccountType"),
                         rs.getString("CreatedAt"),
                         rs.getString("CreatedBy"),
@@ -276,6 +315,32 @@ public class DAOUser {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setString(1, password);
             pstmt.setInt(2, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public void updateUserProfile(User user) {
+        String sql = "UPDATE user\n"
+                + "SET \n"
+                + "    Username = ?,\n"
+                + "    Name = ?,\n"
+                + "    Email = ?,\n"
+                + "    PhoneNumber = ?,\n"
+                + "    Gender = ?,\n"
+                + "    DateOfBirth = ?,\n"
+                + "    UpdatedAt = CURRENT_TIMESTAMP\n"
+                + "WHERE Id = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
+            pstmt.setString(2, user.getName());
+            pstmt.setString(3, user.getEmail());
+            pstmt.setString(4, user.getPhoneNumber());
+            pstmt.setString(5, user.getGender());
+            pstmt.setString(6, user.getDateOfBirth());
+            pstmt.setInt(7, user.getNormalUserId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
