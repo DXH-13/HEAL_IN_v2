@@ -52,7 +52,7 @@
                                             </div>
 
 
-                                            <form action="forgotpassword" method="post">
+                                            <form action="forgot_password" method="post">
                                                 <div class="row gy-3 overflow-hidden">
                                                     <div class="col-12">
                                                         <div class="form-floating mb-5">

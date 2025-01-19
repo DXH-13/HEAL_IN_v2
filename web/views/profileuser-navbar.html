@@ -19,6 +19,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="/web/css/profileuser.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         html,
         body {
@@ -345,7 +346,7 @@
                             </div>
 
 
-                            
+
                         </div>
                     </div>
                 </nav>
@@ -417,7 +418,11 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="row" style="margin-top: 30px;">
+                            <div class="col-md-6 select-width">
+                                <button type="button" class="button-46" onclick="openPopup()" role="button">Change password</button>
+                            </div>
+                        </div>
                         <div class="py-3 pb-4 border-bottom"
                             style="margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 100px;">
                             <button class="save-button" role="button">Save changes</button>
@@ -436,18 +441,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -562,11 +555,44 @@
         </div>
     </footer>
     </div>
+
+
+
+    <!-- -------------------------------------------------------------------------------------------------------- -->
+    <div id="popupForm" class="popup hidden" >
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <h4>Change Password</h4>
+            <form id="passwordForm" class="mt-5">
+                <label for="oldPassword">Old Password:</label>
+                <input type="password" id="oldPassword" name="oldPassword" required>
+
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <div class="popup-actions">
+                    <!-- <button type="button" >Cancel</button> -->
+                    <!-- <button type="submit">Save</button> -->
+                    <button type="reset" class="cancel-button" role="button" onclick="closePopup()">Cancel</button>
+                    <button type="submit" class="save-button" role="button">Save</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- -------------------------------------------------------------------------------------------------------- -->
+
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="/web/js/core.min.js"></script>
     <script src="/web/js/script.js"></script>
+    <script src="/web/js/profileuser.js"></script>
     <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
             width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script
