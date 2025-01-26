@@ -413,12 +413,26 @@ public class DAOUser {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
         }
     }
+    
+    public void deactivateAccount(int userId) {
+        String sql = "UPDATE user\n"
+                + "SET isActive = 0\n"
+                + "WHERE Id = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setInt(1, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    
 
     public static void main(String[] args) {
         DAOUser daoUser = new DAOUser();
-        Vector<User> user = daoUser.getAllUser();
-        for (User userl : user) {
-            System.out.println(userl);
-        }
+        int id = 1;
+        String pass = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92";
+        daoUser.updatePassword(pass, id);
     }
 }
