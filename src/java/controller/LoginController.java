@@ -29,7 +29,7 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String loginType = request.getParameter("loginType");
-        System.out.println("para:login type" + loginType);
+        System.out.println("para:login type " + loginType);
         if ("google".equals(loginType)) {
             // Xử lý đăng nhập bằng Google
             handleGoogleLogin(request, response);
@@ -43,6 +43,8 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String loginType = request.getParameter("loginType");
+        System.out.println("para:login type " + loginType);
         // Xử lý đăng nhập thông thường
         handleRegularLogin(request, response);
     }
@@ -61,8 +63,6 @@ public class LoginController extends HttpServlet {
             User user = gg.getUserInfo(accessToken);
             System.out.println("Google User: " + user);
 
-//            String username = GenerateRandomUserName.generateUsername();
-//            if User
             String userEmail = user.getEmail();
             String userFirstName = user.getFirstName();
             String userGivenName = user.getGivenName();
