@@ -1,12 +1,17 @@
 
 package controller;
 
+import dao.DAOProduct;
+import dao.DAOProductImages;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.Vector;
+import model.Product;
+import model.ProductImages;
 
 /**
  *
@@ -34,6 +39,13 @@ public class SingleProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        DAOProduct daoProduct = new DAOProduct();
+        DAOProductImages daoProductImages = new DAOProductImages();
+        int idProduct =  Integer.parseInt(request.getParameter("idProduct"));
+        Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(idProduct);
+        Product product = daoProduct.findByID(idProduct);
+        request.setAttribute("product", product);
+        request.setAttribute("images", images);
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
 

@@ -128,9 +128,9 @@
                                             </li>
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product#product">Đoàn Viên</a>
+                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
                                                     </li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product#product">Tri Kỷ</a>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -394,7 +394,7 @@
                                         <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
                                                 cart</a></div>
                                         <div class="button-wrap">
-                                            <a class="button button-xs button-secondary button-winona" href="#">View Product</a>
+                                            <a class="button button-xs button-secondary button-winona" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=${product.id}#product">View Product</a>
                                         </div>
                                     </div>
                                     <c:choose>

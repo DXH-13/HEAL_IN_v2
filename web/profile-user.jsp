@@ -141,24 +141,18 @@
                                             <li class="rd-nav-item"><a class="rd-nav-link"
                                                                        href="about-us.html">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="menu.html">Menu</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="/web/views/typography.html">Game</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="#">News</a>
-                                                <!-- RD Navbar Dropdown-->
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="grid-blog.html">Grid blog</a></li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="masonry-blog.html">Masonry blog</a>
+                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
                                                     </li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="blog-post.html">Blog post</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
                                                 </ul>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
                                             </li>
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
