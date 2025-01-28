@@ -1,3 +1,6 @@
+<%@ page import="model.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
@@ -8,18 +11,15 @@
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="/web/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css"
         href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
-    <link rel="stylesheet" href="/web/css/bootstrap.css">
-    <link rel="stylesheet" href="/web/css/fonts.css">
-    <link rel="stylesheet" href="/web/css/style.css">
-    <link rel="stylesheet" href="/web/css/home.css">
-    <!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+
 </head>
 
 <body>
@@ -76,7 +76,7 @@
                                 <button class="rd-navbar-toggle"
                                     data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!-- RD Navbar Brand-->
-                                <div class="rd-navbar-brand"><a class="brand" href="/web/views/home.html"><img
+                                <div class="rd-navbar-brand"><a class="brand" href="views/home.html"><img
                                             class="brand-logo-dark" src="https://placehold.co/198x66" alt=""
                                             width="189" height="66" /></a></div>
                             </div>
@@ -111,23 +111,23 @@
                                     <ul class="rd-navbar-nav">
 
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/home.html">Home</a>
+                                                href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/about-us.html">About us</a>
+                                                href="views/about-us.html">About us</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/typography.html">Game</a>
+                                                href="views/typography.html">Game</a>
                                         </li>
                                         <li class="rd-nav-item active"><a class="rd-nav-link"
-                                            href="#">Shop</a>
+                                            href="landing?id=${sessionScope.userLogin.normalUserId}#shop">Shop</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
-                                                <li class="rd-dropdown-item active"><a class="rd-dropdown-link" href="grid-blog.html">Đoàn Viên</a></li>
-                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="masonry-blog.html">Tri Kỷ</a></li>
+                                                <li class="rd-dropdown-item active"><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product">Đoàn Viên</a></li>
+                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product">Tri Kỷ</a></li>
                                             </ul>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/contacts.html">Contacts</a>
+                                                href="views/contacts.html">Contacts</a>
                                         </li>
                                         <li class="rd-nav-item active loginbtn"><a class="rd-nav-link avtlink"
                                                 href="shop.html">
@@ -135,7 +135,7 @@
                                             </a>
                                             <ul class="rd-menu rd-navbar-dropdown">
                                                 <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                        href="/web/views/single-product.html">Profile user</a>
+                                                        href="views/single-product.html">Profile user</a>
                                                 </li>
                                                 <li class="rd-dropdown-item"><a class="rd-dropdown-link"
                                                         href="checkout.html">Log out</a></li>
@@ -169,24 +169,24 @@
             </div>
         </header>
         <!-- Breadcrumbs -->
-        <section class="bg-gray-7">
+        <section id="breadcrumbs" class="bg-gray-7">
             <div class="breadcrumbs-custom box-transform-wrap context-dark">
                 <div class="container">
                     <h3 class="breadcrumbs-custom-title">Single Product</h3>
                     <div class="breadcrumbs-custom-decor"></div>
                 </div>
-                <div class="box-transform" style="background-image: url(/web/assets/images/bg-1.jpg);"></div>
+                <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
             </div>
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="/web/views/home.html">Home</a></li>
+                    <li><a href="views/home.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li class="active">Single Product</li>
                 </ul>
             </div>
         </section>
         <!-- Single Product-->
-        <section class="section section-sm section-first bg-default">
+        <section id="product" class="section section-sm section-first bg-default">
             <div class="container">
                 <div class="row row-30">
                     <div class="col-lg-6">
@@ -289,7 +289,7 @@
                                 <div class="box-comment box-comment-product">
                                     <div class="unit flex-column flex-md-row">
                                         <div class="unit-left"><a class="box-comment-figure" href="#"><img
-                                                    src="/web/assets/images/team-5-83x83.jpg" alt="" width="83"
+                                                    src="assets/images/team-5-83x83.jpg" alt="" width="83"
                                                     height="83" /></a></div>
                                         <div class="unit-body">
                                             <div class="group-md group-justify">
@@ -539,10 +539,10 @@
                         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                             <div class="row row-30 align-items-center text-lg-center">
                                 <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img
-                                            src="/web/assets/images/logo-inverse-163x57.png" alt="" width="163"
+                                            src="assets/images/logo-inverse-163x57.png" alt="" width="163"
                                             height="57" /></a></div>
                                 <div class="col-md-5 col-xl-6">
-                                    <div class="iso-1"><span><img src="/web/assets/images/like-icon-58x25.png" alt=""
+                                    <div class="iso-1"><span><img src="assets/images/like-icon-58x25.png" alt=""
                                                 width="58" height="25" /></span><span class="iso-1-big">9.4k</span>
                                     </div>
                                 </div>
@@ -595,8 +595,8 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="/web/js/core.min.js"></script>
-    <script src="/web/js/script.js"></script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
     <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
             width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>

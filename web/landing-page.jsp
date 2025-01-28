@@ -124,8 +124,15 @@
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/about-us.html">About us</a>
                                             </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/typography.html">Typography</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="/web/views/typography.html">Game</a>
+                                            </li>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="#shop">Shop</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product#product">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="http://localhost:9999/HEAL_IN_v2/single_product#product">Tri Kỷ</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
@@ -249,7 +256,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-leaf"></span>
+                                            class="services-terri-icon linearicons-bubbles"></span>
                                         <h5 class="services-terri-title"><a href="#">Salads</a></h5>
                                     </div>
                                 </article>
@@ -263,7 +270,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-pizza"></span>
+                                            class="services-terri-icon linearicons-group-work"></span>
                                         <h5 class="services-terri-title"><a href="#">Pizzas</a></h5>
                                     </div>
                                 </article>
@@ -277,7 +284,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-hamburger"></span>
+                                            class="services-terri-icon linearicons-happy-grin"></span>
                                         <h5 class="services-terri-title"><a href="#">Burgers</a></h5>
                                     </div>
                                 </article>
@@ -291,7 +298,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-ice-cream"></span>
+                                            class="services-terri-icon linearicons-joystick"></span>
                                         <h5 class="services-terri-title"><a href="#">Desserts</a></h5>
                                     </div>
                                 </article>
@@ -305,7 +312,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-coffee-cup"></span>
+                                            class="services-terri-icon linearicons-heart-pulse"></span>
                                         <h5 class="services-terri-title"><a href="#">Drinks</a></h5>
                                     </div>
                                 </article>
@@ -319,7 +326,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-steak"></span>
+                                            class="services-terri-icon linearicons-bandage"></span>
                                         <h5 class="services-terri-title"><a href="#">Seafood</a></h5>
                                     </div>
                                 </article>
@@ -354,55 +361,54 @@
             </section>
 
             <!-- Our Shop-->
-            <section class="section section-lg bg-default">
+            <section id="shop" class="section section-lg bg-default">
                 <div class="container">
                     <h3 class="oh-desktop">
                         <span class="d-inline-block wow slideInUp">Selected Pizzas</span>
                     </h3>
                     <div class="row row-lg row-30 justify-content-center">
+                        <c:forEach var="product" items="${productData}" varStatus="loop">
+                            <div class="col-sm-12 col-lg-4">
+                                <article class="product wow fadeInLeft">
+                                    <div class="product-figure"><img src="${product.representativeImage}" alt="" width="210" height="210" />
+                                    </div>
+                                    <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+                                            class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                                    </div>
+                                    <h6 class="product-title">${product.name}</h6>
+                                    <c:choose>
+                                        <c:when test="${product.id == 2}">
+                                            <div class="product-price-wrap">
+                                                <div class="product-price">$24.00</div>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="product-price-wrap">
+                                                <div class="product-price product-price-old">$40.00</div>
+                                                <div class="product-price">${product.price}</div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
 
-                        <div class="col-sm-12 col-lg-4">
-                          <article class="product wow fadeInLeft">
-                            <div class="product-figure"><img src="https://placehold.co/210x210" alt="" width="210" height="210" />
+                                    <div class="product-button">
+                                        <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
+                                                cart</a></div>
+                                        <div class="button-wrap">
+                                            <a class="button button-xs button-secondary button-winona" href="#">View Product</a>
+                                        </div>
+                                    </div>
+                                    <c:choose>
+                                        <c:when test="${product.id == 2}">
+                                            <span class="product-badge product-badge-new">New</span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="product-badge product-badge-sale">Sale</span>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </article>
                             </div>
-                            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                            </div>
-                            <h6 class="product-title">Pesto Pizza</h6>
-                            <div class="product-price-wrap">
-                              <div class="product-price product-price-old">$40.00</div>
-                              <div class="product-price">$24.00</div>
-                            </div>
-                            <div class="product-button">
-                              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
-                                  cart</a></div>
-                              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View
-                                  Product</a></div>
-                            </div><span class="product-badge product-badge-sale">Sale</span>
-                          </article>
-                        </div>
-              
-                        <div class="col-sm-12 col-lg-4">
-                          <article class="product wow fadeInLeft" data-wow-delay=".1s">
-                            <div class="product-figure"><img src="https://placehold.co/210x210" alt="" width="210" height="210" />
-                            </div>
-                            <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                            </div>
-                            <h6 class="product-title">Mushroom Pizza</h6>
-                            <div class="product-price-wrap">
-                              <div class="product-price">$24.00</div>
-                            </div>
-                            <div class="product-button">
-                              <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
-                                  cart</a></div>
-                              <div class="button-wrap"><a class="button button-xs button-secondary button-winona" href="#">View
-                                  Product</a></div>
-                            </div><span class="product-badge product-badge-new">New</span>
-                          </article>
-                        </div>
-                        
-                      </div>
+                        </c:forEach>
+                    </div>
                 </div>
             </section>
 

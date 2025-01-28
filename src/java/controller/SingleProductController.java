@@ -1,22 +1,18 @@
+
 package controller;
 
-import dao.DAOProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.Vector;
-import model.Product;
 
 /**
  *
  * @author dangx
  */
-@WebServlet(name = "LandingController", urlPatterns = {"/landing"})
-public class LandingController extends HttpServlet {
+public class SingleProductController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -26,10 +22,10 @@ public class LandingController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet landingController</title>");
+            out.println("<title>Servlet SingleProductController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet landingController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SingleProductController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -38,18 +34,16 @@ public class LandingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        DAOProduct daoProduct = new DAOProduct();
-        Vector<Product> product = daoProduct.getAllProduct();
-        request.setAttribute("productData", product);
-        request.getRequestDispatcher("landing-page.jsp").forward(request, response);
+        request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
+
 
     @Override
     public String getServletInfo() {

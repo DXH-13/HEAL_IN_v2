@@ -49,7 +49,9 @@ CREATE TABLE token_forget_password (
 CREATE TABLE product (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
+    RepresentativeImage VARCHAR(500),
 	Description VARCHAR(500),
+    AdditionalInfor TEXT,
     Price VARCHAR(50) NOT NULL,
     Quantity INT NOT NULL,
     CreatedAt VARCHAR(50) NOT NULL,
@@ -59,6 +61,8 @@ CREATE TABLE product (
     DeactivatedBy VARCHAR(50),
     isActive BIT DEFAULT 1
 );
+
+
 
 CREATE TABLE productimages (
     Id INT AUTO_INCREMENT PRIMARY KEY,

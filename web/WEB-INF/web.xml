@@ -20,6 +20,10 @@
         <servlet-name>ProfileUserController</servlet-name>
         <servlet-class>controller.ProfileUserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SingleProductController</servlet-name>
+        <servlet-class>controller.SingleProductController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ProfileUserController</servlet-name>
         <url-pattern>/profile_user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SingleProductController</servlet-name>
+        <url-pattern>/single_product</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
