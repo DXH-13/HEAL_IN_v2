@@ -2833,18 +2833,18 @@ h5+.table-custom-responsive {
     color: #151515;
 }
 
-.table-cart td:first-child {
+.table-cart td:nth-child(2) {
     width: 61%;
     min-width: 390px;
 }
 
-.table-cart td:first-child>* {
+.table-cart td:nth-child(2)>* {
     display: inline-block;
     vertical-align: middle;
 }
 
 @media (min-width: 992px) {
-    .table-cart td:first-child {
+    .table-cart td:nth-child(2) {
         min-width: 500px;
     }
 }
