@@ -26,3 +26,47 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainCheckbox = document.querySelector("thead .containerCK input"); // Checkbox tổng
+    const itemCheckboxes = document.querySelectorAll("tbody .containerCK input"); // Checkbox sản phẩm
+    const totalPriceElement = document.querySelector(".text-spacing-75"); // Phần hiển thị tổng tiền
+
+    // Hàm tính tổng giá
+    function updateTotalPrice() {
+        let total = 0;
+        itemCheckboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                const row = checkbox.closest("tr");
+                const price = parseFloat(row.querySelector("td:nth-child(5)").textContent.replace("$", ""));
+                total += price;
+            }
+        });
+        totalPriceElement.textContent = `$${total.toFixed(2)}`; // Cập nhật hiển thị
+    }
+
+    // Xử lý khi click checkbox tổng
+    mainCheckbox.addEventListener("change", function () {
+        itemCheckboxes.forEach((checkbox) => {
+            checkbox.checked = mainCheckbox.checked;
+        });
+        updateTotalPrice(); // Cập nhật tổng giá
+    });
+
+    // Xử lý khi click checkbox từng sản phẩm
+    itemCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+            if (!this.checked) {
+                mainCheckbox.checked = false; // Bỏ check tổng nếu có sản phẩm bị bỏ chọn
+            } else {
+                // Nếu tất cả đều được chọn lại -> check tổng
+                mainCheckbox.checked = [...itemCheckboxes].every(cb => cb.checked);
+            }
+            updateTotalPrice(); // Cập nhật tổng giá
+        });
+    });
+
+    // Gọi hàm cập nhật tổng giá khi trang tải lần đầu
+    updateTotalPrice();
+});

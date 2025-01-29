@@ -1,20 +1,30 @@
+<%-- 
+    Document   : cart-page
+    Created on : Jan 29, 2025, 7:18:26 PM
+    Author     : dangx
+--%>
+<%@ page import="model.User" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
 <head>
-    <title>Checkout</title>
+    <title>Cart Page</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="/web/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css"
         href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
-    <link rel="stylesheet" href="/web/css/bootstrap.css">
-    <link rel="stylesheet" href="/web/css/fonts.css">
-    <link rel="stylesheet" href="/web/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/cart-page.css">
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
@@ -22,6 +32,7 @@
 </head>
 
 <body>
+    <% User user=(User) session.getAttribute("userLogin"); %>
     <div class="preloader">
         <div class="wrapper-triangle">
             <div class="pen">
@@ -76,7 +87,7 @@
                                     data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!-- RD Navbar Brand-->
                                 <div class="rd-navbar-brand"><a class="brand" href="index.html"><img
-                                            class="brand-logo-dark" src="/web/assets/images/logo-198x66.png" alt=""
+                                            class="brand-logo-dark" src="assets/images/logo-198x66.png" alt=""
                                             width="189" height="66" /></a></div>
                             </div>
                             <div class="rd-navbar-right rd-navbar-nav-wrap">
@@ -108,16 +119,16 @@
                                 <div class="rd-navbar-main">
                                     <!-- RD Navbar Nav-->
                                     <ul class="rd-navbar-nav">
-                                        <li class="rd-nav-item active"><a class="rd-nav-link"
-                                                href="/web/views/home.html">Home</a>
+                                        <li class="rd-nav-item"><a class="rd-nav-link"
+                                                href="views/home.html">Home</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/about-us.html">About us</a>
+                                                href="views/about-us.html">About us</a>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/typography.html">Game</a>
+                                                href="views/typography.html">Game</a>
                                         </li>
-                                        <li class="rd-nav-item"><a class="rd-nav-link" href="#shop">Shop</a>
+                                        <li class="rd-nav-item active"><a class="rd-nav-link" href="#shop">Shop</a>
                                             <ul class="rd-menu rd-navbar-dropdown">
                                                 <li class="rd-dropdown-item "><a class="rd-dropdown-link"
                                                         href="grid-blog.html">Đoàn Viên</a>
@@ -128,19 +139,20 @@
                                             </ul>
                                         </li>
                                         <li class="rd-nav-item"><a class="rd-nav-link"
-                                                href="/web/views/contacts.html">Contacts</a>
+                                                href="views/contacts.html">Contacts</a>
                                         </li>
-                                        <li class="rd-nav-item active loginbtn"><a class="rd-nav-link avtlink"
-                                                href="shop.html">
-                                                <img src="https://placehold.co/40x40" alt="">
-                                            </a>
-                                            <ul class="rd-menu rd-navbar-dropdown">
-                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                        href="/web/views/single-product.html">Profile user</a></li>
-                                                <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                        href="checkout.html">Log out</a></li>
-                                            </ul>
-                                        </li>
+                                        <% if (user==null) { %>
+                                            <li class="rd-nav-item loginbtn">
+                                                <a class="rd-nav-link" href="log_in">Login</a>
+                                            </li>
+                                            <% } else { %>
+                                            <li class="rd-nav-item active loginbtn"><a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="profile_user">Profile user</a></li>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="log_out">Log out</a></li>
+                                                </ul>
+                                            </li>
+                                            <% } %>
 
                                     </ul>
                                 </div>
@@ -150,20 +162,25 @@
                                 data-multitoggle-isolate="data-multitoggle-isolate">
                                 <!-------------------------------------------------------------->
 
-                                <!-- <div class="dropdown"> 
-                                    <button class="dropbtn"> <img src="https://placehold.co/50x50" alt="Avatar" class="avatar"> </button>
-                                    <div class="dropdown-content">
-                                        <a href="profile.jsp">Profile</a>
-                                        <a href="logout">Logout</a>
+                                <% if (user==null) { %>
+                                    <a href="log_in" class="loginbtn2">Login</a>
+                                    <% } else { %>
+                                    <div class="dropdown">
+                                        <button class="dropbtn">
+                                            <img src="https://placehold.co/50x50" alt="Avatar"
+                                                 class="avatar">
+                                        </button>
+                                        <div class="dropdown-content">
+                                            <a href="profile_user">Profile</a>
+                                            <a href="log_out">Logout</a>
+                                        </div>
                                     </div>
-                                </div> -->
-
-                                <a href="" class="loginbtn2">Login</a>
+                                    <% } %>
 
 
                                 <!-------------------------------------------------------------->
                             </div>
-                            
+
                         </div>
                     </div>
                 </nav>
@@ -173,258 +190,127 @@
         <section class="bg-gray-7">
             <div class="breadcrumbs-custom box-transform-wrap context-dark">
                 <div class="container">
-                    <h3 class="breadcrumbs-custom-title">Checkout</h3>
+                    <h3 class="breadcrumbs-custom-title">Cart Page</h3>
                     <div class="breadcrumbs-custom-decor"></div>
                 </div>
-                <div class="box-transform" style="background-image: url(/web/assets/images/bg-1.jpg);"></div>
+                <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
             </div>
             <div class="container">
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
-                    <li class="active">Checkout</li>
+                    <li class="active">Cart Page</li>
                 </ul>
             </div>
         </section>
-        <!-- Section checkout form-->
-        <section class="section section-sm section-first bg-default text-md-left">
-            <div class="container">
-                <div class="row row-50 justify-content-center">
-                    <!-- <div class="col-md-10 col-lg-6">
-                        <h5>Billing Address</h5>
-                        <form class="rd-form rd-mailform form-checkout">
-                            <div class="row row-14 gutters-14">
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-first-name-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-first-name-1">First Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-last-name-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-last-name-1">Last Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-company-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-company-1">Company</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-address-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-address-1">Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-postcode-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-postcode-1">Postcode</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-city-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-city-1">City</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-email-1" type="email" name="email"
-                                            data-constraints="@Email @Required" />
-                                        <label class="form-label" for="checkout-email-1">E-Mail</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-phone-1" type="text" name="phone"
-                                            data-constraints="@Numeric" />
-                                        <label class="form-label" for="checkout-phone-1">Phone</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <label class="checkbox-inline">
-                                <input name="input-checkbox-1" value="checkbox-1" type="checkbox" />My Billing Address
-                                and Shipping Address are the same
-                            </label>
-                        </form>
-                    </div> -->
-                    <div class="col-md-10 col-lg-6">
-                        <h5>Delivery Address</h5>
-                        <form class="rd-form rd-mailform form-checkout">
-                            <div class="row row-14 gutters-14">
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-first-name-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-first-name-2">First Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-last-name-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-last-name-2">Last Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-company-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-company-2">Company</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-address-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-address-2">Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-postcode-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-postcode-2">Postcode</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-city-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-city-2">City</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-email-2" type="email" name="email"
-                                            data-constraints="@Email @Required" />
-                                        <label class="form-label" for="checkout-email-2">E-Mail</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-phone-2" type="text" name="phone"
-                                            data-constraints="@Numeric" />
-                                        <label class="form-label" for="checkout-phone-2">Phone</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
         <!-- Shopping Cart-->
-        <section class="section section-sm bg-default text-md-left">
+        <section class="section section-lg bg-default">
             <div class="container">
-                <h5>Your shopping cart</h5>
                 <!-- shopping-cart-->
                 <div class="table-custom-responsive">
                     <table class="table-custom table-cart">
                         <thead>
                             <tr>
+                                <th>
+                                    <label class="containerCK">
+                                        <input type="checkbox" checked="checked">
+                                        <div class="checkmark"></div>
+                                    </label>
+                                </th>
                                 <th>Product name</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a class="table-cart-figure" href="single-product.html"><img
-                                            src="https://placehold.co/195x141" alt="" width="195" height="141" /></a><a
-                                        class="table-cart-link" href="single-product.html">Pepperoni Pizza</a></td>
+                                <td>
+                                    <label class="containerCK">
+                                        <input type="checkbox" checked="checked">
+                                        <div class="checkmark"></div>
+                                    </label>
+                                </td>
+                                <td>
+                                    <a class="table-cart-figure" href="single-product.html">
+                                        <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
+                                    </a>
+                                    <a class="table-cart-link" href="single-product.html">Pepperoni Pizza</a>
+                                </td>
                                 <td>$15</td>
                                 <td>
                                     <div class="table-cart-stepper">
                                         <input class="form-input" type="number" data-zeros="true" value="1" min="1"
-                                            max="1000">
+                                            max="50">
                                     </div>
                                 </td>
                                 <td>$15</td>
+                                <td>
+                                    <button class="deleteProbtn">
+                                        <svg viewBox="0 0 15 17.5" height="17.5" width="15"
+                                            xmlns="http://www.w3.org/2000/svg" class="iconDelete">
+                                            <path transform="translate(-2.5 -1.25)"
+                                                d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
+                                                id="Fill"></path>
+                                        </svg>
+                                    </button>
+                                </td>
                             </tr>
                             <tr>
-                                <td><a class="table-cart-figure" href="single-product.html"><img
-                                            src="https://placehold.co/195x141" alt="" width="195" height="141" /></a><a
-                                        class="table-cart-link" href="single-product.html">Waldorf Salad</a></td>
+                                <td>
+                                    <label class="containerCK">
+                                        <input type="checkbox" checked="checked">
+                                        <div class="checkmark"></div>
+                                    </label>
+                                </td>
+                                <td>
+                                    <a class="table-cart-figure" href="single-product.html">
+                                        <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
+                                    </a>
+                                    <a class="table-cart-link" href="single-product.html">Waldorf Salad</a>
+                                </td>
                                 <td>$24</td>
                                 <td>
                                     <div class="table-cart-stepper">
                                         <input class="form-input" type="number" data-zeros="true" value="1" min="1"
-                                            max="1000">
+                                            max="50">
                                     </div>
                                 </td>
                                 <td>$24</td>
+                                <td>
+                                    <button class="deleteProbtn">
+                                        <svg viewBox="0 0 15 17.5" height="17.5" width="15"
+                                            xmlns="http://www.w3.org/2000/svg" class="iconDelete">
+                                            <path transform="translate(-2.5 -1.25)"
+                                                d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
+                                                id="Fill"></path>
+                                        </svg>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </section>
+                <div class="group-xxxl group-middle justify-content-md-end">
+                    <div>
+                        <div class="group-xxl group-middle">
+                            <p class="big text-gray-500">Total</p>
+                            <h4 class="text-spacing-75">$39</h4>
+                        </div>
+                    </div><a class="button button-lg button-width-240 button-primary button-winona"
+                        href="checkout.html">Checkout</a>
+                </div>
 
-        <!-- Section Payment-->
-        <section class="section section-sm section-last bg-default text-md-left">
-            <div class="container">
-                <div class="row row-50 justify-content-center">
-                    <div class="col-md-10 col-lg-6">
-                        <h5>Payment methods</h5>
-                        <div class="box-radio">
-                            <div class="radio-panel">
-                                <label class="radio-inline active">
-                                    <input name="input-group-radio" value="checkbox-1" type="radio" checked>Direct Bank
-                                    Transfer
-                                </label>
-                                <div class="radio-panel-content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. amet, consectetur
-                                        adipiscing elit, sed</p>
-                                </div>
-                            </div>
-                            <div class="radio-panel">
-                                <label class="radio-inline">
-                                    <input name="input-group-radio" value="checkbox-1" type="radio">Cash on Delivery                                    
-                                </label>
-                                <div class="radio-panel-content">
-                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State /
-                                        County, Store Postcode.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-10 col-lg-6">
-                        <h5>Cart totals</h5>
-                        <div class="table-custom-responsive">
-                            <table class="table-custom table-custom-primary table-checkout">
-                                <tbody>
-                                    <tr>
-                                        <td>Cart Subtotal</td>
-                                        <td>$39</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shipping</td>
-                                        <td>Free</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td>$39</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                <div id="emptyCartMessage" style="display: none; text-align: center;">
+                    <img src="assets/images/empty_cart.png" width="400" height="400" alt="empty_cart">
+                    <h3 style="font-size: 20px; margin-bottom: 50px;">Your shopping cart is empty</h3>
+                    <a href="#" class="goShopbtn"> Go Shopping Now </a>
                 </div>
-                <div class="button-wrap text-center"><a
-                        class="button button-lg button-width-240 button-primary button-pipaluk" href="#">Checkout</a>
-                </div>
+
+
             </div>
+
         </section>
 
         <!-- Page Footer-->
@@ -485,10 +371,10 @@
                         <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                             <div class="row row-30 align-items-center text-lg-center">
                                 <div class="col-md-7 col-xl-6"><a class="brand" href="index.html"><img
-                                            src="/web/assets/images/logo-inverse-163x57.png" alt="" width="163"
+                                            src="assets/images/logo-inverse-163x57.png" alt="" width="163"
                                             height="57" /></a></div>
                                 <div class="col-md-5 col-xl-6">
-                                    <div class="iso-1"><span><img src="/web/assets/images/like-icon-58x25.png" alt=""
+                                    <div class="iso-1"><span><img src="assets/images/like-icon-58x25.png" alt=""
                                                 width="58" height="25" /></span><span class="iso-1-big">9.4k</span>
                                     </div>
                                 </div>
@@ -541,8 +427,9 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="/web/js/core.min.js"></script>
-    <script src="/web/js/script.js"></script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/cart-page.js   "></script>
     <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
             width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script>
