@@ -8,6 +8,6 @@ package model;
  *
  * @author dangx
  */
-public class Cart {
+public class Orders {
     
 }
