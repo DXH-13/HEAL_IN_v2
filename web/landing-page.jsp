@@ -81,7 +81,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="views/home.html"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing?id=${sessionScope.userLogin.normalUserId}"><img
                                                 class="brand-logo-dark" src="https://placehold.co/198x66"
                                                 alt="" width="198" height="66" /></a>
                                     </div>

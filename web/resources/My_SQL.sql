@@ -83,7 +83,6 @@ CREATE TABLE orders (
 	Id INT AUTO_INCREMENT PRIMARY KEY,
     UserId INT NOT NULL,
     ProductId INT NOT NULL,
-    ProductImagePath VARCHAR(500),
     Quantity INT,
     Options VARCHAR(50),
 	CreatedAt VARCHAR(50) NOT NULL,
@@ -95,6 +94,8 @@ CREATE TABLE orders (
     FOREIGN KEY (UserId) REFERENCES user(Id),
     FOREIGN KEY (ProductId) REFERENCES product(Id)
 );
+
+ALTER TABLE healin.orders ADD CONSTRAINT unique_user_product UNIQUE (UserId, ProductId);
 
 CREATE TABLE cart (
 	Id INT AUTO_INCREMENT PRIMARY KEY,

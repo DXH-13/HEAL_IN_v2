@@ -1,12 +1,17 @@
 
 package controller;
 
+import dao.DAOCart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.Vector;
+import model.Cart;
+import model.User;
 
 public class CartController extends HttpServlet {
 
@@ -32,7 +37,11 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        DAOCart daoCart = new DAOCart();
+        Vector<Cart> cart = daoCart.getAllOrdersInCart(userLogin.getNormalUserId());
+        request.setAttribute("cart", cart);
         request.getRequestDispatcher("cart-page.jsp").forward(request, response);
     }
 
@@ -40,7 +49,7 @@ public class CartController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
 

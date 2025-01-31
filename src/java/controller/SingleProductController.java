@@ -1,6 +1,6 @@
-
 package controller;
 
+import dao.DAOCart;
 import dao.DAOProduct;
 import dao.DAOProductImages;
 import java.io.IOException;
@@ -9,9 +9,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.Vector;
+import model.Cart;
 import model.Product;
 import model.ProductImages;
+import model.User;
 
 /**
  *
@@ -27,7 +30,7 @@ public class SingleProductController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SingleProductController</title>");            
+            out.println("<title>Servlet SingleProductController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet SingleProductController at " + request.getContextPath() + "</h1>");
@@ -41,7 +44,7 @@ public class SingleProductController extends HttpServlet {
             throws ServletException, IOException {
         DAOProduct daoProduct = new DAOProduct();
         DAOProductImages daoProductImages = new DAOProductImages();
-        int idProduct =  Integer.parseInt(request.getParameter("idProduct"));
+        int idProduct = Integer.parseInt(request.getParameter("idProduct"));
         Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(idProduct);
         Product product = daoProduct.findByID(idProduct);
         request.setAttribute("product", product);
@@ -49,13 +52,23 @@ public class SingleProductController extends HttpServlet {
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-    }
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        DAOCart daoOrders = new DAOCart();
+        boolean orderAdded = daoOrders.insertOrder(userLogin.getNormalUserId(), productId, quantity);
 
+        if (orderAdded) {
+            //thong bao ok
+        } else {
+            //thong bao loi
+        }
+        request.getRequestDispatcher("single-product.jsp").forward(request, response);
+    }
 
     @Override
     public String getServletInfo() {

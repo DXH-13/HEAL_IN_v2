@@ -77,7 +77,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="views/home.html"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing?id=${sessionScope.userLogin.normalUserId}"><img
                                                 class="brand-logo-dark" src="https://placehold.co/198x66" alt=""
                                                 width="189" height="66" /></a></div>
                                 </div>
@@ -234,41 +234,45 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="single-product">
-                                <h4 class="text-transform-none text-spacing-50">${product.name}</h4>
-                                <div class="group-md group-middle">
-                                    <div class="single-product-price">$${product.price}</div>
-                                    <div class="single-product-rating"><span class="mdi mdi-star"></span><span
-                                            class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                            class="mdi mdi-star"></span><span class="mdi mdi-star-half"></span></div>
-                                </div>
-                                <p>${product.description}</p>
-                                <hr class="hr-gray-300">
-                                <ul class="list list-description d-inline-block d-md-block">
-                                    <li><span>Categories:</span><span>Pizzas</span></li>
-                                    <li><span>Weight:</span><span>0.44 lb</span></li>
-                                    <li><span>Diameter:</span><span>28"</span></li>
-                                </ul>
-                                <div class="group-lg group-middle">
-                                    <div class="product-stepper">
-                                        <input class="form-input" type="number" data-zeros="true" value="1" min="1"
-                                               max="1000">
+                            <form action="/single_product" method="post">
+                                <input type="hidden" name="productId" value="${product.id}">
+                                <div class="single-product">
+                                    <h4 class="text-transform-none text-spacing-50">${product.name}</h4>
+                                    <div class="group-md group-middle">
+                                        <div class="single-product-price">$${product.price}</div>
+                                        <div class="single-product-rating"><span class="mdi mdi-star"></span><span
+                                                class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+                                                class="mdi mdi-star"></span><span class="mdi mdi-star-half"></span></div>
                                     </div>
-                                    <div><a class="button button-lg button-secondary button-winona"
-                                            href="cart-page.html">Add to cart</a></div>
-                                </div>
-                                <hr class="hr-gray-300">
-                                <div class="group-sm group-middle"><span class="single-product-social-title">Share</span>
-                                    <div>
-                                        <ul class="list-inline single-product-social-list list-inline-sm">
-                                            <li><a class="icon mdi mdi-facebook" href="#"></a></li>
-                                            <li><a class="icon mdi mdi-twitter" href="#"></a></li>
-                                            <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                            <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
-                                        </ul>
+                                    <p>${product.description}</p>
+                                    <hr class="hr-gray-300">
+                                    <ul class="list list-description d-inline-block d-md-block">
+                                        <li><span>Categories:</span><span>Pizzas</span></li>
+                                        <li><span>Weight:</span><span>0.44 lb</span></li>
+                                        <li><span>Diameter:</span><span>28"</span></li>
+                                    </ul>
+                                    <div class="group-lg group-middle">
+                                        <div class="product-stepper">
+                                            <input class="form-input" type="number" name="quantity" data-zeros="true" value="1" min="1"
+                                                   max="50">
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="button button-lg button-secondary button-winona" >Add to cart</button>
+                                        </div>
+                                    </div>
+                                    <hr class="hr-gray-300">
+                                    <div class="group-sm group-middle"><span class="single-product-social-title">Share</span>
+                                        <div>
+                                            <ul class="list-inline single-product-social-list list-inline-sm">
+                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-twitter" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <!-- Bootstrap tabs-->
