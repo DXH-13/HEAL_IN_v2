@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.Vector;
-import model.Cart;
+import model.CartXProduct;
 import model.User;
 
 public class CartController extends HttpServlet {
@@ -40,12 +40,10 @@ public class CartController extends HttpServlet {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
         DAOCart daoCart = new DAOCart();
-        Vector<Cart> cart = daoCart.getAllOrdersInCart(userLogin.getNormalUserId());
+        Vector<CartXProduct> cart = daoCart.getAllCartByUserId(userLogin.getNormalUserId());
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("cart-page.jsp").forward(request, response);
     }
-
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -119,25 +119,38 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                                <a class="rd-nav-link active" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/about-us.html">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="/web/views/typography.html">Game</a>
-                                            </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="#shop">Shop</a>
-                                                <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
-                                                    </li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
                                             </li>
-
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="#shop">Shop</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                                                                      
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
+                                                <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                <% if (user==null) { %>
+                                                <% } else { %>
+                                                <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                <% } %>
+                                              </a>
+                                            </li>
+                                            
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
                                                 <a class="rd-nav-link" href="log_in">Login</a>

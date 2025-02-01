@@ -119,28 +119,39 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/about-us.html">About us</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/about-us.html">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/typography.html">Game</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
                                             </li>
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="#shop">Shop</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/typography.html">Game</a>
+                                            </li>
+                                            <li class="rd-nav-item ">
+                                                <a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link"
-                                                                                     href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
                                                     </li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
-                                                                                    href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/contacts.html">Contacts</a>
+                                            
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
+                                                <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                <% if (user==null) { %>
+                                                <% } else { %>
+                                                <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                <% } %>
+                                              </a>
                                             </li>
+                                            
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
                                                 <a class="rd-nav-link" href="log_in">Login</a>
@@ -236,18 +247,18 @@
                                         </td>
                                         <td>
                                             <a class="table-cart-figure" href="single-product.html">
-                                                <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
+                                                <img src="${cart.productRepresentativeImage}" alt="" width="195" height="141" />
                                             </a>
-                                            <a class="table-cart-link" href="single-product.html">Waldorf Salad</a>
+                                            <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
                                         </td>
-                                        <td>$24</td>
+                                        <td>${cart.productPrice}</td>
                                         <td>
                                             <div class="table-cart-stepper">
-                                                <input class="form-input" type="number" data-zeros="true" value="1" min="1"
+                                                <input class="form-input" type="number" data-zeros="true" value="${cart.quantity}" min="1"
                                                        max="50">
                                             </div>
                                         </td>
-                                        <td>$24</td>
+                                        <td>${cart.productPrice * cart.quantity}</td>
                                         <td>
                                             <button class="deleteProbtn">
                                                 <svg viewBox="0 0 15 17.5" height="17.5" width="15"

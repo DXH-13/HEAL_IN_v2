@@ -27,7 +27,10 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, String representativeImage ,String description, String additionalInfor, String price, int quantity, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+    public Product(int id, String name, String representativeImage, 
+            String description, String additionalInfor, String price, 
+            int quantity, String createdAt, String createdBy, String updatedAt, 
+            String deactivatedAt, String deactivatedBy, boolean isActive) {
         this.id = id;
         this.name = name;
         this.representativeImage = representativeImage;

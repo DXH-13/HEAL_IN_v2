@@ -17,8 +17,8 @@
         <link rel="stylesheet" type="text/css"
               href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/style.css">
+
+
         <link rel="stylesheet" href="css/profileuser.css">
         <link rel="stylesheet"
               href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
@@ -27,7 +27,8 @@
         <link rel="stylesheet" href="css/profileuser.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/style.css">
         <style>
             html,
             body {
@@ -135,25 +136,39 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="landing?id=${userLogin.normalUserId}">Home</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="about-us.html">About us</a>
-                                            </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="/web/views/typography.html">Game</a>
-                                            </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}#shop">Shop</a>
-                                                <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
-                                                    </li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
-                                                    </li>
-                                                </ul>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="about-us.html">About us</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
                                             </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}#shop">Shop</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <% if (user==null) { %>
+                                                    <% } else { %>
+                                                    <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                    <% } %>
+                                                </a>
+                                            </li>
+
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
                                                 <a class="rd-nav-link" href="log_in">Login</a>
@@ -607,10 +622,10 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-
+    <script src="js/profileuser.js"></script>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/profileuser.js"></script>
+
     <!-- Google Tag Manager --><noscript><iframe
         src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>

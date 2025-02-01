@@ -12,6 +12,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Cart;
+import model.CartXProduct;
 import utils.DBContext;
 
 /**
@@ -57,14 +58,14 @@ public class DAOCart {
         return vector;
     }
 
-    public Vector<Cart> getAllOrdersInCart(int userId) {
-        String sql = "SELECT * FROM HEALIN.ORDERS WHERE UserId = "+userId+" AND isActive = 1 ";
+    public Vector<Cart> getAllCart(int userId) {
+        String sql = "SELECT * FROM HEALIN.CART WHERE UserId = " + userId + " AND isActive = 1 ";
         return getAll(sql);
     }
 
     public boolean insertOrder(int userId, int productId, int quantity) {
-        String sql = "INSERT INTO orders (UserId, ProductId, Quantity, Options, CreatedAt, CreatedBy, isActive) "
-                + "VALUES (?, ?, ?, 'Size: M, Color: Red', CURRENT_TIMESTAMP, 'Admin', 1) "
+        String sql = "INSERT INTO cart (UserId, ProductId, Quantity, CreatedAt, CreatedBy, isActive) "
+                + "VALUES (?, ?, ?, CURRENT_TIMESTAMP, 'Admin', 1) "
                 + "ON DUPLICATE KEY UPDATE Quantity = Quantity + ?;";
 
         try ( PreparedStatement pstmt = db.getConnection().prepareStatement(sql)) {
@@ -81,14 +82,68 @@ public class DAOCart {
         }
     }
 
+    public Vector<CartXProduct> getAllCartByUserId(int userId) {
+        Vector<CartXProduct> vector = new Vector<>();
+        String sql = "SELECT cart.*, product.Name, product.RepresentativeImage, "
+                + "product.Description, product.AdditionalInfor, product.Price, "
+                + "product.Quantity AS ProductQuantity \n"
+                + "FROM cart \n"
+                + "INNER JOIN product ON cart.ProductId = product.Id \n"
+                + "WHERE cart.UserId = ?";
+        try ( PreparedStatement st = db.getConnection().prepareStatement(sql)) {
+            st.setInt(1, userId);
+            try ( ResultSet rs = st.executeQuery()) {
+                while (rs.next()) {
+                    CartXProduct cartXProduct = new CartXProduct(
+                            rs.getInt("Id"),
+                            rs.getInt("UserId"),
+                            rs.getInt("ProductId"),
+                            rs.getInt("Quantity"),
+                            rs.getString("Name"),
+                            rs.getString("RepresentativeImage"),
+                            rs.getString("Description"),
+                            rs.getString("AdditionalInfor"),
+                            rs.getString("Price"),
+                            rs.getInt("Quantity"),
+                            rs.getString("CreatedAt"),
+                            rs.getString("CreatedBy"),
+                            rs.getString("UpdatedAt"),
+                            rs.getString("DeactivatedAt"),
+                            rs.getString("DeactivatedBy"),
+                            rs.getBoolean("isActive")
+                    );
+                    vector.add(cartXProduct);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("SQL Exception: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return vector;
+    }
 
+    public int getProductCountByUserId(int userId) {
+        String sql = "SELECT COUNT(ProductId) AS ProductCount FROM cart WHERE UserId = ? GROUP BY UserId";
+        int productCount = 0;
+
+        try ( PreparedStatement pstmt = db.getConnection().prepareStatement(sql)) {
+            pstmt.setInt(1, userId); // Thiết lập giá trị cho tham số UserId
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                productCount = rs.getInt("ProductCount"); // Lấy giá trị từ cột ProductCount
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        return productCount;
+    }
 
     public static void main(String[] args) {
         DAOCart dao = new DAOCart();
-        Vector<Cart> orders = dao.getAllOrdersInCart(1);
-        for (Cart order : orders) {
-            System.out.println(order);
-        }
+        int a = dao.getProductCountByUserId(1);
+        System.out.println(a);
 
     }
 }

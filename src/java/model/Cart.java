@@ -24,7 +24,9 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(int userId, int productId, int quantity, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+    public Cart(int userId, int productId, int quantity, String createdAt, 
+            String createdBy, String updatedAt, String deactivatedAt, 
+            String deactivatedBy, boolean isActive) {
         this.userId = userId;
         this.productId = productId;
         this.quantity = quantity;
@@ -38,7 +40,9 @@ public class Cart {
 
     
     
-    public Cart(int id, int userId, int productId, int quantity, String createdAt, String createdBy, String updatedAt, String deactivatedAt, String deactivatedBy, boolean isActive) {
+    public Cart(int id, int userId, int productId, int quantity, String createdAt, 
+            String createdBy, String updatedAt, String deactivatedAt, 
+            String deactivatedBy, boolean isActive) {
         this.id = id;
         this.userId = userId;
         this.productId = productId;

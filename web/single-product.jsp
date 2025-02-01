@@ -111,25 +111,36 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
 
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/about-us.html">About us</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="views/about-us.html">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/typography.html">Game</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
                                             </li>
-                                            <li class="rd-nav-item active"><a class="rd-nav-link"
-                                                                              href="landing?id=${sessionScope.userLogin.normalUserId}#shop">Shop</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="views/typography.html">Game</a>
+                                            </li>
+                                            <li class="rd-nav-item active">
+                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item active"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a></li>
+                                                    <li class="rd-dropdown-item active">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="views/contacts.html">Contacts</a>
+                                            
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
+                                                <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                <% if (user==null) { %>
+                                                <% } else { %>
+                                                <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                <% } %>
+                                              </a>
                                             </li>
+                                            
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
                                                 <a class="rd-nav-link" href="log_in">Login</a>
@@ -234,7 +245,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <form action="/single_product" method="post">
+                            <form action="single_product" method="post">
                                 <input type="hidden" name="productId" value="${product.id}">
                                 <div class="single-product">
                                     <h4 class="text-transform-none text-spacing-50">${product.name}</h4>
@@ -595,6 +606,7 @@
         <!-- Javascript-->
         <script src="js/core.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/single-product.js"></script>
         <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
                                                      width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script>

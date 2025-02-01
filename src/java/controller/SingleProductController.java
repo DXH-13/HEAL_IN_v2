@@ -22,6 +22,9 @@ import model.User;
  */
 public class SingleProductController extends HttpServlet {
 
+    DAOProduct daoProduct = new DAOProduct();
+    DAOProductImages daoProductImages = new DAOProductImages();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -42,8 +45,7 @@ public class SingleProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAOProduct daoProduct = new DAOProduct();
-        DAOProductImages daoProductImages = new DAOProductImages();
+
         int idProduct = Integer.parseInt(request.getParameter("idProduct"));
         Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(idProduct);
         Product product = daoProduct.findByID(idProduct);
@@ -59,14 +61,20 @@ public class SingleProductController extends HttpServlet {
         User userLogin = (User) session.getAttribute("userLogin");
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        DAOCart daoOrders = new DAOCart();
-        boolean orderAdded = daoOrders.insertOrder(userLogin.getNormalUserId(), productId, quantity);
+        DAOCart daoCart = new DAOCart();
+        Product product = daoProduct.findByID(productId);
+        Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(productId);
+        boolean orderAdded = daoCart.insertOrder(userLogin.getNormalUserId(), productId, quantity);
 
         if (orderAdded) {
             //thong bao ok
+            System.out.println("add thanh cong");
         } else {
             //thong bao loi
+            System.out.println("khong add duoc");
         }
+        request.setAttribute("product", product);
+        request.setAttribute("images", images);
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
 

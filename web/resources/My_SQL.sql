@@ -79,7 +79,7 @@ CREATE TABLE productimages (
 );
 
 
-CREATE TABLE orders (
+CREATE TABLE cart (
 	Id INT AUTO_INCREMENT PRIMARY KEY,
     UserId INT NOT NULL,
     ProductId INT NOT NULL,
@@ -97,17 +97,12 @@ CREATE TABLE orders (
 
 ALTER TABLE healin.orders ADD CONSTRAINT unique_user_product UNIQUE (UserId, ProductId);
 
-CREATE TABLE cart (
-	Id INT AUTO_INCREMENT PRIMARY KEY,
-	OrderId INT NOT NULL,
-    CreatedAt VARCHAR(50) NOT NULL,
-    CreatedBy VARCHAR(50),
-    UpdatedAt VARCHAR(50),
-    DeactivatedAt VARCHAR(50),
-    DeactivatedBy VARCHAR(50),
-    isActive BIT DEFAULT 1,
-    FOREIGN KEY (OrderId) REFERENCES orders(Id)
-);
+
+SELECT cart.*, product.Name, product.RepresentativeImage, product.Description, product.AdditionalInfor, product.Price, product.Quantity AS ProductQuantity 
+            FROM cart 
+            INNER JOIN product ON cart.ProductId = product.Id 
+            WHERE cart.UserId = 1;
+
 
 CREATE TABLE checkout (
 	Id INT AUTO_INCREMENT PRIMARY KEY,
