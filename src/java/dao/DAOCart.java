@@ -156,9 +156,68 @@ public class DAOCart {
         }
     }
 
+    public void updateQuantity(int userId, int productId, int quantity) {
+        String sql = "UPDATE cart\n"
+                + "SET Quantity = ?\n"
+                + "WHERE UserId = ? AND ProductId= ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setInt(1, quantity);
+            pstmt.setInt(2, userId);
+            pstmt.setInt(3, productId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public float getProductTotal(int userId, int productId) {
+        String sql = "SELECT SUM(p.Price * c.Quantity) AS TotalPrice\n"
+                + "FROM cart c\n"
+                + "JOIN product p ON c.ProductId = p.Id\n"
+                + "WHERE c.UserId = ? AND c.ProductId = ?;";
+        float productTotal = 0;
+
+        try ( PreparedStatement pstmt = db.getConnection().prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, productId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                productTotal = rs.getFloat("TotalPrice");
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        return productTotal;
+    }
+
+    public float getCartTotal(int userId) {
+        String sql = "SELECT SUM(p.Price * c.Quantity) AS CartTotal\n"
+                + "FROM cart c\n"
+                + "JOIN product p ON c.ProductId = p.Id\n"
+                + "WHERE c.UserId = ? AND c.isActive = 1;";
+        float cartTotal = 0;
+
+        try ( PreparedStatement pstmt = db.getConnection().prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                cartTotal = rs.getFloat("CartTotal");
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        return cartTotal;
+    }
+
     public static void main(String[] args) {
         DAOCart dao = new DAOCart();
-        dao.deleteCart(1, 2);
+        float a = dao.getCartTotal(1);
+        System.out.println(a);
 
     }
 }

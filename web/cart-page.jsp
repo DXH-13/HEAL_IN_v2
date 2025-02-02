@@ -143,7 +143,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="cart">
+                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="#cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">
@@ -231,7 +231,7 @@
                 </div>
             </section>
             <!-- Shopping Cart-->
-            <section class="section section-lg bg-default">
+            <section id="cart" class="section section-lg bg-default">
                 <div class="container">
                     <!-- shopping-cart-->
                     <div class="table-custom-responsive">
@@ -254,7 +254,7 @@
                             </thead>
                             <tbody>
                                 <c:forEach var="cart" items="${cart}" varStatus="loop">
-                                    <tr>
+                                    <tr data-product-id="${cart.productId}">
                                         <td>
                                             <label class="containerCK">
                                                 <input type="checkbox" checked="checked">
@@ -274,7 +274,7 @@
                                                        max="50" onchange="updateQuantity(${cart.productId}, this.value)">
                                             </div>
                                         </td>
-                                        <td>${cart.productPrice * cart.quantity}</td>
+                                        <td class="product-total">${cart.productPrice * cart.quantity}</td>
                                         <td>
                                             <button class="deleteProbtn" onclick="deleteProduct(${sessionScope.userLogin}, ${cart.productId})">
                                                 <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="iconDelete">
@@ -443,8 +443,12 @@
         </script>
         <!-- End Google Tag Manager -->
         <script>
-            var userId = ${sessionScope.userLogin};
+            var userId = "${sessionScope.userLogin != null ? sessionScope.userLogin.getNormalUserId() : 'null'}";
+            if (userId === "null") {
+                console.error("userId is not defined. Please log in first.");
+            }
         </script>
+
 
     </body>
 

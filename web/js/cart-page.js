@@ -1,6 +1,6 @@
 
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const cartBadge = document.querySelector('.cart-badge');
     const scrollY = window.scrollY || window.pageYOffset;
 
@@ -14,32 +14,17 @@ window.addEventListener('scroll', function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const deleteButtons = document.querySelectorAll(".deleteProbtn");
     const tableBody = document.querySelector(".table-cart tbody");
     const tableWrapper = document.querySelector(".table-custom-responsive");
     const totalSection = document.querySelector(".group-xxxl");
     const emptyCartMessage = document.querySelector("#emptyCartMessage"); // Phần tử hiển thị khi giỏ hàng trống
 
-    deleteButtons.forEach((button) => {
-        button.addEventListener("click", function () {
-            const row = this.closest("tr"); // Tìm hàng cha gần nhất của nút delete
+    if (tableBody.children.length === 0) {
+        tableWrapper.style.display = "none";
+        totalSection.style.display = "none";
+        emptyCartMessage.style.display = "block"; // Hiển thị thông báo giỏ hàng trống
+    }
 
-            // Thêm class animation
-            row.classList.add("slide-out-left");
-
-            // Đợi animation kết thúc rồi xóa hàng
-            row.addEventListener("animationend", function () {
-                row.remove(); // Xóa hàng khỏi DOM
-
-                // Kiểm tra nếu không còn hàng nào thì hiển thị emptyCartMessage
-                if (tableBody.children.length === 0) {
-                    tableWrapper.style.display = "none";
-                    totalSection.style.display = "none";
-                    emptyCartMessage.style.display = "block"; // Hiển thị thông báo giỏ hàng trống
-                }
-            });
-        });
-    });
 });
 
 
@@ -88,24 +73,91 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function updateQuantity(productId, quantity) {
+    console.log("Updating quantity:", productId, quantity); // Kiểm tra đầu vào
     $.ajax({
         type: "POST",
-        url: "UpdateCartServlet",
-        data: { userId: userId, productId: productId, quantity: quantity }, 
-        success: function(response) {
+        url: "cart",
+        data: {userId: userId, productId: productId, quantity: quantity},
+        success: function (response) {
+            console.log("Response from server:", response); // Kiểm tra phản hồi từ server
+
             let updatedTotal = response.updatedTotal;
             let productTotal = response.productTotal;
-            
+
             // Cập nhật tổng tiền của sản phẩm trên giao diện
             $(`tr[data-product-id='${productId}'] .product-total`).text(`$${productTotal}`);
 
             // Cập nhật tổng tiền của giỏ hàng
             $(".text-spacing-75").text(`$${updatedTotal}`);
         },
-        error: function() {
+        error: function () {
+            console.error("Cập nhật số lượng thất bại!");
             alert("Cập nhật số lượng thất bại. Vui lòng thử lại.");
         }
     });
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const deleteButtons = document.querySelectorAll(".deleteProbtn");
+    const tableBody = document.querySelector(".table-cart tbody");
+    const tableWrapper = document.querySelector(".table-custom-responsive");
+    const totalSection = document.querySelector(".group-xxxl");
+    const emptyCartMessage = document.querySelector("#emptyCartMessage"); // Phần tử hiển thị khi giỏ hàng trống
+    const cartBadge = document.querySelector(".cart-badge"); // Phần tử hiển thị số lượng sản phẩm trong giỏ hàng
+
+    deleteButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            const row = this.closest("tr"); // Tìm hàng cha gần nhất của nút delete
+            const productId = row.getAttribute("data-product-id"); // Lấy productId từ thuộc tính của <tr>
+            const userId = document.body.getAttribute("data-user-id"); // Giả sử userId được lưu trong body
+
+            // Gửi yêu cầu xóa đến backend
+            fetch("delete_cart", {
+                method: "POST",
+                headers: {"Content-Type": "application/x-www-form-urlencoded"},
+                body: `userId=${userId}&productId=${productId}`,
+            })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Thêm hiệu ứng trước khi xóa hàng khỏi giao diện
+                            row.classList.add("slide-out-left");
+
+                            // Đợi animation kết thúc rồi xóa hàng
+                            row.addEventListener("animationend", function () {
+                                row.remove();
+
+                                // Cập nhật lại tổng tiền của giỏ hàng
+                                document.querySelector(".text-spacing-75").textContent = `$${data.updatedTotal}`;
+
+                                // Cập nhật số lượng sản phẩm trong giỏ hàng
+                                if (cartBadge) {
+                                    cartBadge.textContent = data.updatedProductCount; // Cập nhật lại số lượng sản phẩm trong giỏ hàng
+                                    if (data.updatedProductCount === 0) {
+                                        cartBadge.style.display = "none"; // Nếu không còn sản phẩm, ẩn badge
+                                    }
+                                }
+
+                                // Kiểm tra nếu giỏ hàng trống
+                                if (tableBody.children.length === 0) {
+                                    tableWrapper.style.display = "none";
+                                    totalSection.style.display = "none";
+                                    emptyCartMessage.style.display = "block";
+                                }
+                            });
+                        } else {
+                            alert("Failed to remove the product. Please try again.");
+                        }
+                    })
+                    .catch(() => {
+                        alert("An error occurred. Please try again.");
+                    });
+        });
+    });
+});
+
+
+
 
 

@@ -50,23 +50,23 @@ public class CartController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int userId = Integer.parseInt(request.getParameter("userId"));
+//        int userId = Integer.parseInt(request.getParameter("userId"));
         HttpSession session = request.getSession();
-//        User userLogin = (User) session.getAttribute("userLogin");
+        User userLogin = (User) session.getAttribute("userLogin");
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-//        // Gọi DAO để cập nhật số lượng sản phẩm trong giỏ hàng
-//        daoCart.updateProductQuantity(userId, productId, quantity);
-//
-//        // Tính toán lại tổng tiền
-//        double productTotal = cartDAO.getProductTotal(userId, productId);
-//        double updatedTotal = cartDAO.getCartTotal(userId);
-//
-//        // Trả JSON về client
-//        response.setContentType("application/json");
-//        response.setCharacterEncoding("UTF-8");
-//        response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
+        // Gọi DAO để cập nhật số lượng sản phẩm trong giỏ hàng
+        daoCart.updateQuantity(userLogin.getNormalUserId(), productId, quantity);
+
+        // Tính toán lại tổng tiền
+        float productTotal = daoCart.getProductTotal(userLogin.getNormalUserId(), productId);
+        float updatedTotal = daoCart.getCartTotal(userLogin.getNormalUserId());
+
+        // Trả JSON về client
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
     }
 
     @Override

@@ -132,7 +132,7 @@
                                             </li>
 
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="cart">
+                                                <a class="rd-nav-link" href="cart#cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">

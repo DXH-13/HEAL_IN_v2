@@ -420,8 +420,8 @@
                                     </c:choose>
 
                                     <div class="product-button">
-                                        <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
-                                                cart</a></div>
+<!--                                        <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
+                                                cart</a></div>-->
                                         <div class="button-wrap">
                                             <a class="button button-xs button-secondary button-winona" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=${product.id}#product">View Product</a>
                                         </div>

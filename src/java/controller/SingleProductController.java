@@ -58,7 +58,7 @@ public class SingleProductController extends HttpServlet {
         request.setAttribute("product", product);
         request.setAttribute("images", images);
         
-        request.getRequestDispatcher("single-product.jsp").forward(request, response);
+        request.getRequestDispatcher("single-product.jsp#product").forward(request, response);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class SingleProductController extends HttpServlet {
         }
         request.setAttribute("product", product);
         request.setAttribute("images", images);
-        request.getRequestDispatcher("single-product.jsp").forward(request, response);
+        request.getRequestDispatcher("single-product.jsp#product").forward(request, response);
     }
 
     @Override
