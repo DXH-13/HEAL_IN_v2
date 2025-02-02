@@ -64,9 +64,11 @@ public class SingleProductController extends HttpServlet {
         DAOCart daoCart = new DAOCart();
         Product product = daoProduct.findByID(productId);
         Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(productId);
-        boolean orderAdded = daoCart.insertOrder(userLogin.getNormalUserId(), productId, quantity);
+        boolean orderAdded = daoCart.insertCart(userLogin.getNormalUserId(), productId, quantity);
 
         if (orderAdded) {
+            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+            request.setAttribute("productInCart", productInCart);
             //thong bao ok
             System.out.println("add thanh cong");
         } else {
@@ -77,6 +79,7 @@ public class SingleProductController extends HttpServlet {
         request.setAttribute("images", images);
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
+   
 
     @Override
     public String getServletInfo() {

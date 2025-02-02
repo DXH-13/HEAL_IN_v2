@@ -85,7 +85,7 @@ public class LoginController extends HttpServlet {
                     HttpSession session = request.getSession();
                     int productInCart = daoCart.getProductCountByUserId(user.getNormalUserId());
                     session.setAttribute("userLogin", user);
-                    session.setAttribute("productInCart", productInCart);
+                    request.setAttribute("productInCart", productInCart);
                     response.sendRedirect("landing?id=" + user.getNormalUserId());
                 } else {
                     HttpSession session = request.getSession();
@@ -126,7 +126,7 @@ public class LoginController extends HttpServlet {
                     response.sendRedirect("admin");
                 } else {
                     int productInCart = daoCart.getProductCountByUserId(user.getNormalUserId());
-                    session.setAttribute("productInCart", productInCart);
+                    request.setAttribute("productInCart", productInCart);
                     response.sendRedirect("landing?id=" + user2.getNormalUserId());
                 }
             }

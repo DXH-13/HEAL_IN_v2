@@ -142,16 +142,16 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            
+
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
-                                                <span class="fa-shopping-basket" style="font-size: 30px"></span>
-                                                <% if (user==null) { %>
-                                                <% } else { %>
-                                                <span class="cart-badge">${sessionScope.productInCart}</span>
-                                                <% } %>
-                                              </a>
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <% if (user==null) { %>
+                                                    <% } else { %>
+                                                    <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                    <% } %>
+                                                </a>
                                             </li>
-                                            
+
                                             <% if (user==null) { %>
                                             <li class="rd-nav-item loginbtn">
                                                 <a class="rd-nav-link" href="log_in">Login</a>
@@ -260,12 +260,9 @@
                                         </td>
                                         <td>${cart.productPrice * cart.quantity}</td>
                                         <td>
-                                            <button class="deleteProbtn">
-                                                <svg viewBox="0 0 15 17.5" height="17.5" width="15"
-                                                     xmlns="http://www.w3.org/2000/svg" class="iconDelete">
-                                                <path transform="translate(-2.5 -1.25)"
-                                                      d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
-                                                      id="Fill"></path>
+                                            <button class="deleteProbtn" onclick="deleteProduct(${sessionScope.userLogin}, ${cart.productId})">
+                                                <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="iconDelete">
+                                                <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
                                                 </svg>
                                             </button>
                                         </td>
@@ -412,23 +409,23 @@
         <!-- Javascript-->
         <script src="js/core.min.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/cart-page.js   "></script>
+        <script src="js/cart-page.js"></script>
         <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
                                                      width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    'gtm.start': new Date().getTime(),
-                    event: 'gtm.js'
-                });
-                var f = d.getElementsByTagName(s)[0],
-                        j = d.createElement(s),
-                        dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
+                                                (function (w, d, s, l, i) {
+                                                    w[l] = w[l] || [];
+                                                    w[l].push({
+                                                        'gtm.start': new Date().getTime(),
+                                                        event: 'gtm.js'
+                                                    });
+                                                    var f = d.getElementsByTagName(s)[0],
+                                                            j = d.createElement(s),
+                                                            dl = l != 'dataLayer' ? '&l=' + l : '';
+                                                    j.async = true;
+                                                    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                                                    f.parentNode.insertBefore(j, f);
+                                                })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
         </script>
         <!-- End Google Tag Manager -->
     </body>

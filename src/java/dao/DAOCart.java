@@ -63,7 +63,7 @@ public class DAOCart {
         return getAll(sql);
     }
 
-    public boolean insertOrder(int userId, int productId, int quantity) {
+    public boolean insertCart(int userId, int productId, int quantity) {
         String sql = "INSERT INTO cart (UserId, ProductId, Quantity, CreatedAt, CreatedBy, isActive) "
                 + "VALUES (?, ?, ?, CURRENT_TIMESTAMP, 'Admin', 1) "
                 + "ON DUPLICATE KEY UPDATE Quantity = Quantity + ?;";
@@ -140,10 +140,25 @@ public class DAOCart {
         return productCount;
     }
 
+    public boolean deleteCart(int userId, int productId) {
+        String sql = "DELETE FROM cart\n"
+                + "WHERE UserId = ? AND ProductId = ?;";
+
+        try ( PreparedStatement pstmt = db.getConnection().prepareStatement(sql)) {
+            pstmt.setInt(1, userId);
+            pstmt.setInt(2, productId);
+
+            int result = pstmt.executeUpdate();
+            return result > 0;
+        } catch (SQLException e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         DAOCart dao = new DAOCart();
-        int a = dao.getProductCountByUserId(1);
-        System.out.println(a);
+        dao.deleteCart(1, 2);
 
     }
 }

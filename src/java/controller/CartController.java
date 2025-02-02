@@ -1,4 +1,3 @@
-
 package controller;
 
 import dao.DAOCart;
@@ -15,7 +14,6 @@ import model.User;
 
 public class CartController extends HttpServlet {
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -24,7 +22,7 @@ public class CartController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CartController</title>");            
+            out.println("<title>Servlet CartController</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet CartController at " + request.getContextPath() + "</h1>");
@@ -32,7 +30,6 @@ public class CartController extends HttpServlet {
             out.println("</html>");
         }
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -44,12 +41,24 @@ public class CartController extends HttpServlet {
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("cart-page.jsp").forward(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
+        int userId = Integer.parseInt(request.getParameter("userId"));
+        int productId = Integer.parseInt(request.getParameter("productId"));
 
+        DAOCart daoCart = new DAOCart();
+        boolean isDeleted = daoCart.deleteCart(userId, productId);
+
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
+        if (isDeleted) {
+            response.getWriter().write("Item deleted");
+        } else {
+            response.getWriter().write("Failed to delete item");
+        }
+    }
 
     @Override
     public String getServletInfo() {

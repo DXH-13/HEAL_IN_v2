@@ -136,7 +136,7 @@
                                                 <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                 <% if (user==null) { %>
                                                 <% } else { %>
-                                                <span class="cart-badge">${sessionScope.productInCart}</span>
+                                                <span class="cart-badge">${productInCart}</span>
                                                 <% } %>
                                               </a>
                                             </li>
