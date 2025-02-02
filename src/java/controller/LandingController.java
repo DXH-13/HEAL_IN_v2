@@ -1,5 +1,6 @@
 package controller;
 
+import dao.DAOCart;
 import dao.DAOProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,8 +9,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.Vector;
 import model.Product;
+import model.User;
 
 /**
  *
@@ -38,7 +41,14 @@ public class LandingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        if (userLogin != null) {
+            DAOCart daoCart = new DAOCart();
+            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+            request.setAttribute("productInCart", productInCart);
+        }
         DAOProduct daoProduct = new DAOProduct();
         Vector<Product> product = daoProduct.getAllProduct();
         request.setAttribute("productData", product);

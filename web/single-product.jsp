@@ -23,7 +23,6 @@
     </head>
 
     <body>
-        <% User user=(User) session.getAttribute("userLogin"); %>
         <div class="preloader">
             <div class="wrapper-triangle">
                 <div class="pen">
@@ -77,7 +76,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="landing?id=${sessionScope.userLogin.normalUserId}"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing"><img
                                                 class="brand-logo-dark" src="https://placehold.co/198x66" alt=""
                                                 width="189" height="66" /></a></div>
                                 </div>
@@ -111,7 +110,7 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
 
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="views/about-us.html">About us</a>
                                             </li>
@@ -121,45 +120,52 @@
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="views/typography.html">Game</a>
                                             </li>
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}#shop">Shop</a>
+                                                <a class="rd-nav-link" href="landing#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
                                                     <li class="rd-dropdown-item active">
-                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
                                                     </li>
                                                     <li class="rd-dropdown-item">
-                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=2#product">Tri Kỷ</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
-                                                <span class="fa-shopping-basket" style="font-size: 30px"></span>
-                                                <% if (user==null) { %>
-                                                <% } else { %>
-                                                <span class="cart-badge">${productInCart}</span>
-                                                <% } %>
-                                              </a>
+
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="cart">
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <c:choose>
+                                                        <c:when test="${sessionScope.userLogin == null}">
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <c:if test="${productInCart > 0}">
+                                                                <span class="cart-badge">${productInCart}</span>
+                                                            </c:if>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </a>
                                             </li>
-                                            
-                                            <% if (user==null) { %>
-                                            <li class="rd-nav-item loginbtn">
-                                                <a class="rd-nav-link" href="log_in">Login</a>
-                                            </li>
-                                            <% } else { %>
-                                            <li class="rd-nav-item active loginbtn"><a
-                                                    class="rd-nav-link"
-                                                    href="shop.html">Avatar</a>
-                                                <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="/web/views/single-product.html">Profile
-                                                            user</a></li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="log_out">Log out</a></li>
-                                                </ul>
-                                            </li>
-                                            <% } %>
+
+                                            <c:choose>
+                                                <c:when test="${sessionScope.userLogin == null}">
+                                                    <li class="rd-nav-item loginbtn">
+                                                        <a class="rd-nav-link" href="log_in">Login</a>
+                                                    </li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="rd-nav-item active loginbtn">
+                                                        <a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                        <ul class="rd-menu rd-navbar-dropdown">
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="profile_user">Profile user</a>
+                                                            </li>
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="log_out">Log out</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </ul>
                                         </li>
                                         </ul>
@@ -171,20 +177,23 @@
 
                                     <!-------------------------------------------------------------->
 
-                                    <% if (user==null) { %>
-                                    <a href="log_in" class="loginbtn2">Login</a>
-                                    <% } else { %>
-                                    <div class="dropdown">
-                                        <button class="dropbtn">
-                                            <img src="https://placehold.co/50x50" alt="Avatar"
-                                                 class="avatar">
-                                        </button>
-                                        <div class="dropdown-content">
-                                            <a href="profile_user">Profile</a>
-                                            <a href="log_out">Logout</a>
-                                        </div>
-                                    </div>
-                                    <% } %>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.userLogin == null}">
+                                            <a href="log_in" class="loginbtn2">Login</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">
+                                                    <img src="https://placehold.co/50x50" alt="Avatar"
+                                                         class="avatar">
+                                                </button>
+                                                <div class="dropdown-content">
+                                                    <a href="profile_user">Profile</a>
+                                                    <a href="log_out">Logout</a>
+                                                </div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
 
 
                                     <!-------------------------------------------------------------->

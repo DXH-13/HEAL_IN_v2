@@ -3,7 +3,6 @@ package controller;
 import dao.DAOCart;
 import dao.DAOUser;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -83,10 +82,8 @@ public class LoginController extends HttpServlet {
             } else {
                 if ("GoogleUser".equals(userF.getAccountType())) {
                     HttpSession session = request.getSession();
-                    int productInCart = daoCart.getProductCountByUserId(user.getNormalUserId());
                     session.setAttribute("userLogin", user);
-                    request.setAttribute("productInCart", productInCart);
-                    response.sendRedirect("landing?id=" + user.getNormalUserId());
+                    response.sendRedirect("landing");
                 } else {
                     HttpSession session = request.getSession();
                     session.setAttribute("email", userEmail);
@@ -125,9 +122,7 @@ public class LoginController extends HttpServlet {
                 if ("admin".equals(user2.getAccountType())) {
                     response.sendRedirect("admin");
                 } else {
-                    int productInCart = daoCart.getProductCountByUserId(user.getNormalUserId());
-                    request.setAttribute("productInCart", productInCart);
-                    response.sendRedirect("landing?id=" + user2.getNormalUserId());
+                    response.sendRedirect("landing");
                 }
             }
         }

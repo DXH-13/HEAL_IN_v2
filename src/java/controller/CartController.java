@@ -14,6 +14,8 @@ import model.User;
 
 public class CartController extends HttpServlet {
 
+    DAOCart daoCart = new DAOCart();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -36,7 +38,10 @@ public class CartController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
-        DAOCart daoCart = new DAOCart();
+        if (userLogin != null) {
+            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+            request.setAttribute("productInCart", productInCart);
+        }
         Vector<CartXProduct> cart = daoCart.getAllCartByUserId(userLogin.getNormalUserId());
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("cart-page.jsp").forward(request, response);
@@ -46,18 +51,22 @@ public class CartController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int userId = Integer.parseInt(request.getParameter("userId"));
+        HttpSession session = request.getSession();
+//        User userLogin = (User) session.getAttribute("userLogin");
         int productId = Integer.parseInt(request.getParameter("productId"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-        DAOCart daoCart = new DAOCart();
-        boolean isDeleted = daoCart.deleteCart(userId, productId);
-
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("UTF-8");
-        if (isDeleted) {
-            response.getWriter().write("Item deleted");
-        } else {
-            response.getWriter().write("Failed to delete item");
-        }
+//        // Gọi DAO để cập nhật số lượng sản phẩm trong giỏ hàng
+//        daoCart.updateProductQuantity(userId, productId, quantity);
+//
+//        // Tính toán lại tổng tiền
+//        double productTotal = cartDAO.getProductTotal(userId, productId);
+//        double updatedTotal = cartDAO.getCartTotal(userId);
+//
+//        // Trả JSON về client
+//        response.setContentType("application/json");
+//        response.setCharacterEncoding("UTF-8");
+//        response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
     }
 
     @Override

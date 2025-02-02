@@ -80,7 +80,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="landing?id=${sessionScope.userLogin.normalUserId}"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing"><img
                                                 class="brand-logo-dark" src="https://placehold.co/198x66"
                                                 alt="" width="198" height="66" /></a>
                                     </div>
@@ -118,7 +118,7 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link active" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                                <a class="rd-nav-link active" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/about-us.html">About us</a>
@@ -133,23 +133,21 @@
                                                 <a class="rd-nav-link" href="#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
                                                     <li class="rd-dropdown-item ">
-                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=1#product">Đoàn Viên</a>
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
                                                     </li>
                                                     <li class="rd-dropdown-item">
-                                                        <a class="rd-dropdown-link" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=2#product">Tri Kỷ</a>
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=2#product">Tri Kỷ</a>
                                                     </li>
                                                 </ul>
                                             </li>
 
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart?id=${sessionScope.userLogin.normalUserId}">
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
-
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">
-                                                            <!-- Người dùng chưa đăng nhập, không hiển thị gì -->
                                                         </c:when>
                                                         <c:otherwise>
-                                                            <!-- Người dùng đã đăng nhập -->
                                                             <c:if test="${productInCart > 0}">
                                                                 <span class="cart-badge">${productInCart}</span>
                                                             </c:if>

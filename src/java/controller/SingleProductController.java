@@ -24,6 +24,7 @@ public class SingleProductController extends HttpServlet {
 
     DAOProduct daoProduct = new DAOProduct();
     DAOProductImages daoProductImages = new DAOProductImages();
+    DAOCart daoCart = new DAOCart();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -45,12 +46,18 @@ public class SingleProductController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        if(userLogin!=null){
+            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+            request.setAttribute("productInCart", productInCart);
+        }
         int idProduct = Integer.parseInt(request.getParameter("idProduct"));
         Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(idProduct);
         Product product = daoProduct.findByID(idProduct);
         request.setAttribute("product", product);
         request.setAttribute("images", images);
+        
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
 
@@ -61,6 +68,7 @@ public class SingleProductController extends HttpServlet {
         User userLogin = (User) session.getAttribute("userLogin");
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
+        
         DAOCart daoCart = new DAOCart();
         Product product = daoProduct.findByID(productId);
         Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(productId);
@@ -79,7 +87,6 @@ public class SingleProductController extends HttpServlet {
         request.setAttribute("images", images);
         request.getRequestDispatcher("single-product.jsp").forward(request, response);
     }
-   
 
     @Override
     public String getServletInfo() {
