@@ -1,5 +1,3 @@
-<%-- Document : profile-user Created on : Jan 13, 2025, 9:05:16 AM Author : dangx --%>
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -139,10 +137,7 @@
                                                 <a class="rd-nav-link" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="about-us.html">About us</a>
-                                            </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
+                                                <a class="rd-nav-link" href="about_us">About us</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="/web/views/typography.html">Game</a>

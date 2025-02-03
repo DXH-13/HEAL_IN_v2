@@ -1,9 +1,3 @@
-<%-- 
-    Document   : cart-page
-    Created on : Jan 29, 2025, 7:18:26 PM
-    Author     : dangx
---%>
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,7 +26,6 @@
     </head>
 
     <body>
-        <% User user=(User) session.getAttribute("userLogin"); %>
         <div class="preloader">
             <div class="wrapper-triangle">
                 <div class="pen">
@@ -123,10 +116,7 @@
                                                 <a class="rd-nav-link" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/about-us.html">About us</a>
-                                            </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
+                                                <a class="rd-nav-link" href="about_us">About us</a>
                                             </li>
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="views/typography.html">Game</a>
@@ -299,7 +289,7 @@
                     </div>
 
                     <div id="emptyCartMessage" style="display: none; text-align: center;">
-                        <img src="assets/images/empty_cart.png" width="400" height="400" alt="empty_cart">
+                        <img src="assets/images/empty_cart.png" width="300" height="300" alt="empty_cart">
                         <h3 style="font-size: 20px; margin-bottom: 50px;">Your shopping cart is empty</h3>
                         <a href="landing#shop" class="goShopbtn"> Go Shopping Now </a>
                     </div>

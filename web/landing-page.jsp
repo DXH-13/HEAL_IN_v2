@@ -1,5 +1,3 @@
-<%-- Document : landing-page Created on : Dec 12, 2024, 7:45:56 AM Author : dangx --%>
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -121,11 +119,8 @@
                                                 <a class="rd-nav-link active" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/about-us.html">About us</a>
-                                            </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
-                                            </li>
+                                                <a class="rd-nav-link" href="about_us">About us</a>
+                                            </li>                                       
                                             <li class="rd-nav-item">
                                                 <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
                                             </li>
@@ -142,7 +137,7 @@
                                             </li>
 
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="cart">
+                                                <a class="rd-nav-link" href="cart#cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">

@@ -48,7 +48,7 @@ public class SingleProductController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
-        if(userLogin!=null){
+        if (userLogin != null) {
             int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
             request.setAttribute("productInCart", productInCart);
         }
@@ -57,35 +57,43 @@ public class SingleProductController extends HttpServlet {
         Product product = daoProduct.findByID(idProduct);
         request.setAttribute("product", product);
         request.setAttribute("images", images);
-        
+
         request.getRequestDispatcher("single-product.jsp#product").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User userLogin = (User) session.getAttribute("userLogin");
-        int productId = Integer.parseInt(request.getParameter("productId"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        
-        DAOCart daoCart = new DAOCart();
-        Product product = daoProduct.findByID(productId);
-        Vector<ProductImages> images = daoProductImages.getAllProductImagesByProductId(productId);
-        boolean orderAdded = daoCart.insertCart(userLogin.getNormalUserId(), productId, quantity);
 
-        if (orderAdded) {
-            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
-            request.setAttribute("productInCart", productInCart);
-            //thong bao ok
-            System.out.println("add thanh cong");
-        } else {
-            //thong bao loi
-            System.out.println("khong add duoc");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+
+        try {
+            HttpSession session = request.getSession();
+            User userLogin = (User) session.getAttribute("userLogin");
+
+            if (userLogin == null) {
+                out.print("{\"success\": false, \"message\": \"Người dùng chưa đăng nhập!\"}");
+                return;
+            }
+
+            int productId = Integer.parseInt(request.getParameter("productId"));
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+            DAOCart daoCart = new DAOCart();
+            boolean orderAdded = daoCart.insertCart(userLogin.getNormalUserId(), productId, quantity);
+
+            if (orderAdded) {
+                int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+                out.print("{\"success\": true, \"productInCart\": " + productInCart + "}");
+            } else {
+                out.print("{\"success\": false, \"message\": \"Không thể thêm sản phẩm vào giỏ hàng!\"}");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            out.print("{\"success\": false, \"message\": \"Lỗi hệ thống!\"}");
         }
-        request.setAttribute("product", product);
-        request.setAttribute("images", images);
-        request.getRequestDispatcher("single-product.jsp#product").forward(request, response);
     }
 
     @Override

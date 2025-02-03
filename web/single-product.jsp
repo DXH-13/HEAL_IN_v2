@@ -1,4 +1,3 @@
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -19,6 +18,7 @@
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/single-product.css">
 
     </head>
 
@@ -112,10 +112,7 @@
 
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="landing">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="views/about-us.html">About us</a>
-                                            </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="about_us">About us</a>
                                             </li>
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="views/typography.html">Game</a>
                                             </li>
@@ -139,7 +136,7 @@
                                                         </c:when>
                                                         <c:otherwise>
                                                             <c:if test="${productInCart > 0}">
-                                                                <span class="cart-badge">${productInCart}</span>
+                                                                <span class="cart-badge" id="cartCount">${productInCart}</span>
                                                             </c:if>
                                                         </c:otherwise>
                                                     </c:choose>
@@ -254,8 +251,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <form action="single_product" method="post">
-                                <input type="hidden" name="productId" value="${product.id}">
+                            <form id="addToCartForm">
+                                <input type="hidden" name="productId" id="productId" value="${product.id}">
                                 <div class="single-product">
                                     <h4 class="text-transform-none text-spacing-50">${product.name}</h4>
                                     <div class="group-md group-middle">
@@ -273,7 +270,7 @@
                                     </ul>
                                     <div class="group-lg group-middle">
                                         <div class="product-stepper">
-                                            <input class="form-input" type="number" name="quantity" data-zeros="true" value="1" min="1"
+                                            <input class="form-input" type="number" id="quantity" name="quantity" data-zeros="true" value="1" min="1"
                                                    max="50">
                                         </div>
                                         <div>
@@ -293,6 +290,15 @@
                                     </div>
                                 </div>
                             </form>
+
+                            <!--------------------Pop up thong bao--------------------->
+                            <div id="cartPopup" class="cart-popup">
+                                <span class="popup-icon">&#10003;</span>
+                                <p id="cartPopupMessage"></p>
+                            </div>
+                            <!----------------------------------------->
+
+
                         </div>
                     </div>
                     <!-- Bootstrap tabs-->
@@ -610,6 +616,8 @@
                 </div>
             </footer>
         </div>
+
+
         <!-- Global Mailform Output-->
         <div class="snackbars" id="form-output-global"></div>
         <!-- Javascript-->
