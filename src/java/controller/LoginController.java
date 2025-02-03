@@ -1,8 +1,8 @@
 package controller;
 
+import dao.DAOCart;
 import dao.DAOUser;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -24,7 +24,7 @@ import utils.SHA256;
 public class LoginController extends HttpServlet {
 
     private DAOUser daoUser = new DAOUser();
-
+    DAOCart daoCart = new DAOCart();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -83,7 +83,7 @@ public class LoginController extends HttpServlet {
                 if ("GoogleUser".equals(userF.getAccountType())) {
                     HttpSession session = request.getSession();
                     session.setAttribute("userLogin", user);
-                    response.sendRedirect("landing?id=" + user.getNormalUserId());
+                    response.sendRedirect("landing");
                 } else {
                     HttpSession session = request.getSession();
                     session.setAttribute("email", userEmail);
@@ -122,7 +122,7 @@ public class LoginController extends HttpServlet {
                 if ("admin".equals(user2.getAccountType())) {
                     response.sendRedirect("admin");
                 } else {
-                    response.sendRedirect("landing?id=" + user2.getNormalUserId());
+                    response.sendRedirect("landing");
                 }
             }
         }
@@ -154,109 +154,3 @@ public class LoginController extends HttpServlet {
     }
 }
 
-//public class LoginController extends HttpServlet {
-//
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-//        try ( PrintWriter out = response.getWriter()) {
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet LoginController</title>");
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-//    }
-//
-//    @Override
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        request.getRequestDispatcher("login.jsp").forward(request, response);
-//    }
-//
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//
-//        String loginType = request.getParameter("loginType");
-//        System.out.println(loginType);
-//
-//        DAOUser daoUser = new DAOUser();
-//
-//        if ("google".equals(loginType)) {
-//            //dang nhap bang google
-//            String code = request.getParameter("code");
-//            GoogleLogin gg = new GoogleLogin();
-//            String accessToken = gg.getToken(code);
-//            User user = gg.getUserInfo(accessToken);
-//            System.out.println(user);
-//
-//            String userEmail = user.getEmail();
-//            String userFirstName = user.getFirstName();
-//            String userGivenName = user.getGivenName();
-//            String userFamilyName = user.getFamilyName();
-//            String userImage = user.getImage();
-//            String userGoogleId = user.getGoogleId();
-//            String userName = user.getName();
-//            int isUserGmailVerified = user.isVerifiedEmail() ? 1 : 0;
-//
-//            daoUser.insertGmailUser(userEmail, userFirstName, userGivenName,
-//                    userFamilyName, userImage, userGoogleId, userName, isUserGmailVerified);
-//        } else {
-//            //dang nhap thong thuong
-//            HttpSession session = request.getSession();
-//            String email = request.getParameter("email");
-//            String pass = request.getParameter("password");
-//            String rem = request.getParameter("remember_me");
-//            String encryptedPassword = SHA256.hashPassword(pass);
-//            User user = daoUser.checkExistAccount(email, encryptedPassword);
-//            if (user == null) {
-//                request.setAttribute("errorWrongInforLogin", "Incorrect email or password.");
-//                request.getRequestDispatcher("login.jsp").forward(request, response);
-//            } else {
-//                User user2 = daoUser.checkActiveAccount(email, encryptedPassword);
-//                if (user2 == null) {
-//                    request.setAttribute("errorWrongInforLogin", "Your account has been locked. Please contact support for assistance.");
-//                    request.getRequestDispatcher("login.jsp").forward(request, response);
-//                } else {
-//                    Cookie cEmail = new Cookie("cemail", email);
-//                    Cookie cPass = new Cookie("cpass", pass);
-//                    Cookie cRem = new Cookie("crem", rem);
-//
-//                    if (rem != null) {
-//                        cEmail.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
-//                        cPass.setMaxAge(60 * 60 * 24 * 7); // 7 ngày
-//                    } else {
-//                        cEmail.setMaxAge(0);
-//                        cPass.setMaxAge(0);
-//                        cRem.setMaxAge(0);
-//                    }
-//                    response.addCookie(cEmail);
-//                    response.addCookie(cPass);
-//                    response.addCookie(cRem);
-//
-//                    // Kiểm tra idRole của người dùng
-//                    if ("admin".equals(user.getAccountType())) {
-//                        session.setAttribute("userLogin", user);
-//                        response.sendRedirect("admin");
-//                    } else {
-//                        session.setAttribute("userLogin", user);
-//                        response.sendRedirect("landing?id=" + user.getId());
-//                    }
-//                }
-//            }
-//        }
-//
-//    }
-//
-//    @Override
-//    public String getServletInfo() {
-//        return "Short description";
-//    }// </editor-fold>
-//
-//}

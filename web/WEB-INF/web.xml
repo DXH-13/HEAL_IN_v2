@@ -20,6 +20,22 @@
         <servlet-name>ProfileUserController</servlet-name>
         <servlet-class>controller.ProfileUserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SingleProductController</servlet-name>
+        <servlet-class>controller.SingleProductController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartController</servlet-name>
+        <servlet-class>controller.CartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCartController</servlet-name>
+        <servlet-class>controller.DeleteCartController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AboutUsController</servlet-name>
+        <servlet-class>controller.AboutUsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -55,6 +71,22 @@
     <servlet-mapping>
         <servlet-name>ProfileUserController</servlet-name>
         <url-pattern>/profile_user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SingleProductController</servlet-name>
+        <url-pattern>/single_product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartController</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCartController</servlet-name>
+        <url-pattern>/delete_cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AboutUsController</servlet-name>
+        <url-pattern>/about_us</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

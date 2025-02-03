@@ -1,0 +1,28 @@
+.cart-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.658);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        display: none;
+        z-index: 1000;
+        text-align: center; /* Căn giữa văn bản */
+        min-width: 200px;
+    }
+
+    /* Icon dấu tick */
+    .popup-icon {
+        color: white;
+        font-size: 24px;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .cart-popup p {
+        display: inline;
+        vertical-align: middle;
+    }

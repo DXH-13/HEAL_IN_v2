@@ -1,25 +1,26 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package controller;
 
 import dao.DAOCart;
-import dao.DAOProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.util.Vector;
-import model.Product;
 import model.User;
 
 /**
  *
  * @author dangx
  */
-@WebServlet(name = "LandingController", urlPatterns = {"/landing"})
-public class LandingController extends HttpServlet {
+public class AboutUsController extends HttpServlet {
+
+    DAOCart daoCart = new DAOCart();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,10 +30,10 @@ public class LandingController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet landingController</title>");
+            out.println("<title>Servlet AboutUsController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet landingController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AboutUsController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -41,18 +42,13 @@ public class LandingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
-        if (userLogin != null) {
-            DAOCart daoCart = new DAOCart();
+        if(userLogin!=null){
             int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
             request.setAttribute("productInCart", productInCart);
         }
-        DAOProduct daoProduct = new DAOProduct();
-        Vector<Product> product = daoProduct.getAllProduct();
-        request.setAttribute("productData", product);
-        request.getRequestDispatcher("landing-page.jsp").forward(request, response);
+        request.getRequestDispatcher("about-us.jsp").forward(request, response);
     }
 
     @Override
