@@ -49,7 +49,9 @@ CREATE TABLE token_forget_password (
 CREATE TABLE product (
     Id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(255) NOT NULL,
+    RepresentativeImage VARCHAR(500),
 	Description VARCHAR(500),
+    AdditionalInfor TEXT,
     Price VARCHAR(50) NOT NULL,
     Quantity INT NOT NULL,
     CreatedAt VARCHAR(50) NOT NULL,
@@ -59,6 +61,8 @@ CREATE TABLE product (
     DeactivatedBy VARCHAR(50),
     isActive BIT DEFAULT 1
 );
+
+
 
 CREATE TABLE productimages (
     Id INT AUTO_INCREMENT PRIMARY KEY,
@@ -75,11 +79,10 @@ CREATE TABLE productimages (
 );
 
 
-CREATE TABLE orders (
+CREATE TABLE cart (
 	Id INT AUTO_INCREMENT PRIMARY KEY,
     UserId INT NOT NULL,
     ProductId INT NOT NULL,
-    ProductImagePath VARCHAR(500),
     Quantity INT,
     Options VARCHAR(50),
 	CreatedAt VARCHAR(50) NOT NULL,
@@ -92,17 +95,14 @@ CREATE TABLE orders (
     FOREIGN KEY (ProductId) REFERENCES product(Id)
 );
 
-CREATE TABLE cart (
-	Id INT AUTO_INCREMENT PRIMARY KEY,
-	OrderId INT NOT NULL,
-    CreatedAt VARCHAR(50) NOT NULL,
-    CreatedBy VARCHAR(50),
-    UpdatedAt VARCHAR(50),
-    DeactivatedAt VARCHAR(50),
-    DeactivatedBy VARCHAR(50),
-    isActive BIT DEFAULT 1,
-    FOREIGN KEY (OrderId) REFERENCES orders(Id)
-);
+ALTER TABLE healin.orders ADD CONSTRAINT unique_user_product UNIQUE (UserId, ProductId);
+
+
+SELECT cart.*, product.Name, product.RepresentativeImage, product.Description, product.AdditionalInfor, product.Price, product.Quantity AS ProductQuantity 
+            FROM cart 
+            INNER JOIN product ON cart.ProductId = product.Id 
+            WHERE cart.UserId = 1;
+
 
 CREATE TABLE checkout (
 	Id INT AUTO_INCREMENT PRIMARY KEY,

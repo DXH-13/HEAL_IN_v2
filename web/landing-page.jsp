@@ -1,5 +1,3 @@
-<%-- Document : landing-page Created on : Dec 12, 2024, 7:45:56 AM Author : dangx --%>
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -24,7 +22,6 @@
 
     <body>
 
-        <% User user=(User) session.getAttribute("userLogin"); %>
         <div class="preloader">
             <div class="wrapper-triangle">
                 <div class="pen">
@@ -81,7 +78,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="views/home.html"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing"><img
                                                 class="brand-logo-dark" src="https://placehold.co/198x66"
                                                 alt="" width="198" height="66" /></a>
                                     </div>
@@ -119,30 +116,61 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link" href="landing?id=${sessionScope.userLogin.normalUserId}">Home</a>
+                                                <a class="rd-nav-link active" href="landing">Home</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/about-us.html">About us</a>
+                                                <a class="rd-nav-link" href="about_us">About us</a>
+                                            </li>                                       
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/typography.html">Typography</a>
-                                            </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/contacts.html">Contacts</a>
-                                            </li>
-
-                                            <% if (user==null) { %>
-                                            <li class="rd-nav-item loginbtn">
-                                                <a class="rd-nav-link" href="log_in">Login</a>
-                                            </li>
-                                            <% } else { %>
-                                            <li class="rd-nav-item active loginbtn"><a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                <a class="rd-nav-link" href="#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="profile_user">Profile user</a></li>
-                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="log_out">Log out</a></li>
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <% } %>
+
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="cart#cart">
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <c:choose>
+                                                        <c:when test="${sessionScope.userLogin == null}">
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <c:if test="${productInCart > 0}">
+                                                                <span class="cart-badge">${productInCart}</span>
+                                                            </c:if>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </a>
+                                            </li>
+
+                                            <c:choose>
+                                                <c:when test="${sessionScope.userLogin == null}">
+                                                    <li class="rd-nav-item loginbtn">
+                                                        <a class="rd-nav-link" href="log_in">Login</a>
+                                                    </li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="rd-nav-item active loginbtn">
+                                                        <a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                        <ul class="rd-menu rd-navbar-dropdown">
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="profile_user">Profile user</a>
+                                                            </li>
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="log_out">Log out</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </c:otherwise>
+                                            </c:choose>
 
                                         </ul>
 
@@ -153,21 +181,24 @@
                                      data-multitoggle-isolate="data-multitoggle-isolate">
                                     <!-------------------------------------------------------------->
 
-                                    <% if (user==null) { %>
-                                    <a href="log_in" class="loginbtn2">Login</a>
-                                    <% } else { %>
-                                    <div class="dropdown">
-                                        <button class="dropbtn">
-                                            <img src="https://placehold.co/50x50" alt="Avatar"
-                                                 class="avatar">
-                                        </button>
-                                        <div class="dropdown-content">
-                                            <a href="profile_user">Profile</a>
-                                            <a href="log_out">Logout</a>
-                                        </div>
-                                    </div>
-                                    <% } %>
 
+                                    <c:choose>
+                                        <c:when test="${sessionScope.userLogin == null}">
+                                            <a href="log_in" class="loginbtn2">Login</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">
+                                                    <img src="https://placehold.co/50x50" alt="Avatar"
+                                                         class="avatar">
+                                                </button>
+                                                <div class="dropdown-content">
+                                                    <a href="profile_user">Profile</a>
+                                                    <a href="log_out">Logout</a>
+                                                </div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
 
                                     <!-------------------------------------------------------------->
                                 </div>
@@ -249,7 +280,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-leaf"></span>
+                                            class="services-terri-icon linearicons-bubbles"></span>
                                         <h5 class="services-terri-title"><a href="#">Salads</a></h5>
                                     </div>
                                 </article>
@@ -263,7 +294,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-pizza"></span>
+                                            class="services-terri-icon linearicons-group-work"></span>
                                         <h5 class="services-terri-title"><a href="#">Pizzas</a></h5>
                                     </div>
                                 </article>
@@ -277,7 +308,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-hamburger"></span>
+                                            class="services-terri-icon linearicons-happy-grin"></span>
                                         <h5 class="services-terri-title"><a href="#">Burgers</a></h5>
                                     </div>
                                 </article>
@@ -291,7 +322,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-ice-cream"></span>
+                                            class="services-terri-icon linearicons-joystick"></span>
                                         <h5 class="services-terri-title"><a href="#">Desserts</a></h5>
                                     </div>
                                 </article>
@@ -305,7 +336,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-coffee-cup"></span>
+                                            class="services-terri-icon linearicons-heart-pulse"></span>
                                         <h5 class="services-terri-title"><a href="#">Drinks</a></h5>
                                     </div>
                                 </article>
@@ -319,7 +350,7 @@
                                                                             alt="" width="370" height="278" />
                                     </div>
                                     <div class="services-terri-caption"><span
-                                            class="services-terri-icon linearicons-steak"></span>
+                                            class="services-terri-icon linearicons-bandage"></span>
                                         <h5 class="services-terri-title"><a href="#">Seafood</a></h5>
                                     </div>
                                 </article>
@@ -354,118 +385,53 @@
             </section>
 
             <!-- Our Shop-->
-            <section class="section section-lg bg-default">
+            <section id="shop" class="section section-lg bg-default">
                 <div class="container">
-                    <h3 class="oh-desktop"><span class="d-inline-block wow slideInUp">Selected Pizzas</span>
+                    <h3 class="oh-desktop">
+                        <span class="d-inline-block wow slideInUp">Selected Pizzas</span>
                     </h3>
-                    <div class="row row-lg row-30">
-                        <div class="col-sm-6 col-lg-4 col-xl-3">
-                            <!-- Product-->
-                            <article class="product wow fadeInLeft" data-wow-delay=".15s">
-                                <div class="product-figure"><img src="https://placehold.co/161x162" alt=""
-                                                                 width="161" height="162" />
-                                </div>
-                                <div class="product-rating"><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star text-gray-13"></span>
-                                </div>
-                                <h6 class="product-title">Margherita Pizza</h6>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$24.00</div>
-                                </div>
-                                <div class="product-button">
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-primary button-winona" href="#">Add
-                                            to
-                                            cart</a></div>
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-secondary button-winona"
-                                            href="#">View
-                                            Product</a></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3">
-                            <!-- Product-->
-                            <article class="product wow fadeInLeft" data-wow-delay=".1s">
-                                <div class="product-figure"><img src="https://placehold.co/161x162" alt=""
-                                                                 width="161" height="162" />
-                                </div>
-                                <div class="product-rating"><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                                </div>
-                                <h6 class="product-title">Mushroom Pizza</h6>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$24.00</div>
-                                </div>
-                                <div class="product-button">
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-primary button-winona" href="#">Add
-                                            to
-                                            cart</a></div>
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-secondary button-winona"
-                                            href="#">View
-                                            Product</a></div>
-                                </div><span class="product-badge product-badge-new">New</span>
-                            </article>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3">
-                            <!-- Product-->
-                            <article class="product wow fadeInLeft" data-wow-delay=".05s">
-                                <div class="product-figure"><img src="https://placehold.co/161x162" alt=""
-                                                                 width="161" height="162" />
-                                </div>
-                                <div class="product-rating"><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star text-gray-13"></span>
-                                </div>
-                                <h6 class="product-title">Hawaiian Pizza</h6>
-                                <div class="product-price-wrap">
-                                    <div class="product-price">$24.00</div>
-                                </div>
-                                <div class="product-button">
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-primary button-winona" href="#">Add
-                                            to
-                                            cart</a></div>
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-secondary button-winona"
-                                            href="#">View
-                                            Product</a></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 col-xl-3">
-                            <!-- Product-->
-                            <article class="product wow fadeInLeft">
-                                <div class="product-figure"><img src="https://placehold.co/161x162" alt=""
-                                                                 width="161" height="162" />
-                                </div>
-                                <div class="product-rating"><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
-                                        class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
-                                </div>
-                                <h6 class="product-title">Pesto Pizza</h6>
-                                <div class="product-price-wrap">
-                                    <div class="product-price product-price-old">$40.00</div>
-                                    <div class="product-price">$24.00</div>
-                                </div>
-                                <div class="product-button">
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-primary button-winona" href="#">Add
-                                            to
-                                            cart</a></div>
-                                    <div class="button-wrap"><a
-                                            class="button button-xs button-secondary button-winona"
-                                            href="#">View
-                                            Product</a></div>
-                                </div><span class="product-badge product-badge-sale">Sale</span>
-                            </article>
-                        </div>
+                    <div class="row row-lg row-30 justify-content-center">
+                        <c:forEach var="product" items="${productData}" varStatus="loop">
+                            <div class="col-sm-12 col-lg-4">
+                                <article class="product wow fadeInLeft">
+                                    <div class="product-figure"><img src="${product.representativeImage}" alt="" width="210" height="210" />
+                                    </div>
+                                    <div class="product-rating"><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
+                                            class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span class="mdi mdi-star"></span>
+                                    </div>
+                                    <h6 class="product-title">${product.name}</h6>
+                                    <c:choose>
+                                        <c:when test="${product.id == 2}">
+                                            <div class="product-price-wrap">
+                                                <div class="product-price">$24.00</div>
+                                            </div>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="product-price-wrap">
+                                                <div class="product-price product-price-old">$40.00</div>
+                                                <div class="product-price">${product.price}</div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                    <div class="product-button">
+<!--                                        <div class="button-wrap"><a class="button button-xs button-primary button-winona" href="#">Add to
+                                                cart</a></div>-->
+                                        <div class="button-wrap">
+                                            <a class="button button-xs button-secondary button-winona" href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=${product.id}#product">View Product</a>
+                                        </div>
+                                    </div>
+                                    <c:choose>
+                                        <c:when test="${product.id == 2}">
+                                            <span class="product-badge product-badge-new">New</span>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <span class="product-badge product-badge-sale">Sale</span>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </article>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
             </section>

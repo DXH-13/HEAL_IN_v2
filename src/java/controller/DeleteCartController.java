@@ -1,25 +1,20 @@
 package controller;
 
 import dao.DAOCart;
-import dao.DAOProduct;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.util.Vector;
-import model.Product;
 import model.User;
 
 /**
  *
  * @author dangx
  */
-@WebServlet(name = "LandingController", urlPatterns = {"/landing"})
-public class LandingController extends HttpServlet {
+public class DeleteCartController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,10 +24,10 @@ public class LandingController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet landingController</title>");
+            out.println("<title>Servlet DeleteCartController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet landingController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteCartController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -41,24 +36,26 @@ public class LandingController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        HttpSession session = request.getSession();
-        User userLogin = (User) session.getAttribute("userLogin");
-        if (userLogin != null) {
-            DAOCart daoCart = new DAOCart();
-            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
-            request.setAttribute("productInCart", productInCart);
-        }
-        DAOProduct daoProduct = new DAOProduct();
-        Vector<Product> product = daoProduct.getAllProduct();
-        request.setAttribute("productData", product);
-        request.getRequestDispatcher("landing-page.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        DAOCart daoCart = new DAOCart();
+        boolean isDeleted = daoCart.deleteCart(userLogin.getNormalUserId(), productId);
+        float updatedTotal = daoCart.getCartTotal(userLogin.getNormalUserId());
+        int updatedProductCount  = daoCart.getProductCountByUserId(userLogin.getNormalUserId()); 
+        if (isDeleted) {
+            response.setContentType("application/json");
+            response.getWriter().write("{\"success\": true, \"updatedProductCount\": " + updatedProductCount + ", \"updatedTotal\": " + updatedTotal + "}");
+        } else {
+            response.setContentType("application/json");
+            response.getWriter().write("{\"success\": false}");
+        }
     }
 
     @Override

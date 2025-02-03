@@ -163,7 +163,7 @@ public class DAOUser {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 User user = new User(
-                        rs.getInt("ID"),
+                        rs.getInt("Id"),
                         rs.getString("Email"),
                         rs.getBoolean("VerifiedEmailGoogle"),
                         rs.getString("FirstName"),
@@ -432,7 +432,7 @@ public class DAOUser {
     public static void main(String[] args) {
         DAOUser daoUser = new DAOUser();
         int id = 1;
-        String pass = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92";
-        daoUser.updatePassword(pass, id);
+        User u = daoUser.findByID(id);
+        System.out.println(u);
     }
 }

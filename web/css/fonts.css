@@ -9,6 +9,7 @@
 * --------------------------------------------------
 */
 
+
 @font-face {
     font-family: 'FontAwesome';
     src: url("../assets/fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -2721,7 +2722,7 @@
 }
 
 .fa-shopping-basket:before {
-    content: "\f291";
+    content: "\f291" !important;
 }
 
 .fa-hashtag:before {
@@ -13883,6 +13884,7 @@
 .fl-bigmug-line-zoom60:before {
     content: "\e0db";
 }
+
 
 /*fontface*/
 

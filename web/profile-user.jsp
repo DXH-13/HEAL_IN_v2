@@ -1,5 +1,3 @@
-<%-- Document : profile-user Created on : Jan 13, 2025, 9:05:16 AM Author : dangx --%>
-<%@ page import="model.User" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -17,8 +15,8 @@
         <link rel="stylesheet" type="text/css"
               href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/fonts.css">
-        <link rel="stylesheet" href="css/style.css">
+
+
         <link rel="stylesheet" href="css/profileuser.css">
         <link rel="stylesheet"
               href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
@@ -27,7 +25,8 @@
         <link rel="stylesheet" href="css/profileuser.css">
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/style.css">
         <style>
             html,
             body {
@@ -38,7 +37,6 @@
     </head>
 
     <body>
-        <% User user=(User) session.getAttribute("userLogin"); %>
         <div class="preloader">
             <div class="wrapper-triangle">
                 <div class="pen">
@@ -93,7 +91,7 @@
                                     <button class="rd-navbar-toggle"
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
-                                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing"><img
                                                 class="brand-logo-dark"
                                                 src="https://placehold.co/198x66" alt="" width="189"
                                                 height="66" /></a>
@@ -135,50 +133,61 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="landing?id=${userLogin.normalUserId}">Home</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="about-us.html">About us</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="about_us">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="menu.html">Menu</a>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link"
-                                                                       href="#">News</a>
-                                                <!-- RD Navbar Dropdown-->
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing?id=${userLogin.normalUserId}#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="grid-blog.html">Grid blog</a></li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="masonry-blog.html">Masonry blog</a>
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
                                                     </li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="blog-post.html">Blog post</a></li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link" href="single_product?idProduct=2#product">Tri Kỷ</a>
+                                                    </li>
                                                 </ul>
                                             </li>
-                                            <% if (user==null) { %>
-                                            <li class="rd-nav-item loginbtn">
-                                                <a class="rd-nav-link" href="log_in">Login</a>
+
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart#cart">
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <c:choose>
+                                                        <c:when test="${sessionScope.userLogin == null}">
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <c:if test="${productInCart > 0}">
+                                                                <span class="cart-badge">${productInCart}</span>
+                                                            </c:if>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </a>
                                             </li>
-                                            <% } else { %>
-                                            <li class="rd-nav-item active loginbtn"><a
-                                                    class="rd-nav-link"
-                                                    href="shop.html">Avatar</a>
-                                                <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="/web/views/single-product.html">Profile
-                                                            user</a></li>
-                                                    <li class="rd-dropdown-item"><a
-                                                            class="rd-dropdown-link"
-                                                            href="log_out">Log out</a></li>
-                                                </ul>
-                                            </li>
-                                            <% } %>
+
+                                            <c:choose>
+                                                <c:when test="${sessionScope.userLogin == null}">
+                                                    <li class="rd-nav-item loginbtn">
+                                                        <a class="rd-nav-link" href="log_in">Login</a>
+                                                    </li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="rd-nav-item active loginbtn">
+                                                        <a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                        <ul class="rd-menu rd-navbar-dropdown">
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="profile_user">Profile user</a>
+                                                            </li>
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="log_out">Log out</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </c:otherwise>
+                                            </c:choose>
 
                                         </ul>
                                     </div>
@@ -189,20 +198,23 @@
                                      data-multitoggle-isolate="data-multitoggle-isolate">
                                     <!-------------------------------------------------------------->
 
-                                    <% if (user==null) { %>
-                                    <a href="log_in" class="loginbtn2">Login</a>
-                                    <% } else { %>
-                                    <div class="dropdown">
-                                        <button class="dropbtn">
-                                            <img src="https://placehold.co/50x50" alt="Avatar"
-                                                 class="avatar">
-                                        </button>
-                                        <div class="dropdown-content">
-                                            <a href="profile_user">Profile</a>
-                                            <a href="log_out">Logout</a>
-                                        </div>
-                                    </div>
-                                    <% } %>
+                                    <c:choose>
+                                        <c:when test="${sessionScope.userLogin == null}">
+                                            <a href="log_in" class="loginbtn2">Login</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">
+                                                    <img src="https://placehold.co/50x50" alt="Avatar"
+                                                         class="avatar">
+                                                </button>
+                                                <div class="dropdown-content">
+                                                    <a href="profile_user">Profile</a>
+                                                    <a href="log_out">Logout</a>
+                                                </div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
 
 
                                     <!-------------------------------------------------------------->
@@ -613,10 +625,10 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-
+    <script src="js/profileuser.js"></script>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/profileuser.js"></script>
+
     <!-- Google Tag Manager --><noscript><iframe
         src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0" width="0"
         style="display:none;visibility:hidden"></iframe></noscript>

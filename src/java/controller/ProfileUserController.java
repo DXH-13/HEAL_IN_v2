@@ -1,5 +1,6 @@
 package controller;
 
+import dao.DAOCart;
 import dao.DAOUser;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +18,7 @@ import model.User;
 public class ProfileUserController extends HttpServlet {
 
     DAOUser daoUSer = new DAOUser();
+    DAOCart daoCart = new DAOCart();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,6 +43,8 @@ public class ProfileUserController extends HttpServlet {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
         User user = daoUSer.findByID(userLogin.getNormalUserId());
+        int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+        request.setAttribute("productInCart", productInCart);
         request.setAttribute("userLogin", user);
         request.getRequestDispatcher("profile-user.jsp").forward(request, response);
     }
@@ -50,8 +54,10 @@ public class ProfileUserController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
+        int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+        request.setAttribute("productInCart", productInCart);
         String action = request.getParameter("action");
-        System.out.println("action: "+action);
+        System.out.println("action: " + action);
         if ("updateProfile".equals(action)) {
 
             String username = request.getParameter("username");
