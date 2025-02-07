@@ -58,9 +58,36 @@ public class DAOCart {
         return vector;
     }
 
-    public Vector<Cart> getAllCart(int userId) {
-        String sql = "SELECT * FROM HEALIN.CART WHERE UserId = " + userId + " AND isActive = 1 ";
+    public Vector<Cart> getAllCart(int cartId) {
+        String sql = "SELECT * FROM HEALIN.CART WHERE isActive = 1 ";
         return getAll(sql);
+    }
+
+    public Cart findByID(String id) {
+        String sql = "SELECT * FROM HEALIN.CART WHERE Id = ?";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Cart cart = new Cart(
+                        rs.getInt("Id"),
+                        rs.getInt("UserId"),
+                        rs.getInt("ProductId"),
+                        rs.getInt("Quantity"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return cart;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
     }
 
     public boolean insertCart(int userId, int productId, int quantity) {
@@ -171,6 +198,20 @@ public class DAOCart {
         }
     }
 
+//    public void updateIsBuy(int userId, int productId, int quantity) {
+//        String sql = "UPDATE cart\n"
+//                + "SET Quantity = ?\n"
+//                + "WHERE UserId = ? AND ProductId= ?;";
+//        try {
+//            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+//            pstmt.setInt(1, quantity);
+//            pstmt.setInt(2, userId);
+//            pstmt.setInt(3, productId);
+//            pstmt.executeUpdate();
+//        } catch (SQLException e) {
+//            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+//        }
+//    }
     public float getProductTotal(int userId, int productId) {
         String sql = "SELECT SUM(p.Price * c.Quantity) AS TotalPrice\n"
                 + "FROM cart c\n"
@@ -216,8 +257,11 @@ public class DAOCart {
 
     public static void main(String[] args) {
         DAOCart dao = new DAOCart();
-        float a = dao.getCartTotal(1);
-        System.out.println(a);
-
+//        Vector<CartXProduct> cart = dao.getAllCartByUserId(1);
+//        for (CartXProduct cartXProduct : cart) {
+//            System.out.println(cartXProduct);
+//        }
+        Cart cart = dao.findByID("51");
+        System.out.println(cart);
     }
 }

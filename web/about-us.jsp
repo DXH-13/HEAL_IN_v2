@@ -79,7 +79,7 @@
                                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
                                     <div class="rd-navbar-brand"><a class="brand" href="landing"><img class="brand-logo-dark"
-                                                                                                      src="assets/images/logo-198x66.png" alt="" width="198" height="66" /></a></div>
+                                                                                                      src="https://placehold.co/198x66" alt="" width="198" height="66" /></a></div>
                                 </div>
                                 <div class="rd-navbar-right rd-navbar-nav-wrap">
                                     <div class="rd-navbar-aside">

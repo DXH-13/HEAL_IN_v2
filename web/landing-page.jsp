@@ -91,16 +91,14 @@
                                                     <div class="unit-left"><span
                                                             class="icon mdi mdi-phone"></span>
                                                     </div>
-                                                    <div class="unit-body"><a class="phone" href="tel:#">+1
-                                                            718-999-3939</a></div>
+                                                    <div class="unit-body"><a class="phone" href="tel:#">9999999999</a></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="unit unit-spacing-xs">
                                                     <div class="unit-left"><span
                                                             class="icon mdi mdi-map-marker"></span></div>
-                                                    <div class="unit-body"><a class="address" href="#">514 S.
-                                                            Magnolia St. Orlando, FL 32806</a>
+                                                    <div class="unit-body"><a class="address" href="#">FPT University, Ha Noi</a>
                                                     </div>
                                                 </div>
                                             </li>

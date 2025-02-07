@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
+
+
 function updateQuantity(productId, quantity) {
     console.log("Updating quantity:", productId, quantity); // Kiểm tra đầu vào
     $.ajax({
@@ -157,6 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function submitCheckout() {
+    const selectedProducts = document.querySelectorAll('input[name="selectedProducts"]:checked');
+    if (selectedProducts.length === 0) {
+        alert("Please select at least one product to checkout.");
+        return;
+    }
+    document.getElementById('cartForm').submit();
+}
 
 
 

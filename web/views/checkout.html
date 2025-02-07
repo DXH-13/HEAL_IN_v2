@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/web/css/bootstrap.css">
     <link rel="stylesheet" href="/web/css/fonts.css">
     <link rel="stylesheet" href="/web/css/style.css">
+    <link rel="stylesheet" href="/web/css/checkout.css">
     <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"></script>
@@ -163,7 +164,7 @@
 
                                 <!-------------------------------------------------------------->
                             </div>
-                            
+
                         </div>
                     </div>
                 </nav>
@@ -190,117 +191,45 @@
         <section class="section section-sm section-first bg-default text-md-left">
             <div class="container">
                 <div class="row row-50 justify-content-center">
-                    <!-- <div class="col-md-10 col-lg-6">
-                        <h5>Billing Address</h5>
-                        <form class="rd-form rd-mailform form-checkout">
-                            <div class="row row-14 gutters-14">
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-first-name-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-first-name-1">First Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-last-name-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-last-name-1">Last Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-company-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-company-1">Company</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-address-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-address-1">Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-postcode-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-postcode-1">Postcode</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-city-1" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-city-1">City</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-email-1" type="email" name="email"
-                                            data-constraints="@Email @Required" />
-                                        <label class="form-label" for="checkout-email-1">E-Mail</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-phone-1" type="text" name="phone"
-                                            data-constraints="@Numeric" />
-                                        <label class="form-label" for="checkout-phone-1">Phone</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <label class="checkbox-inline">
-                                <input name="input-checkbox-1" value="checkbox-1" type="checkbox" />My Billing Address
-                                and Shipping Address are the same
-                            </label>
-                        </form>
-                    </div> -->
+
                     <div class="col-md-10 col-lg-6">
                         <h5>Delivery Address</h5>
                         <form class="rd-form rd-mailform form-checkout">
                             <div class="row row-14 gutters-14">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <div class="form-wrap">
                                         <input class="form-input" id="checkout-first-name-2" type="text" name="name"
                                             data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-first-name-2">First Name</label>
+                                        <label class="form-label" for="checkout-first-name-2">Tên</label>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-last-name-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-last-name-2">Last Name</label>
+
+                                <div class="col-sm-4">
+                                    <div class="form-wrap" >
+                                        <select id="provinces" onchange="getProvinces(event)" onfocus="checkDefaultOption(event)" required>
+                                            <option  value="">Tỉnh/Thành phố</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-sm-4">
                                     <div class="form-wrap">
-                                        <input class="form-input" id="checkout-company-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-company-2">Company</label>
+                                        <select id="districts" onchange="getDistricts(event)" required>
+                                            <option  value="">Quận/Huyện</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-wrap">
+                                        <select id="wards" required>
+                                            <option value="">Phường/Xã</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-wrap">
                                         <input class="form-input" id="checkout-address-2" type="text" name="name"
                                             data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-address-2">Address</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-postcode-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-postcode-2">Postcode</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-wrap">
-                                        <input class="form-input" id="checkout-city-2" type="text" name="name"
-                                            data-constraints="@Required" />
-                                        <label class="form-label" for="checkout-city-2">City</label>
+                                        <label class="form-label" for="checkout-address-2">Địa chỉ cụ thể</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -314,7 +243,7 @@
                                     <div class="form-wrap">
                                         <input class="form-input" id="checkout-phone-2" type="text" name="phone"
                                             data-constraints="@Numeric" />
-                                        <label class="form-label" for="checkout-phone-2">Phone</label>
+                                        <label class="form-label" for="checkout-phone-2">Số điện thoại </label>
                                     </div>
                                 </div>
                             </div>
@@ -332,38 +261,31 @@
                     <table class="table-custom table-cart">
                         <thead>
                             <tr>
-                                <th>Product name</th>
-                                <th>Price</th>
+                                <th class="productnameTh">Product name</th>
+                                <th class="priceTh">Price</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><a class="table-cart-figure" href="single-product.html"><img
-                                            src="https://placehold.co/195x141" alt="" width="195" height="141" /></a><a
-                                        class="table-cart-link" href="single-product.html">Pepperoni Pizza</a></td>
-                                <td>$15</td>
+                                <td class="productnameTd">
+                                    <a class="table-cart-figure" href="single-product.html">
+                                        <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
+                                    </a>
+                                    <a class="table-cart-link" href="single-product.html">Pepperoni Pizza</a>
+                                </td>
+
+                                <td class="priceTd">$15</td>
+
                                 <td>
                                     <div class="table-cart-stepper">
                                         <input class="form-input" type="number" data-zeros="true" value="1" min="1"
-                                            max="1000">
+                                            max="1000" disabled>
                                     </div>
                                 </td>
+
                                 <td>$15</td>
-                            </tr>
-                            <tr>
-                                <td><a class="table-cart-figure" href="single-product.html"><img
-                                            src="https://placehold.co/195x141" alt="" width="195" height="141" /></a><a
-                                        class="table-cart-link" href="single-product.html">Waldorf Salad</a></td>
-                                <td>$24</td>
-                                <td>
-                                    <div class="table-cart-stepper">
-                                        <input class="form-input" type="number" data-zeros="true" value="1" min="1"
-                                            max="1000">
-                                    </div>
-                                </td>
-                                <td>$24</td>
                             </tr>
                         </tbody>
                     </table>
@@ -380,8 +302,8 @@
                         <div class="box-radio">
                             <div class="radio-panel">
                                 <label class="radio-inline active">
-                                    <input name="input-group-radio" value="checkbox-1" type="radio" checked>Direct Bank
-                                    Transfer
+                                    <input name="input-group-radio" value="checkbox-1" type="radio" checked>
+                                    Thanh toán khi nhận hàng
                                 </label>
                                 <div class="radio-panel-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. amet, consectetur
@@ -390,7 +312,8 @@
                             </div>
                             <div class="radio-panel">
                                 <label class="radio-inline">
-                                    <input name="input-group-radio" value="checkbox-1" type="radio">Cash on Delivery                                    
+                                    <input name="input-group-radio" value="checkbox-1" type="radio">
+                                    Thanh toán qua ngân hàng
                                 </label>
                                 <div class="radio-panel-content">
                                     <p>Please send a check to Store Name, Store Street, Store Town, Store State /
@@ -541,6 +464,8 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
+    <script src="/web/js/checkout.js"></script>
+    <script src="/web/js/filter-address.js"></script>
     <script src="/web/js/core.min.js"></script>
     <script src="/web/js/script.js"></script>
     <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"

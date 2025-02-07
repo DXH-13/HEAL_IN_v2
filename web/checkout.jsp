@@ -1,10 +1,15 @@
+<%-- 
+    Document   : checkout
+    Created on : Feb 6, 2025, 5:20:55 PM
+    Author     : dangx
+--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
 
     <head>
-        <title>Cart Page</title>
+        <title>Checkout</title>
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport"
               content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -17,12 +22,8 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/checkout.css">
         <link rel="stylesheet" href="css/home.css">
-        <link rel="stylesheet" href="css/cart-page.css">
-        <!--[if lt IE 10]>
-        <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="https://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-        <script src="js/html5shiv.min.js"></script>
-        <![endif]-->
     </head>
 
     <body>
@@ -80,7 +81,7 @@
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
                                     <div class="rd-navbar-brand"><a class="brand" href="landing"><img
-                                                class="brand-logo-dark" src="https://placehold.co/198x66" alt=""
+                                                class="brand-logo-dark" src="assets/images/logo-198x66.png" alt=""
                                                 width="189" height="66" /></a></div>
                                 </div>
                                 <div class="rd-navbar-right rd-navbar-nav-wrap">
@@ -112,28 +113,27 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="landing">Home</a>
+                                            <li class="rd-nav-item active"><a class="rd-nav-link"
+                                                                              href="landing">Home</a>
                                             </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="about_us">About us</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link"
+                                                                       href="about_us">About us</a>
                                             </li>
-                                            <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/typography.html">Game</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link"
+                                                                       href="views/typography.html">Game</a>
                                             </li>
-                                            <li class="rd-nav-item ">
-                                                <a class="rd-nav-link" href="landing#shop">Shop</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
-                                                    <li class="rd-dropdown-item ">
-                                                        <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
+                                                    <li class="rd-dropdown-item "><a class="rd-dropdown-link"
+                                                                                     href="single_product?idProduct=1#product">Đoàn Viên</a>
                                                     </li>
-                                                    <li class="rd-dropdown-item">
-                                                        <a class="rd-dropdown-link" href="single_product?idProduct=2#product">Tri Kỷ</a>
+                                                    <li class="rd-dropdown-item"><a class="rd-dropdown-link"
+                                                                                    href="single_product?idProduct=2#product">Tri Kỷ</a>
                                                     </li>
                                                 </ul>
                                             </li>
-
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="#cart">
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="cart#cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">
@@ -146,7 +146,6 @@
                                                     </c:choose>
                                                 </a>
                                             </li>
-
                                             <c:choose>
                                                 <c:when test="${sessionScope.userLogin == null}">
                                                     <li class="rd-nav-item loginbtn">
@@ -167,7 +166,6 @@
                                                     </li>
                                                 </c:otherwise>
                                             </c:choose>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -207,7 +205,7 @@
             <section class="bg-gray-7">
                 <div class="breadcrumbs-custom box-transform-wrap context-dark">
                     <div class="container">
-                        <h3 class="breadcrumbs-custom-title">Cart Page</h3>
+                        <h3 class="breadcrumbs-custom-title">Checkout</h3>
                         <div class="breadcrumbs-custom-decor"></div>
                     </div>
                     <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
@@ -216,88 +214,174 @@
                     <ul class="breadcrumbs-custom-path">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="shop.html">Shop</a></li>
-                        <li class="active">Cart Page</li>
+                        <li class="active">Checkout</li>
                     </ul>
                 </div>
             </section>
-            <!-- Shopping Cart-->
-            <section id="cart" class="section section-lg bg-default">
+            <!-- Section checkout form-->
+            <section class="section section-sm section-first bg-default text-md-left">
                 <div class="container">
-                    <!-- shopping-cart-->
-                    <form id="cartForm" action="checkout" method="POST">
-                        <div class="table-custom-responsive">
-                            <table class="table-custom table-cart">
-                                <thead>
-                                    <tr>
-                                        <th>
-                                            <label class="containerCK">
-                                                <input type="checkbox" >
-                                                <div class="checkmark"></div>
-                                            </label>
-                                        </th>
-                                        <th>Product name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <c:forEach var="cart" items="${cart}" varStatus="loop">
-                                        <tr data-product-id="${cart.productId}">
-                                            <td>
-                                                <label class="containerCK">
-                                                    <!--<input type="checkbox" >-->
-                                                    <input type="checkbox" name="selectedProducts" value="${cart.id}">
-                                                    <div class="checkmark"></div>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <a class="table-cart-figure" href="single-product.html">
-                                                    <img src="${cart.productRepresentativeImage}" alt="" width="195" height="141" />
-                                                </a>
-                                                <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
-                                            </td>
-                                            <td>${cart.productPrice}</td>
-                                            <td>
-                                                <div class="table-cart-stepper">
-                                                    <input class="form-input" type="number" data-zeros="true" name="quantity_${cart.productId}" value="${cart.quantity}" min="1"
-                                                           max="50" onchange="updateQuantity(${cart.productId}, this.value)">
-                                                </div>
-                                            </td>
-                                            <td class="product-total">${cart.productPrice * cart.quantity}</td>
-                                            <td>
-                                                <button class="deleteProbtn" onclick="deleteProduct(${sessionScope.userLogin}, ${cart.productId})">
-                                                    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="iconDelete">
-                                                    <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
-                                                    </svg>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
-                                </tbody>
-                            </table>
+                    
+                    <div class="row row-50 justify-content-center">
 
-                        </div>
-                        <div class="group-xxxl group-middle justify-content-md-end">
-                            <div>
-                                <div class="group-xxl group-middle">
-                                    <p class="big text-gray-500">Total</p>
-                                    <h4 class="text-spacing-75">$39</h4>
+                        <div class="col-md-10 col-lg-6">
+                            <h5>Delivery Address</h5>
+                            <form class="rd-form rd-mailform form-checkout">
+                                <div class="row row-14 gutters-14">
+                                    <div class="col-sm-12">
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="checkout-first-name-2" type="text" name="name"
+                                                   data-constraints="@Required" />
+                                            <label class="form-label" for="checkout-first-name-2">Tên</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="form-wrap" >
+                                            <select id="provinces" onchange="getProvinces(event)" onfocus="checkDefaultOption(event)" required>
+                                                <option  value="">Tỉnh/Thành phố</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-wrap">
+                                            <select id="districts" onchange="getDistricts(event)" required>
+                                                <option  value="">Quận/Huyện</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-wrap">
+                                            <select id="wards" required>
+                                                <option value="">Phường/Xã</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="checkout-address-2" type="text" name="name"
+                                                   data-constraints="@Required" />
+                                            <label class="form-label" for="checkout-address-2">Địa chỉ cụ thể</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="checkout-email-2" type="email" name="email"
+                                                   data-constraints="@Email @Required" />
+                                            <label class="form-label" for="checkout-email-2">E-Mail</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-wrap">
+                                            <input class="form-input" id="checkout-phone-2" type="text" name="phone"
+                                                   data-constraints="@Numeric" />
+                                            <label class="form-label" for="checkout-phone-2">Số điện thoại </label>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <button class="button button-lg button-width-240 button-primary button-winona" onclick="submitCheckout()">
-                                Checkout
-                            </button>
+                            </form>
                         </div>
-                    </form>
-                    <div id="emptyCartMessage" style="display: none; text-align: center;">
-                        <img src="assets/images/empty_cart.png" width="300" height="300" alt="empty_cart">
-                        <h3 style="font-size: 20px; margin-bottom: 50px;">Your shopping cart is empty</h3>
-                        <a href="landing#shop" class="goShopbtn"> Go Shopping Now </a>
                     </div>
                 </div>
+            </section>
+            <!-- Shopping Cart-->
+            <section class="section section-sm bg-default text-md-left">
+                <div class="container">
+                    <h5>Your shopping cart</h5>
+                    <!-- shopping-cart-->
+                    <div class="table-custom-responsive">
+                        <table class="table-custom table-cart">
+                            <thead>
+                                <tr>
+                                    <th class="productnameTh">Product name</th>
+                                    <th class="priceTh">Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="cart" items="${cartBuy}" varStatus="loop">
+                                <tr>
+                                    <td class="productnameTd">
+                                        <a class="table-cart-figure" href="single-product.html">
+                                            <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
+                                        </a>
+                                        <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
+                                    </td>
 
+                                    <td class="priceTd">${cart.productPrice}</td>
+
+                                    <td>
+                                        <div class="table-cart-stepper">
+                                            <input class="form-input" type="number" data-zeros="true" value="${cart.quantity}" min="1"
+                                                   max="1000" disabled>
+                                        </div>
+                                    </td>
+
+                                    <td>${cart.productPrice * cart.quantity}</td>
+                                </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Payment-->
+            <section class="section section-sm section-last bg-default text-md-left">
+                <div class="container">
+                    <div class="row row-50 justify-content-center">
+                        <div class="col-md-10 col-lg-6">
+                            <h5>Payment methods</h5>
+                            <div class="box-radio">
+                                <div class="radio-panel">
+                                    <label class="radio-inline active">
+                                        <input name="input-group-radio" value="checkbox-1" type="radio" checked>
+                                        Thanh toán khi nhận hàng
+                                    </label>
+                                    <div class="radio-panel-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. amet, consectetur
+                                            adipiscing elit, sed</p>
+                                    </div>
+                                </div>
+                                <div class="radio-panel">
+                                    <label class="radio-inline">
+                                        <input name="input-group-radio" value="checkbox-1" type="radio">
+                                        Thanh toán qua ngân hàng
+                                    </label>
+                                    <div class="radio-panel-content">
+                                        <p>Please send a check to Store Name, Store Street, Store Town, Store State /
+                                            County, Store Postcode.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-lg-6">
+                            <h5>Cart totals</h5>
+                            <div class="table-custom-responsive">
+                                <table class="table-custom table-custom-primary table-checkout">
+                                    <tbody>
+                                        <tr>
+                                            <td>Cart Subtotal</td>
+                                            <td>$39</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Shipping</td>
+                                            <td>Free</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>$39</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-wrap text-center"><a
+                            class="button button-lg button-width-240 button-primary button-pipaluk" href="#">Checkout</a>
+                    </div>
+                </div>
             </section>
 
             <!-- Page Footer-->
@@ -414,35 +498,29 @@
         <!-- Global Mailform Output-->
         <div class="snackbars" id="form-output-global"></div>
         <!-- Javascript-->
+        
+<!--        <script src="js/filter-address.js"></script>-->
         <script src="js/core.min.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/cart-page.js"></script>
+<!--        <script src="js/checkout.js"></script>-->
         <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
                                                      width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script>
-                                (function (w, d, s, l, i) {
-                                    w[l] = w[l] || [];
-                                    w[l].push({
-                                        'gtm.start': new Date().getTime(),
-                                        event: 'gtm.js'
-                                    });
-                                    var f = d.getElementsByTagName(s)[0],
-                                            j = d.createElement(s),
-                                            dl = l != 'dataLayer' ? '&l=' + l : '';
-                                    j.async = true;
-                                    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
-                                    f.parentNode.insertBefore(j, f);
-                                })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
+                                                (function (w, d, s, l, i) {
+                                                    w[l] = w[l] || [];
+                                                    w[l].push({
+                                                        'gtm.start': new Date().getTime(),
+                                                        event: 'gtm.js'
+                                                    });
+                                                    var f = d.getElementsByTagName(s)[0],
+                                                            j = d.createElement(s),
+                                                            dl = l != 'dataLayer' ? '&l=' + l : '';
+                                                    j.async = true;
+                                                    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+                                                    f.parentNode.insertBefore(j, f);
+                                                })(window, document, 'script', 'dataLayer', 'GTM-P9FT69');
         </script>
         <!-- End Google Tag Manager -->
-        <script>
-            var userId = "${sessionScope.userLogin != null ? sessionScope.userLogin.getNormalUserId() : 'null'}";
-            if (userId === "null") {
-                console.error("userId is not defined. Please log in first.");
-            }
-        </script>
-
-
     </body>
 
 </html>

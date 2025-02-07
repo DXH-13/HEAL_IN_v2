@@ -69,6 +69,39 @@ public class CartController extends HttpServlet {
         response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
     }
 
+//protected void doPost(HttpServletRequest request, HttpServletResponse response)
+//        throws ServletException, IOException {
+//    HttpSession session = request.getSession();
+//    User userLogin = (User) session.getAttribute("userLogin");
+//
+//    String productIdParam = request.getParameter("productId");
+//    String quantityParam = request.getParameter("quantity");
+//    String isBuyParam = request.getParameter("isBuy");
+//
+//    response.setContentType("application/json");
+//    response.setCharacterEncoding("UTF-8");
+//
+//    if (quantityParam != null) { 
+//        // Cập nhật số lượng sản phẩm
+//        int productId = Integer.parseInt(productIdParam);
+//        int quantity = Integer.parseInt(quantityParam);
+//
+//        daoCart.updateQuantity(userLogin.getNormalUserId(), productId, quantity);
+//
+//        // Tính toán lại tổng tiền
+//        float productTotal = daoCart.getProductTotal(userLogin.getNormalUserId(), productId);
+//        float updatedTotal = daoCart.getCartTotal(userLogin.getNormalUserId());
+//
+//        response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
+//    } else if (isBuyParam != null) {
+//        // Cập nhật trạng thái isBuy
+//        int productId = Integer.parseInt(productIdParam);
+//        int isBuy = Integer.parseInt(isBuyParam);
+//
+//        daoCart.updateIsBuy(userLogin.getNormalUserId(), productId, isBuy);
+//
+//        response.getWriter().write("{\"success\": true}");
+//    }
     @Override
     public String getServletInfo() {
         return "Short description";
