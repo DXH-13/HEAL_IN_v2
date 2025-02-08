@@ -18,10 +18,12 @@ import javax.mail.internet.MimeMessage;
 public class SendMail {
 
 //    private static final String TEMPLATE_PATH = "/web/views/email-template.html";
-private static final String RESET_PASSWORD_TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-reset.html";
-private static final String ACTIVE_ACCOUNT_TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-active.html";
-private static final String EMAIL = "healin.fpt@gmail.com";
-private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
+private static final String RESET_PASSWORD_TEMPLATE_PATH = "D:\\Code\\HEAL_IN_v2\\web\\views\\email-reset.html";
+private static final String ACTIVE_ACCOUNT_TEMPLATE_PATH = "D:\\Code\\HEAL_IN_v2\\web\\views\\email-active.html";
+//    private static final String RESET_PASSWORD_TEMPLATE_PATH = "..\\HEAL_IN_v2\\web\\views\\email-reset.html";
+//    private static final String ACTIVE_ACCOUNT_TEMPLATE_PATH = "..\\HEAL_IN_v2\\web\\views\\email-active.html";
+    private static final String EMAIL = "healin.fpt@gmail.com";
+    private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
 
     private static final int LIMIT_MINUS = 5;
 
@@ -32,7 +34,6 @@ private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
 //    public LocalDateTime expiredDateTime() {
 //        return LocalDateTime.now().plusMinutes(LIMIT_MINUS);
 //    }
-    
     public static String expiredDateTime() {
         LocalDateTime expiredDateTime = LocalDateTime.now().plusMinutes(LIMIT_MINUS);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -42,20 +43,17 @@ private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
 //    public boolean isExpiredTime(LocalDateTime time) {
 //        return LocalDateTime.now().isAfter(time);
 //    }
-
-    
     public boolean isExpiredTime(String timeString) {
-    try {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime time = LocalDateTime.parse(timeString, formatter);
-        return LocalDateTime.now().isAfter(time);
-    } catch (DateTimeParseException e) {
-        System.err.println("Invalid date-time format: " + e.getMessage());
-        return false; 
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            LocalDateTime time = LocalDateTime.parse(timeString, formatter);
+            return LocalDateTime.now().isAfter(time);
+        } catch (DateTimeParseException e) {
+            System.err.println("Invalid date-time format: " + e.getMessage());
+            return false;
+        }
     }
-}
-    
-    
+
     public static boolean sendResetPasswordMail(String recipient, String resetLink) throws Exception {
         System.out.println("Preparing to send email...");
         Properties properties = new Properties();
@@ -94,9 +92,7 @@ private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
             return false;
         }
     }
-    
-    
-    
+
     public static boolean sendActiveAccountMail(String recipient, String activeLink) throws Exception {
         System.out.println("Preparing to send email...");
         Properties properties = new Properties();
@@ -135,13 +131,9 @@ private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
             return false;
         }
     }
-    
-    
-    
-    
-    
+
     public static void main(String[] args) {
-        String testRecipient = "dangxuanhuyb52@gmail.com"; // Replace with the recipient's email
+        String testRecipient = "huydang139203@gmail.com"; // Replace with the recipient's email
         String resetLink = "http://example.com/reset-password?token=abc123"; // Test reset link
 
         try {

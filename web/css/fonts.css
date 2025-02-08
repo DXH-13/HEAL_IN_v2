@@ -13894,3 +13894,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+@font-face {
+    font-family: "Oswald";
+    src: url("../assets/fonts/Oswald-Bold.ttf");
+    font-weight: bold;
+    font-style: bold;
+}
