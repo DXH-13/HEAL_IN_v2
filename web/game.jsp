@@ -1,0 +1,553 @@
+<%-- 
+    Document   : game
+    Created on : Feb 7, 2025, 9:48:18 PM
+    Author     : dangx
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Animation</title>
+        <link rel="stylesheet" href="css/game.css">
+        <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    </head>
+
+    <body>
+        <!-- <div class="userContainer">
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 1: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; "></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 2: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl"
+                        style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 3: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl"
+                        style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div class="userName">Player 4: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-2xl"
+                        style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="room">Room ID: 67889</div>
+                <div style="margin-left: 8px; margin-top: 10px;">
+                    <button class="copy-button">
+                        <i class="fa-duotone fa-solid fa-copy" style="color: aliceblue;"></i>
+                    </button>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="userContainer">
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 1: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 2: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <div class="userName">Player 3: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div class="userName">Player 4: Huy123</div>
+                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
+                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-2xl" style="color: aliceblue; display: none;"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <a href="landing" class="outButton">
+            <i class="fa-sharp-duotone fa-solid fa-arrow-right-from-bracket fa-2xl"
+               style="color: rgb(255, 255, 255); top: 100px;"></i>
+        </a>
+
+        <div class="soundContainer">
+            <button class="musicButton">
+                <i class="fa-solid fa-music fa-2xl" style="color: rgb(255, 255, 255);"></i>
+            </button>
+            <button class="soundButton">
+                <i class="fa-sharp-duotone fa-solid fa-volume-high fa-2xl" style="color: rgb(255, 255, 255);"></i>
+                <!-- <i class="fa-sharp-duotone fa-solid fa-volume-xmark fa-2xl" style="color: rgb(255, 255, 255);"></i> -->
+            </button>
+        </div>
+
+        <!-- <button class="chatButton">
+            <i class="fa-solid fa-comments fa-2xl" style="color: rgb(255, 255, 255); "></i>
+        </button>
+    
+    
+    
+        <div class="chatContainer">
+            <div class="chatBoard">
+                <div class="message">Hello! How are you?</div>
+                <div class="message">I'm fine, thank you! What about you?</div>
+                <div class="message">I'm doing great! 😊</div>
+                <div class="message">Hello! How are you?</div>
+                <div class="message">I'm fine, thank you! What about you?</div>
+                <div class="message">I'm doing great! 😊</div>
+                <div class="message">Hello! How are you?</div>
+                <div class="message">I'm fine, thank you! What about you?</div>
+                <div class="message">I'm doing great! 😊</div>
+                <div class="message">Hello! How are you?</div>
+                <div class="message">I'm fine, thank you! What about you?</div>
+                <div class="message">I'm doing great! 😊</div>
+                <div class="message">Hello! How are you?</div>
+                <div class="message">I'm fine, thank you! What about you?</div>
+                <div class="message">I'm doing great! 😊</div>
+            </div>
+    
+            <div class="inputContainer">
+                <input type="text" class="messageInput" placeholder="Type a message...">
+                <button class="sendButton">
+                    <i class="fa-solid fa-paper-plane" style="color: aliceblue;"></i>
+                </button>
+            </div>
+        </div> -->
+
+        <audio id="soundShuffle" src="assets/sounds/card-shuffle.mp3" preload="auto"></audio>
+        <audio id="soundFlip" src="assets/sounds/flip-card (mp3cut.net).mp3" preload="auto"></audio>
+
+        <button class="shuffle-spread-button" id="shuffle-spread-button">
+            Xào bài
+        </button>
+
+        <div class="stack">
+
+            <div class="card" style="--i:-21;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(2).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-20;">
+                <div class="front"></div>
+                <div class="back">
+                    <img src="assets/images/products/doanvien - 26 card-(3).jpg" alt="">
+                </div>
+            </div>
+
+            <div class="card" style="--i:-19;">
+                <div class="front"></div>
+                <div class="back">
+                    <img src="assets/images/products/doanvien - 26 card-(4).jpg" alt="">
+                </div>
+            </div>
+
+            <div class="card" style="--i:-18;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(5).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-17;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(6).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-16;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(7).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-15;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(20).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-14;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(8).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-13;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(9).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-12;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(10).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-11;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(11).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-10;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(12).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-9;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(13).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-8;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(14).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-7;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(15).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-6;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(16).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-5;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(17).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-4;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(18).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-3;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(19).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-2;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(20).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:-1;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(21).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:0;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(22).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:1;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(23).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:2;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(24).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:3;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(25).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:4;">
+                <div class="card-inner">
+                    <div class="front"></div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(26).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:5;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(27).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:6;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(12).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:7;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(13).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:8;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(14).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:9;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(15).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:10;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(16).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:11;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(17).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:12;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(18).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:13;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(19).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:14;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(20).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:15;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(21).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:16;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(22).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:17;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(26).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:18;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(27).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:19;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(25).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:20;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(24).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="--i:21;">
+                <div class="card-inner">
+                    <div class="front">
+                    </div>
+                    <div class="back">
+                        <img src="assets/images/products/doanvien - 26 card-(23).jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <script src="js/game.js"></script>
+    </body>
+
+</html>

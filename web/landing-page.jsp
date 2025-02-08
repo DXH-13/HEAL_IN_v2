@@ -10,7 +10,7 @@
               content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
-        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
         <!-- Stylesheets-->
         <link rel="stylesheet" type="text/css"
               href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500">
@@ -79,7 +79,7 @@
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
                                     <div class="rd-navbar-brand"><a class="brand" href="landing"><img
-                                                class="brand-logo-dark" src="https://placehold.co/198x66"
+                                                class="brand-logo-dark" src="assets/images/Logo web.png"
                                                 alt="" width="198" height="66" /></a>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                                 <div class="unit unit-spacing-xs">
                                                     <div class="unit-left"><span
                                                             class="icon mdi mdi-map-marker"></span></div>
-                                                    <div class="unit-body"><a class="address" href="#">FPT University, Ha Noi</a>
+                                                    <div class="unit-body"><a class="address" href="#">Km29 Đại lộ Thăng Long - Thạch Thất - Hà Nội</a>
                                                     </div>
                                                 </div>
                                             </li>
@@ -114,16 +114,16 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item active">
-                                                <a class="rd-nav-link active" href="landing">Home</a>
+                                                <a class="rd-nav-link active" href="landing">Trang chủ</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="about_us">About us</a>
+                                                <a class="rd-nav-link" href="about_us">Về chúng tôi</a>
                                             </li>                                       
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="/web/views/typography.html">Game</a>
+                                                <a class="rd-nav-link" href="game">Trò chơi</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="#shop">Shop</a>
+                                                <a class="rd-nav-link" href="#shop">Cửa hàng</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
                                                     <li class="rd-dropdown-item ">
                                                         <a class="rd-dropdown-link" href="single_product?idProduct=1#product">Đoàn Viên</a>
@@ -152,7 +152,7 @@
                                             <c:choose>
                                                 <c:when test="${sessionScope.userLogin == null}">
                                                     <li class="rd-nav-item loginbtn">
-                                                        <a class="rd-nav-link" href="log_in">Login</a>
+                                                        <a class="rd-nav-link" href="log_in">Đăng nhập</a>
                                                     </li>
                                                 </c:when>
                                                 <c:otherwise>
@@ -182,7 +182,7 @@
 
                                     <c:choose>
                                         <c:when test="${sessionScope.userLogin == null}">
-                                            <a href="log_in" class="loginbtn2">Login</a>
+                                            <a href="log_in" class="loginbtn2">Đăng nhập</a>
                                         </c:when>
                                         <c:otherwise>
                                             <div class="dropdown">
@@ -216,9 +216,9 @@
                                 <div class="row">
                                     <div class="col-sm-9 col-md-8 col-lg-7 col-xl-7 offset-lg-1 offset-xxl-0">
                                         <h1 class="oh swiper-title">
-                                            <span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">ABC</span></h1>
+                                            <span class="d-inline-block" data-caption-animate="slideInUp" data-caption-delay="0">CHẤT LƯỢNG HOÀN HẢO</span></h1>
                                         <p class="big swiper-text" data-caption-animate="fadeInLeft"
-                                           data-caption-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                           data-caption-delay="300">Chúng tôi mang đến những bộ board game tốt nhất để tạo nên những khoảnh khắc đáng nhớ cho gia đình và bạn bè.
                                         </p>
                                         <a class="button button-lg button-primary button-winona button-shadow-2"
                                            href="#" data-caption-animate="fadeInUp"
@@ -236,9 +236,28 @@
                                     <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
                                         <h1 class="oh swiper-title"><span class="d-inline-block"
                                                                           data-caption-animate="slideInDown"
-                                                                          data-caption-delay="0">ABC</span></h1>
+                                                                          data-caption-delay="0">KHOẢNH KHẮC TUYỆT VỜI</span></h1>
                                         <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                           data-caption-delay="300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                           data-caption-delay="300">Trải nghiệm niềm vui kết nối và tiếng cười cùng bộ sưu tập board game độc đáo của chúng tôi!</p>
+                                        <div class="button-wrap oh"><a
+                                                class="button button-lg button-primary button-winona button-shadow-2"
+                                                href="#" data-caption-animate="slideInUp"
+                                                data-caption-delay="0">View our menu</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide context-dark" data-slide-bg="https://placehold.co/1918x753">
+                        <div class="swiper-slide-caption section-md">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-8 col-lg-7 offset-lg-1 offset-xxl-0">
+                                        <h1 class="oh swiper-title"><span class="d-inline-block"
+                                                                          data-caption-animate="slideInDown"
+                                                                          data-caption-delay="0">KẾT NỐI CẢM XÚC – GẮN KẾT YÊU THƯƠNG</span></h1>
+                                        <p class="big swiper-text" data-caption-animate="fadeInRight"
+                                           data-caption-delay="300">Board game không chỉ là trò chơi, mà còn là sợi dây gắn kết giúp gia đình và bạn bè xích lại gần nhau hơn qua từng khoảnh khắc đáng nhớ!</p>
                                         <div class="button-wrap oh"><a
                                                 class="button button-lg button-primary button-winona button-shadow-2"
                                                 href="#" data-caption-animate="slideInUp"
@@ -268,7 +287,7 @@
             <!-- What We Offer-->
             <section class="section section-md bg-default">
                 <div class="container">
-                    <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Our Menu</span></h3>
+                    <h3 class="oh-desktop"><span class="d-inline-block wow slideInDown">Nhiệm vụ của chúng tôi</span></h3>
                     <div class="row row-md row-30">
                         <div class="col-sm-6 col-lg-4">
                             <div class="oh-desktop">
@@ -279,7 +298,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-bubbles"></span>
-                                        <h5 class="services-terri-title"><a href="#">Salads</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -293,7 +312,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-group-work"></span>
-                                        <h5 class="services-terri-title"><a href="#">Pizzas</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -307,7 +326,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-happy-grin"></span>
-                                        <h5 class="services-terri-title"><a href="#">Burgers</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -321,7 +340,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-joystick"></span>
-                                        <h5 class="services-terri-title"><a href="#">Desserts</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -335,7 +354,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-heart-pulse"></span>
-                                        <h5 class="services-terri-title"><a href="#">Drinks</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -349,7 +368,7 @@
                                     </div>
                                     <div class="services-terri-caption"><span
                                             class="services-terri-icon linearicons-bandage"></span>
-                                        <h5 class="services-terri-title"><a href="#">Seafood</a></h5>
+                                        <h5 class="services-terri-title"><a href="#">abc</a></h5>
                                     </div>
                                 </article>
                             </div>
@@ -366,15 +385,13 @@
                         <div class="row justify-content-end">
                             <div class="col-sm-8 col-md-7 col-lg-5">
                                 <div class="cta-modern">
-                                    <h3 class="cta-modern-title wow fadeInRight">Best atmosphere</h3>
-                                    <p class="lead">PizzaHouse is the place of the best pizza and high-quality
-                                        service.</p>
+                                    <h3 class="cta-modern-title wow fadeInRight">Không khí hứng khởi</h3>
+                                    <p class="lead">Heal In là nơi có trò chơi hay nhất và dịch vụ chất lượng cao.</p>
                                     <p class="cta-modern-text oh-desktop" data-wow-delay=".1s"><span
                                             class="cta-modern-decor wow slideInLeft"></span><span
-                                            class="d-inline-block wow slideInDown">Ben
-                                            Smith, Founder</span></p><a
+                                            class="d-inline-block wow slideInDown">Huy bảo thế</span></p><a
                                         class="button button-md button-secondary-2 button-winona wow fadeInUp"
-                                        href="#" data-wow-delay=".2s">View Our Services</a>
+                                        href="#" data-wow-delay=".2s">Xem dịch vụ của chúng tôi</a>
                                 </div>
                             </div>
                         </div>
@@ -386,7 +403,7 @@
             <section id="shop" class="section section-lg bg-default">
                 <div class="container">
                     <h3 class="oh-desktop">
-                        <span class="d-inline-block wow slideInUp">Selected Pizzas</span>
+                        <span class="d-inline-block wow slideInUp">Chọn bộ bài của bạn</span>
                     </h3>
                     <div class="row row-lg row-30 justify-content-center">
                         <c:forEach var="product" items="${productData}" varStatus="loop">
@@ -443,19 +460,16 @@
                             <div class="col-sm-9 col-md-7 col-lg-5">
                                 <div class="cta-modern">
                                     <h3 class="cta-modern-title cta-modern-title-2 oh-desktop"><span
-                                            class="d-inline-block wow fadeInLeft">-30% on all salads &
-                                            drinks</span>
+                                            class="d-inline-block wow fadeInLeft">-30% với tất cả sản phẩm</span>
                                     </h3>
                                     <p class="cta-modern-text cta-modern-text-2 oh-desktop"
                                        data-wow-delay=".1s">
                                         <span
                                             class="cta-modern-decor cta-modern-decor-2 wow slideInLeft"></span><span
-                                            class="d-inline-block wow slideInUp">Taste some of the best
-                                            PizzaHouse
-                                            salads!</span>
+                                            class="d-inline-block wow slideInUp">Có những trải nghiệm tốt nhất với Heal In!</span>
                                     </p><a
                                         class="button button-lg button-secondary button-winona wow fadeInRight"
-                                        href="views/contacts.html" data-wow-delay=".2s">contact us</a>
+                                        href="views/contacts.html" data-wow-delay=".2s">Liên hệ ngay</a>
                                 </div>
                             </div>
                         </div>
@@ -466,7 +480,7 @@
             <!-- What We Offer-->
             <section class="section section-xl bg-default">
                 <div class="container">
-                    <h3 class="wow fadeInLeft">What People Say</h3>
+                    <h3 class="wow fadeInLeft">Mọi người nói gì</h3>
                 </div>
                 <div class="container container-style-1">
                     <div class="owl-carousel owl-style-12" data-items="1" data-sm-items="2" data-lg-items="3"
@@ -476,63 +490,53 @@
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
                                 <div class="quote-tara-text">
-                                    <p class="q">PizzaHouse is the longest lasting pizza place in the city and
-                                        is
-                                        well run and staffed.
-                                        Prices are great and allow me to keep coming back.</p>
+                                    <p class="q">hay</p>
                                 </div>
                                 <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
                                                                     width="115" height="115" />
                                 </div>
                             </div>
-                            <h6 class="quote-tara-author">Ashley Fitzgerald</h6>
-                            <div class="quote-tara-status">Client</div>
+                            <h6 class="quote-tara-author">huy</h6>
+                            <div class="quote-tara-status">Khách hàng</div>
                         </article>
                         <!-- Quote Tara-->
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
                                 <div class="quote-tara-text">
-                                    <p class="q">I am a real pizza addict, and even when I’m home I prefer your
-                                        pizzas to all others. They
-                                        taste awesome and are very affordable.</p>
+                                    <p class="q">hay</p>
                                 </div>
                                 <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
                                                                     width="115" height="115" />
                                 </div>
                             </div>
-                            <h6 class="quote-tara-author">Stephanie Williams</h6>
-                            <div class="quote-tara-status">Client</div>
+                            <h6 class="quote-tara-author">huy</h6>
+                            <div class="quote-tara-status">Khách hàng</div>
                         </article>
                         <!-- Quote Tara-->
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
                                 <div class="quote-tara-text">
-                                    <p class="q">PizzaHouse has amazing pizza. Not only do you get served with a
-                                        great attitude, you also
-                                        get delicious pizza at a great price!</p>
+                                    <p class="q">hay</p>
                                 </div>
                                 <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
                                                                     width="115" height="115" />
                                 </div>
                             </div>
-                            <h6 class="quote-tara-author">Bill Johnson</h6>
-                            <div class="quote-tara-status">Client</div>
+                            <h6 class="quote-tara-author">huy</h6>
+                            <div class="quote-tara-status">Khách hàng</div>
                         </article>
                         <!-- Quote Tara-->
                         <article class="quote-tara">
                             <div class="quote-tara-caption">
                                 <div class="quote-tara-text">
-                                    <p class="q">PizzaHouse has great pizza. Not only do you get served with a
-                                        great
-                                        attitude and delivered
-                                        delicious pizza, you get a great price.</p>
+                                    <p class="q">hay</p>
                                 </div>
                                 <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
                                                                     width="115" height="115" />
                                 </div>
                             </div>
-                            <h6 class="quote-tara-author">Aaron Wilson</h6>
-                            <div class="quote-tara-status">Client</div>
+                            <h6 class="quote-tara-author">huy</h6>
+                            <div class="quote-tara-status">Khách hàng</div>
                         </article>
                     </div>
                 </div>
@@ -649,7 +653,7 @@
             <!-- Tell-->
             <section class="section section-sm section-first bg-default">
                 <div class="container">
-                    <h3 class="heading-3">Book your Table</h3>
+                    <h3 class="heading-3">Cá nhân hóa bộ bài của bạn</h3>
                     <form class="rd-form rd-mailform form-style-1" data-form-output="form-output-global"
                           data-form-type="contact" method="post" action="bat/rd-mailform.php">
                         <div class="row row-20 gutters-20">
@@ -657,14 +661,14 @@
                                 <div class="form-wrap wow slideInDown">
                                     <input class="form-input" id="contact-your-name-6" type="text" name="name"
                                            data-constraints="@Required">
-                                    <label class="form-label" for="contact-your-name-6">Your Name*</label>
+                                    <label class="form-label" for="contact-your-name-6">Tên của bạn*</label>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4 oh-desktop">
                                 <div class="form-wrap wow slideInUp">
                                     <input class="form-input" id="contact-email-6" type="email" name="email"
                                            data-constraints="@Email @Required">
-                                    <label class="form-label" for="contact-email-6">Your E-mail*</label>
+                                    <label class="form-label" for="contact-email-6">E-mail của bạn*</label>
                                 </div>
                             </div>
                             <div class="col-lg-4 oh-desktop">
@@ -672,16 +676,16 @@
                                     <!--Select 2-->
                                     <select class="form-input" data-minimum-results-for-search="Infinity"
                                             data-constraints="@Required">
-                                        <option value="1">Select a Service</option>
-                                        <option value="2">Dine-In</option>
-                                        <option value="3">Carry-Out</option>
-                                        <option value="4">Event Catering</option>
+                                        <option value="1">Chọn dịch vụ</option>
+                                        <option value="2">Thêm ảnh của bạn</option>
+                                        <option value="3">Video 3d</option>
+                                        <option value="4">Cá nhân hóa lá bài</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-wrap wow fadeIn">
-                                    <label class="form-label" for="contact-message-6">Message</label>
+                                    <label class="form-label" for="contact-message-6">Tin nhắn</label>
                                     <textarea class="form-input textarea-lg" id="contact-message-6"
                                               name="message" data-constraints="@Required"></textarea>
                                 </div>
@@ -689,12 +693,11 @@
                         </div>
                         <div class="group-custom-1 group-middle oh-desktop">
                             <button class="button button-lg button-primary button-winona wow fadeInRight"
-                                    type="submit">Send
-                                message</button>
+                                    type="submit">Gửi tin nhắn</button>
                             <!-- Quote Classic-->
                             <article class="quote-classic quote-classic-3 wow slideInDown">
                                 <div class="quote-classic-text">
-                                    <p class="q">Please reserve your table at least 1 day in advance.</p>
+                                    <p class="q">Vui lòng đặt trước ít nhất 3 ngày.</p>
                                 </div>
                             </article>
                         </div>
@@ -712,38 +715,30 @@
                             <div class="box-icon-megan-header">
                                 <div class="box-icon-megan-icon linearicons-bag"></div>
                             </div>
-                            <h5 class="box-icon-megan-title"><a href="#">Free Delivery</a></h5>
-                            <p class="box-icon-megan-text">If you order more than 3 pizzas, we will gladly
-                                deliver
-                                them to you for free.
+                            <h5 class="box-icon-megan-title"><a href="#">Mua Sắm Tiện Lợi</a></h5>
+                            <p class="box-icon-megan-text">Dễ dàng mua sắm online với dịch vụ giao hàng nhanh chóng và đáng tin cậy.
                             </p>
                         </article>
                         <article class="box-icon-megan wow fadeInUp" data-wow-delay=".05s">
                             <div class="box-icon-megan-header">
                                 <div class="box-icon-megan-icon linearicons-map2"></div>
                             </div>
-                            <h5 class="box-icon-megan-title"><a href="#">Convenient Location</a></h5>
-                            <p class="box-icon-megan-text">Our pizzeria is situated in the downtown and is very
-                                easy
-                                to reach even on
-                                weekends.</p>
+                            <h5 class="box-icon-megan-title"><a href="#">Giao Hàng Miễn Phí</a></h5>
+                            <p class="box-icon-megan-text">Miễn phí giao hàng cho đơn hàng từ 3 board game trở lên.</p>
                         </article>
                         <article class="box-icon-megan wow fadeInUp" data-wow-delay=".1s">
                             <div class="box-icon-megan-header">
                                 <div class="box-icon-megan-icon linearicons-radar"></div>
                             </div>
-                            <h5 class="box-icon-megan-title"><a href="#">Free Wi-Fi</a></h5>
-                            <p class="box-icon-megan-text">We have free Wi-Fi available to all clients and
-                                visitors
-                                of our pizzeria.</p>
+                            <h5 class="box-icon-megan-title"><a href="#">Chất Lượng Đảm Bảo</a></h5>
+                            <p class="box-icon-megan-text">Các board game được chọn lọc kỹ càng để mang đến trải nghiệm tốt nhất.</p>
                         </article>
                         <article class="box-icon-megan wow fadeInUp" data-wow-delay=".15s">
                             <div class="box-icon-megan-header">
                                 <div class="box-icon-megan-icon linearicons-thumbs-up"></div>
                             </div>
-                            <h5 class="box-icon-megan-title"><a href="#">Best Service</a></h5>
-                            <p class="box-icon-megan-text">The client is our #1 priority as we deliver top-notch
-                                customer service.</p>
+                            <h5 class="box-icon-megan-title"><a href="#">Hỗ Trợ Khách Hàng</a></h5>
+                            <p class="box-icon-megan-text">Cần tư vấn? Đội ngũ thân thiện của chúng tôi luôn sẵn sàng hỗ trợ!.</p>
                         </article>
                     </div>
                 </div>
@@ -757,35 +752,33 @@
                         <div class="row row-50">
                             <div class="col-md-6 col-lg-4">
                                 <h5 class="footer-modern-title oh-desktop"><span
-                                        class="d-inline-block wow slideInLeft">What We
-                                        Offer</span></h5>
+                                        class="d-inline-block wow slideInLeft">Những gì chúng tôi cung cấp</span></h5>
                                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                                    <li><a href="#">Pizzas</a></li>
-                                    <li><a href="#">Burgers</a></li>
-                                    <li><a href="#">Salads</a></li>
-                                    <li><a href="#">Drinks</a></li>
-                                    <li><a href="#">Seafood</a></li>
-                                    <li><a href="#">Drinks</a></li>
+                                    <li><a href="#">abc</a></li>
+                                    <li><a href="#">abc</a></li>
+                                    <li><a href="#">abc</a></li>
+                                    <li><a href="#">abc</a></li>
+                                    <li><a href="#">abc</a></li>
+                                    <li><a href="#">abc</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-6 col-lg-4 col-xl-3">
                                 <h5 class="footer-modern-title oh-desktop"><span
-                                        class="d-inline-block wow slideInLeft">Information</span>
+                                        class="d-inline-block wow slideInLeft">Thông tin</span>
                                 </h5>
                                 <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                                    <li><a href="views/about-us.html">About us</a></li>
-                                    <li><a href="#">Latest News</a></li>
-                                    <li><a href="#">Our Menu</a></li>
+                                    <li><a href="views/about-us.html">Về chúng tôi</a></li>
+                                    <li><a href="#">Dịch vụ của chúng tôi</a></li>
                                     <li><a href="#">FAQ</a></li>
-                                    <li><a href="#">Shop</a></li>
-                                    <li><a href="views/contacts.html">Contact Us</a></li>
+                                    <li><a href="#">Cửa hàng</a></li>
+                                    <li><a href="views/contacts.html">Liên hệ ngay</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-4 col-xl-5">
                                 <h5 class="footer-modern-title oh-desktop"><span
-                                        class="d-inline-block wow slideInLeft">Newsletter</span>
+                                        class="d-inline-block wow slideInLeft">Khách hàng mới</span>
                                 </h5>
-                                <p class="wow fadeInRight">Sign up today for the latest news and updates.</p>
+                                <p class="wow fadeInRight">Đăng ký ngay hôm nay để nhận tin tức và cập nhật mới nhất.</p>
                                 <!-- RD Mailform-->
                                 <form class="rd-form rd-mailform rd-form-inline rd-form-inline-sm oh-desktop"
                                       data-form-output="form-output-global" data-form-type="subscribe"
@@ -793,8 +786,8 @@
                                     <div class="form-wrap wow slideInUp">
                                         <input class="form-input" id="subscribe-form-2-email" type="email"
                                                name="email" data-constraints="@Email @Required" />
-                                        <label class="form-label" for="subscribe-form-2-email">Enter your
-                                            E-mail</label>
+                                        <label class="form-label" for="subscribe-form-2-email">Nhập
+                                            E-mail của bạn</label>
                                     </div>
                                     <div class="form-button form-button-2 wow slideInRight">
                                         <button
@@ -814,10 +807,10 @@
                             <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
                                 <div class="row row-30 align-items-center text-lg-center">
                                     <div class="col-md-7 col-xl-6"><a class="brand" href="views/home.html"><img
-                                                src="assets/images/logo-inverse-198x66.png" alt="" width="198"
+                                                src="assets/images/Logo_white.png" alt="" width="198"
                                                 height="66" /></a></div>
                                     <div class="col-md-5 col-xl-6">
-                                        <div class="iso-1"><span><img src="assets/images/like-icon-58x25.png"
+                                        <div class="iso-1"><span><img src="assets/images/like-icon-58x25.webp"
                                                                       alt="" width="58" height="25" /></span><span
                                                 class="iso-1-big">9.4k</span></div>
                                     </div>
@@ -860,14 +853,13 @@
                 <div class="footer-modern-line-3">
                     <div class="container">
                         <div class="row row-10 justify-content-between">
-                            <div class="col-md-6"><span>514 S. Magnolia St. Orlando, FL 32806</span></div>
+                            <div class="col-md-6"><span>Km29 Đại lộ Thăng Long - Thạch Thất - Hà Nội</span></div>
                             <div class="col-md-auto">
                                 <!-- Rights-->
                                 <p class="rights"><span>&copy;&nbsp;</span><span
-                                        class="copyright-year"></span><span></span><span>.&nbsp;</span><span>All
-                                        Rights Reserved.</span><span>
-                                        Design&nbsp;by&nbsp;<a
-                                            href="https://www.templatemonster.com">TemplateMonster</a></span>
+                                        class="copyright-year"></span><span></span><span>.&nbsp;</span><span>Tất cả các quyền được bảo lưu.</span><span>
+                                        Thiết kế&nbsp;bởi&nbsp;<a
+                                            href="https://www.templatemonster.com">Heal In</a></span>
                                 </p>
                             </div>
                         </div>

@@ -108,11 +108,11 @@
                                     <div class="rd-navbar-main">
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="landing">Home</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="landing">Home</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="about_us">About us</a>
+                                            <li class="rd-nav-item active"><a class="rd-nav-link " href="about_us">About us</a>
                                             </li>
-                                            <li class="rd-nav-item"><a class="rd-nav-link" href="views/typography.html">Game</a>
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="game">Game</a>
                                             </li>
                                             <li class="rd-nav-item"><a class="rd-nav-link" href="landing#shop">Shop</a>
                                                 <ul class="rd-menu rd-navbar-dropdown">
@@ -124,7 +124,7 @@
                                             </li>
 
 
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="cart#cart">
+                                            <li class="rd-nav-item "><a class="rd-nav-link" href="cart#cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">

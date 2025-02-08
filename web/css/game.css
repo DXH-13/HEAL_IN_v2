@@ -16,7 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('/web/assets/images/products/background_1.jpg');
+    background-image: url('../assets/images/products/background_1.jpg');
     background-size: cover; /* Đảm bảo ảnh phủ đầy màn hình */
     background-attachment: fixed; /* Giữ ảnh nền cố định khi zoom */
     background-repeat: no-repeat;
@@ -172,7 +172,7 @@ body {
 
 
 .stack .card .front {
-    background-image: url('/web/assets/images/products/card_back.jpg');
+    background-image: url('../assets/images/products/card_back.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;

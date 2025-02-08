@@ -11,9 +11,9 @@ package constant;
 public interface IConstant {
     
     
-    String GOOGLE_CLIENT_ID = "990006517371-6q85h94fvf4baric0cd1r7qtgcci7k5q.apps.googleusercontent.com";
+    String GOOGLE_CLIENT_ID = "51300126202-jbb4258dvsdjr16iqa5vb92vbdqot9sl.apps.googleusercontent.com";
 
-    String GOOGLE_CLIENT_SECRET = "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";
+    String GOOGLE_CLIENT_SECRET = "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";
 
     String GOOGLE_REDIRECT_URI_LOG_IN = "http://localhost:9999/HEAL_IN_v2/log_in?loginType=google";
     

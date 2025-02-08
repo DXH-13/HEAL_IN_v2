@@ -15729,7 +15729,7 @@ html.rd-navbar-fixed-linked .page {
 
 @media (min-width: 1200px) {
     .rd-navbar-modern.rd-navbar-static .rd-navbar-brand img {
-        max-width: 240px;
+        max-width: 198px;
         max-height: 240px;
     }
 }
@@ -15842,7 +15842,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-modern.rd-navbar-static .rd-navbar-project-hamburger-open {
     position: absolute;
-    right: 15px;
+    right: -80px;
     bottom: 10px;
 }
 
@@ -15996,7 +15996,7 @@ html.rd-navbar-fixed-linked .page {
 
 .rd-navbar-project-hamburger {
     position: relative;
-    width: 58px;
+    width: 158px;
     height: 50px;
     padding: 6px 0;
     transition: all .3s ease;

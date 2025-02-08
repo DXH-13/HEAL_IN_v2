@@ -20,8 +20,8 @@ public class SendMail {
 //    private static final String TEMPLATE_PATH = "/web/views/email-template.html";
 private static final String RESET_PASSWORD_TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-reset.html";
 private static final String ACTIVE_ACCOUNT_TEMPLATE_PATH = "D:\\FPT University\\Spring_2025\\EXE202\\HEAL_IN_v2\\web\\views\\email-active.html";
-private static final String EMAIL = "huydang139203@gmail.com";
-private static final String EMAIL_APP_PASS = "bacgpgdyexlipimy";
+private static final String EMAIL = "healin.fpt@gmail.com";
+private static final String EMAIL_APP_PASS = "ykbcxpwhijocswed";
 
     private static final int LIMIT_MINUS = 5;
 

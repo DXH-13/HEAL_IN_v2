@@ -119,7 +119,7 @@
                                                 <a class="rd-nav-link" href="about_us">About us</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="views/typography.html">Game</a>
+                                                <a class="rd-nav-link" href="game">Game</a>
                                             </li>
                                             <li class="rd-nav-item ">
                                                 <a class="rd-nav-link" href="landing#shop">Shop</a>

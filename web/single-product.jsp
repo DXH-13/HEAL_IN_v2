@@ -10,7 +10,7 @@
               content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
-        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
         <!-- Stylesheets-->
         <link rel="stylesheet" type="text/css"
               href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
@@ -77,7 +77,7 @@
                                             data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                     <!-- RD Navbar Brand-->
                                     <div class="rd-navbar-brand"><a class="brand" href="landing"><img
-                                                class="brand-logo-dark" src="https://placehold.co/198x66" alt=""
+                                                class="brand-logo-dark" src="assets/images/Logo web.png" alt=""
                                                 width="189" height="66" /></a></div>
                                 </div>
                                 <div class="rd-navbar-right rd-navbar-nav-wrap">
@@ -207,7 +207,7 @@
                         <h3 class="breadcrumbs-custom-title">Single Product</h3>
                         <div class="breadcrumbs-custom-decor"></div>
                     </div>
-                    <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
+                    <div class="box-transform" style="background-image: url(assets/images/cover_doanvien.png);"></div>
                 </div>
                 <div class="container">
                     <ul class="breadcrumbs-custom-path">
