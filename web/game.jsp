@@ -18,6 +18,39 @@
     </head>
 
     <body>
+        <div class="preloader">
+            <div class="wrapper-triangle">
+              <div class="pen">
+                <div class="line-triangle">
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                </div>
+                <div class="line-triangle">
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                  <div class="triangle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- <div class="userContainer">
             <div style="display: flex; align-items: center;">
                 <div class="userName">Player 1: Huy123</div>
@@ -548,6 +581,8 @@
 
 
         <script src="js/game.js"></script>
+        <script src="js/core.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 
 </html>

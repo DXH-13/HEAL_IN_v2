@@ -75,6 +75,30 @@ cards.forEach((card, index) => {
     });
 });
 
+// cards.forEach((card, index) => {
+//     card.addEventListener('click', () => {
+//         if (card.classList.contains('active')) return;
+        
+//         if (activeCard) {
+//             activeCard.classList.remove('active', 'flip');
+//             const activeIcon = activeCard.querySelector('.icon-container i');
+//             if (activeIcon) activeIcon.style.display = 'none';
+//             activeCard.style.display = 'none';
+//         }
+        
+//         card.classList.add('active');
+//         setTimeout(() => {
+//             card.classList.add('flip');  
+//         }, 300);
+        
+//         activeCard = card;
+        
+//         const iconContainers = document.querySelectorAll('.icon-container i');
+//         iconContainers.forEach(icon => icon.style.display = 'none');
+//         iconContainers[currentPlayerIndex].style.display = 'inline-block';
+//         currentPlayerIndex = (currentPlayerIndex + 1) % iconContainers.length;
+//     });
+// });
 
 
 

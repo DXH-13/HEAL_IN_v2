@@ -121,7 +121,7 @@
                                                         tôi</a>
                                                 </li>
                                                 <li class="rd-nav-item"><a class="rd-nav-link"
-                                                        href="views/typography.html">Trò chơi</a>
+                                                        href="game">Trò chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item active">
                                                     <a class="rd-nav-link" href="landing#shop">Cửa hàng</a>
@@ -193,7 +193,7 @@
                                             <c:otherwise>
                                                 <div class="dropdown">
                                                     <button class="dropbtn">
-                                                        <img src="https://placehold.co/50x50" alt="Avatar"
+                                                        <img src="${sessionScope.userLogin.image}" alt="Avatar"
                                                             class="avatar">
                                                     </button>
                                                     <div class="dropdown-content">
@@ -572,7 +572,7 @@
                                 </div>
                                 <div class="col-lg-4 col-xl-5">
                                     <h5 class="footer-modern-title oh-desktop"><span
-                                            class="d-inline-block wow slideInLeft">Newsletter</span></h5>
+                                            class="d-inline-block wow slideInLeft">Khách hàng mới</span></h5>
                                     <p class="wow fadeInRight">Đăng ký ngay hôm nay để nhận tin tức và cập nhật mới
                                         nhất.</p>
                                     <!-- RD Mailform-->
@@ -604,11 +604,12 @@
                                                     src="assets/images/Logo_white.png" alt="" width="163"
                                                     height="57" /></a></div>
                                         <div class="col-md-5 col-xl-6">
-                                            <div class="iso-1"><a
-                                                    href="https://www.facebook.com/profile.php?id=61573141550651">
+                                            <div class="iso-1">
+                                                <a href="https://www.facebook.com/profile.php?id=61573141550651">
                                                     <img src="assets/images/like-icon-58x25.webp" alt="" width="58"
                                                         height="25" />
-                                                </a><span class="iso-1-big">9.4k</span>
+                                                </a>
+                                                <span class="iso-1-big">9.4k</span>
                                             </div>
                                         </div>
                                     </div>

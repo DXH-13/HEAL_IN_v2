@@ -128,11 +128,11 @@
                                                     <ul class="rd-menu rd-navbar-dropdown">
                                                         <li class="rd-dropdown-item ">
                                                             <a class="rd-dropdown-link"
-                                                                href="single_product?idProduct=1#product">Đoàn Viên</a>
+                                                                href="single_product?idProduct=1">Đoàn Viên</a>
                                                         </li>
                                                         <li class="rd-dropdown-item">
                                                             <a class="rd-dropdown-link"
-                                                                href="single_product?idProduct=2#product">Tri Kỷ</a>
+                                                                href="single_product?idProduct=2">Tri Kỷ</a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -191,7 +191,7 @@
                                             <c:otherwise>
                                                 <div class="dropdown">
                                                     <button class="dropbtn">
-                                                        <img src="https://placehold.co/50x50" alt="Avatar"
+                                                        <img src="${sessionScope.userLogin.image}" alt="Avatar"
                                                             class="avatar">
                                                     </button>
                                                     <div class="dropdown-content">
@@ -221,17 +221,16 @@
                                         <div class="col-sm-9 col-md-9 col-lg-9 col-xl-7 offset-lg-1 offset-xxl-0">
                                             <h1 class="oh swiper-title">
                                                 <span class="d-inline-block" data-caption-animate="slideInUp"
-                                                    data-caption-delay="0" style="color: #9A1E22; margin-top: 25px">CHẤT
+                                                    data-caption-delay="0" style=" margin-top: 25px">CHẤT
                                                     LƯỢNG</span>
                                             </h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInLeft"
-                                                data-caption-delay="300" style="color: #9A1E22;">Chúng tôi mang đến
+                                                data-caption-delay="300" >Chúng tôi mang đến
                                                 những bộ board game tốt nhất để tạo nên những khoảnh khắc đáng nhớ cho
                                                 gia đình và bạn bè.
                                             </p>
                                             <a class="button button-lg button-primary button-winona button-shadow-2"
-                                                href="#" data-caption-animate="fadeInUp" data-caption-delay="300">View
-                                                our menu</a>
+                                                href="#" data-caption-animate="fadeInUp" data-caption-delay="300">Xem các sản phẩm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -244,15 +243,15 @@
                                         <div class="col-sm-8 col-lg-9 offset-lg-1 offset-xxl-0">
                                             <h1 class="oh swiper-title"><span class="d-inline-block"
                                                     data-caption-animate="slideInDown" data-caption-delay="0"
-                                                    style="color: #9A1E22; margin-top: 25px">KHOẢNH KHẮC</span></h1>
+                                                    style=" margin-top: 25px">KHOẢNH KHẮC</span></h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                                data-caption-delay="300" style="color: #9A1E22;">Trải nghiệm niềm vui
+                                                data-caption-delay="300" >Trải nghiệm niềm vui
                                                 kết nối và tiếng cười cùng bộ sưu tập board game độc đáo của chúng tôi!
                                             </p>
                                             <div class="button-wrap oh"><a
                                                     class="button button-lg button-primary button-winona button-shadow-2"
                                                     href="#" data-caption-animate="slideInUp"
-                                                    data-caption-delay="0">View our menu</a></div>
+                                                    data-caption-delay="0">Đăng ký ngay</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -265,14 +264,14 @@
                                         <div class="col-sm-8 col-lg-9 offset-lg-1 offset-xxl-0">
                                             <h1 class="oh swiper-title"><span class="d-inline-block"
                                                     data-caption-animate="slideInDown" data-caption-delay="0"
-                                                    style="color: #9A1E22; margin-top: 25px;">KẾT NỐI</span></h1>
+                                                    style=" margin-top: 25px;">KẾT NỐI</span></h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                                data-caption-delay="300" style="color: #9A1E22;">Board game là sợi dây
+                                                data-caption-delay="300" >Board game là sợi dây
                                                 gắn kết gia đình, bạn bè!</p>
                                             <div class="button-wrap oh"><a
                                                     class="button button-lg button-primary button-winona button-shadow-2"
                                                     href="#" data-caption-animate="slideInUp"
-                                                    data-caption-delay="0">View our menu</a></div>
+                                                    data-caption-delay="0">Chơi thử ngay</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -449,7 +448,7 @@
                                                 cart</a></div>-->
                                             <div class="button-wrap">
                                                 <a class="button button-xs button-secondary button-winona"
-                                                    href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=${product.id}#product">View
+                                                    href="single_product?id=${sessionScope.userLogin.normalUserId}&idProduct=${product.id}">View
                                                     Product</a>
                                             </div>
                                         </div>
