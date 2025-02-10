@@ -290,7 +290,7 @@ body {
     top: 25px;
     left: 25px;
     width: 250px;
-    height: 220px;
+    height: 250px;
     background-color: rgba(172, 106, 0, 0.78);
     z-index: 1000;
     border-radius: 12px;
@@ -374,7 +374,7 @@ body {
     .userContainer {
         width: 300px;
         /* Tăng kích thước để tránh các phần tử bị tràn */
-        height: auto;
+        height: 280px;
         /* Cho phép chiều cao tự động */
         top: 20px;
         left: 20px;

@@ -40,18 +40,24 @@ public class GameController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Đọc và xử lý JSON như ở bước trước
         String[] playerNames = request.getParameterValues("players[]");
         List<String> players = new ArrayList<>();
 
-        if (playerNames != null) {
+        if (playerNames != null && playerNames.length > 0) {
             for (String player : playerNames) {
-                players.add(player);
+                // Add only non-empty and non-null player names
+                if (player != null && !player.trim().isEmpty()) {
+                    players.add(player);
+                }
             }
         }
 
-        request.setAttribute("players", players);
-        System.out.println(players);
+        // Set the attribute only if there are valid players
+        if (!players.isEmpty()) {
+            request.setAttribute("players", players);
+        }
+
+        System.out.println(players);  // Log player names for debugging
         request.getRequestDispatcher("game.jsp").forward(request, response);
     }
 

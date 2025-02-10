@@ -12,15 +12,34 @@ document.querySelector("#deck2").addEventListener("click", () => {
     openChoicePopup();
 });
 
-document.querySelector("#startImmediately").addEventListener("click", () => {
-    alert(`Bắt đầu trò chơi với bộ bài: ${selectedDeck}`);
-    closePopup("#choiceOverlay");
-});
+// document.querySelector("#startImmediately").addEventListener("click", () => {
+//     alert(`Bắt đầu trò chơi với bộ bài: ${selectedDeck}`);
+//     closePopup("#choiceOverlay");
+// });
 
 document.querySelector("#addPlayers").addEventListener("click", () => {
     closePopup("#choiceOverlay");
     openPopup("#playerOverlay");
 });
+
+// Close the player popup if clicked outside
+document.addEventListener("click", function(event) {
+    const playerOverlay = document.querySelector("#playerOverlay");
+    const playerOverlayContent = document.querySelector("#playerOverlay .bg-white");
+    const choiceOverlay = document.querySelector("#choiceOverlay");
+    const choiceOverlayContent = document.querySelector("#choiceOverlay .bg-white");
+
+    // Close the "Thêm Người Chơi" popup if clicked outside
+    if (playerOverlay.classList.contains("active") && !playerOverlayContent.contains(event.target) && !event.target.closest("#addPlayers")) {
+        closePopup("#playerOverlay");
+    }
+
+    // Close the "Bạn muốn làm gì tiếp theo?" popup if clicked outside
+    if (choiceOverlay.classList.contains("active") && !choiceOverlayContent.contains(event.target) && !event.target.closest("#deck1") && !event.target.closest("#deck2")) {
+        closePopup("#choiceOverlay");
+    }
+});
+
 
 document.querySelector("#addPlayer").addEventListener("click", (event) => {
     event.preventDefault();
@@ -91,3 +110,23 @@ function addHiddenPlayerInput(playerName) {
     input.value = playerName;
     document.querySelector("#playerListHiddenInputs").appendChild(input);
 }
+
+document.querySelector("#startImmediately").addEventListener("click", () => {
+    // Nếu không có người chơi, gửi players = 0
+    const players = [];  // Mảng trống hoặc giá trị mà bạn muốn xử lý trong servlet
+
+    // Gửi thông tin đến servlet game
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = "game";  // Đảm bảo rằng action trỏ đến servlet xử lý game
+
+    // Thêm giá trị players vào form
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = "players[]";  // Đây là mảng players mà servlet sẽ nhận
+    input.value = JSON.stringify(players);  // Chuyển mảng thành chuỗi JSON
+    form.appendChild(input);
+
+    document.body.appendChild(form);
+    form.submit();  // Gửi form đến servlet
+});

@@ -1,3 +1,123 @@
+/* General body and font styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8fafc; /* Light gray background */
+    color: #333;
+}
+
+/* Main wrapper for content */
+.w-full {
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #2c3e50;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#backToChoiceOverlay i {
+    font-size: 1.5rem; /* Adjust size */
+    transition: color 0.3s ease;
+}
+
+#backToChoiceOverlay:hover i {
+    color: #333; /* Darker color on hover */
+}
+
+/* Card container for selecting deck */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.ui-to-top{
+    display: none !important;
+}
+
+/* .border {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+} */
+
+/* .border:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+} */
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    color: #34495e;
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.bg-blue-500 {
+    background-color: #3498db;
+    color: white;
+}
+
+.bg-blue-500:hover {
+    background-color: #2980b9;
+}
+
+.bg-green-500 {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.bg-green-500:hover {
+    background-color: #27ae60;
+}
+
+/* Form and input styles */
+input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+input::placeholder {
+    color: #7f8c8d;
+}
+
+/* Player overlay styling */
 .overlay {
     display: none;
     position: fixed;
@@ -15,29 +135,336 @@
     align-items: center;
 }
 
-.player-card {
-    animation: slideIn 0.3s ease-in-out;
+.bg-white {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+    .w-full {
+        max-width: 90%;
     }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    .flex {
+        flex-direction: column;
     }
+
+
 }
 
-.player-overlay-content {
+/* Preloader active state */
+.preloader.active {
     display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
-.player-list {
-    flex: 1;
-    overflow-y: auto;
+/* For close button inside player list */
+.removePlayer {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+
+
+
+
+.outButton {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffd480;
+    border-radius: 50%;
+    display: flex;
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    background: rgba(172, 106, 0, 0.78);
+    cursor: pointer;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.outButton:hover i {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+}
+
+
+
+
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    transition: .3s all ease;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader.loaded .triangle,
+.preloader.loaded .pen {
+    animation: none;
+}
+
+.preloader-body {
+    text-align: center;
+}
+
+.preloader-body p {
+    position: relative;
+    right: -8px;
+}
+
+.wrapper-triangle {
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 304px;
+    height: 250px;
+    transform: translate(-50%, -50%);
+}
+
+.line-triangle {
+    position: absolute;
+    width: 250px;
+    height: 54px;
+    border: 1px solid transparent;
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(1) {
+    left: 313px;
+    bottom: -21px;
+    transform: rotate(-120deg);
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(2) {
+    left: 156px;
+    top: -54px;
+    transform: rotate(120deg);
+    transform-origin: 0 100%;
+}
+
+.line-triangle:nth-last-of-type(3) {
+    top: 217px;
+    left: 0;
+}
+
+.triangle:nth-of-type(1) {
+    animation: tri1 1.5s linear infinite;
+}
+
+@keyframes tri1 {
+    0% {
+        opacity: 0;
+    }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(2) {
+    animation: tri2 1.5s linear infinite;
+}
+
+@keyframes tri2 {
+    0% {
+        opacity: 0;
+    }
+    14.28571% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(3) {
+    animation: tri3 1.5s linear infinite;
+}
+
+@keyframes tri3 {
+    0% {
+        opacity: 0;
+    }
+    28.57143% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(4) {
+    animation: tri4 1.5s linear infinite;
+}
+
+@keyframes tri4 {
+    0% {
+        opacity: 0;
+    }
+    42.85714% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(5) {
+    animation: tri5 1.5s linear infinite;
+}
+
+@keyframes tri5 {
+    0% {
+        opacity: 0;
+    }
+    57.14286% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(6) {
+    animation: tri6 1.5s linear infinite;
+}
+
+@keyframes tri6 {
+    0% {
+        opacity: 0;
+    }
+    71.42857% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle:nth-of-type(7) {
+    animation: tri7 1.5s linear infinite;
+}
+
+@keyframes tri7 {
+    0% {
+        opacity: 0;
+    }
+    85.71429% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.triangle {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border: 31px solid transparent;
+    border-bottom: 54px solid #9A1E22;
+    animation: tri 1.5s linear infinite;
+}
+
+.triangle:nth-of-type(1) {
+    left: 0px;
+}
+
+.triangle:nth-of-type(2) {
+    left: 31px;
+}
+
+.triangle:nth-of-type(3) {
+    left: 63px;
+}
+
+.triangle:nth-of-type(4) {
+    left: 94px;
+}
+
+.triangle:nth-of-type(5) {
+    left: 125px;
+}
+
+.triangle:nth-of-type(6) {
+    left: 156px;
+}
+
+.triangle:nth-of-type(7) {
+    left: 188px;
+}
+
+.triangle:nth-child(even) {
+    transform: rotate(180deg);
+    top: 0;
+}
+
+.triangle:nth-child(1) {
+    animation: none;
+}
+
+.line:nth-child(2) .triangle:nth-child(1):before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    left: -22px;
+    bottom: -77px;
+    background: transparent;
+    border: 13px solid transparent;
+    border-bottom: 21px solid #F1ECDB;
+    animation: tri 1.5s linear infinite;
+}
+
+.pen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 312.5px;
+    transform-origin: 50% 0;
+    animation: move 1.5s cubic-bezier(0, 0, 0.5, 0.85) infinite;
+}
+
+@keyframes tri {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: scale(2.45);
+    }
+    100% {
+        transform: scale(0.5);
+    }
 }

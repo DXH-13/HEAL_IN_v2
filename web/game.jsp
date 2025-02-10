@@ -89,22 +89,29 @@
             </div>
         </div> -->
 
-        <div class="userContainer">
-            <c:forEach var="player" items="${players}" varStatus="status">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <div class="userName">Player ${status.index + 1}: ${player}</div>
-                    <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
-                        <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+        <c:if test="${not empty players}">
+            <div class="userContainer">
+                <c:forEach var="player" items="${players}" varStatus="status">
+                    <div style="display: flex; align-items: center; ">
+                        <div class="userName">Player ${status.index + 1}: ${player}</div>
+                        <div style="margin-left: 8px; " class="icon-container">
+                            <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
-        </div>
+                </c:forEach>
+            </div>
+        </c:if>
 
 
 
 
 
-        <a href="landing" class="outButton">
+
+
+
+
+
+        <a href="pre_game" class="outButton">
             <i class="fa-sharp-duotone fa-solid fa-arrow-right-from-bracket fa-2xl"
                style="color: rgb(255, 255, 255); top: 100px;"></i>
         </a>

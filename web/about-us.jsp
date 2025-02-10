@@ -219,7 +219,7 @@
                             <h3 class="breadcrumbs-custom-title">Về chúng tôi</h3>
                             <div class="breadcrumbs-custom-decor"></div>
                         </div>
-                        <div class="box-transform" style="background-image: url(https://placehold.co/1200x324);"></div>
+                        <div class="box-transform" style="background-image: url(https://daihoc.fpt.edu.vn/wp-content/uploads/2025/01/header-2024-png.avif);"></div>
                     </div>
                     <div class="container">
                         <ul class="breadcrumbs-custom-path">
