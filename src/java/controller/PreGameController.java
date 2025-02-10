@@ -1,3 +1,4 @@
+
 package controller;
 
 import java.io.IOException;
@@ -6,14 +7,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- *
- * @author dangx
- */
-public class GameController extends HttpServlet {
+
+public class PreGameController extends HttpServlet {
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -23,36 +20,27 @@ public class GameController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet GameController</title>");
+            out.println("<title>Servlet PreGameController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet GameController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet PreGameController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("game.jsp").forward(request, response);
+        request.getRequestDispatcher("pregame.jsp").forward(request, response);
     }
 
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Đọc và xử lý JSON như ở bước trước
-        String[] playerNames = request.getParameterValues("players[]");
-        List<String> players = new ArrayList<>();
-
-        if (playerNames != null) {
-            for (String player : playerNames) {
-                players.add(player);
-            }
-        }
-
-        request.setAttribute("players", players);
-        System.out.println(players);
-        request.getRequestDispatcher("game.jsp").forward(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     @Override

@@ -44,6 +44,10 @@
         <servlet-name>GameController</servlet-name>
         <servlet-class>controller.GameController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PreGameController</servlet-name>
+        <servlet-class>controller.PreGameController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>GameController</servlet-name>
         <url-pattern>/game</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PreGameController</servlet-name>
+        <url-pattern>/pre_game</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

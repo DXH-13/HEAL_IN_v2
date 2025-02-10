@@ -3,7 +3,7 @@
     Created on : Feb 7, 2025, 9:48:18 PM
     Author     : dangx
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,37 +20,37 @@
     <body>
         <div class="preloader">
             <div class="wrapper-triangle">
-              <div class="pen">
-                <div class="line-triangle">
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
+                <div class="pen">
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
                 </div>
-                <div class="line-triangle">
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                </div>
-                <div class="line-triangle">
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                  <div class="triangle"></div>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
         <!-- <div class="userContainer">
             <div style="display: flex; align-items: center;">
                 <div class="userName">Player 1: Huy123</div>
@@ -90,31 +90,16 @@
         </div> -->
 
         <div class="userContainer">
-            <div style="display: flex; align-items: center;">
-                <div class="userName">Player 1: Huy123</div>
-                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
-                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+            <c:forEach var="player" items="${players}" varStatus="status">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="userName">Player ${status.index + 1}: ${player}</div>
+                    <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
+                        <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
+                    </div>
                 </div>
-            </div>
-            <div style="display: flex; align-items: center;">
-                <div class="userName">Player 2: Huy123</div>
-                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
-                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
-                </div>
-            </div>
-            <div style="display: flex; align-items: center;">
-                <div class="userName">Player 3: Huy123</div>
-                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
-                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-xl" style="color: aliceblue; display: none;"></i>
-                </div>
-            </div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                <div class="userName">Player 4: Huy123</div>
-                <div style="margin-left: 8px; margin-top: 15px;" class="icon-container">
-                    <i class="fa-sharp-duotone fa-solid fa-hand-point-left fa-bounce fa-2xl" style="color: aliceblue; display: none;"></i>
-                </div>
-            </div>
+            </c:forEach>
         </div>
+
 
 
 

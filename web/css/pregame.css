@@ -1,0 +1,43 @@
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+.overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-card {
+    animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.player-overlay-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.player-list {
+    flex: 1;
+    overflow-y: auto;
+}

@@ -121,7 +121,7 @@
                                                     <a class="rd-nav-link" href="about_us">Về chúng tôi</a>
                                                 </li>
                                                 <li class="rd-nav-item">
-                                                    <a class="rd-nav-link" href="game">Trò chơi</a>
+                                                    <a class="rd-nav-link" href="pre_game">Trò chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item">
                                                     <a class="rd-nav-link" href="#shop">Cửa hàng</a>
