@@ -12,6 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forgot password</title>
+        <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/forgot-password.css">
     </head>
@@ -36,11 +37,11 @@
                                                     <div class="mb-3">
                                                         <div class="text-center" style="margin-bottom: 7rem;">
                                                             <a href="#!">
-                                                                <img src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/bsb-logo.svg" alt="BootstrapBrain Logo" width="175" height="57">
+                                                                <img src="assets/images/Logo web.png" alt="BootstrapBrain Logo" width="175" height="57">
                                                             </a>
                                                         </div>
-                                                        <h2 class="text-left mb-3 mt-5">Reset your password</h2>
-                                                        <p class="text-left">Enter the email you signed up with. We'll send you a link to log in and reset your password.</p>
+                                                        <h2 class="text-left mb-3 mt-5">Quên mật khẩu</h2>
+                                                        <p class="text-left">Nhập email bạn đã đăng ký. Chúng tôi sẽ gửi cho bạn liên kết để đăng nhập và đặt lại mật khẩu.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +63,7 @@
                                                     </div>
                                                     <div class="col-12">
                                                         <div class="d-grid">
-                                                            <button class="btn btn-dark btn-lg" type="submit">Send link</button>
+                                                            <button class="btn btnLoginnow btn-lg" type="submit">Gửi mail</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,7 +72,7 @@
                                             <div class="row mt-5" style="margin-bottom: 6.2rem;">
                                                 <div class="col-12">
                                                     <div class="d-flex justify-content-center mt-3">
-                                                        <a href="log_in" class="link-secondary text-decoration-none">Log in</a>
+                                                        <a href="log_in" class="link-secondary text-decoration-none">Đăng nhập</a>
                                                     </div>                          
                                                 </div>
                                             </div>

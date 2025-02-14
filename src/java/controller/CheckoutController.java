@@ -14,7 +14,7 @@ import model.Cart;
 import model.User;
 
 /**
- *
+ * 
  * @author dangx
  */
 public class CheckoutController extends HttpServlet {
@@ -49,6 +49,7 @@ public class CheckoutController extends HttpServlet {
         }
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
@@ -58,6 +59,7 @@ public class CheckoutController extends HttpServlet {
             int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
             request.setAttribute("productInCart", productInCart);
         }
+        
         String[] selectedProducts = request.getParameterValues("selectedProducts");
         List<Cart> cartList = new ArrayList<>();
 
@@ -70,8 +72,10 @@ public class CheckoutController extends HttpServlet {
                 }
             }
         }
+        System.out.println(cartList);
         request.setAttribute("cartBuy", cartList);
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
+        
     }
 
     @Override

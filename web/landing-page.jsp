@@ -91,7 +91,7 @@
                                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span>
                                                         </div>
                                                         <div class="unit-body"><a class="phone"
-                                                                href="tel:#">9999999999</a></div>
+                                                                href="tel:#">0327992501</a></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -138,7 +138,7 @@
                                                 </li>
 
                                                 <li class="rd-nav-item">
-                                                    <a class="rd-nav-link" href="cart#cart">
+                                                    <a class="rd-nav-link" href="cart">
                                                         <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                         <c:choose>
                                                             <c:when test="${sessionScope.userLogin == null}">
@@ -214,7 +214,7 @@
                 <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true"
                     data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
                     <div class="swiper-wrapper text-sm-left">
-                        <div class="swiper-slide context-dark" data-slide-bg="https://placehold.co/1918x753">
+                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-1-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -236,7 +236,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide context-dark" data-slide-bg="https://placehold.co/1918x753">
+                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-3-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide context-dark" data-slide-bg="https://placehold.co/1918x753">
+                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-2-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -304,12 +304,12 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInUp">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
+                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-3.jpg"
+                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-bubbles"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Trò chuyện</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -318,12 +318,12 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
+                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-2.jpg"
+                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-group-work"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Kết nối</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -332,12 +332,14 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInUp">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
-                                        </div>
+                                        <div class="services-terri-figure">
+                                            <img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/len-mam-3.jpg"
+                                                 alt="" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;">
+                                          </div>
+                                          
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-happy-grin"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Giải trí</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -346,12 +348,12 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
+                                        <div class="services-terri-figure"><img src="https://th.bing.com/th/id/OIP.PH43VsxjCDQbTuB2-40bKQHaFj?w=1232&h=924&rs=1&pid=ImgDetMain"
+                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-joystick"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Cảm xúc</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -360,12 +362,12 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInUp">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
+                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ma-doi-grab-food-4-playing-scaled.jpg"
+                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-heart-pulse"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Thư giãn</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -374,12 +376,12 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://placehold.co/370x278"
-                                                alt="" width="370" height="278" />
+                                        <div class="services-terri-figure"><img src="https://th.bing.com/th/id/OIP.Tx4n1myttGPjV-d5a_R9PwHaFj?w=960&h=720&rs=1&pid=ImgDetMain"
+                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-bandage"></span>
-                                            <h5 class="services-terri-title"><a href="#">abc</a></h5>
+                                            <h5 class="services-terri-title"><a href="#">Chữa lành</a></h5>
                                         </div>
                                     </article>
                                 </div>
@@ -390,7 +392,7 @@
 
                 <!-- Section CTA-->
                 <section class="primary-overlay section parallax-container"
-                    data-parallax-img="https://placehold.co/1920x503">
+                    data-parallax-img="assets/images/banner/banner_nhiet_huyet.png">
                     <div class="parallax-content section-xl context-dark text-md-left">
                         <div class="container">
                             <div class="row justify-content-end">
@@ -401,7 +403,7 @@
                                         </p>
                                         <p class="cta-modern-text oh-desktop" data-wow-delay=".1s"><span
                                                 class="cta-modern-decor wow slideInLeft"></span><span
-                                                class="d-inline-block wow slideInDown">Huy bảo thế</span></p><a
+                                                class="d-inline-block wow slideInDown">Khách hàng</span></p><a
                                             class="button button-md button-secondary-2 button-winona wow fadeInUp"
                                             href="#" data-wow-delay=".2s">Xem dịch vụ của chúng tôi</a>
                                     </div>
@@ -437,7 +439,7 @@
                                             </c:when>
                                             <c:otherwise>
                                                 <div class="product-price-wrap">
-                                                    <div class="product-price product-price-old">179.000đ</div>
+                                                    <div class="product-price product-price-old">2?9.000đ</div>
                                                     <div class="product-price">${product.price}đ</div>
                                                 </div>
                                             </c:otherwise>
@@ -469,7 +471,7 @@
 
                 <!-- Section CTA-->
                 <section class="primary-overlay section parallax-container"
-                    data-parallax-img="https://placehold.co/1920x558">
+                    data-parallax-img="assets/images/banner/banner_sale.png">
                     <div class="parallax-content section-xxl context-dark text-md-left">
                         <div class="container">
                             <div class="row justify-content-end">
@@ -505,52 +507,52 @@
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">hay</p>
+                                        <p class="q">Healin không chỉ đẹp về hình thức mà còn chạm vào cảm xúc sâu bên trong. Bộ bài là công cụ tuyệt vời để kết nối cảm xúc giữa các thành viên trong gia đình.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
+                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/431972177_1649416969212222_2285923343821617056_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=70WZr9-pd3AQ7kNvgFSrfQi&_nc_oc=Adi9Wjq7nCeSKnviK0vewfDW8uppxfAJ8BudXyw_8waDIAOXGlQqJXp17tRbdQZBOMU&_nc_zt=24&_nc_ht=scontent.fhan2-3.fna&_nc_gid=ATHLc2pjuj-CEHNP8qOOBSe&oh=00_AYCQN_AfmWmzSr9PT7mYQZqSyKsbRzMfSvuNXdjlVStv0A&oe=67AF97E0" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
-                                <h6 class="quote-tara-author">huy</h6>
+                                <h6 class="quote-tara-author">Lê Hồng Phong</h6>
                                 <div class="quote-tara-status">Khách hàng</div>
                             </article>
                             <!-- Quote Tara-->
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">hay</p>
+                                        <p class="q">Tôi rất ấn tượng với chất liệu và thiết kế bền vững. Hy vọng nhóm sẽ bổ sung thêm phiên bản theo chủ đề văn hóa đặc biệt.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
+                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/473243745_1259495658640223_6082860896114192720_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=x7JbJ1r5Ya4Q7kNvgHWd4ZL&_nc_oc=AdhmfLEPdo1ozhRXCOqxR8CPDHSWgGCl4Qx7mDqDFRqjRDaSq7HCF9EQffTJuuZR6Jw&_nc_zt=24&_nc_ht=scontent.fhan2-4.fna&_nc_gid=AVJDrxyizOanbUn15CBp2xh&oh=00_AYBd5ikdTSVIriBMMzf1EvJWUeiGVu5oO3x3kHsTBaVDRA&oe=67AF9129" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
-                                <h6 class="quote-tara-author">huy</h6>
+                                <h6 class="quote-tara-author">Vũ Thanh Hằng</h6>
                                 <div class="quote-tara-status">Khách hàng</div>
                             </article>
                             <!-- Quote Tara-->
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">hay</p>
+                                        <p class="q">Thiết kế của Healin với hình ảnh các món ăn Việt Nam thật sự gợi nhớ những kỷ niệm thân quen. Sau khi chơi, gia đình tôi đã có dịp ôn lại nhiều câu chuyện cũ và thấu hiểu nhau hơn.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
+                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/468572848_1897083211064886_1585829358111805848_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=YqVXxk7KiVsQ7kNvgFbvUqd&_nc_oc=Adjra4kjrGbddl8yH1eGFvPmO1NqdNVI6OlFphBaLcV_HoYVrX1GXmAZIC1jxvgna2Y&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=An_asuKXF4GzVSpG8hu3Dze&oh=00_AYDSdhSGJcpDZZNze0mD9I_zzd2TIQbAbb6cUu92pqAAzw&oe=67AF9E62" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
-                                <h6 class="quote-tara-author">huy</h6>
+                                <h6 class="quote-tara-author">Nguyễn Thùy Linh</h6>
                                 <div class="quote-tara-status">Khách hàng</div>
                             </article>
                             <!-- Quote Tara-->
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">hay</p>
+                                        <p class="q">Trước đây, tôi luôn cảm thấy khó mở lời khi nói chuyện với bố mẹ, đặc biệt là những chuyện riêng tư. Nhưng sau khi trải nghiệm bộ bài của Healin, các câu hỏi trong bộ bài đã giúp tôi dễ dàng chia sẻ hơn, và tôi nhận ra rằng bố mẹ cũng rất thấu hiểu mình</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://placehold.co/115x115" alt=""
+                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/435913441_3552735471723375_2680337991640332681_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=l0GfnwvjWMUQ7kNvgEwt7gU&_nc_oc=AdgROkWnN7N_JCmMx4yBNzZrbZz0vuWt6Dz4o9UFs0In4vSQ2CwCjB2oJJw58YZ3gDw&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=AVx4Sw1Xuf3FkcLryeF5Efj&oh=00_AYBvg4PJIBl2vS6rKEyt6fn09FX4OFATSZ2Px0S-shmJzg&oe=67AF7665" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
-                                <h6 class="quote-tara-author">huy</h6>
+                                <h6 class="quote-tara-author">Nguyễn Huy Hoàng</h6>
                                 <div class="quote-tara-status">Khách hàng</div>
                             </article>
                         </div>
@@ -846,7 +848,7 @@
                                             <div class="unit unit-spacing-sm align-items-center">
                                                 <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
                                                 </div>
-                                                <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                                <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                                 </div>
                                             </div>
                                         </div>

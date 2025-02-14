@@ -89,7 +89,7 @@
                                             <li>
                                                 <div class="unit unit-spacing-xs">
                                                     <div class="unit-left"><span class="icon mdi mdi-phone"></span></div>
-                                                    <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                                    <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                                     </div>
                                                 </div>
                                             </li>
@@ -119,7 +119,7 @@
                                                 <a class="rd-nav-link" href="about_us">Về chúng tôi</a>
                                             </li>
                                             <li class="rd-nav-item">
-                                                <a class="rd-nav-link" href="game">Trò chơi</a>
+                                                <a class="rd-nav-link" href="pre_game">Trò chơi</a>
                                             </li>
                                             <li class="rd-nav-item ">
                                                 <a class="rd-nav-link" href="landing#shop">Cửa hàng</a>
@@ -133,7 +133,7 @@
                                                 </ul>
                                             </li>
 
-                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="#cart">
+                                            <li class="rd-nav-item active"><a class="rd-nav-link" href="cart">
                                                     <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                     <c:choose>
                                                         <c:when test="${sessionScope.userLogin == null}">
@@ -210,7 +210,7 @@
                         <h3 class="breadcrumbs-custom-title">Giỏ hàng</h3>
                         <div class="breadcrumbs-custom-decor"></div>
                     </div>
-                    <div class="box-transform" style="background-image: url(assets/images/bg-1.jpg);"></div>
+                    <div class="box-transform" style="background-image: url(assets/images/banner/banner_cart.png);"></div>
                 </div>
                 <div class="container">
                     <ul class="breadcrumbs-custom-path">
@@ -240,7 +240,7 @@
                                         <th>Số lượng</th>
                                         <th>Số tiền</th>
                                         <th>Thao tác</th>
-                                    </tr>
+                                    </tr>   
                                 </thead>
                                 <tbody>
                                     <c:forEach var="cart" items="${cart}" varStatus="loop">
@@ -258,14 +258,14 @@
                                                 </a>
                                                 <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
                                             </td>
-                                            <td>${cart.productPrice}</td>
+                                            <td style="text-transform: lowercase;">${cart.productPrice}đ</td>
                                             <td>
                                                 <div class="table-cart-stepper">
                                                     <input class="form-input" type="number" data-zeros="true" name="quantity_${cart.productId}" value="${cart.quantity}" min="1"
                                                            max="50" onchange="updateQuantity(${cart.productId}, this.value)">
                                                 </div>
                                             </td>
-                                            <td class="product-total">${cart.productPrice * cart.quantity}</td>
+                                            <td class="product-total" style="text-transform: lowercase">${cart.productPrice * cart.quantity}00đ</td>
                                             <td>
                                                 <button class="deleteProbtn" onclick="deleteProduct(${sessionScope.userLogin}, ${cart.productId})">
                                                     <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="iconDelete">
@@ -283,7 +283,7 @@
                             <div>
                                 <div class="group-xxl group-middle">
                                     <p class="big text-gray-500">Tổng thanh toán</p>
-                                    <h4 class="text-spacing-75">$39</h4>
+                                    <h4 class="text-spacing-75" style="text-transform: lowercase"></h4>
                                 </div>
                             </div>
                             <button class="button button-lg button-width-240 button-primary button-winona" onclick="submitCheckout()">
@@ -383,7 +383,7 @@
                                         <div class="unit unit-spacing-sm align-items-center">
                                             <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
                                             </div>
-                                            <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                            <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                             </div>
                                         </div>
                                     </div>

@@ -13902,3 +13902,10 @@
     font-weight: bold;
     font-style: bold;
 }
+
+@font-face {
+    font-family: "TallingBold";
+    src: url("../assets/fonts/00177-UTM-TallingBold.ttf");
+    font-weight: bold;
+    font-style: bold;
+}

@@ -103,7 +103,7 @@
                                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span>
                                                         </div>
                                                         <div class="unit-body"><a class="phone"
-                                                                href="tel:#">9999999999</a>
+                                                                href="tel:#">0327992501</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -134,7 +134,7 @@
                                                     <a class="rd-nav-link" href="about_us">Về chúng tôi</a>
                                                 </li>
                                                 <li class="rd-nav-item">
-                                                    <a class="rd-nav-link" href="game">Trò chơi</a>
+                                                    <a class="rd-nav-link" href="pre_game">Trò chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item">
                                                     <a class="rd-nav-link"
@@ -553,7 +553,7 @@
                                         <div class="unit unit-spacing-sm align-items-center">
                                             <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
                                             </div>
-                                            <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                            <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                             </div>
                                         </div>
                                     </div>

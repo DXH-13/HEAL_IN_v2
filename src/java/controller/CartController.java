@@ -61,12 +61,12 @@ public class CartController extends HttpServlet {
 
         // Tính toán lại tổng tiền
         float productTotal = daoCart.getProductTotal(userLogin.getNormalUserId(), productId);
-        float updatedTotal = daoCart.getCartTotal(userLogin.getNormalUserId());
+//        float updatedTotal = daoCart.getCartTotal(userLogin.getNormalUserId());
 
         // Trả JSON về client
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().write("{\"productTotal\": " + productTotal + ", \"updatedTotal\": " + updatedTotal + "}");
+        response.getWriter().write("{\"productTotal\": " + productTotal + "}");
     }
 
 //protected void doPost(HttpServletRequest request, HttpServletResponse response)

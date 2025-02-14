@@ -1,14 +1,10 @@
-
-
 window.addEventListener('scroll', function () {
     const cartBadge = document.querySelector('.cart-badge');
     const scrollY = window.scrollY || window.pageYOffset;
-
-    // Điều chỉnh giá trị top dựa trên vị trí cuộn
-    if (scrollY > 50) { // Khi cuộn xuống quá 50px
-        cartBadge.style.top = '44px'; // Đẩy lên cao hơn
+    if (scrollY > 50) {
+        cartBadge.style.top = '44px';
     } else {
-        cartBadge.style.top = '55px'; // Trở về vị trí ban đầu
+        cartBadge.style.top = '55px';
     }
 });
 
@@ -17,23 +13,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableBody = document.querySelector(".table-cart tbody");
     const tableWrapper = document.querySelector(".table-custom-responsive");
     const totalSection = document.querySelector(".group-xxxl");
-    const emptyCartMessage = document.querySelector("#emptyCartMessage"); // Phần tử hiển thị khi giỏ hàng trống
+    const emptyCartMessage = document.querySelector("#emptyCartMessage");
 
     if (tableBody.children.length === 0) {
         tableWrapper.style.display = "none";
         totalSection.style.display = "none";
-        emptyCartMessage.style.display = "block"; // Hiển thị thông báo giỏ hàng trống
+        emptyCartMessage.style.display = "block";
     }
 
 });
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const mainCheckbox = document.querySelector("thead .containerCK input"); // Checkbox tổng
-    const itemCheckboxes = document.querySelectorAll("tbody .containerCK input"); // Checkbox sản phẩm
-    const totalPriceElement = document.querySelector(".text-spacing-75"); // Phần hiển thị tổng tiền
+    const mainCheckbox = document.querySelector("thead .containerCK input");
+    const itemCheckboxes = document.querySelectorAll("tbody .containerCK input");
+    const totalPriceElement = document.querySelector(".text-spacing-75");
 
-    // Hàm tính tổng giá
+
     function updateTotalPrice() {
         let total = 0;
         itemCheckboxes.forEach((checkbox) => {
@@ -43,31 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 total += price;
             }
         });
-        totalPriceElement.textContent = `$${total.toFixed(2)}`; // Cập nhật hiển thị
+
+        const formattedTotal = new Intl.NumberFormat('vi-VN', {minimumFractionDigits: 3, maximumFractionDigits: 3}).format(total);
+        totalPriceElement.textContent = `${formattedTotal}đ`;
     }
 
-    // Xử lý khi click checkbox tổng
+
     mainCheckbox.addEventListener("change", function () {
         itemCheckboxes.forEach((checkbox) => {
             checkbox.checked = mainCheckbox.checked;
         });
-        updateTotalPrice(); // Cập nhật tổng giá
+        updateTotalPrice();
     });
 
-    // Xử lý khi click checkbox từng sản phẩm
     itemCheckboxes.forEach((checkbox) => {
         checkbox.addEventListener("change", function () {
             if (!this.checked) {
-                mainCheckbox.checked = false; // Bỏ check tổng nếu có sản phẩm bị bỏ chọn
+                mainCheckbox.checked = false;
             } else {
-                // Nếu tất cả đều được chọn lại -> check tổng
                 mainCheckbox.checked = [...itemCheckboxes].every(cb => cb.checked);
             }
-            updateTotalPrice(); // Cập nhật tổng giá
+            updateTotalPrice();
         });
     });
 
-    // Gọi hàm cập nhật tổng giá khi trang tải lần đầu
     updateTotalPrice();
 });
 
@@ -76,23 +71,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+function formatPrice(value) {
+    const parts = value.toFixed(3).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return parts.join('.');
+}
+
+//function updateQuantity(productId, quantity) {
+//    console.log("Updating quantity:", productId, quantity);
+//    $.ajax({
+//        type: "POST",
+//        url: "cart",
+//        data: {userId: userId, productId: productId, quantity: quantity},
+//        success: function (response) {
+//            console.log("Response from server:", response);
+//
+////            let updatedTotal = response.updatedTotal;  // Tổng giá trị đã cập nhật
+//            let productTotal = response.productTotal;  // Tổng giá trị cho sản phẩm riêng lẻ
+//
+//            $(`tr[data-product-id='${productId}'] .product-total`).text(`${formatPrice(productTotal)}đ`);
+////            $(".text-spacing-75").text(`${formatPrice(updatedTotal)}đ`);
+//        },
+//        error: function () {
+//            console.error("Cập nhật số lượng thất bại!");
+//            alert("Cập nhật số lượng thất bại. Vui lòng thử lại.");
+//        }
+//    });
+//}
+
 function updateQuantity(productId, quantity) {
-    console.log("Updating quantity:", productId, quantity); // Kiểm tra đầu vào
+    console.log("Updating quantity:", productId, quantity);
     $.ajax({
         type: "POST",
         url: "cart",
-        data: {userId: userId, productId: productId, quantity: quantity},
+        data: { userId: userId, productId: productId, quantity: quantity },
         success: function (response) {
-            console.log("Response from server:", response); // Kiểm tra phản hồi từ server
+            console.log("Response from server:", response);
 
-            let updatedTotal = response.updatedTotal;
-            let productTotal = response.productTotal;
+            let productTotal = response.productTotal;  // Tổng giá trị cho sản phẩm riêng lẻ
+            const productRow = $(`tr[data-product-id='${productId}']`);
 
-            // Cập nhật tổng tiền của sản phẩm trên giao diện
-            $(`tr[data-product-id='${productId}'] .product-total`).text(`$${productTotal}`);
+            // Cập nhật giá thành phần trong giao diện
+            productRow.find(".product-total").text(`${formatPrice(productTotal)}đ`);
 
-            // Cập nhật tổng tiền của giỏ hàng
-            $(".text-spacing-75").text(`$${updatedTotal}`);
+            // Tính lại tổng giá của giỏ hàng
+            updateTotalPriceWithAjax();
         },
         error: function () {
             console.error("Cập nhật số lượng thất bại!");
@@ -101,14 +124,35 @@ function updateQuantity(productId, quantity) {
     });
 }
 
+function updateTotalPriceWithAjax() {
+    let total = 0;
+    const itemCheckboxes = document.querySelectorAll("tbody .containerCK input");
+
+    itemCheckboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            const row = checkbox.closest("tr");
+            const productTotalText = row.querySelector(".product-total").textContent.replace("đ", "").replace(/\./g, "").trim();
+            const productTotal = parseFloat(productTotalText);
+            total += productTotal;
+        }
+    });
+
+    const formattedTotal = new Intl.NumberFormat('vi-VN', { minimumFractionDigits: 0, maximumFractionDigits:0}).format(total);
+    document.querySelector(".text-spacing-75").textContent = `${formattedTotal}đ`;
+}
+
+
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const deleteButtons = document.querySelectorAll(".deleteProbtn");
     const tableBody = document.querySelector(".table-cart tbody");
     const tableWrapper = document.querySelector(".table-custom-responsive");
     const totalSection = document.querySelector(".group-xxxl");
-    const emptyCartMessage = document.querySelector("#emptyCartMessage"); // Phần tử hiển thị khi giỏ hàng trống
-    const cartBadge = document.querySelector(".cart-badge"); // Phần tử hiển thị số lượng sản phẩm trong giỏ hàng
+    const emptyCartMessage = document.querySelector("#emptyCartMessage");
+    const cartBadge = document.querySelector(".cart-badge");
 
     deleteButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -124,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
                     .then(response => response.json())
                     .then(data => {
-                        if (data.success) {
+                        if (data.success) { 
                             // Thêm hiệu ứng trước khi xóa hàng khỏi giao diện
                             row.classList.add("slide-out-left");
 
@@ -133,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 row.remove();
 
                                 // Cập nhật lại tổng tiền của giỏ hàng
-                                document.querySelector(".text-spacing-75").textContent = `$${data.updatedTotal}`;
+                                document.querySelector(".text-spacing-75").textContent = `${data.updatedTotal}.00đ`;
 
                                 // Cập nhật số lượng sản phẩm trong giỏ hàng
                                 if (cartBadge) {

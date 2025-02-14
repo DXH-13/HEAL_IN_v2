@@ -89,7 +89,7 @@
                                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span>
                                                         </div>
                                                         <div class="unit-body"><a class="phone"
-                                                                href="tel:#">9999999999</a>
+                                                                href="tel:#">0327992501</a>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -121,7 +121,7 @@
                                                         tôi</a>
                                                 </li>
                                                 <li class="rd-nav-item"><a class="rd-nav-link"
-                                                        href="game">Trò chơi</a>
+                                                        href="pre_game">Trò chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item active">
                                                     <a class="rd-nav-link" href="landing#shop">Cửa hàng</a>
@@ -138,7 +138,7 @@
                                                 </li>
 
                                                 <li class="rd-nav-item">
-                                                    <a class="rd-nav-link" href="cart#cart">
+                                                    <a class="rd-nav-link" href="cart">
                                                         <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                         <c:choose>
                                                             <c:when test="${sessionScope.userLogin == null}">
@@ -219,7 +219,7 @@
                             <h3 class="breadcrumbs-custom-title">${product.name}</h3>
                             <div class="breadcrumbs-custom-decor"></div>
                         </div>
-                        <div class="box-transform" style="background-image: url(assets/images/cover_doanvien.png);">
+                        <div class="box-transform" style="background-image: url(assets/images/banner/cover_doanvien.png);">
                         </div>
                     </div>
                     <div class="container">
@@ -620,7 +620,7 @@
                                             <div class="unit unit-spacing-sm align-items-center">
                                                 <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
                                                 </div>
-                                                <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                                <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -656,7 +656,7 @@
                                         <span>&copy;&nbsp;</span><span
                                             class="copyright-year"></span><span></span><span>.&nbsp;</span><span>Tất cả
                                             các quyền được bảo lưu.</span><span>
-                                            Thiết kế&nbsp;bởi&nbsp;<a href="https://www.templatemonster.com">Heal
+                                            Thiết kế&nbsp;bởi&nbsp;<a href="#">Heal
                                                 In</a></span>
                                     </p>
                                 </div>

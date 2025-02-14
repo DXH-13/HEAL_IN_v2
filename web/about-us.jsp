@@ -93,7 +93,7 @@
                                                         <div class="unit-left"><span class="icon mdi mdi-phone"></span>
                                                         </div>
                                                         <div class="unit-body"><a class="phone"
-                                                                href="tel:#">9999999999</a></div>
+                                                                href="tel:#">0327992501</a></div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -123,7 +123,7 @@
                                                         href="about_us">Về chúng
                                                         tôi</a>
                                                 </li>
-                                                <li class="rd-nav-item"><a class="rd-nav-link" href="game">Trò chơi</a>
+                                                <li class="rd-nav-item"><a class="rd-nav-link" href="pre_game">Trò chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item"><a class="rd-nav-link" href="landing#shop">Cửa
                                                         hàng</a>
@@ -138,7 +138,7 @@
                                                 </li>
 
 
-                                                <li class="rd-nav-item "><a class="rd-nav-link" href="cart#cart">
+                                                <li class="rd-nav-item "><a class="rd-nav-link" href="cart">
                                                         <span class="fa-shopping-basket" style="font-size: 30px"></span>
                                                         <c:choose>
                                                             <c:when test="${sessionScope.userLogin == null}">
@@ -219,7 +219,9 @@
                             <h3 class="breadcrumbs-custom-title">Về chúng tôi</h3>
                             <div class="breadcrumbs-custom-decor"></div>
                         </div>
-                        <div class="box-transform" style="background-image: url(https://daihoc.fpt.edu.vn/wp-content/uploads/2025/01/header-2024-png.avif);"></div>
+                        <div class="box-transform"
+                            style="background-image: url(https://daihoc.fpt.edu.vn/wp-content/uploads/2025/01/header-2024-png.avif);">
+                        </div>
                     </div>
                     <div class="container">
                         <ul class="breadcrumbs-custom-path">
@@ -247,8 +249,8 @@
                                     <li class="list-category-item wow fadeInRight" role="presentation"
                                         data-wow-delay=".3s"><a href="#tabs-4-4" data-toggle="tab">Giá Trị Của Chúng
                                             Tôi</a></li>
-                                </ul><a class="button button-xl button-primary button-winona"
-                                    href="views/contacts.html">Contact us</a>
+                                </ul>
+                                
                             </div>
                             <div class="col-lg-8 col-xl-9">
                                 <!-- Tab panes-->
@@ -266,8 +268,8 @@
                                             hiểu và phát triển các sản phẩm độc đáo, thú vị, phù hợp với mọi đối tượng.
                                             Chúng tôi tin rằng mỗi bộ bài không chỉ là một trò chơi, mà còn là một công
                                             cụ để xây dựng tình bạn, tình yêu thương và sự gắn kết bền vững.
-                                            .</p><img src="https://placehold.co/832x418" alt="" width="835"
-                                            height="418" />
+                                            .</p><img src="https://daihoc.fpt.edu.vn/wp-content/uploads/2017/08/f6.jpg"
+                                            alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-2">
                                         <h4>Cung cấp các trò chơi Board Game hay nhất tại đại học FPT</h4>
@@ -286,7 +288,8 @@
                                         </p>
                                         <p>Chúng tôi muốn các sản phẩm của mình không chỉ là trò chơi, mà còn là một
                                             phần của hành trình xây dựng những kỷ niệm đẹp đẽ trong cuộc đời.</p><img
-                                            src="https://placehold.co/832x418" alt="" width="835" height="418" />
+                                            src="https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/fcamp.jpg" alt=""
+                                            width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-3">
                                         <h4>Cung cấp dịch vụ khách hàng hàng đầu</h4>
@@ -303,7 +306,8 @@
                                             Phát triển bền vững: Chúng tôi cam kết sử dụng các nguồn tài nguyên thân
                                             thiện với môi trường trong sản xuất, đồng thời đóng góp vào các hoạt động
                                             cộng đồng, giúp xây dựng một xã hội tốt đẹp hơn.</p>
-                                        <img src="https://placehold.co/832x418" alt="" width="835" height="418" />
+                                        <img src="https://fpt.edu.vn/Resources/article/uploads/2024/04/img_935ddc66-5415-4ab4-8367-b8147ecc27f2.jpg"
+                                            alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-4">
                                         <h4>Lắng nghe để cải tiến</h4>
@@ -317,7 +321,8 @@
                                             đồng để cải thiện sản phẩm, mang lại những giá trị thiết thực nhất.
                                             Bền Vững và Trách Nhiệm: Chúng tôi cam kết sản xuất một cách có trách nhiệm,
                                             bảo vệ môi trường và đóng góp tích cực cho xã hội.</p>
-                                        <img src="https://placehold.co/832x418" alt="" width="835" height="418" />
+                                        <img src="https://i.chungta.vn/2021/10/13/bai2anh1-1634101428_1200x0.jpg" alt=""
+                                            width="835" height="418" />
                                     </div>
                                 </div>
                             </div>
@@ -336,9 +341,8 @@
                                             <div class="box-icon-classic-icon linearicons-helicopter"></div>
                                         </div>
                                         <div class="unit-body">
-                                            <h5 class="box-icon-classic-title"><a href="#">Free Delivery</a></h5>
-                                            <p class="box-icon-classic-text">Lotus advenas ducunt ad gemna. Ubi est
-                                                domesticus domina heu.</p>
+                                            <h5 class="box-icon-classic-title"><a href="#">Miên phí vận chuyển</a></h5>
+                                            <p class="box-icon-classic-text">Mua sắm thả ga không lo phí ship.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -347,13 +351,12 @@
                                 <article class="box-icon-classic">
                                     <div class="unit unit-spacing-lg flex-column text-center flex-md-row text-md-left">
                                         <div class="unit-left">
-                                            <div class="box-icon-classic-icon linearicons-pizza"></div>
+                                            <div class="box-icon-classic-icon linearicons-bubble-heart"></div>
                                         </div>
                                         <div class="unit-body">
-                                            <h5 class="box-icon-classic-title"><a href="#">20+ Pizza Options</a></h5>
-                                            <p class="box-icon-classic-text">Lorem ipsum dolor sit amet, consectetuer
-                                                adipiscing elit, sed diam
-                                                nonummy nibh</p>
+                                            <h5 class="box-icon-classic-title"><a href="#">Kho câu hỏi và hình nền phong
+                                                    phú</a></h5>
+                                            <p class="box-icon-classic-text">Sẵn sàng khám phá mọi cảm xúc</p>
                                         </div>
                                     </div>
                                 </article>
@@ -365,10 +368,9 @@
                                             <div class="box-icon-classic-icon linearicons-leaf"></div>
                                         </div>
                                         <div class="unit-body">
-                                            <h5 class="box-icon-classic-title"><a href="#">Fresh Ingredients</a></h5>
-                                            <p class="box-icon-classic-text">Albus, dexter particulas grauiter consumere
-                                                de ferox, bi-color
-                                                abactus.</p>
+                                            <h5 class="box-icon-classic-title"><a href="#">Vật liệu thân thiện với môi
+                                                    trường</a></h5>
+                                            <p class="box-icon-classic-text">Gần gũi thiên nhiên, bảo vệ trái đất.</p>
                                         </div>
                                     </div>
                                 </article>
@@ -380,16 +382,20 @@
                 <!-- Our Team-->
                 <section class="section section-lg section-bottom-md-70 bg-default">
                     <div class="container">
-                        <h3 class="oh"><span class="d-inline-block wow slideInUp" data-wow-delay="0s">our team</span>
+                        <h3 class="oh"><span class="d-inline-block wow slideInUp" data-wow-delay="0s">Nhóm của chúng
+                                tôi</span>
                         </h3>
                         <div class="row row-lg row-40 justify-content-center">
                             <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay=".2s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/lan.png" alt=""
+                                            style="width: 270px; height: 270px; object-fit: cover; " />
+
+                                    </a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Richard Peterson</a></h6>
-                                        <div class="team-modern-status">Head Chef</div>
+                                        <h6 class="team-modern-name"><a href="#">Dương Hoàng Lan</a></h6>
+                                        <div class="team-modern-status">Nhóm trưởng</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -402,10 +408,11 @@
                             <div class="col-sm-6 col-lg-4 wow fadeInLeft" data-wow-delay="0s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/thu.png" alt="" width="270" height="236"
+                                            style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Amelia Lee</a></h6>
-                                        <div class="team-modern-status">Manager</div>
+                                        <h6 class="team-modern-name"><a href="#">Nguyễn Hà Thu</a></h6>
+                                        <div class="team-modern-status">Nhân viên</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -418,10 +425,11 @@
                             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".1s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/duong.png" alt="" width="270" height="236"
+                                            style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Sam Peterson</a></h6>
-                                        <div class="team-modern-status">Head Baker</div>
+                                        <h6 class="team-modern-name"><a href="#">Lê Thùy Dương</a></h6>
+                                        <div class="team-modern-status">Nhân viên</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -434,10 +442,11 @@
                             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/huy.png" alt="" width="270" height="236"
+                                            style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Jane Smith</a></h6>
-                                        <div class="team-modern-status">Pizza Chef</div>
+                                        <h6 class="team-modern-name"><a href="#">Đặng Xuân Huy</a></h6>
+                                        <div class="team-modern-status">Nhân viên</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -450,10 +459,11 @@
                             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/khai.png" alt="" width="270" height="236"
+                                            style="width: 270px; height: 270px; object-fit: cover;" /></a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Jane Smith</a></h6>
-                                        <div class="team-modern-status">Pizza Chef</div>
+                                        <h6 class="team-modern-name"><a href="#">Lương Duy Khải</a></h6>
+                                        <div class="team-modern-status">Nhân viên</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -466,10 +476,11 @@
                             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".3s" data-wow-duration="1s">
                                 <!-- Team Modern-->
                                 <article class="team-modern"><a class="team-modern-figure" href="#"><img
-                                            src="https://placehold.co/270x236" alt="" width="270" height="236" /></a>
+                                            src="assets/images/team/phuong.png" alt="" width="270" height="236"
+                                            style="width: 270px; height: 270px; object-fit: cover;" /></a>
                                     <div class="team-modern-caption">
-                                        <h6 class="team-modern-name"><a href="#">Jane Smith</a></h6>
-                                        <div class="team-modern-status">Pizza Chef</div>
+                                        <h6 class="team-modern-name"><a href="#">Nguyễn Thu Phương</a></h6>
+                                        <div class="team-modern-status">Nhân viên</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -486,70 +497,69 @@
                     <div class="container">
                         <div class="row row-60 justify-content-center justify-content-xxl-between">
                             <div class="col-lg-6 col-xxl-5 position-static">
-                                <h3>Our history</h3>
+                                <h3>Hành trình của chúng tôi</h3>
                                 <div class="tabs-custom" id="tabs-5">
                                     <div class="tab-content tab-content-1">
                                         <div class="tab-pane fade" id="tabs-5-1">
                                             <h5 class="font-weight-normal text-transform-none text-spacing-75">
-                                                PizzaHouse Establishment and First
-                                                Happy Clients</h5>
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                                nonummy nibh</p>
+                                                Hạt mầm của sự đồng cảm</h5>
+                                            <p>Ý tưởng bắt đầu từ sự thấu hiểu những khó khăn trong câu chuyện giao tiếp
+                                                và khoảng cách thế hệ trong cuộc sống ngày nay.</p>
                                         </div>
                                         <div class="tab-pane fade" id="tabs-5-2">
                                             <h5 class="font-weight-normal text-transform-none text-spacing-75">
-                                                Organizing a Free Pizza Delivery
-                                                Service in Los Angeles</h5>
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                accusantium doloremque.</p>
+                                                Hành trình khám phá nỗi đau thầm lặng</h5>
+                                            <p>Chúng tôi khám phá những rào cản tâm lý khiến con người xa cách, nhằm tìm
+                                                giải pháp khơi thông kết nối.</p>
                                         </div>
                                         <div class="tab-pane fade" id="tabs-5-3">
-                                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Offering
-                                                an Extended Range of
-                                                Pizzas, Burgers, and Salads</h5>
-                                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                                fugit.</p>
+                                            <h5 class="font-weight-normal text-transform-none text-spacing-75">Ý tưởng
+                                                Healin được định hình </h5>
+                                            <p>Một công cụ độc đáo ra đời, nơi những lá bài dẫn dắt con người vượt qua
+                                                sợ hãi và mở lòng.</p>
                                         </div>
                                         <div class="tab-pane fade show active" id="tabs-5-4">
                                             <h5 class="font-weight-normal text-transform-none text-spacing-75">
-                                                Partnering with Organic Farms
-                                                Located in California</h5>
-                                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                                                consectetur.</p>
+                                                Trạm dừng chân chữa lành </h5>
+                                            <p>Bộ bài Healin phiên bản vật lý đầu tiên chính thức ra mắt, không chỉ là
+                                                trò chơi mà còn là hành trình kết nối, khơi dậy những cảm xúc đã ngủ
+                                                quên.</p>
                                         </div>
                                     </div>
                                     <div class="list-history-wrap">
                                         <ul class="nav list-history">
                                             <li class="list-history-item" role="presentation"><a href="#tabs-5-1"
                                                     data-toggle="tab">
-                                                    <div class="list-history-circle"></div>2005
+                                                    <div class="list-history-circle"></div>09/2024
                                                 </a></li>
                                             <li class="list-history-item" role="presentation"><a href="#tabs-5-2"
                                                     data-toggle="tab">
-                                                    <div class="list-history-circle"></div>2012
+                                                    <div class="list-history-circle"></div>10/2024
                                                 </a></li>
                                             <li class="list-history-item" role="presentation"><a href="#tabs-5-3"
                                                     data-toggle="tab">
-                                                    <div class="list-history-circle"></div>2015
+                                                    <div class="list-history-circle"></div>11/2024
                                                 </a></li>
                                             <li class="list-history-item" role="presentation"><a class="active"
                                                     href="#tabs-5-4" data-toggle="tab">
-                                                    <div class="list-history-circle"></div>2019
+                                                    <div class="list-history-circle"></div>02/2025
                                                 </a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-9 col-lg-6 position-static index-1">
-                                <div class="bg-image-right-1 bg-image-right-lg"><img src="https://placehold.co/1110x710"
+                                <div class="bg-image-right-1 bg-image-right-lg"><img
+                                        src="https://caodang.fpt.edu.vn/wp-content/uploads/2024/05/FPT-Polytechnic_Can-Tho_Hoi-thao-AI-2.jpg"
                                         alt="" width="1110" height="710" />
                                     <div class="link-play-modern"><a class="icon mdi mdi-play" data-lightgallery="item"
-                                            href="https://www.youtube.com/watch?v=1UWpbtUupQQ"></a>
-                                        <div class="link-play-modern-title">How we<span>Work</span></div>
+                                            href="https://www.youtube.com/watch?v=ILsA2VFJ150&list=RDILsA2VFJ150&start_radio=1"></a>
+                                        <div class="link-play-modern-title">Hướng dẫn<span>Chơi</span></div>
                                         <div class="link-play-modern-decor"></div>
                                     </div>
                                     <div class="box-transform"
-                                        style="background-image: url(https://placehold.co/1110x710);"></div>
+                                        style="background-image: url(https://caodang.fpt.edu.vn/wp-content/uploads/2024/05/FPT-Polytechnic_Can-Tho_Hoi-thao-AI-2.jpg);">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -571,49 +581,49 @@
                                             <div class="item">
                                                 <!-- Quote Modern-->
                                                 <article class="quote-modern">
-                                                    <h5 class="quote-modern-text"><span class="q">Torus accelerares,
-                                                            tanquam ferox cacula. Fluctuss
-                                                            experimentum in burdigala! Ubi est peritus classis?
-                                                            Peregrinatione superbe ducunt ad magnum
-                                                            verpa.</span></h5>
-                                                    <h5 class="quote-modern-author">Stephen Adams,</h5>
-                                                    <p class="quote-modern-status">Regular Client</p>
+                                                    <h5 class="quote-modern-text"><span class="q">"Đội ngũ Healin đã làm
+                                                            rất tốt trong việc thấu hiểu và phản ánh những vấn đề xã hội
+                                                            hiện tại. Dự án không chỉ sáng tạo mà còn mang giá trị nhân
+                                                            văn, tập trung vào kết nối cảm xúc giữa các thế hệ."</span>
+                                                    </h5>
+                                                    <h5 class="quote-modern-author">Đặng Thị Diệu Linh,</h5>
+                                                    <p class="quote-modern-status">Mentor</p>
                                                 </article>
                                             </div>
                                             <div class="item">
                                                 <!-- Quote Modern-->
                                                 <article class="quote-modern">
-                                                    <h5 class="quote-modern-text"><span class="q">Gluten, fluctus, et
-                                                            galatae. Germanus classiss
-                                                            ducunt ad brodium. Pol, a bene cedrium. Tabess unda in
-                                                            neuter avenio! Orexiss sunt adelphiss
-                                                            de rusticus parma.</span></h5>
-                                                    <h5 class="quote-modern-author">Sam Peterson,</h5>
-                                                    <p class="quote-modern-status">Regular Client</p>
+                                                    <h5 class="quote-modern-text"><span class="q">"Điểm mạnh lớn nhất của
+                                                            nhóm là sự đồng lòng và khả năng làm việc sáng tạo. Healin
+                                                            là minh chứng cho sự nỗ lực của cả đội. Tôi mong các bạn
+                                                            tiếp tục lắng nghe phản hồi từ người dùng để cải tiến và
+                                                            hoàn thiện sản phẩm tốt hơn."</span></h5>
+                                                    <h5 class="quote-modern-author">Lê Thùy Linh,</h5>
+                                                    <p class="quote-modern-status">Người dùng thử nghiệm</p>
                                                 </article>
                                             </div>
                                             <div class="item">
                                                 <!-- Quote Modern-->
                                                 <article class="quote-modern">
-                                                    <h5 class="quote-modern-text"><span class="q">Pol, silva! Grandis
-                                                            contencios ducunt ad torus.
-                                                            Monss congregabo in nobilis tectum! Velox, fatalis victrixs
-                                                            sapienter talem de emeritis,
-                                                            festus torus.</span></h5>
-                                                    <h5 class="quote-modern-author">Jane McMillan,</h5>
-                                                    <p class="quote-modern-status">Regular Client</p>
+                                                    <h5 class="quote-modern-text"><span class="q">"Điều làm tôi ngạc
+                                                            nhiên nhất là cách nhóm xây dựng hành trình trải nghiệm
+                                                            người dùng từ offline đến online. Tôi mong rằng các bạn sẽ
+                                                            tận dụng công nghệ tốt hơn nữa để phát triển các tính năng
+                                                            cá nhân hóa mạnh mẽ hơn."</span></h5>
+                                                    <h5 class="quote-modern-author">Vũ Hồng Sơn,</h5>
+                                                    <p class="quote-modern-status">Cố vấn công nghệ </p>
                                                 </article>
                                             </div>
                                             <div class="item">
                                                 <!-- Quote Modern-->
                                                 <article class="quote-modern">
-                                                    <h5 class="quote-modern-text"><span class="q">Fluctuss sunt eras de
-                                                            neuter plasmator. Heuretes
-                                                            noster brabeuta est. Nixus, visus, et mensa. Primus, magnum
-                                                            tatas rare locus de altus,
-                                                            camerarius clabulare.</span></h5>
-                                                    <h5 class="quote-modern-author">Will Jones,</h5>
-                                                    <p class="quote-modern-status">Regular Client</p>
+                                                    <h5 class="quote-modern-text"><span class="q">"Thiết kế của Healin
+                                                            tạo nên sự khác biệt. Từng lá bài, từng chi tiết đều được
+                                                            chăm chút tỉ mỉ, mang đậm chất văn hóa Việt nhưng vẫn rất
+                                                            hiện đại. Tôi kỳ vọng nhóm sẽ tiếp tục cải tiến với các
+                                                            phiên bản đặc biệt để duy trì sự mới mẻ."</span></h5>
+                                                    <h5 class="quote-modern-author">Nguyễn Thái An,</h5>
+                                                    <p class="quote-modern-status">Nhà thiết kế đồ họa</p>
                                                 </article>
                                             </div>
                                         </div>
@@ -621,24 +631,29 @@
                                             data-arrows="true" data-for=".carousel-parent" data-items="4"
                                             data-sm-items="4" data-md-items="4" data-lg-items="4" data-xl-items="4"
                                             data-slide-to-scroll="1">
-                                            <div class="item"><img class="img-circle" src="https://placehold.co/83x83"
+                                            <div class="item"><img class="img-circle"
+                                                    src="assets/images/commenter/mentor.png"
                                                     alt="" width="83" height="83" />
                                             </div>
-                                            <div class="item"><img class="img-circle" src="https://placehold.co/83x83"
+                                            <div class="item"><img class="img-circle"
+                                                    src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/454324419_1663628727717963_2010441840616440302_n.jpg?stp=cp6_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e99d92&_nc_ohc=frqa1SIKsY0Q7kNvgGIhnPQ&_nc_oc=AdiBukVy0Dl2HhkBDcZwqmLwMzMsLbBKWzR9ISm6Vr78UKi5R15kBae8pp0gFH2Q1jo&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=AAzWTzOzzWi4QKHm2k1MP5G&oh=00_AYCFu8e3JCnq8z4TDNEBU06pPnmFfg4_hEFCJaxaU-GwcA&oe=67AF7F3B"
                                                     alt="" width="83" height="83" />
                                             </div>
-                                            <div class="item"><img class="img-circle" src="https://placehold.co/83x83"
+                                            <div class="item"><img class="img-circle"
+                                                    src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/448348263_1732589413943048_7455479925015017025_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=jTttoa4sZ34Q7kNvgEzeoBf&_nc_oc=AdhIoH-u53qvrczLkjuQS4Q9hZD5E4oqKiI8dWD4W6pg6HmXXEVmTZ1DaT7Sv6hQfS8&_nc_zt=24&_nc_ht=scontent.fhan2-3.fna&_nc_gid=AEJnvahFjG2pnOFiTARXDQU&oh=00_AYCh5mxMaGu_h4edo0eqLk4ljIgFeFCNd4tdrxDOvl1tCg&oe=67AF7AD0"
                                                     alt="" width="83" height="83" />
                                             </div>
-                                            <div class="item"><img class="img-circle" src="https://placehold.co/83x83"
+                                            <div class="item"><img class="img-circle"
+                                                    src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-1/411200370_2063889270629698_3298817594301013475_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_ohc=0ua8O9J9oQsQ7kNvgGCtwsG&_nc_oc=AdhVGoA9Yxni04hd2UGL_v9nvGmu07YXinQeYo3KTVhwu4n3kedhGYbyH-vulAT3YeE&_nc_zt=24&_nc_ht=scontent.fhan20-1.fna&_nc_gid=AAxraluyV7lk9Nx2U4dor_z&oh=00_AYDc65E1rvJBDGLhd0wlOsa9Zi25QKiTKktpFNt7BoulTQ&oe=67AF7FE3"
                                                     alt="" width="83" height="83" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-xl-7"><img src="https://placehold.co/669x447" alt="" width="669"
-                                    height="447" />
+                            <div class="col-lg-6 col-xl-7"><img
+                                    src="https://daihoc.fpt.edu.vn/wp-content/uploads/2024/07/anh-3-bai-106-plan-bai-pr-ts-fptu-2024-v11-1719632581205-1024x684.webp"
+                                    alt="" width="669" height="447" />
                             </div>
                         </div>
                     </div>
@@ -724,7 +739,7 @@
                                             <div class="unit unit-spacing-sm align-items-center">
                                                 <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
                                                 </div>
-                                                <div class="unit-body"><a class="phone" href="tel:#">9999999999</a>
+                                                <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
                                                 </div>
                                             </div>
                                         </div>
