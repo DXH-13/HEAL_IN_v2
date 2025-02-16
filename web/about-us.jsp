@@ -19,10 +19,7 @@
             <link rel="stylesheet" href="css/style.css">
             <link rel="stylesheet" href="css/home.css">
 
-            <!--[if lt IE 10]>
-          <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-          <script src="js/html5shiv.min.js"></script>
-          <![endif]-->
+
         </head>
 
         <body>
@@ -123,7 +120,8 @@
                                                         href="about_us">Về chúng
                                                         tôi</a>
                                                 </li>
-                                                <li class="rd-nav-item"><a class="rd-nav-link" href="pre_game">Trò chơi</a>
+                                                <li class="rd-nav-item"><a class="rd-nav-link" href="pre_game">Trò
+                                                        chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item"><a class="rd-nav-link" href="landing#shop">Cửa
                                                         hàng</a>
@@ -250,77 +248,57 @@
                                         data-wow-delay=".3s"><a href="#tabs-4-4" data-toggle="tab">Giá Trị Của Chúng
                                             Tôi</a></li>
                                 </ul>
-                                
+
                             </div>
                             <div class="col-lg-8 col-xl-9">
                                 <!-- Tab panes-->
                                 <div class="tab-content tab-content-1">
                                     <div class="tab-pane fade show active" id="tabs-4-1">
                                         <h4>Một số thông tin về chúng tôi</h4>
-                                        <p>Chúng tôi là một nhóm những người trẻ đầy nhiệt huyết và sáng tạo, đam mê
-                                            việc mang lại những phút giây vui vẻ và ý nghĩa cho gia đình và bạn bè. Nhận
-                                            thấy tầm quan trọng của sự kết nối trong thời đại số hóa, nơi con người ngày
-                                            càng dành nhiều thời gian cho thiết bị công nghệ, chúng tôi đã quyết định
-                                            tạo ra các bộ bài board game để khơi gợi lại những giá trị truyền thống của
-                                            sự gần gũi và sẻ chia.
+                                        <p>Chúng tôi là một nhóm trẻ đầy nhiệt huyết và sáng tạo, mong muốn mang lại sự
+                                            kết nối và niềm vui cho mọi người thông qua các bộ bài board game. Nhận thấy
+                                            các mối quan hệ đang dần trở nên xa cách, chúng tôi muốn khơi gợi lại giá
+                                            trị truyền thống của sự sẻ chia và gần gũi.
                                         </p>
-                                        <p>Với sự tận tâm và niềm yêu thích dành cho trò chơi, chúng tôi không ngừng tìm
-                                            hiểu và phát triển các sản phẩm độc đáo, thú vị, phù hợp với mọi đối tượng.
-                                            Chúng tôi tin rằng mỗi bộ bài không chỉ là một trò chơi, mà còn là một công
-                                            cụ để xây dựng tình bạn, tình yêu thương và sự gắn kết bền vững.
-                                            .</p><img src="https://daihoc.fpt.edu.vn/wp-content/uploads/2017/08/f6.jpg"
-                                            alt="" width="835" height="418" />
+                                        <p>Và với tâm huyết và niềm yêu thích dành cho trò chơi, chúng tôi không ngừng
+                                            phát triển những sản phẩm độc đáo, thú vị, phù hợp với mọi đối tượng. Mỗi bộ
+                                            bài không chỉ là một trò chơi giải trí, mà còn là cầu nối để xây dựng tình
+                                            bạn, tình yêu thương và sự gắn kết bền vững.</p><img
+                                            src="https://daihoc.fpt.edu.vn/wp-content/uploads/2017/08/f6.jpg" alt=""
+                                            width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-2">
                                         <h4>Cung cấp các trò chơi Board Game hay nhất tại đại học FPT</h4>
-                                        <p>Sứ mệnh của chúng tôi là làm sống lại những khoảnh khắc chân thực và gần gũi
-                                            trong cuộc sống hiện đại. Thông qua các bộ bài board game, chúng tôi hy vọng
-                                            sẽ giúp mọi người:
-                                            Thắt chặt tình cảm gia đình và bạn bè: Tạo cơ hội để mọi người dành thời
-                                            gian là chính mình cho nhau,tâm sự trải lònl, cười đùa và cùng nhau vượt qua
-                                            thử thách trong trò chơi.
-                                            Giảm căng thẳng, tăng niềm vui: Các trò chơi của chúng tôi được thiết kế để
-                                            mang lại tiếng cười và sự thư giãn, là giải pháp tuyệt vời cho những ngày
-                                            dài mệt mỏi.
-                                            Khuyến khích sự sáng tạo và tương tác trực tiếp: Kích thích tư duy và khơi
-                                            nguồn sáng tạo, đồng thời giảm bớt sự phụ thuộc vào các thiết bị điện tử.
-
+                                        <p>Chúng tôi ở đây cùng Healin với sứ mệnh gỡ rối những câu chuyện giao tiếp khó
+                                            khăn và làm sống lại khoảnh khắc chân thực, gần gũi trong cuộc sống hiện
+                                            nay.
                                         </p>
                                         <p>Chúng tôi muốn các sản phẩm của mình không chỉ là trò chơi, mà còn là một
-                                            phần của hành trình xây dựng những kỷ niệm đẹp đẽ trong cuộc đời.</p><img
-                                            src="https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/fcamp.jpg" alt=""
-                                            width="835" height="418" />
+                                            phần của hành trình xây dựng kết nối những kỷ niệm đẹp đẽ trong cuộc đời.
+                                        </p><img src="https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/fcamp.jpg"
+                                            alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-3">
                                         <h4>Cung cấp dịch vụ khách hàng hàng đầu</h4>
-                                        <p>Tạo nên những bộ bài độc đáo và chất lượng: Mỗi sản phẩm đều được nghiên cứu
-                                            và thiết kế kỹ lưỡng, từ ý tưởng trò chơi cho đến chất liệu bài, để đảm bảo
-                                            mang lại trải nghiệm tuyệt vời nhất cho người chơi.
-                                            Xây dựng cộng đồng boardgame lớn mạnh: Chúng tôi mong muốn tạo ra một không
-                                            gian, nơi những người yêu thích board game có thể kết nối, chia sẻ kinh
-                                            nghiệm và cùng nhau phát triển.
+                                        <p>Healin là không chỉ là một trò chơi độc đáo mà còn là nơi mà chúng tôi đặt
+                                            trọn tâm huyết từ ý tưởng trò chơi đến chất lượng sản phẩm. Với hy vọng mang
+                                            lại những trải nghiệm tốt nhất cho người chơi.
                                             .</p>
-                                        <p>Đưa board game vào đời sống hàng ngày: Chúng tôi hướng đến việc biến board
-                                            game thành một phần không thể thiếu trong các buổi họp mặt gia đình, bạn bè,
-                                            giúp mọi người tận hưởng những giây phút trọn vẹn bên nhau.
-                                            Phát triển bền vững: Chúng tôi cam kết sử dụng các nguồn tài nguyên thân
-                                            thiện với môi trường trong sản xuất, đồng thời đóng góp vào các hoạt động
-                                            cộng đồng, giúp xây dựng một xã hội tốt đẹp hơn.</p>
+                                        <p>Chúng tôi tin rằng những giá trị mà Healin mang lại sẽ trở thành cầu nối giúp
+                                            gia đình, bạn bè có thể nung nấu được những câu chuyện đã ngủ quên và tận
+                                            hưởng những khoảnh khắc ý nghĩa nhất.</p>
                                         <img src="https://fpt.edu.vn/Resources/article/uploads/2024/04/img_935ddc66-5415-4ab4-8367-b8147ecc27f2.jpg"
                                             alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-4">
                                         <h4>Lắng nghe để cải tiến</h4>
-                                        <p>Sáng Tạo Không Ngừng: Chúng tôi không ngừng đổi mới để mang lại những ý tưởng
-                                            trò chơi mới mẻ, hấp dẫn và phù hợp với nhiều đối tượng khác nhau.
-                                            Gắn Kết Con Người: Tất cả những gì chúng tôi làm đều hướng đến việc xây dựng
-                                            mối quan hệ sâu sắc và bền chặt giữa con người.
-                                            Chất Lượng Là Trọng Tâm: Từ thiết kế, sản xuất đến trải nghiệm người chơi,
-                                            chất lượng luôn là ưu tiên hàng đầu của chúng tôi.</p>
-                                        <p>Chia Sẻ và Thấu Hiểu: Chúng tôi luôn lắng nghe ý kiến từ khách hàng và cộng
-                                            đồng để cải thiện sản phẩm, mang lại những giá trị thiết thực nhất.
-                                            Bền Vững và Trách Nhiệm: Chúng tôi cam kết sản xuất một cách có trách nhiệm,
-                                            bảo vệ môi trường và đóng góp tích cực cho xã hội.</p>
+                                        <p>Chúng tôi không ngừng sáng tạo để mang đến cho Healin được phát triển với
+                                            trọng tâm là chất lượng, từ thiết kế đến trải nghiệm người chơi, nhằm mang
+                                            lại giá trị tốt nhất.</p>
+                                        <p>Và với sự lắng nghe và thấu hiểu, chúng tôi không ngừng cải tiến dựa trên ý
+                                            kiến từ khách hàng và cộng đồng. Đồng thời, chúng tôi cam kết phát triển bền
+                                            vững, sản xuất có trách nhiệm, bảo vệ môi trường và đóng góp tích cực cho xã
+                                            hội.</p>
                                         <img src="https://i.chungta.vn/2021/10/13/bai2anh1-1634101428_1200x0.jpg" alt=""
                                             width="835" height="418" />
                                     </div>
@@ -593,7 +571,8 @@
                                             <div class="item">
                                                 <!-- Quote Modern-->
                                                 <article class="quote-modern">
-                                                    <h5 class="quote-modern-text"><span class="q">"Điểm mạnh lớn nhất của
+                                                    <h5 class="quote-modern-text"><span class="q">"Điểm mạnh lớn nhất
+                                                            của
                                                             nhóm là sự đồng lòng và khả năng làm việc sáng tạo. Healin
                                                             là minh chứng cho sự nỗ lực của cả đội. Tôi mong các bạn
                                                             tiếp tục lắng nghe phản hồi từ người dùng để cải tiến và
@@ -632,8 +611,8 @@
                                             data-sm-items="4" data-md-items="4" data-lg-items="4" data-xl-items="4"
                                             data-slide-to-scroll="1">
                                             <div class="item"><img class="img-circle"
-                                                    src="assets/images/commenter/mentor.png"
-                                                    alt="" width="83" height="83" />
+                                                    src="assets/images/commenter/mentor.png" alt="" width="83"
+                                                    height="83" />
                                             </div>
                                             <div class="item"><img class="img-circle"
                                                     src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/454324419_1663628727717963_2010441840616440302_n.jpg?stp=cp6_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e99d92&_nc_ohc=frqa1SIKsY0Q7kNvgGIhnPQ&_nc_oc=AdiBukVy0Dl2HhkBDcZwqmLwMzMsLbBKWzR9ISm6Vr78UKi5R15kBae8pp0gFH2Q1jo&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=AAzWTzOzzWi4QKHm2k1MP5G&oh=00_AYCFu8e3JCnq8z4TDNEBU06pPnmFfg4_hEFCJaxaU-GwcA&oe=67AF7F3B"

@@ -58,8 +58,8 @@ public class ProfileUserController extends HttpServlet {
         request.setAttribute("productInCart", productInCart);
         String action = request.getParameter("action");
         System.out.println("action: " + action);
-        if ("updateProfile".equals(action)) {
 
+        if ("updateProfile".equals(action)) {
             String username = request.getParameter("username");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
@@ -67,42 +67,56 @@ public class ProfileUserController extends HttpServlet {
             String gender = request.getParameter("gender");
             String dateOrBirth = request.getParameter("dateorbirth");
 
-            User userF1 = daoUSer.findByUsername(username);
-            User userF2 = daoUSer.findByEmail(email);
-            User userF3 = daoUSer.findByPhoneNumber(phoneNumber);
+            boolean isDuplicate = false;
 
-            User updatedUser = new User();
-            updatedUser.setUsername(username);
-            updatedUser.setName(name);
-            updatedUser.setEmail(email);
-            updatedUser.setPhoneNumber(phoneNumber);
-            updatedUser.setGender(gender);
-            updatedUser.setDateOfBirth(dateOrBirth);
-            updatedUser.setNormalUserId(userLogin.getNormalUserId());
+            // Kiểm tra nếu có username/email/phone mới khác hiện tại và đã tồn tại ở DB
+            if (!username.equals(userLogin.getUsername()) && daoUSer.findByUsername(username) != null) {
+                isDuplicate = true;
+            }
+            if (!email.equals(userLogin.getEmail()) && daoUSer.findByEmail(email) != null) {
+                isDuplicate = true;
+            }
+            if (!phoneNumber.equals(userLogin.getPhoneNumber()) && daoUSer.findByPhoneNumber(phoneNumber) != null) {
+                isDuplicate = true;
+            }
 
-            if (userF1 != null || userF2 != null || userF3 != null) {
-                //thong bao loi
+            if (isDuplicate) {
+                System.out.println("Update lỗi: username/email/phone bị trùng");
+                request.setAttribute("error", "Username, Email hoặc Số điện thoại đã tồn tại!");
                 request.getRequestDispatcher("profile-user.jsp").forward(request, response);
+                return;
             } else {
+                User updatedUser = new User();
+                updatedUser.setUsername(username);
+                updatedUser.setName(name);
+                updatedUser.setEmail(email);
+                updatedUser.setPhoneNumber(phoneNumber);
+                updatedUser.setGender(gender);
+                updatedUser.setDateOfBirth(dateOrBirth);
+                updatedUser.setNormalUserId(userLogin.getNormalUserId());
+
                 daoUSer.updateUserProfile(updatedUser);
-                //thongbao update thanh cong
+                System.out.println("Cập nhật thành công!");
+                request.setAttribute("success", "Cập nhật thông tin thành công!");
                 request.getRequestDispatcher("profile-user.jsp").forward(request, response);
             }
         } else if ("changePassword".equals(action)) {
             String oldPassword = request.getParameter("oldPassword");
             String newPassword = request.getParameter("newPassword");
             String confirmPassword = request.getParameter("confirmPassword");
+
             if (utils.SHA256.hashPassword(oldPassword).equals(userLogin.getPassword())) {
                 if (newPassword.equals(confirmPassword)) {
                     daoUSer.updatePassword(utils.SHA256.hashPassword(newPassword), userLogin.getNormalUserId());
+                    request.setAttribute("success", "Đổi mật khẩu thành công!");
                 } else {
                     request.setAttribute("error", "Mật khẩu xác nhận không khớp.");
                 }
             } else {
-                request.setAttribute("error", "Mật khẩu của bạn không khớp. Điền lại lần nữa.");
+                request.setAttribute("error", "Mật khẩu cũ không đúng.");
             }
+            request.getRequestDispatcher("profile-user.jsp").forward(request, response);
         }
-        request.getRequestDispatcher("profile-user.jsp").forward(request, response);
     }
 
     @Override

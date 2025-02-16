@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
 import dao.DAOTokenForgetPassword;
@@ -91,7 +87,6 @@ public class ResetPasswordController extends HttpServlet {
         HttpSession session = request.getSession();
         String tokenStr = (String) session.getAttribute("token");
         TokenForgetPassword tokenForgetPassword = daoToken.getTokenForgetPassword(tokenStr);
-        //check token is valid, of time, of used
         SendMail service = new SendMail();
         if (tokenForgetPassword == null) {
             request.setAttribute("errorEmailNotFound", "Token invalid");

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : checkout
-    Created on : Feb 6, 2025, 5:20:55 PM
-    Author     : dangx
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

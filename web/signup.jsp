@@ -43,7 +43,7 @@
                         <div class="row">
                           <div class="col-12">
                             <div class="d-flex gap-3 flex-column">
-                              <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid&redirect_uri=http://localhost:9999/HEAL_IN_v2/sign_up?signupType=google&response_type=code&client_id=990006517371-6q85h94fvf4baric0cd1r7qtgcci7k5q.apps.googleusercontent.com&approval_prompt=force"
+                              <a href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid&redirect_uri=http://localhost:9999/HEAL_IN_v2/sign_up?signupType=google&response_type=code&client_id=51300126202-jbb4258dvsdjr16iqa5vb92vbdqot9sl.apps.googleusercontent.com&approval_prompt=force"
                                 class="btn btn-lg btnGGlogin">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                   class="bi bi-google" viewBox="0 0 16 16">
