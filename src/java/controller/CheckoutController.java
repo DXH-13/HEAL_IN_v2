@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import model.Cart;
+import model.CartXProduct;
 import model.User;
 
 /**
@@ -51,40 +52,32 @@ public class CheckoutController extends HttpServlet {
     }
 
     @Override
-protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-        throws ServletException, IOException {
-    HttpSession session = request.getSession();
-    
-    if (session.getAttribute("cartBuy") != null) {
-        session.removeAttribute("cartBuy");
-    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User userLogin = (User) session.getAttribute("userLogin");
+        if (userLogin != null) {
+            int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+            request.setAttribute("productInCart", productInCart);
+        }
 
-    User userLogin = (User) session.getAttribute("userLogin");
-    if (userLogin != null) {
-        int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
-        request.setAttribute("productInCart", productInCart);
-    }
+        String[] selectedProducts = request.getParameterValues("selectedProducts");
+        List<CartXProduct> cartList = new ArrayList<>();
 
-    String[] selectedProducts = request.getParameterValues("selectedProducts");
-    List<Cart> cartList = new ArrayList<>();
-
-    if (selectedProducts != null) {
-        for (String cartId : selectedProducts) {
-            System.out.println("Cart ID: " + cartId);
-            Cart cart = daoCart.findByID(cartId);
-            if (cart != null) {
-                cartList.add(cart);
+        if (selectedProducts != null) {
+            for (String cartId : selectedProducts) {
+                System.out.println("Cart ID: " + cartId);
+                CartXProduct cartXProduct = daoCart.getAllCartById(cartId);
+                if (cartXProduct != null) {
+                    cartList.add(cartXProduct);
+                }
             }
         }
+        System.out.println(cartList);
+        request.setAttribute("cartBuy", cartList);
+        request.getRequestDispatcher("checkout.jsp").forward(request, response);
+        
     }
-
-    // Lưu danh sách cart vào session
-    session.setAttribute("cartBuy", cartList);
-
-    // Chuyển hướng đến trang checkout.jsp
-    response.sendRedirect("checkout.jsp");
-}
-
 
     @Override
     public String getServletInfo() {

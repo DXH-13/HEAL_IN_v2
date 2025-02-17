@@ -94,7 +94,7 @@
                                                     <div class="unit-left"><span class="icon mdi mdi-map-marker"></span>
                                                     </div>
                                                     <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
-                                                        Thăng Long - Thạch Thất - Hà Nội</a></div>
+                                                            Thăng Long - Thạch Thất - Hà Nội</a></div>
                                                 </div>
                                             </li>
                                         </ul>
@@ -109,7 +109,7 @@
                                         <!-- RD Navbar Nav-->
                                         <ul class="rd-navbar-nav">
                                             <li class="rd-nav-item "><a class="rd-nav-link"
-                                                                              href="landing">Trang chủ</a>
+                                                                        href="landing">Trang chủ</a>
                                             </li>
                                             <li class="rd-nav-item"><a class="rd-nav-link"
                                                                        href="about_us">Về chúng tôi</a>
@@ -200,7 +200,7 @@
             <section class="bg-gray-7">
                 <div class="breadcrumbs-custom box-transform-wrap context-dark">
                     <div class="container">
-                        <h3 class="breadcrumbs-custom-title">Checkout</h3>
+                        <h3 class="breadcrumbs-custom-title">Thanh toán</h3>
                         <div class="breadcrumbs-custom-decor"></div>
                     </div>
                     <div class="box-transform" style="background-image: url(assets/images/banner/banner_cart.png);"></div>
@@ -216,11 +216,11 @@
             <!-- Section checkout form-->
             <section class="section section-sm section-first bg-default text-md-left">
                 <div class="container">
-                    
+
                     <div class="row row-50 justify-content-center">
 
                         <div class="col-md-10 col-lg-6">
-                            <h5>Delivery Address</h5>
+                            <h5>Địa chỉ giao hàng</h5>
                             <form class="rd-form rd-mailform form-checkout">
                                 <div class="row row-14 gutters-14">
                                     <div class="col-sm-12">
@@ -282,7 +282,7 @@
             <!-- Shopping Cart-->
             <section class="section section-sm bg-default text-md-left">
                 <div class="container">
-                    <h5>Your shopping cart</h5>
+                    <h5>Giỏ hàng của bạn</h5>
                     <!-- shopping-cart-->
                     <div class="table-custom-responsive">
                         <table class="table-custom table-cart">
@@ -296,25 +296,26 @@
                             </thead>
                             <tbody>
                                 <c:forEach var="cart" items="${cartBuy}" varStatus="loop">
-                                <tr>
-                                    <td class="productnameTd">
-                                        <a class="table-cart-figure" href="single-product.html">
-                                            <img src="https://placehold.co/195x141" alt="" width="195" height="141" />
-                                        </a>
-                                        <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
-                                    </td>
+                                    <tr>
+                                        <td class="productnameTd">
+                                            <a class="table-cart-figure" href="single-product.html">
+                                                <img src="${cart.productRepresentativeImage}" alt="" width="195" height="141" />
+                                            </a>
+                                            <a class="table-cart-link" href="single-product.html">${cart.productName}</a>
+                                        </td>
 
-                                    <td class="priceTd">${cart.productPrice}</td>
+                                        <td class="priceTd" style="text-transform: lowercase;">${cart.productPrice}đ</td>
 
-                                    <td>
-                                        <div class="table-cart-stepper">
-                                            <input class="form-input" type="number" data-zeros="true" value="${cart.quantity}" min="1"
-                                                   max="1000" disabled>
-                                        </div>
-                                    </td>
+                                        <td>
+                                            <div class="table-cart-stepper">
+                                                <input class="form-input" type="number" data-zeros="true" value="${cart.quantity}" min="1"
+                                                       max="1000" disabled>
+                                            </div>
+                                        </td>
 
-                                    <td>${cart.productPrice * cart.quantity}</td>
-                                </tr>
+                                    <td style="text-transform: lowercase;">${cart.productPrice * cart.quantity}00đ</td>
+
+                                    </tr>
                                 </c:forEach>
                             </tbody>
                         </table>
@@ -417,17 +418,17 @@
                                     nhất.</p>
                                 <!-- RD Mailform-->
                                 <form class="rd-form rd-mailform rd-form-inline rd-form-inline-sm oh-desktop"
-                                    data-form-output="form-output-global" data-form-type="subscribe" method="post"
-                                    action="bat/rd-mailform.php">
+                                      data-form-output="form-output-global" data-form-type="subscribe" method="post"
+                                      action="bat/rd-mailform.php">
                                     <div class="form-wrap wow slideInUp">
                                         <input class="form-input" id="subscribe-form-2-email" type="email"
-                                            name="email" data-constraints="@Email @Required" />
+                                               name="email" data-constraints="@Email @Required" />
                                         <label class="form-label" for="subscribe-form-2-email">Nhập
                                             E-mail của bạn</label>
                                     </div>
                                     <div class="form-button form-button-2 wow slideInRight">
                                         <button class="button button-sm button-icon-3 button-primary button-winona"
-                                            type="submit"><span
+                                                type="submit"><span
                                                 class="d-none d-xl-inline-block">Đăng ký</span><span
                                                 class="icon mdi mdi-telegram d-xl-none"></span></button>
                                     </div>
@@ -448,7 +449,7 @@
                                         <div class="iso-1">
                                             <a href="https://www.facebook.com/profile.php?id=61573141550651">
                                                 <img src="assets/images/like-icon-58x25.webp" alt="" width="58"
-                                                    height="25" />
+                                                     height="25" />
                                             </a>
                                             <span class="iso-1-big">9.4k
                                             </span>
@@ -471,7 +472,7 @@
                                             <div class="unit-left"><span class="icon mdi mdi-email"></span>
                                             </div>
                                             <div class="unit-body"><a class="mail"
-                                                    href="mailto:#">healin.fpt@gmail.com</a></div>
+                                                                      href="mailto:#">healin.fpt@gmail.com</a></div>
                                         </div>
                                     </div>
                                     <div class="wow slideInRight">
@@ -510,11 +511,11 @@
         <!-- Global Mailform Output-->
         <div class="snackbars" id="form-output-global"></div>
         <!-- Javascript-->
-        
-<!--        <script src="js/filter-address.js"></script>-->
+
+        <!--        <script src="js/filter-address.js"></script>-->
         <script src="js/core.min.js"></script>
         <script src="js/script.js"></script>
-<!--        <script src="js/checkout.js"></script>-->
+        <!--        <script src="js/checkout.js"></script>-->
         <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69" height="0"
                                                      width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script>

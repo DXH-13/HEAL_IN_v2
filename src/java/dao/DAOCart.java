@@ -149,6 +149,45 @@ public class DAOCart {
         return vector;
     }
 
+    public CartXProduct getAllCartById(String cartId) {
+        String sql = "SELECT cart.*, product.Name, product.RepresentativeImage, "
+                + "product.Description, product.AdditionalInfor, product.Price, "
+                + "product.Quantity AS ProductQuantity \n"
+                + "FROM cart \n"
+                + "INNER JOIN product ON cart.ProductId = product.Id \n"
+                + "WHERE cart.Id = ?";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, cartId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                CartXProduct cartXProduct = new CartXProduct(
+                        rs.getInt("Id"),
+                        rs.getInt("UserId"),
+                        rs.getInt("ProductId"),
+                        rs.getInt("Quantity"),
+                        rs.getString("Name"),
+                        rs.getString("RepresentativeImage"),
+                        rs.getString("Description"),
+                        rs.getString("AdditionalInfor"),
+                        rs.getString("Price"),
+                        rs.getInt("Quantity"),
+                        rs.getString("CreatedAt"),
+                        rs.getString("CreatedBy"),
+                        rs.getString("UpdatedAt"),
+                        rs.getString("DeactivatedAt"),
+                        rs.getString("DeactivatedBy"),
+                        rs.getBoolean("isActive")
+                );
+                return cartXProduct;
+            }
+        } catch (Exception e) {
+            Logger.getLogger(DAOCart.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return null;
+    }
+
+
     public int getProductCountByUserId(int userId) {
         String sql = "SELECT COUNT(ProductId) AS ProductCount FROM cart WHERE UserId = ? GROUP BY UserId";
         int productCount = 0;
@@ -257,11 +296,7 @@ public class DAOCart {
 
     public static void main(String[] args) {
         DAOCart dao = new DAOCart();
-//        Vector<CartXProduct> cart = dao.getAllCartByUserId(1);
-//        for (CartXProduct cartXProduct : cart) {
-//            System.out.println(cartXProduct);
-//        }
-        Cart cart = dao.findByID("51");
+        CartXProduct cart = dao.getAllCartById("58");
         System.out.println(cart);
     }
 }
