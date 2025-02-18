@@ -203,8 +203,8 @@ div.profile-setting div.select2-container {
 /* CSS */
 .save-button {
     align-items: center;
-    background-color: #06f;
-    border: 2px solid #06f;
+    background-color: #9A1E22;
+    border: 2px solid #9A1E22;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
@@ -234,15 +234,16 @@ div.profile-setting div.select2-container {
 }
 
 .save-button:hover {
-    background-color: #3385ff;
-    border-color: #3385ff;
-    fill: #06f;
+    background-color: #FFE6D2;
+    border-color: #FFE6D2;
+    fill: #9A1E22;
+    color: #000;
 }
 
 .save-button:active {
-    background-color: #3385ff;
-    border-color: #3385ff;
-    fill: #06f;
+    background-color: #FFE6D2;
+    border-color: #FFE6D2;
+    fill: #9A1E22;
 }
 
 @media (min-width: 768px) {

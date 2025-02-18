@@ -4,7 +4,7 @@
 <html class="wide wow-animation" lang="en">
 
     <head>
-        <title>Cart Page</title>
+        <title>Tài khoản</title>
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport"
               content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -112,13 +112,13 @@
                                                     <div class="unit-left"><span
                                                             class="icon mdi mdi-map-marker"></span>
                                                     </div>
-                                                    <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
+                                                    <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
                                                             Thăng Long - Thạch Thất - Hà Nội</a></div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <ul class="list-share-2">
-                                            <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                            <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                             <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                             <li><a class="icon mdi mdi-google-plus" href="#"></a></li>

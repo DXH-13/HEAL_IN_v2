@@ -77,27 +77,6 @@ function formatPrice(value) {
     return parts.join('.');
 }
 
-//function updateQuantity(productId, quantity) {
-//    console.log("Updating quantity:", productId, quantity);
-//    $.ajax({
-//        type: "POST",
-//        url: "cart",
-//        data: {userId: userId, productId: productId, quantity: quantity},
-//        success: function (response) {
-//            console.log("Response from server:", response);
-//
-////            let updatedTotal = response.updatedTotal;  // Tổng giá trị đã cập nhật
-//            let productTotal = response.productTotal;  // Tổng giá trị cho sản phẩm riêng lẻ
-//
-//            $(`tr[data-product-id='${productId}'] .product-total`).text(`${formatPrice(productTotal)}đ`);
-////            $(".text-spacing-75").text(`${formatPrice(updatedTotal)}đ`);
-//        },
-//        error: function () {
-//            console.error("Cập nhật số lượng thất bại!");
-//            alert("Cập nhật số lượng thất bại. Vui lòng thử lại.");
-//        }
-//    });
-//}
 
 function updateQuantity(productId, quantity) {
     console.log("Updating quantity:", productId, quantity);

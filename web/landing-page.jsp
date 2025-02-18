@@ -4,7 +4,7 @@
         <html>
 
         <head>
-            <title>Home</title>
+            <title>Trang chủ</title>
             <meta name="format-detection" content="telephone=no">
             <meta name="viewport"
                 content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -98,14 +98,14 @@
                                                     <div class="unit unit-spacing-xs">
                                                         <div class="unit-left"><span
                                                                 class="icon mdi mdi-map-marker"></span></div>
-                                                        <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
+                                                        <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
                                                                 Thăng Long - Thạch Thất - Hà Nội</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-share-2">
-                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
@@ -509,11 +509,11 @@
                                     <div class="quote-tara-text">
                                         <p class="q">Healin không chỉ đẹp về hình thức mà còn chạm vào cảm xúc sâu bên trong. Bộ bài là công cụ tuyệt vời để kết nối cảm xúc giữa các thành viên trong gia đình.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/431972177_1649416969212222_2285923343821617056_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_ohc=70WZr9-pd3AQ7kNvgFSrfQi&_nc_oc=Adi9Wjq7nCeSKnviK0vewfDW8uppxfAJ8BudXyw_8waDIAOXGlQqJXp17tRbdQZBOMU&_nc_zt=24&_nc_ht=scontent.fhan2-3.fna&_nc_gid=ATHLc2pjuj-CEHNP8qOOBSe&oh=00_AYCQN_AfmWmzSr9PT7mYQZqSyKsbRzMfSvuNXdjlVStv0A&oe=67AF97E0" alt=""
+                                    <div class="quote-tara-figure"><img src="assets/images/commenter/duong.jpg" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
-                                <h6 class="quote-tara-author">Lê Hồng Phong</h6>
+                                <h6 class="quote-tara-author">Nguyễn Tiến Dương</h6>
                                 <div class="quote-tara-status">Khách hàng</div>
                             </article>
                             <!-- Quote Tara-->
@@ -522,7 +522,7 @@
                                     <div class="quote-tara-text">
                                         <p class="q">Tôi rất ấn tượng với chất liệu và thiết kế bền vững. Hy vọng nhóm sẽ bổ sung thêm phiên bản theo chủ đề văn hóa đặc biệt.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/473243745_1259495658640223_6082860896114192720_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=x7JbJ1r5Ya4Q7kNvgHWd4ZL&_nc_oc=AdhmfLEPdo1ozhRXCOqxR8CPDHSWgGCl4Qx7mDqDFRqjRDaSq7HCF9EQffTJuuZR6Jw&_nc_zt=24&_nc_ht=scontent.fhan2-4.fna&_nc_gid=AVJDrxyizOanbUn15CBp2xh&oh=00_AYBd5ikdTSVIriBMMzf1EvJWUeiGVu5oO3x3kHsTBaVDRA&oe=67AF9129" alt=""
+                                    <div class="quote-tara-figure"><img src="assets/images/commenter/linh.jpg" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
@@ -535,7 +535,7 @@
                                     <div class="quote-tara-text">
                                         <p class="q">Thiết kế của Healin với hình ảnh các món ăn Việt Nam thật sự gợi nhớ những kỷ niệm thân quen. Sau khi chơi, gia đình tôi đã có dịp ôn lại nhiều câu chuyện cũ và thấu hiểu nhau hơn.</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/468572848_1897083211064886_1585829358111805848_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=YqVXxk7KiVsQ7kNvgFbvUqd&_nc_oc=Adjra4kjrGbddl8yH1eGFvPmO1NqdNVI6OlFphBaLcV_HoYVrX1GXmAZIC1jxvgna2Y&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=An_asuKXF4GzVSpG8hu3Dze&oh=00_AYDSdhSGJcpDZZNze0mD9I_zzd2TIQbAbb6cUu92pqAAzw&oe=67AF9E62" alt=""
+                                    <div class="quote-tara-figure"><img src="assets/images/commenter/minhanh.jpg" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
@@ -548,7 +548,7 @@
                                     <div class="quote-tara-text">
                                         <p class="q">Trước đây, tôi luôn cảm thấy khó mở lời khi nói chuyện với bố mẹ, đặc biệt là những chuyện riêng tư. Nhưng sau khi trải nghiệm bộ bài của Healin, các câu hỏi trong bộ bài đã giúp tôi dễ dàng chia sẻ hơn, và tôi nhận ra rằng bố mẹ cũng rất thấu hiểu mình</p>
                                     </div>
-                                    <div class="quote-tara-figure"><img src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/435913441_3552735471723375_2680337991640332681_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=104&ccb=1-7&_nc_sid=e99d92&_nc_ohc=l0GfnwvjWMUQ7kNvgEwt7gU&_nc_oc=AdgROkWnN7N_JCmMx4yBNzZrbZz0vuWt6Dz4o9UFs0In4vSQ2CwCjB2oJJw58YZ3gDw&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=AVx4Sw1Xuf3FkcLryeF5Efj&oh=00_AYBvg4PJIBl2vS6rKEyt6fn09FX4OFATSZ2Px0S-shmJzg&oe=67AF7665" alt=""
+                                    <div class="quote-tara-figure"><img src="assets/images/commenter/thanh.jpg" alt=""
                                             width="115" height="115" />
                                     </div>
                                 </div>
@@ -567,12 +567,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/310x585" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/310x585?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="310" height="585" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">Best Ingredients</a></h6>
-                                            <div class="thumbnail-mary-location">Tasty Pizza</div>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -581,13 +581,13 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-big wow slideInRight"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/631x587" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/631x587?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="631" height="587" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">Comfortable interior</a>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a>
                                             </h6>
-                                            <div class="thumbnail-mary-location">Modern Design</div>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -596,12 +596,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInDown"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">quality Dishware</a></h6>
-                                            <div class="thumbnail-mary-location">Top-notch utensils</div>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -610,12 +610,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary wow slideInUp"><a class="thumbnail-mary-figure"
                                         href="https://placehold.co/1200x800" data-lightgallery="item"><img
-                                            src="https://placehold.co/631x289" alt="" width="631" height="289" /></a>
+                                            src="https://placehold.co/631x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt="" width="631" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">Refreshing cocktails</a>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a>
                                             </h6>
-                                            <div class="thumbnail-mary-location">Exclusive selection</div>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -624,12 +624,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInUp"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">Exotic Salads</a></h6>
-                                            <div class="thumbnail-mary-location">Summer Taste</div>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -638,12 +638,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInRight"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">All Types of pizza</a></h6>
-                                            <div class="thumbnail-mary-location">Special Recipes</div>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>
@@ -652,12 +652,12 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289" alt=""
+                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
                                             width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
-                                            <h6 class="thumbnail-mary-title"><a href="#">Diverse menu</a></h6>
-                                            <div class="thumbnail-mary-location">Pick Your Favorite dish</div>
+                                            <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
+                                            <div class="thumbnail-mary-location">Sắp ra mắt</div>
                                         </div>
                                     </div>
                                 </article>

@@ -4,7 +4,7 @@
         <html class="wide wow-animation" lang="en">
 
         <head>
-            <title>Single Product</title>
+            <title>Sản phẩm</title>
             <meta name="format-detection" content="telephone=no">
             <meta name="viewport"
                 content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -98,13 +98,13 @@
                                                         <div class="unit-left"><span
                                                                 class="icon mdi mdi-map-marker"></span>
                                                         </div>
-                                                        <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
+                                                        <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
                                                                 Thăng Long - Thạch Thất - Hà Nội</a></div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-share-2">
-                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
@@ -382,7 +382,7 @@
                                                 <div class="form-wrap">
                                                     <input class="form-input" id="contact-email-3" type="email"
                                                         name="email" data-constraints="@Email @Required" />
-                                                    <label class="form-label" for="contact-email-3">E-mail cảu
+                                                    <label class="form-label" for="contact-email-3">E-mail của
                                                         bạn*</label>
                                                 </div>
                                             </div>
@@ -421,16 +421,8 @@
                                                 class="icon-xxxl text-gray-800-01 mdi mdi-information-outline"></span>
                                         </div>
                                         <div class="unit-body">
-                                            <p class="text-spacing-50">Here you can read some details about a nifty
-                                                little
-                                                lifecycle of your order's journey. At first you choose the product you
-                                                like.
-                                                Then you put into your shopping cart and pass the checkout process in a
-                                                few
-                                                clicks. Our
-                                                store offers several payment and delivery methods, so you have an
-                                                opportunity to
-                                                choose which one is the most convenient for you.</p>
+                                            <p class="text-spacing-50">- Đối với hình thức vận chuyển: Chúng tôi sẽ giao đơn hàng đến tận tay các bạn trong thời gian ngắn nhất. Đối với khu vực nội thành Hà Nội sẽ được miễn phí vận chuyển. Còn các tỉnh thành khác sẽ có thêm phí vận chuyển tùy thuộc vào khoảng cách.<br>
+                                            - Đối với hình thức thanh toán: Chúng tôi cung cấp 2 hình thức thanh toán đó là thanh toán khi nhận hàng và thanh toán qua tài khoản ngân hàng. </p>
                                         </div>
                                     </div>
                                 </div>

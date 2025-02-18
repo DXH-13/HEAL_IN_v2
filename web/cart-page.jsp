@@ -4,7 +4,7 @@
 <html class="wide wow-animation" lang="en">
 
     <head>
-        <title>Cart Page</title>
+        <title>Giỏ hàng</title>
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport"
               content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -93,13 +93,13 @@
                                                 <div class="unit unit-spacing-xs">
                                                     <div class="unit-left"><span class="icon mdi mdi-map-marker"></span>
                                                     </div>
-                                                    <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
+                                                    <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
                                                         Thăng Long - Thạch Thất - Hà Nội</a></div>
                                                 </div>
                                             </li>
                                         </ul>
                                         <ul class="list-share-2">
-                                            <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                            <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                             <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                             <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
@@ -263,7 +263,7 @@
                                             </td>
                                             <td class="product-total" style="text-transform: lowercase">${cart.productPrice * cart.quantity}00đ</td>
                                             <td>
-                                                <button class="deleteProbtn" onclick="deleteProduct(${sessionScope.userLogin}, ${cart.productId})">
+                                                <button type="button" class="deleteProbtn" >
                                                     <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="iconDelete">
                                                     <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
                                                     </svg>

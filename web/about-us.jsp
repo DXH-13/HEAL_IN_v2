@@ -4,7 +4,7 @@
         <html class="wide wow-animation" lang="en">
 
         <head>
-            <title>About us</title>
+            <title>Về chúng tôi</title>
             <meta name="format-detection" content="telephone=no">
             <meta name="viewport"
                 content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -97,14 +97,18 @@
                                                     <div class="unit unit-spacing-xs">
                                                         <div class="unit-left"><span
                                                                 class="icon mdi mdi-map-marker"></span></div>
-                                                        <div class="unit-body"><a class="address" href="#">Km29 Đại lộ
+                                                        <div class="unit-body"><a class="address"
+                                                                href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8"
+                                                                target="_blank">Km29 Đại lộ
                                                                 Thăng Long - Thạch Thất - Hà Nội</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-share-2">
-                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-facebook"
+                                                        href="https://www.facebook.com/healin.boardgame"
+                                                        target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
@@ -255,50 +259,78 @@
                                 <div class="tab-content tab-content-1">
                                     <div class="tab-pane fade show active" id="tabs-4-1">
                                         <h4>Một số thông tin về chúng tôi</h4>
-                                        <p>Chúng tôi là một nhóm trẻ đầy nhiệt huyết và sáng tạo, mong muốn mang lại sự
-                                            kết nối và niềm vui cho mọi người thông qua các bộ bài board game. Nhận thấy
-                                            các mối quan hệ đang dần trở nên xa cách, chúng tôi muốn khơi gợi lại giá
-                                            trị truyền thống của sự sẻ chia và gần gũi.
+                                        <p>Chúng tôi là một nhóm trẻ đầy nhiệt huyết và sáng tạo, với mong muốn giúp mọi
+                                            người xích lại gần nhau hơn thông qua những cuộc trò chuyện ý nghĩa. Trong
+                                            xã hội hiện đại, nhiều người gặp khó khăn trong giao tiếp, khoảng cách thế
+                                            hệ ngày càng lớn, và đôi khi, những cảm xúc sâu kín khó được giãi bày. Chúng
+                                            tôi tin rằng sự kết nối chân thành có thể giúp chữa lành những vết thương
+                                            trong tâm hồn, giúp con người thấu hiểu nhau hơn và tìm lại sự đồng cảm mà
+                                            cuộc sống bận rộn đôi khi khiến ta lãng quên.
                                         </p>
-                                        <p>Và với tâm huyết và niềm yêu thích dành cho trò chơi, chúng tôi không ngừng
-                                            phát triển những sản phẩm độc đáo, thú vị, phù hợp với mọi đối tượng. Mỗi bộ
-                                            bài không chỉ là một trò chơi giải trí, mà còn là cầu nối để xây dựng tình
-                                            bạn, tình yêu thương và sự gắn kết bền vững.</p><img
+                                        <p>Chính vì vậy, chúng tôi đã tạo ra một bộ bài tâm lý với mục tiêu không chỉ là
+                                            một trò chơi, mà còn là một công cụ để khơi mở những câu chuyện, tháo gỡ
+                                            những nút thắt trong giao tiếp và giúp mọi người bước ra khỏi vùng an toàn
+                                            để bày tỏ suy nghĩ, cảm xúc của mình. Healin không đơn thuần là một bộ bài –
+                                            đó là một hành trình kết nối, nơi mỗi câu hỏi, mỗi lá bài đều mở ra cơ hội
+                                            để sẻ chia, thấu hiểu và xây dựng những mối quan hệ bền vững hơn.</p><img
                                             src="https://daihoc.fpt.edu.vn/wp-content/uploads/2017/08/f6.jpg" alt=""
                                             width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-2">
                                         <h4>Cung cấp các trò chơi Board Game hay nhất tại đại học FPT</h4>
-                                        <p>Chúng tôi ở đây cùng Healin với sứ mệnh gỡ rối những câu chuyện giao tiếp khó
-                                            khăn và làm sống lại khoảnh khắc chân thực, gần gũi trong cuộc sống hiện
-                                            nay.
+                                        <p>Trong một thế giới mà con người ngày càng bận rộn và phụ thuộc nhiều vào công
+                                            nghệ, sự kết nối giữa chúng ta dần trở nên mong manh. Những cuộc trò chuyện
+                                            sâu sắc, những khoảnh khắc sẻ chia chân thành ngày càng ít đi, khiến khoảng
+                                            cách giữa các thế hệ, bạn bè và người thân ngày càng xa hơn. Chúng tôi tin
+                                            rằng, mỗi con người đều có những câu chuyện, cảm xúc và suy nghĩ cần được
+                                            lắng nghe, nhưng không phải ai cũng dễ dàng mở lòng.
                                         </p>
-                                        <p>Chúng tôi muốn các sản phẩm của mình không chỉ là trò chơi, mà còn là một
-                                            phần của hành trình xây dựng kết nối những kỷ niệm đẹp đẽ trong cuộc đời.
+                                        <p>Vì vậy, chúng tôi tạo ra Healin với sứ mệnh trở thành cầu nối giúp mọi người
+                                            phá bỏ rào cản trong giao tiếp, gỡ rối những khoảng cách vô hình và mang đến
+                                            không gian an toàn để bày tỏ bản thân. Bộ bài không chỉ đơn thuần là một trò
+                                            chơi, mà là một công cụ để khuyến khích sự chia sẻ, giúp con người thấu hiểu
+                                            nhau hơn và tìm thấy sự đồng cảm. Chúng tôi mong muốn Healin có thể trở
+                                            thành một phần trong hành trình kết nối và chữa lành, giúp mọi người tìm lại
+                                            sự gắn kết và những khoảnh khắc ý nghĩa trong cuộc sống.
                                         </p><img src="https://daihoc.fpt.edu.vn/wp-content/uploads/2019/10/fcamp.jpg"
                                             alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-3">
                                         <h4>Cung cấp dịch vụ khách hàng hàng đầu</h4>
-                                        <p>Healin là không chỉ là một trò chơi độc đáo mà còn là nơi mà chúng tôi đặt
-                                            trọn tâm huyết từ ý tưởng trò chơi đến chất lượng sản phẩm. Với hy vọng mang
-                                            lại những trải nghiệm tốt nhất cho người chơi.
+                                        <p>Healin không chỉ là một sản phẩm, mà còn là đứa con tinh thần mà chúng tôi
+                                            dành nhiều tâm huyết để phát triển. Từ ý tưởng ban đầu cho đến khâu thiết
+                                            kế, sản xuất, chúng tôi luôn đặt chất lượng trải nghiệm của người chơi lên
+                                            hàng đầu. Chúng tôi mong muốn tạo ra một trải nghiệm không chỉ thú vị mà còn
+                                            có chiều sâu, giúp mỗi người tham gia cảm thấy thoải mái khi bày tỏ suy
+                                            nghĩ, mở lòng với những người xung quanh và xây dựng những mối quan hệ vững
+                                            chắc hơn.
                                             .</p>
-                                        <p>Chúng tôi tin rằng những giá trị mà Healin mang lại sẽ trở thành cầu nối giúp
-                                            gia đình, bạn bè có thể nung nấu được những câu chuyện đã ngủ quên và tận
-                                            hưởng những khoảnh khắc ý nghĩa nhất.</p>
+                                        <p>Mục tiêu của chúng tôi là giúp Healin trở thành một phương tiện kết nối hiệu
+                                            quả giữa gia đình, bạn bè hay thậm chí là những người mới quen. Dù bạn là
+                                            ai, ở độ tuổi nào, bạn cũng có thể tìm thấy trong Healin những câu hỏi, tình
+                                            huống giúp bạn dễ dàng bắt đầu câu chuyện, thấu hiểu người khác và chia sẻ
+                                            những điều chân thành nhất. Chúng tôi tin rằng thông qua những lá bài nhỏ bé
+                                            này, những mối quan hệ sẽ được nuôi dưỡng, khoảng cách thế hệ sẽ được thu
+                                            hẹp, và những ký ức đẹp sẽ được tạo ra.</p>
                                         <img src="https://fpt.edu.vn/Resources/article/uploads/2024/04/img_935ddc66-5415-4ab4-8367-b8147ecc27f2.jpg"
                                             alt="" width="835" height="418" />
                                     </div>
                                     <div class="tab-pane fade" id="tabs-4-4">
                                         <h4>Lắng nghe để cải tiến</h4>
-                                        <p>Chúng tôi không ngừng sáng tạo để mang đến cho Healin được phát triển với
-                                            trọng tâm là chất lượng, từ thiết kế đến trải nghiệm người chơi, nhằm mang
-                                            lại giá trị tốt nhất.</p>
-                                        <p>Và với sự lắng nghe và thấu hiểu, chúng tôi không ngừng cải tiến dựa trên ý
-                                            kiến từ khách hàng và cộng đồng. Đồng thời, chúng tôi cam kết phát triển bền
-                                            vững, sản xuất có trách nhiệm, bảo vệ môi trường và đóng góp tích cực cho xã
-                                            hội.</p>
+                                        <p>Sự kết nối và thấu hiểu chính là giá trị cốt lõi mà Healin hướng đến. Chúng
+                                            tôi tin rằng mỗi con người đều có câu chuyện riêng, và những cuộc trò chuyện
+                                            chân thành là chìa khóa giúp xây dựng sự gắn kết giữa mọi người. Vì vậy,
+                                            chúng tôi luôn đặt trọng tâm vào việc sáng tạo những nội dung chất lượng,
+                                            giúp mở ra những cuộc đối thoại ý nghĩa, để mọi người có thể chia sẻ mà
+                                            không còn e ngại.</p>
+                                        <p>Bên cạnh đó, chúng tôi không ngừng lắng nghe phản hồi từ cộng đồng để liên
+                                            tục cải tiến sản phẩm, giúp Healin ngày càng hoàn thiện và phù hợp hơn với
+                                            nhu cầu của người chơi. Chúng tôi cũng đề cao sự phát triển bền vững, từ
+                                            việc lựa chọn chất liệu thân thiện với môi trường đến việc thiết kế sản phẩm
+                                            một cách tinh tế, mang lại trải nghiệm tốt nhất cho người dùng. Với Healin,
+                                            chúng tôi không chỉ mang đến một trò chơi, mà còn là một hành trình khám phá
+                                            cảm xúc, giúp mọi người tìm lại sự kết nối và yêu thương trong cuộc sống.
+                                        </p>
                                         <img src="https://i.chungta.vn/2021/10/13/bai2anh1-1634101428_1200x0.jpg" alt=""
                                             width="835" height="418" />
                                     </div>
@@ -373,7 +405,7 @@
                                     </a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Dương Hoàng Lan</a></h6>
-                                        <div class="team-modern-status">Nhóm trưởng</div>
+                                        <div class="team-modern-status">CEO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -390,7 +422,7 @@
                                             style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Nguyễn Hà Thu</a></h6>
-                                        <div class="team-modern-status">Nhân viên</div>
+                                        <div class="team-modern-status">CFO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -407,7 +439,7 @@
                                             style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Lê Thùy Dương</a></h6>
-                                        <div class="team-modern-status">Nhân viên</div>
+                                        <div class="team-modern-status">CMO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -424,7 +456,7 @@
                                             style="width: 270px; height: 270px; object-fit: cover; " /></a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Đặng Xuân Huy</a></h6>
-                                        <div class="team-modern-status">Nhân viên</div>
+                                        <div class="team-modern-status">CPO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -441,7 +473,7 @@
                                             style="width: 270px; height: 270px; object-fit: cover;" /></a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Lương Duy Khải</a></h6>
-                                        <div class="team-modern-status">Nhân viên</div>
+                                        <div class="team-modern-status">CTO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -458,7 +490,7 @@
                                             style="width: 270px; height: 270px; object-fit: cover;" /></a>
                                     <div class="team-modern-caption">
                                         <h6 class="team-modern-name"><a href="#">Nguyễn Thu Phương</a></h6>
-                                        <div class="team-modern-status">Nhân viên</div>
+                                        <div class="team-modern-status">COO</div>
                                         <ul class="list-inline team-modern-social-list">
                                             <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
@@ -589,7 +621,7 @@
                                                             người dùng từ offline đến online. Tôi mong rằng các bạn sẽ
                                                             tận dụng công nghệ tốt hơn nữa để phát triển các tính năng
                                                             cá nhân hóa mạnh mẽ hơn."</span></h5>
-                                                    <h5 class="quote-modern-author">Vũ Hồng Sơn,</h5>
+                                                    <h5 class="quote-modern-author">Nguyễn Khách Tùng,</h5>
                                                     <p class="quote-modern-status">Cố vấn công nghệ </p>
                                                 </article>
                                             </div>
@@ -601,7 +633,7 @@
                                                             chăm chút tỉ mỉ, mang đậm chất văn hóa Việt nhưng vẫn rất
                                                             hiện đại. Tôi kỳ vọng nhóm sẽ tiếp tục cải tiến với các
                                                             phiên bản đặc biệt để duy trì sự mới mẻ."</span></h5>
-                                                    <h5 class="quote-modern-author">Nguyễn Thái An,</h5>
+                                                    <h5 class="quote-modern-author">Nguyễn Đức Minh,</h5>
                                                     <p class="quote-modern-status">Nhà thiết kế đồ họa</p>
                                                 </article>
                                             </div>
@@ -615,16 +647,16 @@
                                                     height="83" />
                                             </div>
                                             <div class="item"><img class="img-circle"
-                                                    src="https://scontent.fhan2-5.fna.fbcdn.net/v/t39.30808-1/454324419_1663628727717963_2010441840616440302_n.jpg?stp=cp6_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e99d92&_nc_ohc=frqa1SIKsY0Q7kNvgGIhnPQ&_nc_oc=AdiBukVy0Dl2HhkBDcZwqmLwMzMsLbBKWzR9ISm6Vr78UKi5R15kBae8pp0gFH2Q1jo&_nc_zt=24&_nc_ht=scontent.fhan2-5.fna&_nc_gid=AAzWTzOzzWi4QKHm2k1MP5G&oh=00_AYCFu8e3JCnq8z4TDNEBU06pPnmFfg4_hEFCJaxaU-GwcA&oe=67AF7F3B"
-                                                    alt="" width="83" height="83" />
+                                                    src="assets/images/commenter/trang.jpg" alt="" width="83"
+                                                    height="83" />
                                             </div>
                                             <div class="item"><img class="img-circle"
-                                                    src="https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/448348263_1732589413943048_7455479925015017025_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=jTttoa4sZ34Q7kNvgEzeoBf&_nc_oc=AdhIoH-u53qvrczLkjuQS4Q9hZD5E4oqKiI8dWD4W6pg6HmXXEVmTZ1DaT7Sv6hQfS8&_nc_zt=24&_nc_ht=scontent.fhan2-3.fna&_nc_gid=AEJnvahFjG2pnOFiTARXDQU&oh=00_AYCh5mxMaGu_h4edo0eqLk4ljIgFeFCNd4tdrxDOvl1tCg&oe=67AF7AD0"
-                                                    alt="" width="83" height="83" />
+                                                    src="assets/images/commenter/tung.jpg" alt="" width="83"
+                                                    height="83" />
                                             </div>
                                             <div class="item"><img class="img-circle"
-                                                    src="https://scontent.fhan20-1.fna.fbcdn.net/v/t39.30808-1/411200370_2063889270629698_3298817594301013475_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=109&ccb=1-7&_nc_sid=e99d92&_nc_ohc=0ua8O9J9oQsQ7kNvgGCtwsG&_nc_oc=AdhVGoA9Yxni04hd2UGL_v9nvGmu07YXinQeYo3KTVhwu4n3kedhGYbyH-vulAT3YeE&_nc_zt=24&_nc_ht=scontent.fhan20-1.fna&_nc_gid=AAxraluyV7lk9Nx2U4dor_z&oh=00_AYDc65E1rvJBDGLhd0wlOsa9Zi25QKiTKktpFNt7BoulTQ&oe=67AF7FE3"
-                                                    alt="" width="83" height="83" />
+                                                    src="assets/images/commenter/minh.jpg" alt="" width="83"
+                                                    height="83" />
                                             </div>
                                         </div>
                                     </div>
