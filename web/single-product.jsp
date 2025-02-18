@@ -98,16 +98,20 @@
                                                         <div class="unit-left"><span
                                                                 class="icon mdi mdi-map-marker"></span>
                                                         </div>
-                                                        <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
+                                                        <div class="unit-body"><a class="address"
+                                                                href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8"
+                                                                target="_blank">Km29 Đại lộ
                                                                 Thăng Long - Thạch Thất - Hà Nội</a></div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-share-2">
-                                                <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
+                                                <li><a class="icon mdi mdi-facebook"
+                                                        href="https://www.facebook.com/healin.boardgame"
+                                                        target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                                <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                                <li><a class="icon mdi iconTiktok" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14"><path fill="#00000" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                             </ul>
                                         </div>
                                         <div class="rd-navbar-main">
@@ -120,8 +124,8 @@
                                                 <li class="rd-nav-item"><a class="rd-nav-link" href="about_us">Về chúng
                                                         tôi</a>
                                                 </li>
-                                                <li class="rd-nav-item"><a class="rd-nav-link"
-                                                        href="pre_game">Trò chơi</a>
+                                                <li class="rd-nav-item"><a class="rd-nav-link" href="pre_game">Trò
+                                                        chơi</a>
                                                 </li>
                                                 <li class="rd-nav-item active">
                                                     <a class="rd-nav-link" href="landing#shop">Cửa hàng</a>
@@ -219,7 +223,8 @@
                             <h3 class="breadcrumbs-custom-title">${product.name}</h3>
                             <div class="breadcrumbs-custom-decor"></div>
                         </div>
-                        <div class="box-transform" style="background-image: url(assets/images/banner/cover_doanvien.png);">
+                        <div class="box-transform"
+                            style="background-image: url(assets/images/banner/cover_doanvien.png);">
                         </div>
                     </div>
                     <div class="container">
@@ -421,8 +426,13 @@
                                                 class="icon-xxxl text-gray-800-01 mdi mdi-information-outline"></span>
                                         </div>
                                         <div class="unit-body">
-                                            <p class="text-spacing-50">- Đối với hình thức vận chuyển: Chúng tôi sẽ giao đơn hàng đến tận tay các bạn trong thời gian ngắn nhất. Đối với khu vực nội thành Hà Nội sẽ được miễn phí vận chuyển. Còn các tỉnh thành khác sẽ có thêm phí vận chuyển tùy thuộc vào khoảng cách.<br>
-                                            - Đối với hình thức thanh toán: Chúng tôi cung cấp 2 hình thức thanh toán đó là thanh toán khi nhận hàng và thanh toán qua tài khoản ngân hàng. </p>
+                                            <p class="text-spacing-50">- Đối với hình thức vận chuyển: Chúng tôi sẽ giao
+                                                đơn hàng đến tận tay các bạn trong thời gian ngắn nhất. Đối với khu vực
+                                                nội thành Hà Nội sẽ được miễn phí vận chuyển. Còn các tỉnh thành khác sẽ
+                                                có thêm phí vận chuyển tùy thuộc vào khoảng cách.<br>
+                                                - Đối với hình thức thanh toán: Chúng tôi cung cấp 2 hình thức thanh
+                                                toán đó là thanh toán khi nhận hàng và thanh toán qua tài khoản ngân
+                                                hàng. </p>
                                         </div>
                                     </div>
                                 </div>
@@ -543,12 +553,12 @@
                                             class="d-inline-block wow slideInLeft">Những gì chúng tôi cung cấp</span>
                                     </h5>
                                     <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
+                                        <li><a href="#">Trò chuyện</a></li>
+                                        <li><a href="#">Kết nối</a></li>
+                                        <li><a href="#">Gải trí</a></li>
+                                        <li><a href="#">Cảm xúc</a></li>
+                                        <li><a href="#">Thư giãn</a></li>
+                                        <li><a href="#">Chữa lành</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-4 col-xl-3">
@@ -620,17 +630,18 @@
                                             <div class="unit unit-spacing-sm align-items-center">
                                                 <div class="unit-left"><span class="icon mdi mdi-email"></span></div>
                                                 <div class="unit-body"><a class="mail"
-                                                        href="mailto:#">healin.fpt@gmail.com</a>
+                                                        href="mailto:#">healin.boardgame@gmail.com</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="wow slideInRight">
                                             <ul
                                                 class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
-                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/healin.boardgame"
+                                                    target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                                <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                                <li><a class="icon mdi " href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18"><path fill="#ffffff" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                             </ul>
                                         </div>
                                     </div>

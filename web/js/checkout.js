@@ -1,3 +1,14 @@
+
+window.addEventListener('scroll', function () {
+    const cartBadge = document.querySelector('.cart-badge');
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > 50) {
+        cartBadge.style.top = '44px';
+    } else {
+        cartBadge.style.top = '55px';
+    }
+});
+
 const radioPanels = document.querySelectorAll('.radio-panel');
 
 radioPanels.forEach(panel => {

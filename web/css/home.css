@@ -138,3 +138,15 @@
         display: none;
     }
 }
+
+.iconTiktok svg {
+    width: 14px;
+    height: 14px;
+    fill: black; /* Màu mặc định */
+    transition: fill 0.3s ease; /* Hiệu ứng chuyển đổi màu mượt mà */
+  }
+  
+  .icon:hover svg {
+    fill: white; /* Màu trắng khi hover */
+  }
+  

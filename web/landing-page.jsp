@@ -98,17 +98,21 @@
                                                     <div class="unit unit-spacing-xs">
                                                         <div class="unit-left"><span
                                                                 class="icon mdi mdi-map-marker"></span></div>
-                                                        <div class="unit-body"><a class="address" href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8" target="_blank">Km29 Đại lộ
+                                                        <div class="unit-body"><a class="address"
+                                                                href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8"
+                                                                target="_blank">Km29 Đại lộ
                                                                 Thăng Long - Thạch Thất - Hà Nội</a>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                             <ul class="list-share-2">
-                                                <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
+                                                <li><a class="icon mdi mdi-facebook"
+                                                        href="https://www.facebook.com/healin.boardgame"
+                                                        target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                                <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                                <li><a class="icon mdi iconTiktok" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14"><path fill="#00000" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                             </ul>
                                         </div>
                                         <div class="rd-navbar-main">
@@ -163,11 +167,12 @@
                                                             <a class="rd-nav-link" href="shop.html">Avatar</a>
                                                             <ul class="rd-menu rd-navbar-dropdown">
                                                                 <li class="rd-dropdown-item">
-                                                                    <a class="rd-dropdown-link"
-                                                                        href="profile_user">Hồ sơ</a>
+                                                                    <a class="rd-dropdown-link" href="profile_user">Hồ
+                                                                        sơ</a>
                                                                 </li>
                                                                 <li class="rd-dropdown-item">
-                                                                    <a class="rd-dropdown-link" href="log_out">Đăng Xuất</a>
+                                                                    <a class="rd-dropdown-link" href="log_out">Đăng
+                                                                        Xuất</a>
                                                                 </li>
                                                             </ul>
                                                         </li>
@@ -214,7 +219,8 @@
                 <section class="section swiper-container swiper-slider swiper-slider-2 swiper-slider-3" data-loop="true"
                     data-autoplay="5000" data-simulate-touch="false" data-slide-effect="fade">
                     <div class="swiper-wrapper text-sm-left">
-                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-1-copyright.jpg">
+                        <div class="swiper-slide context-dark"
+                            data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-1-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -225,18 +231,20 @@
                                                     LƯỢNG</span>
                                             </h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInLeft"
-                                                data-caption-delay="300" >Chúng tôi mang đến
+                                                data-caption-delay="300">Chúng tôi mang đến
                                                 những bộ board game tốt nhất để tạo nên những khoảnh khắc đáng nhớ cho
                                                 gia đình và bạn bè.
                                             </p>
                                             <a class="button button-lg button-primary button-winona button-shadow-2"
-                                                href="#" data-caption-animate="fadeInUp" data-caption-delay="300">Xem các sản phẩm</a>
+                                                href="#" data-caption-animate="fadeInUp" data-caption-delay="300">Xem
+                                                các sản phẩm</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-3-copyright.jpg">
+                        <div class="swiper-slide context-dark"
+                            data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-3-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -245,7 +253,7 @@
                                                     data-caption-animate="slideInDown" data-caption-delay="0"
                                                     style=" margin-top: 25px">KHOẢNH KHẮC</span></h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                                data-caption-delay="300" >Trải nghiệm niềm vui
+                                                data-caption-delay="300">Trải nghiệm niềm vui
                                                 kết nối và tiếng cười cùng bộ sưu tập board game độc đáo của chúng tôi!
                                             </p>
                                             <div class="button-wrap oh"><a
@@ -257,7 +265,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide context-dark" data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-2-copyright.jpg">
+                        <div class="swiper-slide context-dark"
+                            data-slide-bg="https://chit-club.ancorathemes.com/wp-content/uploads/2019/11/about-slider-2-copyright.jpg">
                             <div class="swiper-slide-caption section-md">
                                 <div class="container">
                                     <div class="row">
@@ -266,7 +275,7 @@
                                                     data-caption-animate="slideInDown" data-caption-delay="0"
                                                     style=" margin-top: 25px;">KẾT NỐI</span></h1>
                                             <p class="big swiper-text" data-caption-animate="fadeInRight"
-                                                data-caption-delay="300" >Board game là sợi dây
+                                                data-caption-delay="300">Board game là sợi dây
                                                 gắn kết gia đình, bạn bè!</p>
                                             <div class="button-wrap oh"><a
                                                     class="button button-lg button-primary button-winona button-shadow-2"
@@ -304,8 +313,10 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInUp">
-                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-3.jpg"
-                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
+                                        <div class="services-terri-figure"><img
+                                                src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-3.jpg"
+                                                alt="" width="370" height="278"
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-bubbles"></span>
@@ -318,8 +329,10 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-2.jpg"
-                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
+                                        <div class="services-terri-figure"><img
+                                                src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ban-ga-la-tach-2.jpg"
+                                                alt="" width="370" height="278"
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-group-work"></span>
@@ -334,9 +347,10 @@
                                     <article class="services-terri wow slideInUp">
                                         <div class="services-terri-figure">
                                             <img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/len-mam-3.jpg"
-                                                 alt="" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;">
-                                          </div>
-                                          
+                                                alt=""
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;">
+                                        </div>
+
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-happy-grin"></span>
                                             <h5 class="services-terri-title"><a href="#">Giải trí</a></h5>
@@ -348,8 +362,10 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://th.bing.com/th/id/OIP.PH43VsxjCDQbTuB2-40bKQHaFj?w=1232&h=924&rs=1&pid=ImgDetMain"
-                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
+                                        <div class="services-terri-figure"><img
+                                                src="https://th.bing.com/th/id/OIP.PH43VsxjCDQbTuB2-40bKQHaFj?w=1232&h=924&rs=1&pid=ImgDetMain"
+                                                alt="" width="370" height="278"
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-joystick"></span>
@@ -362,8 +378,10 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInUp">
-                                        <div class="services-terri-figure"><img src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ma-doi-grab-food-4-playing-scaled.jpg"
-                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
+                                        <div class="services-terri-figure"><img
+                                                src="https://thesmartlocal.com/vietnam/wp-content/uploads/2020/10/ma-doi-grab-food-4-playing-scaled.jpg"
+                                                alt="" width="370" height="278"
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-heart-pulse"></span>
@@ -376,8 +394,10 @@
                                 <div class="oh-desktop">
                                     <!-- Services Terri-->
                                     <article class="services-terri wow slideInDown">
-                                        <div class="services-terri-figure"><img src="https://th.bing.com/th/id/OIP.Tx4n1myttGPjV-d5a_R9PwHaFj?w=960&h=720&rs=1&pid=ImgDetMain"
-                                                alt="" width="370" height="278" style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;"/>
+                                        <div class="services-terri-figure"><img
+                                                src="https://th.bing.com/th/id/OIP.Tx4n1myttGPjV-d5a_R9PwHaFj?w=960&h=720&rs=1&pid=ImgDetMain"
+                                                alt="" width="370" height="278"
+                                                style="width: 100%; height: 100%; object-fit: cover; max-width: 370px; max-height: 278px;" />
                                         </div>
                                         <div class="services-terri-caption"><span
                                                 class="services-terri-icon linearicons-bandage"></span>
@@ -423,8 +443,8 @@
                             <c:forEach var="product" items="${productData}" varStatus="loop">
                                 <div class="col-sm-12 col-lg-4">
                                     <article class="product wow fadeInLeft">
-                                        <div class="product-figure"><img style="width: 210px; height: 210px;" src="${product.representativeImage}" alt=""
-                                                width="210" height="210" />
+                                        <div class="product-figure"><img style="width: 210px; height: 210px;"
+                                                src="${product.representativeImage}" alt="" width="210" height="210" />
                                         </div>
                                         <div class="product-rating"><span class="mdi mdi-star"></span><span
                                                 class="mdi mdi-star"></span><span class="mdi mdi-star"></span><span
@@ -507,7 +527,9 @@
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">Healin không chỉ đẹp về hình thức mà còn chạm vào cảm xúc sâu bên trong. Bộ bài là công cụ tuyệt vời để kết nối cảm xúc giữa các thành viên trong gia đình.</p>
+                                        <p class="q">Healin không chỉ đẹp về hình thức mà còn chạm vào cảm xúc sâu bên
+                                            trong. Bộ bài là công cụ tuyệt vời để kết nối cảm xúc giữa các thành viên
+                                            trong gia đình.</p>
                                     </div>
                                     <div class="quote-tara-figure"><img src="assets/images/commenter/duong.jpg" alt=""
                                             width="115" height="115" />
@@ -520,7 +542,8 @@
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">Tôi rất ấn tượng với chất liệu và thiết kế bền vững. Hy vọng nhóm sẽ bổ sung thêm phiên bản theo chủ đề văn hóa đặc biệt.</p>
+                                        <p class="q">Tôi rất ấn tượng với chất liệu và thiết kế bền vững. Hy vọng nhóm
+                                            sẽ bổ sung thêm phiên bản theo chủ đề văn hóa đặc biệt.</p>
                                     </div>
                                     <div class="quote-tara-figure"><img src="assets/images/commenter/linh.jpg" alt=""
                                             width="115" height="115" />
@@ -533,7 +556,9 @@
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">Thiết kế của Healin với hình ảnh các món ăn Việt Nam thật sự gợi nhớ những kỷ niệm thân quen. Sau khi chơi, gia đình tôi đã có dịp ôn lại nhiều câu chuyện cũ và thấu hiểu nhau hơn.</p>
+                                        <p class="q">Thiết kế của Healin với hình ảnh các món ăn Việt Nam thật sự gợi
+                                            nhớ những kỷ niệm thân quen. Sau khi chơi, gia đình tôi đã có dịp ôn lại
+                                            nhiều câu chuyện cũ và thấu hiểu nhau hơn.</p>
                                     </div>
                                     <div class="quote-tara-figure"><img src="assets/images/commenter/minhanh.jpg" alt=""
                                             width="115" height="115" />
@@ -546,7 +571,10 @@
                             <article class="quote-tara">
                                 <div class="quote-tara-caption">
                                     <div class="quote-tara-text">
-                                        <p class="q">Trước đây, tôi luôn cảm thấy khó mở lời khi nói chuyện với bố mẹ, đặc biệt là những chuyện riêng tư. Nhưng sau khi trải nghiệm bộ bài của Healin, các câu hỏi trong bộ bài đã giúp tôi dễ dàng chia sẻ hơn, và tôi nhận ra rằng bố mẹ cũng rất thấu hiểu mình</p>
+                                        <p class="q">Trước đây, tôi luôn cảm thấy khó mở lời khi nói chuyện với bố mẹ,
+                                            đặc biệt là những chuyện riêng tư. Nhưng sau khi trải nghiệm bộ bài của
+                                            Healin, các câu hỏi trong bộ bài đã giúp tôi dễ dàng chia sẻ hơn, và tôi
+                                            nhận ra rằng bố mẹ cũng rất thấu hiểu mình</p>
                                     </div>
                                     <div class="quote-tara-figure"><img src="assets/images/commenter/thanh.jpg" alt=""
                                             width="115" height="115" />
@@ -567,8 +595,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/310x585?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="310" height="585" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/310x585?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="310" height="585" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
@@ -581,8 +610,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-big wow slideInRight"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/631x587?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="631" height="587" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/631x587?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="631" height="587" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a>
@@ -596,8 +626,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInDown"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="311" height="289" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
@@ -610,7 +641,8 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary wow slideInUp"><a class="thumbnail-mary-figure"
                                         href="https://placehold.co/1200x800" data-lightgallery="item"><img
-                                            src="https://placehold.co/631x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt="" width="631" height="289" /></a>
+                                            src="https://placehold.co/631x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="631" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a>
@@ -624,8 +656,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInUp"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="311" height="289" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
@@ -638,8 +671,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInRight"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="311" height="289" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
@@ -652,8 +686,9 @@
                                 <!-- Thumbnail Mary-->
                                 <article class="thumbnail thumbnail-mary thumbnail-mary-2 wow slideInLeft"><a
                                         class="thumbnail-mary-figure" href="https://placehold.co/1200x800"
-                                        data-lightgallery="item"><img src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt" alt=""
-                                            width="311" height="289" /></a>
+                                        data-lightgallery="item"><img
+                                            src="https://placehold.co/311x289?text=S%E1%BA%AFp%20ra%20m%E1%BA%AFt"
+                                            alt="" width="311" height="289" /></a>
                                     <div class="thumbnail-mary-caption">
                                         <div>
                                             <h6 class="thumbnail-mary-title"><a href="#">Sự kiện mới</a></h6>
@@ -775,12 +810,12 @@
                                             class="d-inline-block wow slideInLeft">Những gì chúng tôi cung cấp</span>
                                     </h5>
                                     <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
-                                        <li><a href="#">abc</a></li>
+                                        <li><a href="#">Trò chuyện</a></li>
+                                        <li><a href="#">Kết nối</a></li>
+                                        <li><a href="#">Gải trí</a></li>
+                                        <li><a href="#">Cảm xúc</a></li>
+                                        <li><a href="#">Thư giãn</a></li>
+                                        <li><a href="#">Chữa lành</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-4 col-xl-3">
@@ -813,8 +848,7 @@
                                         </div>
                                         <div class="form-button form-button-2 wow slideInRight">
                                             <button class="button button-sm button-icon-3 button-primary button-winona"
-                                                type="submit"><span
-                                                    class="d-none d-xl-inline-block">Đăng ký</span><span
+                                                type="submit"><span class="d-none d-xl-inline-block">Đăng ký</span><span
                                                     class="icon mdi mdi-telegram d-xl-none"></span></button>
                                         </div>
                                     </form>
@@ -857,16 +891,17 @@
                                                 <div class="unit-left"><span class="icon mdi mdi-email"></span>
                                                 </div>
                                                 <div class="unit-body"><a class="mail"
-                                                        href="mailto:#">healin.fpt@gmail.com</a></div>
+                                                        href="mailto:#">healin.boardgame@gmail.com</a></div>
                                             </div>
                                         </div>
                                         <div class="wow slideInRight">
                                             <ul
                                                 class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
-                                                <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                                <li><a class="icon mdi mdi-facebook" href="https://www.facebook.com/healin.boardgame"
+                                                    target="_blank"></a></li>
                                                 <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                                 <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                                <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                                <li><a class="icon mdi " href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18"><path fill="#ffffff" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                             </ul>
                                         </div>
                                     </div>
