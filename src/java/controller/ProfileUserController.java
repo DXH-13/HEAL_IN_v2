@@ -1,5 +1,6 @@
 package controller;
 
+import constant.IConstant;
 import dao.DAOCart;
 import dao.DAOUser;
 import java.io.IOException;
@@ -9,7 +10,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import model.User;
+import utils.ImageUpload;
 
 /**
  *
@@ -60,13 +67,40 @@ public class ProfileUserController extends HttpServlet {
         System.out.println("action: " + action);
 
         if ("updateProfile".equals(action)) {
+
+            Part filePart = request.getPart("image");
+            String fileName = ImageUpload.getFileName(filePart);
+            
+            if (filePart == null || filePart.getSize() == 0) {
+                response.getWriter().write("Vui lòng chọn một tệp ảnh.");
+                return;
+            }
+            if (filePart.getSize() > 1 * 1024 * 1024) {
+                response.getWriter().write("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
+                return;
+            }
+
+            String uploadPath = getServletContext().getRealPath("") + File.separator + IConstant.UPLOAD_DIR;
+            File uploadDir = new File(uploadPath);
+
+            // Tạo thư mục nếu chưa tồn tại
+            if (!uploadDir.exists()) {
+                uploadDir.mkdirs();
+            }
+
+            // Lưu file ảnh vào thư mục
+            File file = new File(uploadDir, fileName);
+            try ( InputStream fileContent = filePart.getInputStream()) {
+                Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }
+
             String username = request.getParameter("username");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phonenumber");
             String gender = request.getParameter("gender");
-            String dateOrBirth = request.getParameter("dateorbirth");
-
+            String dateOrBirth = request.getParameter("dateofbirth");
+            System.out.println("nagy sinh nhap la: " + dateOrBirth);
             boolean isDuplicate = false;
 
             // Kiểm tra nếu có username/email/phone mới khác hiện tại và đã tồn tại ở DB
@@ -94,9 +128,12 @@ public class ProfileUserController extends HttpServlet {
                 updatedUser.setGender(gender);
                 updatedUser.setDateOfBirth(dateOrBirth);
                 updatedUser.setNormalUserId(userLogin.getNormalUserId());
-
+                updatedUser.setAccountType(userLogin.getAccountType());
                 daoUSer.updateUserProfile(updatedUser);
                 System.out.println("Cập nhật thành công!");
+//                request.setAttribute("userLogin", updatedUser);
+                session.setAttribute("userLogin", updatedUser);
+
                 request.setAttribute("success", "Cập nhật thông tin thành công!");
                 request.getRequestDispatcher("profile-user.jsp").forward(request, response);
             }

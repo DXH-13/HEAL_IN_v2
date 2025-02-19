@@ -9,14 +9,15 @@ package constant;
  * @author dangx
  */
 public interface IConstant {
-    
-    
+
+    String UPLOAD_DIR = "uploads";
+
     String GOOGLE_CLIENT_ID = "51300126202-jbb4258dvsdjr16iqa5vb92vbdqot9sl.apps.googleusercontent.com";
 
     String GOOGLE_CLIENT_SECRET = "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";
 
     String GOOGLE_REDIRECT_URI_LOG_IN = "http://localhost:9999/HEAL_IN_v2/log_in?loginType=google";
-    
+
     String GOOGLE_REDIRECT_URI_SIGN_UP = "http://localhost:9999/HEAL_IN_v2/sign_up?signupType=google";
 
     String GOOGLE_GRANT_TYPE = "authorization_code";

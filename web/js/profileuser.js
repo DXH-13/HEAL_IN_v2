@@ -39,3 +39,46 @@ window.addEventListener('scroll', function() {
         cartBadge.style.top = '55px';
     }
 });
+
+
+//////////////////////////Dang tai anh dai dien/////////////////////////////////
+document.getElementById('chooseImageBtn').addEventListener('click', function () {
+        document.getElementById('imageInput').click();
+    });
+
+    document.getElementById('imageInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) { // 5MB
+                alert("Kích thước tệp quá lớn! Vui lòng chọn ảnh dưới 5MB.");
+                return;
+            }
+            
+            // Xem trước ảnh
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+            
+            // Gửi ảnh lên server
+            uploadImage(file);
+        }
+    });
+
+    function uploadImage(file) {
+        const formData = new FormData();
+        formData.append("image", file);
+
+        fetch("UploadServlet", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error("Lỗi khi tải ảnh lên:", error);
+        });
+    }

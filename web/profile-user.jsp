@@ -121,7 +121,7 @@
                                             <li><a class="icon mdi mdi-facebook"  href="https://www.facebook.com/healin.boardgame" target="_blank"></a></li>
                                             <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                             <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                            <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                            <li><a class="icon mdi iconTiktok" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14" height="14"><path fill="#00000" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                         </ul>
                                     </div>
                                     <div class="rd-navbar-main">
@@ -344,16 +344,30 @@
                     <h4 class="pb-4 border-bottom">Hồ sơ của tôi</h4>
                     <form action="profile_user" method="post">
                         <input type="hidden" name="action" value="updateProfile">
+
+                        <!--                        <div class="d-flex align-items-start py-3 border-bottom">
+                                                    <img src="${userLogin.image}" class="img" alt="">
+                                                    <div class="pl-sm-4 pl-2" id="img-section">
+                                                        <b style="text-align: left; display: block;">Ảnh</b>
+                                                        <p class="m-0">Loại tệp được chấp nhận .png. Nhỏ hơn 1MB</p>
+                                                        <button class="upload-btn">
+                                                            <b style="font-weight: 500;">Chọn ảnh</b>
+                                                        </button>
+                                                    </div>
+                                                </div>-->
+
                         <div class="d-flex align-items-start py-3 border-bottom">
-                            <img src="${userLogin.image}" class="img" alt="">
+                            <img id="previewImage" src="${userLogin.image}" class="img" alt="">
                             <div class="pl-sm-4 pl-2" id="img-section">
                                 <b style="text-align: left; display: block;">Ảnh</b>
-                                <p class="m-0">Loại tệp được chấp nhận .png. Nhỏ hơn 1MB</p>
-                                <button class="upload-btn">
+                                <p class="m-0">Loại tệp được chấp nhận .png, .jpg, .jpeg. Nhỏ hơn 5MB</p>
+                                <button class="upload-btn" id="chooseImageBtn">
                                     <b style="font-weight: 500;">Chọn ảnh</b>
                                 </button>
+                                <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg" style="display: none;">
                             </div>
                         </div>
+
                         <div class="py-2">
                             <div class="row" style="margin-top: 30px;">
                                 <div class="col-md-6 ">
@@ -416,6 +430,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="row" style="margin-top: 30px;">
                                 <c:choose>
@@ -549,7 +564,7 @@
                                         <li><a class="icon mdi mdi-facebook" href="#"></a></li>
                                         <li><a class="icon mdi mdi-twitter" href="#"></a></li>
                                         <li><a class="icon mdi mdi-instagram" href="#"></a></li>
-                                        <li><a class="icon mdi mdi-google-plus" href="#"></a></li>
+                                        <li><a class="icon mdi " href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="18" height="18"><path fill="#ffffff" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg></a></li>
                                     </ul>
                                 </div>
                             </div>
