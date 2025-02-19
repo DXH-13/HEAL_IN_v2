@@ -59,48 +59,58 @@ public class ProfileUserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
         int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
         request.setAttribute("productInCart", productInCart);
         String action = request.getParameter("action");
-        System.out.println("action: " + action);
+
+//        if ("uploadAvatar".equals(action)) {
+//            Part filePart = request.getPart("image");
+//            if (filePart == null || filePart.getSize() == 0) {
+////                response.getWriter().write("Vui lòng chọn một tệp ảnh.");
+//                System.out.println("Vui lòng chọn một tệp ảnh.");
+//                return;
+//            }
+//            if (filePart.getSize() > 1 * 1024 * 1024) {
+////                response.getWriter().write("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
+//                System.out.println("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
+//                return;
+//            }
+//
+//            // Lưu ảnh vào server
+//            String fileName = ImageUpload.getFileName(filePart);
+//            String uploadPath = getServletContext().getRealPath("/web") + File.separator + IConstant.UPLOAD_DIR;
+//            File uploadDir = new File(uploadPath);
+//            if (!uploadDir.exists()) {
+//                uploadDir.mkdirs();
+//            }
+//
+//            File file = new File(uploadDir, fileName);
+//            try ( InputStream fileContent = filePart.getInputStream()) {
+//                Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+//            }
+//
+//            // Cập nhật đường dẫn ảnh vào DB
+//            daoUSer.updateAvatar(userLogin.getNormalUserId(), fileName); // Hàm cập nhật avatar
+//
+//            // Cập nhật session
+//            userLogin.setImage(fileName);
+//            session.setAttribute("userLogin", userLogin);
+//
+////            response.getWriter().write("Cập nhật ảnh đại diện thành công!");
+//            System.out.println("Cập nhật ảnh đại diện thành công!");
+//            return;
+//        }
 
         if ("updateProfile".equals(action)) {
-
-            Part filePart = request.getPart("image");
-            String fileName = ImageUpload.getFileName(filePart);
-            
-            if (filePart == null || filePart.getSize() == 0) {
-                response.getWriter().write("Vui lòng chọn một tệp ảnh.");
-                return;
-            }
-            if (filePart.getSize() > 1 * 1024 * 1024) {
-                response.getWriter().write("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
-                return;
-            }
-
-            String uploadPath = getServletContext().getRealPath("") + File.separator + IConstant.UPLOAD_DIR;
-            File uploadDir = new File(uploadPath);
-
-            // Tạo thư mục nếu chưa tồn tại
-            if (!uploadDir.exists()) {
-                uploadDir.mkdirs();
-            }
-
-            // Lưu file ảnh vào thư mục
-            File file = new File(uploadDir, fileName);
-            try ( InputStream fileContent = filePart.getInputStream()) {
-                Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            }
-
             String username = request.getParameter("username");
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String phoneNumber = request.getParameter("phonenumber");
             String gender = request.getParameter("gender");
             String dateOrBirth = request.getParameter("dateofbirth");
-            System.out.println("nagy sinh nhap la: " + dateOrBirth);
             boolean isDuplicate = false;
 
             // Kiểm tra nếu có username/email/phone mới khác hiện tại và đã tồn tại ở DB
@@ -129,9 +139,9 @@ public class ProfileUserController extends HttpServlet {
                 updatedUser.setDateOfBirth(dateOrBirth);
                 updatedUser.setNormalUserId(userLogin.getNormalUserId());
                 updatedUser.setAccountType(userLogin.getAccountType());
+                updatedUser.setImage(userLogin.getImage());
                 daoUSer.updateUserProfile(updatedUser);
                 System.out.println("Cập nhật thành công!");
-//                request.setAttribute("userLogin", updatedUser);
                 session.setAttribute("userLogin", updatedUser);
 
                 request.setAttribute("success", "Cập nhật thông tin thành công!");

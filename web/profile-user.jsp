@@ -342,32 +342,20 @@
             <div class="profile-setting">
                 <div class="wrapper bg-white mt-sm-5">
                     <h4 class="pb-4 border-bottom">Hồ sơ của tôi</h4>
-                    <form action="profile_user" method="post">
-                        <input type="hidden" name="action" value="updateProfile">
 
-                        <!--                        <div class="d-flex align-items-start py-3 border-bottom">
-                                                    <img src="${userLogin.image}" class="img" alt="">
-                                                    <div class="pl-sm-4 pl-2" id="img-section">
-                                                        <b style="text-align: left; display: block;">Ảnh</b>
-                                                        <p class="m-0">Loại tệp được chấp nhận .png. Nhỏ hơn 1MB</p>
-                                                        <button class="upload-btn">
-                                                            <b style="font-weight: 500;">Chọn ảnh</b>
-                                                        </button>
-                                                    </div>
-                                                </div>-->
-
-                        <div class="d-flex align-items-start py-3 border-bottom">
-                            <img id="previewImage" src="${userLogin.image}" class="img" alt="">
-                            <div class="pl-sm-4 pl-2" id="img-section">
-                                <b style="text-align: left; display: block;">Ảnh</b>
-                                <p class="m-0">Loại tệp được chấp nhận .png, .jpg, .jpeg. Nhỏ hơn 5MB</p>
-                                <button class="upload-btn" id="chooseImageBtn">
-                                    <b style="font-weight: 500;">Chọn ảnh</b>
-                                </button>
-                                <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg" style="display: none;">
-                            </div>
+                    <div class="d-flex align-items-start py-3 border-bottom">
+                        <img id="previewImage" src="${userLogin.image}" class="img" alt="">
+                        <div class="pl-sm-4 pl-2" id="img-section">
+                            <b style="text-align: left; display: block;">Ảnh</b>
+                            <p class="m-0">Loại tệp được chấp nhận .png, .jpg, .jpeg. Nhỏ hơn 5MB</p>
+                            <button class="upload-btn" id="chooseImageBtn">
+                                <b style="font-weight: 500;">Chọn ảnh</b>
+                            </button>
+                            <input type="file" id="imageInput" name="image" accept="image/png, image/jpeg, image/jpg" style="display: none;">
                         </div>
-
+                    </div>
+                    <form action="profile_user" method="post" >
+                        <input type="hidden" name="action" value="updateProfile">
                         <div class="py-2">
                             <div class="row" style="margin-top: 30px;">
                                 <div class="col-md-6 ">
@@ -430,7 +418,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="row" style="margin-top: 30px;">
                                 <c:choose>
@@ -448,6 +435,7 @@
                                     <button type="submit" class="save-button" role="button">Lưu</button>
                                 </div>
                             </div>
+                        </div>
                     </form>
                     <div class="d-sm-flex align-items-center pt-3 mt-5" id="deactivate">
                         <div style="text-align: left; display: block; ">

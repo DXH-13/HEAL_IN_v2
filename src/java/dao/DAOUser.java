@@ -268,7 +268,7 @@ public class DAOUser {
         }
         return null;
     }
-    
+
     public User findByPhoneNumber(String phoneNumber) {
         String sql = "SELECT * FROM HEALIN.USER WHERE PhoneNumber = ?;";
         try {
@@ -349,19 +349,21 @@ public class DAOUser {
 
     public boolean insertUser(String username, String password, String email) {
         String accountType = "NormalUser";
+        String defaultAvatar = "assets/images/defaultAvatar.webp";
 
         String sql = "INSERT INTO user (Name, Username, Password, Email, "
                 + "PhoneNumber, DateOfBirth, Image, AccountType, CreatedAt, "
                 + "CreatedBy, UpdatedAt, DeactivatedAt, DeactivatedBy, isActive)\n"
-                + "VALUES (NULL, ?, ?, ?, NULL, NULL, NULL, ?, CURRENT_TIMESTAMP"
+                + "VALUES (NULL, ?, ?, ?, NULL, NULL, ?, ?, CURRENT_TIMESTAMP"
                 + ", ?, NULL, NULL, NULL, 0)";
         try {
             PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
             pstmt.setString(1, username);
             pstmt.setString(2, password);
             pstmt.setString(3, email);
-            pstmt.setString(4, accountType);
-            pstmt.setString(5, username);
+            pstmt.setString(4, defaultAvatar);
+            pstmt.setString(5, accountType);
+            pstmt.setString(6, username);
 
             int result = pstmt.executeUpdate();
             return result > 0;
@@ -413,7 +415,7 @@ public class DAOUser {
             Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
         }
     }
-    
+
     public void deactivateAccount(int userId) {
         String sql = "UPDATE user\n"
                 + "SET isActive = 0\n"
@@ -427,7 +429,19 @@ public class DAOUser {
         }
     }
 
-    
+    public void updateAvatar(int userId, String imagePath) {
+        String sql = "UPDATE user\n"
+                + "SET Image = ?\n"
+                + "WHERE Id = ?;";
+        try {
+            PreparedStatement pstmt = db.getConnection().prepareStatement(sql);
+            pstmt.setString(1, imagePath);
+            pstmt.setInt(2, userId);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            Logger.getLogger(DAOUser.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 
     public static void main(String[] args) {
         DAOUser daoUser = new DAOUser();
