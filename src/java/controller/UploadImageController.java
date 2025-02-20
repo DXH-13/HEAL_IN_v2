@@ -31,7 +31,6 @@ import model.User;
 )
 public class UploadImageController extends HttpServlet {
 
-    private static final String UPLOAD_DIRECTORY = "D:/uploads"; // Thư mục lưu ảnh ngoài web
     DAOUser daoUser = new DAOUser();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -70,12 +69,14 @@ public class UploadImageController extends HttpServlet {
             Part filePart = request.getPart("avatar");
 
             if (filePart != null && filePart.getSize() > 0) {
-                String fileName = UUID.randomUUID() + "_" + filePart.getSubmittedFileName();
-                File uploadDir = new File(UPLOAD_DIRECTORY);
+                String uploadPath = getServletContext().getRealPath("/") + "uploads";
+                File uploadDir = new File(uploadPath);
 
                 if (!uploadDir.exists()) {
                     uploadDir.mkdirs();
                 }
+
+                String fileName = UUID.randomUUID() + "_" + filePart.getSubmittedFileName();
 
                 File file = new File(uploadDir, fileName);
                 Files.copy(filePart.getInputStream(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
