@@ -1,6 +1,5 @@
 package controller;
 
-import constant.IConstant;
 import dao.DAOCart;
 import dao.DAOUser;
 import java.io.IOException;
@@ -10,13 +9,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import jakarta.servlet.http.Part;
-import java.io.File;
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import model.User;
-import utils.ImageUpload;
 
 /**
  *
@@ -49,10 +42,24 @@ public class ProfileUserController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
+
+        if (userLogin == null) {
+            response.sendRedirect("login.jsp"); // Chưa đăng nhập → chuyển hướng về trang login
+            return;
+        }
+
+        // Lấy thông tin user từ DB để đảm bảo dữ liệu mới nhất
         User user = daoUSer.findByID(userLogin.getNormalUserId());
+
+        // Cập nhật avatar mới nhất vào session (tránh lỗi hiển thị ảnh cũ)
+        userLogin.setImage(user.getImage());
+        session.setAttribute("userLogin", userLogin);
+
         int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
+
         request.setAttribute("productInCart", productInCart);
         request.setAttribute("userLogin", user);
+
         request.getRequestDispatcher("profile-user.jsp").forward(request, response);
     }
 
@@ -65,44 +72,6 @@ public class ProfileUserController extends HttpServlet {
         int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
         request.setAttribute("productInCart", productInCart);
         String action = request.getParameter("action");
-
-//        if ("uploadAvatar".equals(action)) {
-//            Part filePart = request.getPart("image");
-//            if (filePart == null || filePart.getSize() == 0) {
-////                response.getWriter().write("Vui lòng chọn một tệp ảnh.");
-//                System.out.println("Vui lòng chọn một tệp ảnh.");
-//                return;
-//            }
-//            if (filePart.getSize() > 1 * 1024 * 1024) {
-////                response.getWriter().write("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
-//                System.out.println("Ảnh quá lớn! Chỉ chấp nhận ảnh dưới 1MB.");
-//                return;
-//            }
-//
-//            // Lưu ảnh vào server
-//            String fileName = ImageUpload.getFileName(filePart);
-//            String uploadPath = getServletContext().getRealPath("/web") + File.separator + IConstant.UPLOAD_DIR;
-//            File uploadDir = new File(uploadPath);
-//            if (!uploadDir.exists()) {
-//                uploadDir.mkdirs();
-//            }
-//
-//            File file = new File(uploadDir, fileName);
-//            try ( InputStream fileContent = filePart.getInputStream()) {
-//                Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-//            }
-//
-//            // Cập nhật đường dẫn ảnh vào DB
-//            daoUSer.updateAvatar(userLogin.getNormalUserId(), fileName); // Hàm cập nhật avatar
-//
-//            // Cập nhật session
-//            userLogin.setImage(fileName);
-//            session.setAttribute("userLogin", userLogin);
-//
-////            response.getWriter().write("Cập nhật ảnh đại diện thành công!");
-//            System.out.println("Cập nhật ảnh đại diện thành công!");
-//            return;
-//        }
 
         if ("updateProfile".equals(action)) {
             String username = request.getParameter("username");

@@ -39,47 +39,38 @@ window.addEventListener('scroll', function () {
         cartBadge.style.top = '55px';
     }
 });
+/////////////////////////////////////////////////
 
+document.addEventListener("DOMContentLoaded", function () {
+    const imageInput = document.getElementById("imageInput");
+    const chooseImageBtn = document.getElementById("chooseImageBtn");
+    const previewImage = document.getElementById("previewImage");
+    
+    chooseImageBtn.addEventListener("click", function () {
+        imageInput.click();
+    });
+    
+    imageInput.addEventListener("change", function () {
+        if (imageInput.files.length > 0) {
+            let formData = new FormData();
+            formData.append("avatar", imageInput.files[0]);
+            
+            fetch("upload_image", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(imagePath => {
+                if (imagePath.startsWith("uploads/")) {
+                    previewImage.src = imagePath; // Cập nhật ảnh mới
+                } else {
+                    alert("Lỗi tải ảnh: " + imagePath);
+                }
+            })
+            .catch(error => {
+                console.error("Lỗi:", error);
+            });
+        }
+    });
+});
 
-//////////////////////////Dang tai anh dai dien/////////////////////////////////
-//document.getElementById('chooseImageBtn').addEventListener('click', function () {
-//    document.getElementById('imageInput').click();
-//});
-//
-//document.getElementById('imageInput').addEventListener('change', function (event) {
-//    const file = event.target.files[0];
-//    if (file) {
-//        if (file.size > 1 * 1024 * 1024) { // 1MB giới hạn
-//            alert("Kích thước tệp quá lớn! Vui lòng chọn ảnh dưới 1MB.");
-//            return;
-//        }
-//
-//        // Hiển thị ảnh trước khi upload
-//        const reader = new FileReader();
-//        reader.onload = function (e) {
-//            document.getElementById('previewImage').src = e.target.result;
-//        };
-//        reader.readAsDataURL(file);
-//
-//        // Gửi ảnh lên server
-//        uploadImage(file);
-//    }
-//});
-//
-//function uploadImage(file) {
-//    const formData = new FormData();
-//    formData.append("image", file);
-//
-//    fetch("profile_user?action=uploadAvatar", {// Truyền action riêng biệt
-//        method: "POST",
-//        body: formData
-//    })
-//            .then(response => response.text())
-//            .then(data => {
-//                alert(data);
-//            })
-//            .catch(error => {
-//                console.error("Lỗi khi tải ảnh lên:", error);
-//            });
-//}
-//

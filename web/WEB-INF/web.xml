@@ -57,6 +57,10 @@
         <servlet-name>PreGameController</servlet-name>
         <servlet-class>controller.PreGameController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadImageController</servlet-name>
+        <servlet-class>controller.UploadImageController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -120,6 +124,10 @@
     <servlet-mapping>
         <servlet-name>PreGameController</servlet-name>
         <url-pattern>/pre_game</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadImageController</servlet-name>
+        <url-pattern>/upload_image</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

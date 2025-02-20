@@ -347,13 +347,14 @@
                         <img id="previewImage" src="${userLogin.image}" class="img" alt="">
                         <div class="pl-sm-4 pl-2" id="img-section">
                             <b style="text-align: left; display: block;">Ảnh</b>
-                            <p class="m-0">Loại tệp được chấp nhận .png, .jpg, .jpeg. Nhỏ hơn 5MB</p>
+                            <p class="m-0">Loại tệp được chấp nhận .png, .jpg, .jpeg. Nhỏ hơn 1MB</p>
                             <button class="upload-btn" id="chooseImageBtn">
                                 <b style="font-weight: 500;">Chọn ảnh</b>
                             </button>
                             <input type="file" id="imageInput" name="image" accept="image/png, image/jpeg, image/jpg" style="display: none;">
                         </div>
                     </div>
+
                     <form action="profile_user" method="post" >
                         <input type="hidden" name="action" value="updateProfile">
                         <div class="py-2">
