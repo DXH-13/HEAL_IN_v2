@@ -1,0 +1,72 @@
+.invoice {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #ffffff;
+    margin-top: 50px;
+}
+.invoice .container {
+    max-width: 1200px;
+    margin: auto;
+    background: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.invoice h2 {
+    text-align: center;
+}
+.invoice .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.invoice .column {
+    flex: 1;
+}
+.invoice .card {
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.invoice .card.flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.invoice table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.invoice th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.invoice th {
+    background-color: #f2f2f2;
+}
+.invoice .text-end {
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.invoice #qrcode {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.invoice .payment-column {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.invoice .payment-card {
+    flex-grow: 1;
+}

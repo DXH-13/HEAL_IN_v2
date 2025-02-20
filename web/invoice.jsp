@@ -1,0 +1,569 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+    <head>
+        <title>Tài khoản</title>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport"
+              content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
+        <!-- Stylesheets-->
+        <link rel="stylesheet" type="text/css"
+              href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,500,600,700,900%7CRaleway:500%7CSignika">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="css/invoice.css">
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/style.css">
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="preloader">
+            <div class="wrapper-triangle">
+                <div class="pen">
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="line-triangle">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page">
+            <!-- Page Header-->
+            <header class="section page-header">
+                <!-- RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed"
+                         data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed"
+                         data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static"
+                         data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static"
+                         data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+                         data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="56px"
+                         data-xl-stick-up-offset="56px" data-xxl-stick-up-offset="56px" data-lg-stick-up="true"
+                         data-xl-stick-up="true" data-xxl-stick-up="true">
+                        <div class="rd-navbar-inner-outer">
+                            <div class="rd-navbar-inner">
+                                <!-- RD Navbar Panel-->
+                                <div class="rd-navbar-panel">
+                                    <!-- RD Navbar Toggle-->
+                                    <button class="rd-navbar-toggle"
+                                            data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                                    <!-- RD Navbar Brand-->
+                                    <div class="rd-navbar-brand"><a class="brand" href="landing"><img
+                                                class="brand-logo-dark" src="assets/images/Logo web.png" alt=""
+                                                width="189" height="66" /></a>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-right rd-navbar-nav-wrap">
+                                    <div class="rd-navbar-aside">
+                                        <ul class="rd-navbar-contacts-2">
+                                            <li>
+                                                <div class="unit unit-spacing-xs">
+                                                    <div class="unit-left"><span class="icon mdi mdi-phone"></span>
+                                                    </div>
+                                                    <div class="unit-body"><a class="phone"
+                                                                              href="tel:#">0327992501</a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="unit unit-spacing-xs">
+                                                    <div class="unit-left"><span
+                                                            class="icon mdi mdi-map-marker"></span>
+                                                    </div>
+                                                    <div class="unit-body"><a class="address"
+                                                                              href="https://maps.app.goo.gl/vj1JjRyS7Lhfwqqb8"
+                                                                              target="_blank">Km29 Đại lộ
+                                                            Thăng Long - Thạch Thất - Hà Nội</a></div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="list-share-2">
+                                            <li><a class="icon mdi mdi-facebook"
+                                                   href="https://www.facebook.com/healin.boardgame"
+                                                   target="_blank"></a></li>
+                                            <li><a class="icon mdi mdi-twitter" href="#"></a></li>
+                                            <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                                            <li><a class="icon mdi iconTiktok" href="#"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                                        width="14" height="14">
+                                                    <path fill="#00000"
+                                                          d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
+                                                    </svg></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="rd-navbar-main">
+                                        <!-- RD Navbar Nav-->
+                                        <ul class="rd-navbar-nav">
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="landing">Trang chủ</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="about_us">Về chúng tôi</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link" href="pre_game">Trò chơi</a>
+                                            </li>
+                                            <li class="rd-nav-item">
+                                                <a class="rd-nav-link"
+                                                   href="landing?id=${userLogin.normalUserId}#shop">Cửa hàng</a>
+                                                <ul class="rd-menu rd-navbar-dropdown">
+                                                    <li class="rd-dropdown-item ">
+                                                        <a class="rd-dropdown-link"
+                                                           href="single_product?idProduct=1">Đoàn Viên</a>
+                                                    </li>
+                                                    <li class="rd-dropdown-item">
+                                                        <a class="rd-dropdown-link"
+                                                           href="single_product?idProduct=2">Tri Kỷ</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="rd-nav-item"><a class="rd-nav-link" href="cart#cart">
+                                                    <span class="fa-shopping-basket" style="font-size: 30px"></span>
+                                                    <c:choose>
+                                                        <c:when test="${sessionScope.userLogin == null}">
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <c:if test="${productInCart > 0}">
+                                                                <span class="cart-badge">${productInCart}</span>
+                                                            </c:if>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </a>
+                                            </li>
+
+                                            <c:choose>
+                                                <c:when test="${sessionScope.userLogin == null}">
+                                                    <li class="rd-nav-item loginbtn">
+                                                        <a class="rd-nav-link" href="log_in">Đăng nhập</a>
+                                                    </li>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <li class="rd-nav-item active loginbtn">
+                                                        <a class="rd-nav-link" href="shop.html">Avatar</a>
+                                                        <ul class="rd-menu rd-navbar-dropdown">
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="profile_user">Hồ
+                                                                    sơ</a>
+                                                            </li>
+                                                            <li class="rd-dropdown-item">
+                                                                <a class="rd-dropdown-link" href="log_out">Đăng
+                                                                    Xuất</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </c:otherwise>
+                                            </c:choose>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-open rd-navbar-fixed-element-1"
+                                     data-multitoggle=".rd-navbar-inner" data-multitoggle-blur=".rd-navbar-wrap"
+                                     data-multitoggle-isolate="data-multitoggle-isolate">
+                                    <!-------------------------------------------------------------->
+
+                                    <c:choose>
+                                        <c:when test="${sessionScope.userLogin == null}">
+                                            <a href="log_in" class="loginbtn2">Đăng nhập</a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <div class="dropdown">
+                                                <button class="dropbtn">
+                                                    <img src="${sessionScope.userLogin.image}" alt="Avatar"
+                                                         class="avatar">
+                                                </button>
+                                                <div class="dropdown-content">
+                                                    <a href="profile_user">Hồ sơ</a>
+                                                    <a href="log_out">Đăng xuất</a>
+                                                </div>
+                                            </div>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+                                    <!-------------------------------------------------------------->
+                                </div>
+
+
+                                <div class="rd-navbar-project">
+                                    <div class="rd-navbar-project-header">
+                                        <h5 class="rd-navbar-project-title">Gallery</h5>
+                                        <div class="rd-navbar-project-hamburger rd-navbar-project-hamburger-close"
+                                             data-multitoggle=".rd-navbar-inner"
+                                             data-multitoggle-blur=".rd-navbar-wrap"
+                                             data-multitoggle-isolate="data-multitoggle-isolate">
+                                            <div class="project-close"><span></span><span></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="rd-navbar-project-content rd-navbar-content">
+                                        <div>
+                                            <div class="row gutters-20" data-lightgallery="group">
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-1-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-1-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-2-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-2-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-3-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-3-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-4-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-4-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-5-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-5-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                                <div class="col-6">
+                                                    <!-- Thumbnail Creative-->
+                                                    <article class="thumbnail thumbnail-creative">
+                                                        <a href="images/project-6-1200x800-original.jpg"
+                                                           data-lightgallery="item">
+                                                            <div class="thumbnail-creative-figure"><img
+                                                                    src="images/project-6-195x164.jpg" alt=""
+                                                                    width="195" height="164" />
+                                                            </div>
+                                                            <div class="thumbnail-creative-caption">
+                                                                <span
+                                                                    class="icon thumbnail-creative-icon linearicons-magnifier"></span>
+                                                            </div>
+                                                        </a>
+                                                    </article>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <div class="invoice">
+                <div class="container">
+                    <h2>HÓA ĐƠN THANH TOÁN</h2>
+
+                    <div class="row">
+                        <div class="column">
+                            <div class="card flex">
+                                <h4>Thông Tin Người Nhận</h4>
+                                <p><strong>Tên:</strong> Nguyễn Văn A</p>
+                                <p><strong>Địa chỉ:</strong> 123 Đường ABC, Quận 1, TP. HCM</p>
+                                <p><strong>Số điện thoại:</strong> 0123 456 789</p>
+                            </div>
+
+                            <div class="card">
+                                <h4>Chi Tiết Đơn Hàng</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Tổng tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Sản phẩm A</td>
+                                            <td>2</td>
+                                            <td>250.000 VND</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h5 class="text-end" style="margin-top: 50px;">Tổng cộng: <strong id="total-amount">250.000 VND</strong></h5>
+
+                            </div>
+                        </div>
+
+                        <div class="payment-column">
+                            <div class="card payment-card">
+                                <h4>Phương Thức Thanh Toán</h4>
+                                <p><strong>Chuyển khoản qua ngân hàng</strong></p>
+                                <div>
+                                    <img src="https://img.vietqr.io/image/MB-0120133662311-compact.jpg?amount=125000&addInfo=Mua%20b%E1%BB%99%20b%C3%A0i%20HealIn&accountName=Nguy%E1%BB%85n%20H%C3%A0%20Thu"
+                                         alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Page Footer-->
+        <footer class="section footer-modern context-dark footer-modern-2">
+            <div class="footer-modern-line">
+                <div class="container">
+                    <div class="row row-50">
+                        <div class="col-md-6 col-lg-4">
+                            <h5 class="footer-modern-title oh-desktop"><span
+                                    class="d-inline-block wow slideInLeft">Những gì chúng tôi cung cấp</span>
+                            </h5>
+                            <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
+                                <li><a href="#">abc</a></li>
+                                <li><a href="#">abc</a></li>
+                                <li><a href="#">abc</a></li>
+                                <li><a href="#">abc</a></li>
+                                <li><a href="#">abc</a></li>
+                                <li><a href="#">abc</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <h5 class="footer-modern-title oh-desktop"><span
+                                    class="d-inline-block wow slideInLeft">Thông tin</span>
+                            </h5>
+                            <ul class="footer-modern-list d-inline-block d-sm-block wow fadeInUp">
+                                <li><a href="views/about-us.html">Về chúng tôi</a></li>
+                                <li><a href="#">Dịch vụ của chúng tôi</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Cửa hàng</a></li>
+                                <li><a href="views/contacts.html">Liên hệ ngay</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-xl-5">
+                            <h5 class="footer-modern-title oh-desktop"><span
+                                    class="d-inline-block wow slideInLeft">Khách hàng mới</span>
+                            </h5>
+                            <p class="wow fadeInRight">Đăng ký ngay hôm nay để nhận tin tức và cập nhật mới
+                                nhất.</p>
+                            <!-- RD Mailform-->
+                            <form class="rd-form rd-mailform rd-form-inline rd-form-inline-sm oh-desktop"
+                                  data-form-output="form-output-global" data-form-type="subscribe" method="post"
+                                  action="bat/rd-mailform.php">
+                                <div class="form-wrap wow slideInUp">
+                                    <input class="form-input" id="subscribe-form-2-email" type="email" name="email"
+                                           data-constraints="@Email @Required" />
+                                    <label class="form-label" for="subscribe-form-2-email">Nhập
+                                        E-mail của bạn</label>
+                                </div>
+                                <div class="form-button form-button-2 wow slideInRight">
+                                    <button class="button button-sm button-icon-3 button-primary button-winona"
+                                            type="submit"><span class="d-none d-xl-inline-block">Đăng ký</span><span
+                                            class="icon mdi mdi-telegram d-xl-none"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-modern-line-2">
+                <div class="container">
+                    <div class="row row-30 align-items-center">
+                        <div class="col-sm-6 col-md-7 col-lg-4 col-xl-4">
+                            <div class="row row-30 align-items-center text-lg-center">
+                                <div class="col-md-7 col-xl-6"><a class="brand" href="landing"><img
+                                            src="assets/images/Logo_white.png" alt="" width="198" height="66" /></a>
+                                </div>
+                                <div class="col-md-5 col-xl-6">
+                                    <div class="iso-1">
+                                        <a href="https://www.facebook.com/profile.php?id=61573141550651">
+                                            <img src="assets/images/like-icon-58x25.webp" alt="" width="58"
+                                                 height="25" />
+                                        </a>
+                                        <span class="iso-1-big">9.4k
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-12 col-lg-8 col-xl-8 oh-desktop">
+                            <div class="group-xmd group-sm-justify">
+                                <div class="footer-modern-contacts wow slideInUp">
+                                    <div class="unit unit-spacing-sm align-items-center">
+                                        <div class="unit-left"><span class="icon icon-24 mdi mdi-phone"></span>
+                                        </div>
+                                        <div class="unit-body"><a class="phone" href="tel:#">0327992501</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer-modern-contacts wow slideInDown">
+                                    <div class="unit unit-spacing-sm align-items-center">
+                                        <div class="unit-left"><span class="icon mdi mdi-email"></span>
+                                        </div>
+                                        <div class="unit-body"><a class="mail"
+                                                                  href="mailto:#">healin.fpt@gmail.com</a></div>
+                                    </div>
+                                </div>
+                                <div class="wow slideInRight">
+                                    <ul
+                                        class="list-inline footer-social-list footer-social-list-2 footer-social-list-3">
+                                        <li><a class="icon mdi mdi-facebook" href="#"></a></li>
+                                        <li><a class="icon mdi mdi-twitter" href="#"></a></li>
+                                        <li><a class="icon mdi mdi-instagram" href="#"></a></li>
+                                        <li><a class="icon mdi " href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                               viewBox="0 0 448 512" width="18" height="18">
+                                                <path fill="#ffffff"
+                                                      d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
+                                                </svg></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-modern-line-3">
+                <div class="container">
+                    <div class="row row-10 justify-content-between">
+                        <div class="col-md-6"><span>Km29 Đại lộ Thăng Long - Thạch Thất - Hà Nội</span></div>
+                        <div class="col-md-auto">
+                            <!-- Rights-->
+                            <p class="rights">
+                                <span>&copy;&nbsp;</span><span
+                                    class="copyright-year"></span><span></span><span>.&nbsp;</span><span>Tất cả
+                                    các quyền được bảo lưu.</span><span>
+                                    Thiết kế&nbsp;bởi&nbsp;<a href="https://www.templatemonster.com">Heal
+                                        In</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P9FT69"
+                                                 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy nội dung tổng cộng
+            var totalText = document.getElementById("total-amount").innerText;
+
+            // Chuyển đổi thành số (loại bỏ chữ 'VND' và dấu chấm phân cách)
+            var amount = parseInt(totalText.replace(/\D/g, ""), 10);
+
+            // Lấy thẻ img
+            var qrImage = document.querySelector(".payment-card img");
+
+            var baseUrl = "https://img.vietqr.io/image/MB-0120133662311-compact.jpg";
+            var newUrl = baseUrl + "?amount=" + amount + "&addInfo=Mua%20b%E1%BB%99%20b%C3%A0i%20HealIn&accountName=Nguy%E1%BB%85n%20H%C3%A0%20Thu";
+
+            // Cập nhật src cho ảnh QR
+            qrImage.src = newUrl;
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

@@ -61,6 +61,10 @@
         <servlet-name>UploadImageController</servlet-name>
         <servlet-class>controller.UploadImageController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InvoiceController</servlet-name>
+        <servlet-class>controller.InvoiceController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/log_in</url-pattern>
@@ -128,6 +132,10 @@
     <servlet-mapping>
         <servlet-name>UploadImageController</servlet-name>
         <url-pattern>/upload_image</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvoiceController</servlet-name>
+        <url-pattern>/invoice</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
