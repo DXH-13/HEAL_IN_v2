@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Đăng nhập</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
@@ -21,7 +21,7 @@
                         <div class="card border-light-subtle shadow-sm">
                             <div class="row g-0">
                                 <div class="col-12 col-md-6">
-                                    <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="https://placehold.co/592x740" alt="Welcome back you've been missed!">
+                                    <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="assets/images/login_cover.png" alt="Welcome back you've been missed!">
                                 </div>
                                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                                     <div class="col-12 col-lg-11 col-xl-10">

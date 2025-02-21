@@ -56,6 +56,8 @@ public class CheckoutController extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         User userLogin = (User) session.getAttribute("userLogin");
+        System.out.println("User in session: " + userLogin);
+
         if (userLogin != null) {
             int productInCart = daoCart.getProductCountByUserId(userLogin.getNormalUserId());
             request.setAttribute("productInCart", productInCart);
@@ -76,7 +78,6 @@ public class CheckoutController extends HttpServlet {
         System.out.println(cartList);
         request.setAttribute("cartBuy", cartList);
         request.getRequestDispatcher("checkout.jsp").forward(request, response);
-        
     }
 
     @Override

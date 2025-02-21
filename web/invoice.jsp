@@ -543,19 +543,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Lấy nội dung tổng cộng
             var totalText = document.getElementById("total-amount").innerText;
-
-            // Chuyển đổi thành số (loại bỏ chữ 'VND' và dấu chấm phân cách)
             var amount = parseInt(totalText.replace(/\D/g, ""), 10);
-
-            // Lấy thẻ img
             var qrImage = document.querySelector(".payment-card img");
-
             var baseUrl = "https://img.vietqr.io/image/MB-0120133662311-compact.jpg";
             var newUrl = baseUrl + "?amount=" + amount + "&addInfo=Mua%20b%E1%BB%99%20b%C3%A0i%20HealIn&accountName=Nguy%E1%BB%85n%20H%C3%A0%20Thu";
-
-            // Cập nhật src cho ảnh QR
             qrImage.src = newUrl;
         });
     </script>

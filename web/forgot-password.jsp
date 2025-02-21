@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Forgot password</title>
+        <title>Quên mật khẩu</title>
         <link rel="icon" href="assets/images/Avatar.png" type="image/x-icon">
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/forgot-password.css">
@@ -26,7 +26,7 @@
                         <div class="card border-light-subtle shadow-sm">
                             <div class="row g-0">
                                 <div class="col-12 col-md-6">
-                                    <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="https://bootstrapbrain.com/demo/components/logins/login-8/assets/img/logo-img-1.webp" alt="Welcome back you've been missed!">
+                                    <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="assets/images/login_cover.png" alt="Welcome back you've been missed!">
                                 </div>
                                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
                                     <div class="col-12 col-lg-11 col-xl-10">
@@ -69,7 +69,7 @@
                                                 </div>
                                             </form>
 
-                                            <div class="row mt-5" style="margin-bottom: 6.2rem;">
+                                            <div class="row mt-5" style="margin-bottom: 5.7rem;">
                                                 <div class="col-12">
                                                     <div class="d-flex justify-content-center mt-3">
                                                         <a href="log_in" class="link-secondary text-decoration-none">Đăng nhập</a>

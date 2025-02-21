@@ -225,8 +225,8 @@
                                 <div class="row row-14 gutters-14">
                                     <div class="col-sm-12">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="checkout-first-name-2" type="text" name="name"
-                                                   data-constraints="@Required" />
+                                            <input class="form-input" id="checkout-first-name-2" type="text" name="name" value="${sessionScope.userLogin.name}"
+                                                   data-constraints="@Required" readonly />
                                             <label class="form-label" for="checkout-first-name-2">Tên</label>
                                         </div>
                                     </div>
@@ -254,22 +254,22 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="checkout-address-2" type="text" name="name"
+                                            <input class="form-input" id="checkout-address-2" type="text" name="detailAddress"
                                                    data-constraints="@Required" />
                                             <label class="form-label" for="checkout-address-2">Địa chỉ cụ thể</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="checkout-email-2" type="email" name="email"
-                                                   data-constraints="@Email @Required" />
+                                            <input class="form-input" id="checkout-email-2" type="email" name="email" value="${sessionScope.userLogin.email}"
+                                                   data-constraints="@Email @Required" readonly/>
                                             <label class="form-label" for="checkout-email-2">E-Mail</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-wrap">
-                                            <input class="form-input" id="checkout-phone-2" type="text" name="phone"
-                                                   data-constraints="@Numeric" />
+                                            <input class="form-input" id="checkout-phone-2" type="text" name="phone" value="${sessionScope.userLogin.phoneNumber}"
+                                                   data-constraints="@Numeric" readonly />
                                             <label class="form-label" for="checkout-phone-2">Số điện thoại </label>
                                         </div>
                                     </div>
